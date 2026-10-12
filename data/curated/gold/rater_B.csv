@@ -1,0 +1,181 @@
+entity_id,item,score,unit,quote
+HW264,G1,0.5,2,"The existing baseplate in the Veggie unit is replaced with the XROOTS enclosure"
+HW264,G2,0.5,2,"seed cartridges will be placed in the XROOTS chambers"
+HW264,G3,0.5,2,"There are multiple independent growth chambers that are imaged from seed germination onward."
+HW264,F1,1,2,"Veggie will provide lighting and air exchange between the Veggie growing volume containing XROOTS and the space station cabin."
+HW264,F2,0.5,2,"Veggie will provide lighting and air exchange between the Veggie growing volume containing XROOTS and the space station cabin."
+HW264,E1,0.5,2,"XROOTS uses power and data feeds from the EXPRESS rack as well as thermal conditioning."
+HW264,E2,0,,
+HW264,E3,0.5,2,"XROOTS is designed to test variables such as nutrient delivery and usage, nutrient recovery, power utilization, spray characteristics and protocols, and root zone atmosphere."
+HW264,E4,0,,
+HW264,E5,0.5,2,"Veggie will provide lighting"
+HW264,B1,1,2,"using hydroponic and aeroponic techniques to grow crop plants without soil"
+HW264,B2,1,2,"Hardware Type: Active aeroponic irrigation system inserted into VEGGIE."
+HW264,B3,0,,
+HW264,T1,0.5,2,"XROOTS uses power and data feeds from the EXPRESS rack as well as thermal conditioning."
+HW264,W1,0,,
+HW232,G1,0.5,2,"With a total chamber volume, equal or greater than .64 cubic feet"
+HW232,G2,1,2,"With a total chamber volume, equal or greater than .64 cubic feet"
+HW232,G3,1,2,"the AEM-T holds a maximum of 20 mice with a total mass up to 600g in two separate groups of 10 mice"
+HW232,F1,0.5,2,"Coupled with the AEM-E (ECLSS) Environmental Control and Life Support System to provide for air revitalization"
+HW232,F2,0,,
+HW232,E1,1,2,"the AEM-T maintains rodent chamber temperature within +/- 3deg C of cabin temperatures aboard the ISS"
+HW232,E2,0.5,2,"capability of storing measured parameters (e.g. temperature and relative humidity) up to 6 months"
+HW232,E3,1,2,"Coupled with the AEM-E (ECLSS) Environmental Control and Life Support System to provide for air revitalization"
+HW232,E4,0.5,2,"during ascent on the CRS SpaceX Dragon pressurized capsule"
+HW232,E5,1,39,"12:12 light cycle matched in timing to the light cycle used for Transporters and Habitats programmed for flight"
+HW232,B1,1,2,"the AEM-T holds a maximum of 20 mice"
+HW232,B2,1,2,"The AEM-T is equipped with a water refill box and dispensers (two per group of housed rodents)"
+HW232,B3,0,,
+HW232,T1,0.5,2,"the AEM-T is launched and returned mounted (powered) on Dragon"
+HW232,W1,0.5,2,"chamber lighting to maintain day and night cycles, cage mesh or grid"
+HW228,G1,0.5,3,"The FIT payload was a passive middeck locker experiment."
+HW228,G2,1,2,"one FIT Fungus Kit (two fungus tubes (10 ml) that are housed in an ESA vented Type 1 Container"
+HW228,G3,1,4,"Ten virgin females and 5 males were housed in 5 of the fly cassettes"
+HW228,F1,1,2,"housed in a European Space Agency (ESA) vented Type 1 Container"
+HW228,F2,0,,
+HW228,E1,0.5,4,"placed in stowage foam on the Shuttle middeck at ambient temperature and relative humidity"
+HW228,E2,0.5,4,"placed in stowage foam on the Shuttle middeck at ambient temperature and relative humidity"
+HW228,E3,0,,
+HW228,E4,0,,
+HW228,E5,0,,
+HW228,B1,1,3,"This experiment used the model organism, Drosophila"
+HW228,B2,1,4,"a polycarbonate fly cassette, with a 2ml food tray"
+HW228,B3,0,,
+HW228,T1,0.5,3,"The FIT payload was a passive middeck locker experiment."
+HW228,W1,0.5,4,"a polycarbonate fly cassette, with a 2ml food tray, inside a TypeI aluminum container"
+HW216,G1,1,2,"The total canister assembly measures 355 mm tall and 82 mm in diameter"
+HW216,G2,1,4,"inserted into a Teflon tube of 18 mm diameter, 335 mm in length"
+HW216,G3,1,4,"Thirteen of these dry wrapped kernels could be loaded into each of the two compartments of the Plant Canister."
+HW216,F1,1,2,"There are four light-baffled holes in both the upper and lower cans, providing gas exchange for the plants contained within."
+HW216,F2,0,,
+HW216,E1,0.5,2,"the Ambient Temperature Recorder is utilized to monitor the temperature profile experienced during flight"
+HW216,E2,0,,
+HW216,E3,0.5,2,"providing gas exchange for the plants contained within"
+HW216,E4,0,,
+HW216,E5,0.5,2,"contained in a hollow stainless steel container that contains a two- stage light filter"
+HW216,B1,1,4,"kernels of the Zea mays sweet corn were used"
+HW216,B2,1,4,"108 ml of sterile double-distilled water was added to the two compartments of the canister"
+HW216,B3,0.5,2,"providing gas exchange for the plants contained within"
+HW216,T1,0,,
+HW216,W1,0.5,2,"two hollow cans threaded together, constructed of anodized aluminum"
+HW215,G1,0.5,2,"The Vestibular Function Experiment Unit (VFEU) is a rack-mounted piece of hardware"
+HW215,G2,0.5,2,"Each Fish Package includes 1 fish container that houses 1 fish"
+HW215,G3,1,2,"Two fish total can be housed in each VFEU."
+HW215,F1,1,3,"a fish container, which contains a front window, water pump, air pump, water accumulator, artificial lung, and water purification system"
+HW215,F2,0.5,3,"a fish container, which contains a front window, water pump, air pump, water accumulator, artificial lung, and water purification system"
+HW215,E1,0.5,3,"The Data Recorder records fish neural and acceleration data, the water temperature and pressure"
+HW215,E2,0,,
+HW215,E3,1,3,"water pump, air pump, water accumulator, artificial lung, and water purification system"
+HW215,E4,0.5,3,"The Data Recorder records fish neural and acceleration data, the water temperature and pressure"
+HW215,E5,0,,
+HW215,B1,1,2,"provide life support capability for the Oyster toadfish, Opsanus tau"
+HW215,B2,1,2,"1 fish container that houses 1 fish (implanted with multichannel electrodes or microwire electrode) in artificial seawater"
+HW215,B3,0,,
+HW215,T1,0,,
+HW215,W1,0.5,3,"air pump, water accumulator, artificial lung"
+HW181,G1,0.5,3,"The cage assembly consists of a large circular tank containing six circular cages mounted on a common air distribution plenum"
+HW181,G2,1,3,"Each cage is 15 cm in diameter and 4 cm high and lined with porous polyethylene."
+HW181,G3,1,3,"a large circular tank containing six circular cages mounted on a common air distribution plenum"
+HW181,F1,1,3,"Conditioned air is supplied from the ECS to the plenum where it is distributed uniformly to each cage."
+HW181,F2,1,3,"through the porous floor and ceiling of the cage at a rate of 85 liters per minute"
+HW181,E1,1,4,"temperatures in the pupa plates were raised to 20° C"
+HW181,E2,1,3,"The ECS maintains an oxygen nitrogen atmosphere at 700 ± 15 mm Hg and 20 ± 10% relative humidity."
+HW181,E3,1,3,"The circular ECS tank houses a fan, a charcoal-lithium hydroxide absorption canister"
+HW181,E4,1,3,"The ECS maintains an oxygen nitrogen atmosphere at 700 ± 15 mm Hg"
+HW181,E5,1,3,"a programmable stimulus lamp operating on a delta ten-minute increment"
+HW181,B1,1,4,"The first experiment used the pocket mouse (Perognathus longimembris) as the experiment subject."
+HW181,B2,1,3,"Each cage is filled with 50 g of dried seeds"
+HW181,B3,0.5,3,"CO2 generated by the pupa and flies is removed by reaction with a potassium hydroxide (KOH) solution"
+HW181,T1,0.5,2,"interfaces with the spacecraft for power, thermal control, and data retrieval and command functions"
+HW181,W1,1,3,"Air is directed through each cage subplenum through the porous floor and ceiling of the cage"
+HW175,G1,0,,
+HW175,G2,0.5,2,"The chamber accommodates seven rats and can be partitioned by a remotely activated door"
+HW175,G3,1,2,"The chamber accommodates seven rats and can be partitioned by a remotely activated door to separate male and female rats"
+HW175,F1,1,2,"Unidirectional airflow moves wastes and debris into a waste collector located at the bottom of the cage."
+HW175,F2,0.5,2,"Unidirectional airflow moves wastes and debris into a waste collector located at the bottom of the cage."
+HW175,E1,0,,
+HW175,E2,0,,
+HW175,E3,0,,
+HW175,E4,0,,
+HW175,E5,0.5,2,"The lighting system regulates the light/dark cycle."
+HW175,B1,1,3,"Seven more Wistar rats were flown as part of the rat embryology experiment."
+HW175,B2,1,2,"The chamber includes eight feeding stations, providing the animals food at regular intervals. Water is available to the rats ad libitum."
+HW175,B3,0,,
+HW175,T1,0,,
+HW175,W1,0,,
+HW170,G1,0,,
+HW170,G2,0.5,2,"standard, cotton-stoppered fruit fly vials"
+HW170,G3,0.5,2,"sheetmetal flight containers that housed standard, cotton-stoppered fruit fly vials"
+HW170,F1,0.5,2,"cotton-stoppered fruit fly vials"
+HW170,F2,0,,
+HW170,E1,0,,
+HW170,E2,0,,
+HW170,E3,0,,
+HW170,E4,0,,
+HW170,E5,0,,
+HW170,B1,1,3,"a Domodedovo-32 strain of the fruit fly Drosophila melanogaster"
+HW170,B2,1,2,"fruit fly vials with standard food medium for the fruit fly experiment"
+HW170,B3,0,,
+HW170,T1,0,,
+HW170,W1,0.5,2,"The Soviets provided sheetmetal flight containers that housed standard, cotton-stoppered fruit fly vials"
+HW146,G1,1,3,"Approx cylindrical canister ~457 mm diameter × 457 mm length"
+HW146,G2,0.5,15,"Egg chamber units consist of three Lexan pieces assembled to form an incubation chamber for the growing embryos."
+HW146,G3,1,15,"The box can house four adult female frogs and is divided into two compartments, with each compartment accommodating two frogs."
+HW146,F1,1,15,"An aquarium-style air pump provides ventilation."
+HW146,F2,0.5,15,"An aquarium-style air pump provides ventilation."
+HW146,E1,0.5,14,"The Frog Environmental Unit (FEU) provides a ventilated and temperature-controlled habitat for four female frogs"
+HW146,E2,0,,
+HW146,E3,0,,
+HW146,E4,0.5,8,"Sealed (internal); Ambient (external)"
+HW146,E5,0.5,7,"N"
+HW146,B1,1,2,"fertilization of adult Xenopus laevis"
+HW146,B2,1,15,"Frogs are kept moist with Ringer's solution"
+HW146,B3,0,,
+HW146,T1,0.5,15,"The Power Conditioning Unit (PCU) accepts power from the Spacelab and distributes it to the various FEU subsystems."
+HW146,W1,0.5,15,"Egg chamber units consist of three Lexan pieces assembled to form an incubation chamber"
+HW141,G1,1,3,"approximate middeck locker volume (~25 × 35 × 50 cm)"
+HW141,G2,1,19,"Type-1/E has an internal volume of approximately 65 ml (~81x40x20 mm)"
+HW141,G3,1,19,"can accommodate 20 standard Type-I/E containers and four Type-II/E containers"
+HW141,F1,0.5,2,"Designed for multi-user, high containment biological research"
+HW141,F2,0,,
+HW141,E1,1,19,"An incubator, which is temperature controlled between 20 ° and 37 ° C"
+HW141,E2,0.5,9,"Ambient ISS"
+HW141,E3,0.5,8,"N"
+HW141,E4,0.5,11,"Ambient ISS"
+HW141,E5,0.5,7,"N"
+HW141,B1,1,20,"Burkholderia cepacia (bacterium)"
+HW141,B2,0,,
+HW141,B3,0,,
+HW141,T1,0.5,13,"no electrical/power/data connection"
+HW141,W1,0,,
+HW140,G1,0.5,3,"Middeck Locker"
+HW140,G2,0.5,2,"sealed OptiCell™ chambers under a controlled initial atmosphere"
+HW140,G3,1,18,"Each BRIC-Opti contains four commercial OptiCells™ from BioCrystal, Ltd."
+HW140,F1,1,2,"designed to support passive microbial and plant tissue culture in sealed OptiCell™ chambers"
+HW140,F2,0.5,8,"O₂ and atmosphere regulated via internal airflow management"
+HW140,E1,1,10,"Controlled: 18 – 30 °C ±0.5 °C"
+HW140,E2,1,9,"50–90% RH ±3%"
+HW140,E3,1,8,"CO₂ control: 400 ppm up to 5,000 ppm ±50 ppm"
+HW140,E4,0.5,11,"N"
+HW140,E5,0.5,7,"N"
+HW140,B1,1,18,"BRIC-Opti was designed to provide a closed environment with an atmosphere of known initial composition for microbial growth in space."
+HW140,B2,0.5,13,"crew watering refill station"
+HW140,B3,0,,
+HW140,T1,0.5,13,"uses thermoelectric cooling/heating internally; connected to rack thermal system"
+HW140,W1,0,,
+HW100,G1,0.5,14,"The Observation and Lighting Units that house the Fly Cassettes are inserted in the BioRack"
+HW100,G2,0.5,14,"The Fly Cassette consists of an aluminum body that has a slot through which a Food Tray is inserted."
+HW100,G3,1,4,"15 vials per cassette, 12 cassettes per rack"
+HW100,F1,1,14,"The sides of the Cassettes include holes for ventilation that are covered with a stainless steel mesh"
+HW100,F2,0,,
+HW100,E1,0,,
+HW100,E2,0,,
+HW100,E3,0,,
+HW100,E4,0,,
+HW100,E5,1,14,"The Observation and Lighting Unit contains LED lights to simulate daylight. Infrared LED lights allow monitoring of the flies under dark conditions."
+HW100,B1,1,13,"long-duration fruit fly--Drosophila melanogaster--studies in space"
+HW100,B2,1,14,"A new food tray, filled with fresh fly food"
+HW100,B3,0,,
+HW100,T1,0,,
+HW100,W1,0.5,14,"holes for ventilation that are covered with a stainless steel mesh"

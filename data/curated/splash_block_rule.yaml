@@ -1,0 +1,12 @@
+# SPLASH records whose descriptive fields are displaced from neighbouring rows.
+# Evidence: data/curated/splash_field_review.csv (29 field-level verdicts, offsets mostly -2),
+# results/tables/T0_splash_consistency.csv (automated adjacency test), and the environment
+# fields of #138-#142 (e.g. #140 BRIC-Opti carries APH's CO2/RH/temperature ranges and
+# '135 days continuous growth'; #139 Animal Access Unit carries the Aquatic Habitat's
+# 'artificial lung' gas control and 25-30 C range). The earliest confirmed displacement is
+# #121 (specimen_size 'Workbench (WB): Fold-out 0.5 m2 workspace' = MSPR #119).
+# Inside the block every field except those listed in `keep` is treated as untrusted.
+first_id: 121
+last_id: 147
+keep: [_id, name, alternate_names, background, category, status, last_update]
+snapshot: 2026-10-12

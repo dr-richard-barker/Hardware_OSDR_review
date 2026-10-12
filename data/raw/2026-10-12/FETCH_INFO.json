@@ -1,0 +1,10 @@
+{
+ "finished_utc": "2026-10-12T15:22:56+00:00",
+ "sources": {
+  "biodata": "https://visualization.osdr.nasa.gov/biodata/api/v2",
+  "registry": "https://osdr.nasa.gov/geode-py/ws/api",
+  "splash": "https://visualization.osdr.nasa.gov/splash-api/public"
+ },
+ "started_utc": "2026-10-12T15:20:17+00:00",
+ "user_agent": "Hardware_OSDR_review/0.1 (space-biology hardware meta-analysis; github.com/dr-richard-barker)"
+}

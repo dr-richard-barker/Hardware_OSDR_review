@@ -1,0 +1,7 @@
+node_a,name_a,node_b,name_b,basis
+R52,Cosmos Primate-BIOS,R54,Cosmos Rodent-BIOS,ambiguous acronym BIOS
+S24,Biological Research In Canisters,S25,Biological Research in Canisters - Petri Dish Fixation Unit; BRIC + Petri Dish Fixation Unit,ambiguous acronym BRIC
+R920,Space Tissue Loss-A (STL-A) Module or Cell Culture Module (CCM),R997,Cell Culture Module (CCM),ambiguous acronym CCM
+R899,Circadian Rhythm/Temperature Hardware (CR/T),R910,Circadian Rhythm/Temperature Experiment Hardware (CR/T),ambiguous acronym CR/T
+R2004,Multi-use Variable-g Platform (MVP),S22,MVP-Cell (Space Races),acronym 'MVP' would merge two SPLASH records
+P:Low Pressure Growth Chambers (LPGC),Low Pressure Growth Chambers (LPGC),R2051,Variable Pressure Growth Chamber,fuzzy 0.83

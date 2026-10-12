@@ -1,0 +1,77 @@
+ENTITY HW141: Biopack
+
+--- unit 1 | source=splash record=141 field=name
+Biopack
+
+--- unit 2 | source=splash record=141 field=background
+The Biopack facility was developed by ESA (European Space Agency) as a compact, middeck locker–mounted biological payload platform for the Space Shuttle and eventually the ISS/Columbus module. It includes an incubator (with centrifuge), cooler, and freezer, allowing experiments on plant tissue, microbes, insects, or cell cultures across varying gravity levels by running on-orbit or via centrifuge exposure. Designed for multi-user, high containment biological research in microgravity or artificial gravity up to 2×g.
+
+--- unit 3 | source=splash record=141 field=dims
+Fits within ESA Type‑I/E and Type‑II/E locker frames (middeck or EDR drawer size) – approximate middeck locker volume (~25 × 35 × 50 cm)
+
+--- unit 4 | source=splash record=141 field=volume
+Single middeck locker or equivalent EDR drawer
+
+--- unit 5 | source=splash record=141 field=flight_heritage
+Shuttle
+
+--- unit 6 | source=splash record=141 field=operations
+CREW TIME REQUIRED + SAMPLE RETURN REQUIRED
+
+--- unit 7 | source=splash record=141 field=lighting
+N
+
+--- unit 8 | source=splash record=141 field=gas_control
+N
+
+--- unit 9 | source=splash record=141 field=rh_range
+Ambient ISS
+
+--- unit 10 | source=splash record=141 field=temperature_range
+Ambient ISS
+
+--- unit 11 | source=splash record=141 field=pressure
+Ambient ISS
+
+--- unit 12 | source=splash record=141 field=measurements
+BEI computer logs basic temperature and centrifuge run data; no microscopy or imaging onboard
+
+--- unit 13 | source=splash record=141 field=note_specs
+For Interface: manual crew interfacing must occur for mouse transfer; no electrical/power/data connection
+
+--- unit 14 | source=splash record=141 field=category
+Life Sciences - Culturing, Growth, Microbiology / Exposure Facilities
+
+--- unit 15 | source=splash record=141 field=nutrient_production
+N
+
+--- unit 16 | source=splash record=141 field=experiment_duration
+Transfer occurs during experiment start and end—habitat durations up to ~90 day
+
+--- unit 17 | source=registry record=999 field=name
+Biopack
+
+--- unit 18 | source=registry record=999 field=description
+Biopack is a reusable multi-user facility developed by the European Space Agency (ESA) that enables biological experimentation under varying gravity conditions. The facility is designed to accommodate small biological samples such as bacterial cultures, mammalian cells, tissue cultures, small plants, and insects. Biopack includes three experiment compartments: an incubator with three centrifuges, a cooler, and a freezer. Experiments are flown in ESA Type-I/E and Type-II/E containers.  Onboard an orbiting spacecraft such as the Space Shuttle or ISS, biological samples may be exposed to gravity levels ranging from microgravity up to at least 2 G.
+
+The Biopack is capable of displaying, downlinking, and locally storing all parameters available in the facility. All the data of the Biopack system will be sampled and stored each second on a palmtop hard disk. Biopack and experiment operations can be adjusted manually, inflight, or through tele-commands when necessary.
+
+--- unit 19 | source=registry record=999 field=components_text
+Experiment Containers (ECs): ESA has two standardized ECs used for biological research, known as Type-1/E and Type-II/E. Type-1/E has an internal volume of approximately 65 ml (~81x40x20 mm) and Type-II/E has a volume of 385 ml (~87x63x63 mm). | Cooler and Freezer: To store samples before or after incubation period, two temperature controlled areas are available. Ten Type-I/E containers can be stored in the 4 °C cooler, while the same number of containers can also be kept frozen in a -15 °C freezer. Transfer between incubator and freezer requires crewmember actions. To speed up the cool-freeze down time for an experiment container, special cool-freeze locations are provided; these locations, two for each compartment, are equipped with stronger cooling elements (peltier). The cool down time from 37 ° to -15 °C will be about 90 minutes. To increase cooling capacity, it is also possible to set the -15 °C freezer to function as a 4 °C cooler. | On-board Centrifuges: Each of the centrifuges is software controlled and can be programmed individually to provide any acceleration value between microgravity and 2 G.  Static as well as dynamic gravity profiles can be generated. | Incubator: An incubator, which is temperature controlled between 20 ° and 37 ° C, can accommodate 20 standard Type-I/E containers and four Type-II/E containers, 10 Type-I/E, and two Type-II/E containers in static positions, and another 10 Type-1/E and two Type-II/E containers on three centrifuges. Static as well as dynamic gravity profiles can be generated providing the researcher with an unlimited range of experiment scenarios.
+
+--- unit 20 | source=payload record=BIOPACK field=description
+Life Sciences Research Objectives
+· To explore the effect of space flight and microgravity on bacterial growth, physiology, and virulence
+
+Life Sciences Investigations
+· Microbiology (Biopack-1)
+
+Organisms Studied
+· Burkholderia cepacia (bacterium)
+
+Flight Hardware
+· Biopack
+
+--- unit 21 | source=payload record=BIOPACK field=hardware_version
+As Flown on STS-107: The hardware was flown on STS-107 with all the components as described.
+

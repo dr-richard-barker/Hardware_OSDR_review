@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+runs/
+.abai/
+.DS_Store
+latex/build/
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz

@@ -1,0 +1,57 @@
+ENTITY HW140: BRIC-Opti
+
+--- unit 1 | source=splash record=140 field=name
+BRIC-Opti
+
+--- unit 2 | source=splash record=140 field=background
+BRIC‑Opti is a variant within NASA’s Biological Research in Canisters (BRIC) suite, designed to support passive microbial and plant tissue culture in sealed OptiCell™ chambers under a controlled initial atmosphere. It enables closed-environment biological experiments with onboard autonomy and minimal crew interaction in microgravity.
+
+--- unit 3 | source=splash record=140 field=dims
+Middeck Locker
+
+--- unit 4 | source=splash record=140 field=volume
+Half Middeck Locker
+
+--- unit 5 | source=splash record=140 field=flight_heritage
+ISS (Expedition 13)
+
+--- unit 6 | source=splash record=140 field=operations
+NO CREW TIME REQUIRED + SAMPLE RETURN REQUIRED
+
+--- unit 7 | source=splash record=140 field=lighting
+N
+
+--- unit 8 | source=splash record=140 field=gas_control
+CO₂ control: 400 ppm up to 5,000 ppm ±50 ppm; O₂ and atmosphere regulated via internal airflow management
+
+--- unit 9 | source=splash record=140 field=rh_range
+50–90% RH ±3%
+
+--- unit 10 | source=splash record=140 field=temperature_range
+Controlled: 18 – 30 °C ±0.5 °C
+
+--- unit 11 | source=splash record=140 field=pressure
+N
+
+--- unit 12 | source=splash record=140 field=measurements
+HOBO data logger
+
+--- unit 13 | source=splash record=140 field=note_specs
+For Interface: crew watering refill station and remote ground commands supported; For Heat Sync: uses thermoelectric cooling/heating internally; connected to rack thermal system
+
+--- unit 14 | source=splash record=140 field=category
+Life Sciences – Culturing, Growth, Microbiology / Environmental Monitoring
+
+--- unit 15 | source=splash record=140 field=nutrient_production
+N
+
+--- unit 16 | source=splash record=140 field=experiment_duration
+Up to 135 days continuous growth
+
+--- unit 17 | source=registry record=2047 field=name
+BRIC-OPTI
+
+--- unit 18 | source=registry record=2047 field=description
+BRIC-Opti was designed to provide a closed environment with an atmosphere of known initial composition for microbial growth in space. It provides a redundant level of containment for potentially hazardous materials, with autonomous logging of temperature data in three physical locations within each canister. Each BRIC-Opti contains four commercial OptiCells™ from BioCrystal, Ltd. BRIC-Opti was only flown once, to the ISS in 2006-2007, for the Passive Observatories for Experimental Microbial Systems in Microgravity (POEMS) experiment. POEMS was designed to evaluate the effect of stress in the space environment on the generation of genetic variation within model microbial cells. This experiment uses a new system for microbial cultivation in the spaceflight environment to observe the generation and maintenance of genetic variation within microbial populations in microgravity. POEMS will contain experiments studying the growth, ecology and performance of diverse assemblages of microorganisms in space. Understanding microbial growth and ecology in a space environment is important for maintaining human health and bioregenerative life support functions in support of NASA Exploration Systems requiring Advanced Life Support.
+
+

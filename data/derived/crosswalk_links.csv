@@ -1,0 +1,32 @@
+node_a,node_b,method,key
+S121,R1403,curated,Both are BioServe MOBIAS (SPLASH background: 'MOBIAS is a modular bioreactor system developed by BioServe')
+S37,R2048,curated,Same JAXA facility: 'Cell Biology Experimentation Facility; Plant Experimentation Unit' vs 'Plant Experiment Unit / Cell Biology Experiment Facility (PEU/CBEF)'
+R2017,S34,exact_alias,advanced plant habitat
+R1381,S139,exact_alias,animal access unit
+R133,S68,exact_alias,animal enclosure module
+R239,S145,exact_alias,aquatic animal experiment unit
+R1080,S137,exact_alias,aquatic research facility
+R2040,S70,exact_alias,astro garden from sierra space
+R1001,S72,exact_alias,avian development facility
+R2003,S17,exact_alias,bioculture system
+R999,S141,exact_alias,biopack
+R240,S143,exact_alias,biorack
+R2001,S81,exact_alias,bone densitometer
+R2019,S24,exact_alias,bric 100
+R2047,S140,exact_alias,bric opti
+R2020,S25,exact_alias,bric pdfu
+R907,S147,exact_alias,closed equilibrated biological aquatic system
+R908,S44,exact_alias,commercial generic bioprocessing apparatus
+R1057,S42,exact_alias,european modular cultivation system
+R241,S146,exact_alias,frog environmental unit
+R1389,S100,exact_alias,fruit fly lab experiment hardware
+R1173,S27,exact_alias,group activation pack
+R1172,S40,exact_alias,kubik incubator
+R1388,S114,exact_alias,microgravity science glovebox
+R2004,S36,exact_alias,multi use variable g platform
+R150,S138,exact_alias,plant growth unit
+R1379,S142,exact_alias,rodent habitat
+R2041,S52,exact_alias,spectrum
+R1397,S33,exact_alias,vegetable production system
+R2005,S19,acronym,PHAB
+R2006,S43,acronym,SABL

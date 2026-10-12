@@ -1,0 +1,60 @@
+ENTITY HW100: Fruit Fly Lab; Fruit Fly Lab Experiment Hardware
+
+--- unit 1 | source=splash record=100 field=name
+Fruit Fly Lab; Fruit Fly Lab Experiment Hardware
+
+--- unit 2 | source=splash record=100 field=background
+The Fruit Fly Lab is a platform on the ISS that enables long-duration fruit fly (Drosophila Melanogaster) experiments in space. These investigations study how exposure to microgravity and the other attributes of the space environment affect fruit flies, providing valuable information for long-term spaceflight and response to illness.
+
+--- unit 3 | source=splash record=100 field=specimen_types_supported
+Fruit Flies
+
+--- unit 4 | source=splash record=100 field=specimen_size
+15 vials per cassette, 12 cassettes per rack
+
+--- unit 5 | source=splash record=100 field=flight_heritage
+ISS (SpaceX-5)
+
+--- unit 6 | source=splash record=100 field=operations
+CREW TIME REQUIRED + SAMPLE RETURN REQUIRED
+
+--- unit 7 | source=splash record=100 field=lighting
+Y
+
+--- unit 8 | source=splash record=100 field=measurements
+Y
+
+--- unit 9 | source=splash record=100 field=category
+Animal Habitats
+
+--- unit 10 | source=splash record=100 field=experiment_duration
+weeks/months
+
+--- unit 11 | source=splash record=100 field=alternate_names
+Fruit Fly Lab
+
+--- unit 12 | source=registry record=1389 field=name
+Fruit Fly Lab Experiment Hardware
+
+--- unit 13 | source=registry record=1389 field=description
+NASA's Fruit Fly Lab provides a research platform aboard the International Space Station for long-duration fruit fly--Drosophila melanogaster--studies in space. The system has three major components. The first is the Fly Cassette that will house and safely transport fruit flies to the space station. The second is the Food Changeout Platform that will be used periodically to provide the flies with fresh food while maintaining containment and allowing extraction of fruit fly eggs, embryos and larvae for preservation. The third is the Observation and Lighting System to allow fly behavior monitoring and exposure to an artificial day/night cycle.
+
+--- unit 14 | source=registry record=1389 field=components_text
+Observation and Lighting System: The Observation and Lighting System houses a video camera and LED lights to both record fly behavior and also generate an artificial day/night cycle. Each Observation and Lighting Units holds one Fly Cassette. The video camera can record images of the flies through the transparent lid of the Cassette, providing behaviorial data to researchers. The Observation and Lighting Unit contains LED lights to simulate daylight. Infrared LED lights allow monitoring of the flies under dark conditions. 
+The Observation and Lighting Units that house the Fly Cassettes are inserted in the BioRack and the BioRack centrifuge to run experiments that include side-by-side exposure of Cassettes to microgravity and 1 g (simulated Earth gravity.) The system can accommodate a total of 12 Cassettes for one experimental run with as many as six of the Cassettes on the centrifuge and six of the Cassettes on the microgravity rack. | Fly Cassette: The Fly Cassette consists of an aluminum body that has a slot through which a Food Tray is inserted. The Cassette lid is made of transparent polycarbonate plastic (Lexan.) The sides of the Cassettes include holes for ventilation that are covered with a stainless steel mesh to prevent flies and larvae from escaping. | Food Changeout Platform: The Food Changeout Platform is used to exchange food trays while maintaining containment of Drosophila. The kit is comprised of 3 elements:
+    1) Food Changeout Platform
+    2) A new food tray, filled with fresh fly food
+    3) T-bar (for pushing food trays through the slots)
+
+The platform is fabricated from Delrin and Lexan. It allows transfer of food trays from one Fly Cassette to another by a series of operational steps performed by station crew while continuously providing containment of Drosophila.The T-bar is tethered to the Platform by a cord. The T-Bar is used to push a fresh food tray into a Fly Cassette while simultaneously pushing the spent food tray out the opposite side of the Cassette. The Platform Kit is stowed in a resealable polyethylene bag.
+
+Station crew will conduct food tray change out operations as required by the experiment design. At the time of the food tray change out, the food tray exposed to the adult flies in each Cassette will contain Drosophila eggs, embryos, and larvae. The procedure consists of transferring a new food tray into the fly cassette that carries the adult flies and then transferring the food tray with the larvae into a new, unused fly cassette that is subsequently frozen. The Platform Kit provides containment during this operation; no additional containment is required.
+
+--- unit 15 | source=payload record=FFL01 field=description
+The first Fruit Fly Lab mission, FFL-01 will launch to the station on SpaceX-5 in 2014. The goals for the first flight are to validate hardware performance and for station crew to demonstrate critical research operations in space, including testing an RNA fixation kit. More than a hundred flies will be aboard the space station for up to 30 days.
+
+The common fruit fly (Drosophila melanogaster) is an important animal model for the human immune system, making it a useful model for studying the biological effects of spaceflight. Spaceflight affects the innate immune system, which could make animals including humans more susceptible to disease, especially because microbes can become more virulent in space. The NASA Ames Research Center (ARC) ISS Drosophila Experiment (Fruit Fly Lab-01) studies the combined effect of altered host immunity with changes to microbes in space.
+
+--- unit 16 | source=payload record=FFL01 field=hardware_version
+Version used on International Space Station: to be written
+

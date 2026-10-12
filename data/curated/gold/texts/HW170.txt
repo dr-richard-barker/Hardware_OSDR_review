@@ -1,0 +1,32 @@
+ENTITY HW170: Cosmos Fruit Fly Container
+
+--- unit 1 | source=registry record=50 field=name
+Cosmos Fruit Fly Container
+
+--- unit 2 | source=registry record=50 field=description
+The Soviets provided sheetmetal flight containers that housed standard, cotton-stoppered fruit fly vials with standard food medium for the fruit fly experiment.
+
+--- unit 3 | source=payload record=Bion%203 field=description
+Mission Overview
+
+The Cosmos 782 mission marked the first time that the United States participated in the Soviet Cosmos Program. Scientists from France, Czechoslovakia, Hungary, Poland, Romania, the U.S. and the U.S.S.R. participated in these investigations. More than 20 different species were flown on the mission. American investigators conducted experiments on a subset that included rats, fruit flies, carrot tissue and cells, and fish eggs. A U.S. radiation dosimeter experiment was also carried out without using biological materials. A centrifuge on the spacecraft created an artificial 1-g environment for some of the biological subjects.  Specimens rotated on the centrifuge were compared with specimens maintained in microgravity conditions.    
+
+The general objective of the U.S. life science experiments was to compare the effects of microgravity and artificial gravity on the genetics, growth, development and aging of biological systems. Aging processes were studied using fruit flies as experimental subjects. The effects of microgravity, artificial gravity and the null-gravity environment of a ground-based clinostat were studied on carrot tumor growth. Another experiment using cultured carrot cells studied the development process in higher plants. A follow-up to an Apollo-Soyuz experiment was conducted to explore the harmful effects of microgravity on growth and development in fish eggs. Rat experiments were designed to assess microgravity effects on gastrointestinal, endocrine and lymphoid systems and on blood, muscle, bone and eye tissue. A radiation dosimetry experiment measured the high-linear energy transfer (LET) particle radiation aboard the biosatellite.    
+
+Twenty-five unrestrained Wistar rats (Rattus norvegicus) were flown aboard the spacecraft, in individual cages. Body temperature telemetry transmitters were implanted in five of the rats. Two control groups of rats were studied on the ground - the Synchronous Control group and the Vivarium Control group.  Studies on growth and development were conducted on one thousand embryos of Fundulus heteroclitus, a small shallow water minnow (Walbaum) of the Beaufort, North Carolina strain. Other experimental subjects included a Domodedovo-32 strain of the fruit fly Drosophila melanogaster, carrot (Daucus carota) tissue and cultured carrot cells.
+
+--- unit 4 | source=payload record=Bion%203 field=hardware_version
+As Flown on Cosmos: The hardware was flown on Cosmos 782 and 936 as described.
+
+--- unit 5 | source=payload record=Bion%204 field=description
+Mission Overview
+
+The Soviet Union launched the Cosmos 936 mission on August 3, 1977.   Scientists from the U.S.S.R., the U.S., Czechoslovakia, France, Hungary, Poland, Romania, Bulgaria and the German Democratic Republic conducted experiments in physics and biology on the mission.   The biosatellite was recovered near Kustanay in Central Asia on August 22, 1977, after remaining in orbit for 18.5 days.    A notable feature of the mission was the use of two onboard centrifuges to rotate rat subjects throughout the flight.  The artificial gravity environment provided by continuous centrifugation was expected to counteract spaceflight effects caused by microgravity.  Effects caused by other spaceflight factors, such as the acceleration, noise and vibration stresses of launch and reentry, were not expected to change.  The effects of spaceflight on various biological specimens were investigated during the mission, as during the previous Cosmos mission.  An effort was made to differentiate between spaceflight-associated effects on rat subjects that were caused by microgravity as opposed to those that were caused by other stresses.  The effects of spaceflight were studied in bone and muscle, erythrocyte survival and lipid and carbohydrate metabolism.  An experiment to examine the effect of space radiation on the retina was also carried out using rat subjects.  Another study of space radiation was conducted without using biological material, to determine various physical parameters of the different components of radiation in space.  Genetics and the aging process were studied in fruit flies.  
+
+Thirty male, specific pathogen free rats (Rattus norvegicus) of the Wistar strain were flown onboard.  At launch, they weighed 215 grams on average and were about 62 days old.  Twenty of these rats experienced microgravity during the entire mission.  The remaining ten rats were subjected to continuous centrifugation throughout flight.  
+
+Fruit flies (Drosophila melanogaster) were used to study development and aging in the space environment.  This species was also used to study genetic mutation rate.
+
+--- unit 6 | source=payload record=Bion%204 field=hardware_version
+As Flown on Cosmos: The hardware was flown on Cosmos 782 and 936 as described.
+

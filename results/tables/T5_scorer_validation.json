@@ -1,0 +1,14 @@
+{
+ "n_cells": 180,
+ "n_entities": 12,
+ "rater_exact_agreement": 0.9,
+ "rater_weighted_kappa": 0.8895178340039556,
+ "rater_presence_agreement": 0.9222222222222223,
+ "auto_exact_agreement": 0.6888888888888889,
+ "auto_weighted_kappa": 0.6142433234421365,
+ "auto_presence_precision": 1.0,
+ "auto_presence_recall": 0.688,
+ "entity_completeness_spearman": 0.7688369585908676,
+ "entity_completeness_mean_gold": 0.5277777777777778,
+ "entity_completeness_mean_auto": 0.35833333333333334
+}

@@ -1,0 +1,18 @@
+ENTITY HW175: Rodent Mating Chamber
+
+--- unit 1 | source=registry record=57 field=name
+Rodent Mating Chamber
+
+--- unit 2 | source=registry record=57 field=description
+The Rodent Mating Chamber, developed by the USSR, was designed to support embryology experiments onboard the Russian Cosmos Biosatellite. The chamber accommodates seven rats and can be partitioned by a remotely activated door to separate male and female rats until the door should be opened to allow rats to mingle and possibly mate, upon wich the door can be opened. The chamber includes eight feeding stations, providing the animals food at regular intervals. Water is available to the rats ad libitum. Unidirectional airflow moves wastes and debris into a waste collector located at the bottom of the cage. The lighting system regulates the light/dark cycle.
+
+--- unit 3 | source=payload record=Bion%205 field=description
+Mission Overview
+
+Cosmos 1129 satellite carried biological and radiation physics experiment packages from Czechoslovakia, France, Hungary, Poland, Romania, the German Democratic Republic, the U.S. and the U.S.S.R.   The U.S. investigations onboard included a radiation physics experiment and several biological experiments using rats, quail embryos and plants.  As for all Cosmos missions, the principal objective of Cosmos 1129 was to study the effects of spaceflight on biological systems, with a particular focus on the biomedical problems observed in men and animals during spaceflight.  A concerted effort was made to maximize the science return from the mission.  To this end, virtually every organ and tissue from the rat specimens flown was examined by investigators.  Spaceflight effects on bone and muscle were examined in a series of studies on rats.  Rats were also used in an attempt to study mammalian reproductive processes in space.   A study of avian embryogenesis was carried out for the first time on this mission.    Microgravity effects on plants were investigated using carrot tissue.  The  radiation exposure of the spacecraft and its contents was measured in a radiation dosimetry experiment.  
+
+Thirty male specific pathogen free rats (Rattus norvegicus) of the Wistar strain were flown onboard and served as experimental subjects for a wide variety of physiological studies.  When the experiments began, the rats were about 85 days old and weighed 300 grams on average.  The flight rats were divided into five groups for experimental purposes.  They were sacrificed seven to 11 hours after landing (group 1), 32 to 37 hours after landing (group 5), six days postflight (groups 2 and 3), or 29 days postflight (group 4).    Seven more Wistar rats were flown as part of the rat embryology experiment.  Five of these were females weighing about 340 grams at launch and two were males weighing about 260 grams.    Fertilized Japanese quail (Coturnix coturnix) eggs were flown to evaluate the effects of spaceflight on avian embryological development.    The effects of spaceflight on the rate of cellular metabolism were assessed by studying the growth of crown gall tumors in carrots (Daucus carota).  Carrot cell cultures were used to determine if growth and development of plants were affected by spaceflight.
+
+--- unit 4 | source=payload record=Bion%205 field=hardware_version
+As Flown on Cosmos 1129: The Rodent Mating Chamber was flown on Cosmos 1129 as described.
+

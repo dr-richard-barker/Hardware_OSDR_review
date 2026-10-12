@@ -1,0 +1,475 @@
+{
+ "data": [
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/133"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/239"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/135"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/896"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/136"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/137"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/240"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/138"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/906"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/20"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/37"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1190"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/141"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/42"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/144"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/910"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/907"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/49"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/50"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/51"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/52"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/53"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/54"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1188"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/21"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/145"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/241"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1186"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/4"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/5"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1187"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/231"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/928"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/22"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/6"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/24"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/25"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/19"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/26"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1189"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/28"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/29"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/152"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/32"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/33"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/9"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/589"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/57"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/163"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/238"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/17"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/920"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/34"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/35"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/36"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1080"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/997"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/911"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/891"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/913"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/912"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/895"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/924"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/921"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/892"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/898"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/899"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/900"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/901"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/902"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/903"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/904"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/905"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/908"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/915"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/918"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/922"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/929"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/998"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/938"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/848"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1079"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/162"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/148"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/150"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/999"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1001"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1042"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1057"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/89"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1172"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1173"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1403"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1332"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1333"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1356"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1357"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/249"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1388"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1389"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2001"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1379"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1380"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1381"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2002"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2003"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2004"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2005"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2006"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2007"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2008"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2009"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1402"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2010"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2011"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2016"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2012"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2013"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2014"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2015"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/1397"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2017"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2018"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2019"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2020"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2021"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2022"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2023"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2024"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2025"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2026"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2027"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2028"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2029"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2030"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2031"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2032"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2033"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2034"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2035"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2036"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2037"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2038"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2039"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2040"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2041"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2042"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2043"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2044"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2045"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2046"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2047"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2048"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2049"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2050"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2051"
+  },
+  {
+   "hardware": "https://osdr.nasa.gov/geode-py/ws/api/hardware/2052"
+  }
+ ]
+}

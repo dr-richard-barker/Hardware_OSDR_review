@@ -1,0 +1,26 @@
+ENTITY HW216: Plant Canister
+
+--- unit 1 | source=registry record=928 field=name
+Plant Canister
+
+--- unit 2 | source=registry record=928 field=description
+The Plant Canister consists of two hollow cans threaded together, constructed of anodized aluminum. There are four light-baffled holes in both the upper and lower cans, providing gas exchange for the plants contained within. The total canister assembly measures 355 mm tall and 82 mm in diameter and is contained in a hollow stainless steel container that contains a two- stage light filter. There is an end cap with a knob at one end to facilitate handling. Canisters are encased in plastic foam for placement in a middeck locker of the orbiter for flight. The foam is made of 2 lb/3 ft density, nominal 70 pores/inch Pyrel foam, which is a standard cushion material for middeck lockers, and the Ambient Temperature Recorder is utilized to monitor the temperature profile experienced during flight. Canisters can be fit into the Passive Freezer, to freeze tissue during flight.
+
+--- unit 3 | source=payload record=GHCD field=description
+The GHCD was designed to satisfy the requirements of a plant growth experiment. The objective of the experiment was to characterize the effect of microgravity on indoleacetic acid, a plant growth hormone. Ground studies had established that a gravitational stimulus causes rapid hormonal changes in the plant. As indoleacetic acid concentration increases in the lower part of the stem, the stem reorients and grows upward. An understanding of this effect was expected to lead to finding the gravity-detecting device in the plants.
+
+Two ground control experiments were carried out in support of the flight experiment. One was conducted at the same time as the flight experiment. The other was conducted postflight to simulate the temperatures experienced by the flight specimens. Specimens in both ground control experiments were frozen after being allowed to grow for the same length of time as the flight specimens.
+
+The seeds were planted in the canisters and kept in total darkness prior to the flight. Water was added to the canisters 17 hours before launch.
+
+On the fifth flight day, a crew member placed two of the flight canisters in the liquid nitrogen freezer to arrest plant growth and to preserve the growth hormone in the plant tissue. The seedlings in these two canisters had a total growth period of 125 hours.
+
+The two unfrozen flight canisters were frozen shortly after the Shuttle landed. The seedlings in these canisters had a growth period of 137 hours.
+
+All specimens were analyzed for growth hormone, cellular structure, lignin, polysaccharides, mRNA, and proteins.
+
+There were no significant chemical perturbations in the seedlings exposed to microgravity. There were almost no differences in indoleacetic acid content in flight and control seedlings. The methods and equipment used in the experiment appeared to be suitable for comparing seedlings exposed to microgravity and terrestrial gravity.
+
+--- unit 4 | source=payload record=GHCD field=hardware_version
+As Flown on GHCD: For the Growth Hormone Concentration and Distribution (GHCD) payload on STS-34, kernels of the Zea mays sweet corn were used. Sterilized, individual kernels were wrapped in two 13 x 18 cm sheets of Whatman No. 1 filter paper. The first sheet was folded in thirds across the long dimension and served as a support for the kernel; this sheet was then rolled in the second sheet and inserted into a Teflon tube of 18 mm diameter, 335 mm in length. Thirteen of these dry wrapped kernels could be loaded into each of the two compartments of the Plant Canister. Seventeen hours before launch, 108 ml of sterile double-distilled water was added to the two compartments of the canister. For GHCD, a total of four canisters were utilized for flight, two of which were frozen during the flight.
+

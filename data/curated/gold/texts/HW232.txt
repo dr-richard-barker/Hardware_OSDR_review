@@ -1,0 +1,815 @@
+ENTITY HW232: Animal Enclosure Module Transporter (AEM-T)
+
+--- unit 1 | source=registry record=1380 field=name
+Animal Enclosure Module Transporter (AEM-T)
+
+--- unit 2 | source=registry record=1380 field=description
+The Animal Enclosure Module Transporter (AEM-T) is a subsystem of the Animal Transport System and is designed transport rodents to the International Space Station (ISS) during ascent on the CRS SpaceX Dragon pressurized capsule for a continuous duration of at least 10 days. Coupled with the AEM-E (ECLSS) Environmental Control and Life Support System to provide for air revitalization, the AEM-T is launched and returned mounted (powered) on Dragon. The AEM-T was built to provide adequate specimen chamber accommodations so the rodents can arrive healthy to ISS to support subsequent on-orbit experiment. The AEM-T can operate as a non-rack payload within ISS to support animal transfers to the Rodent Habitat (AEM-X) and interface with the Animal Access Unit (AAU).
+
+With a total chamber volume, equal or greater than .64 cubic feet, the AEM-T holds a maximum of 20 mice with a total mass up to 600g in two separate groups of 10 mice, or two groups of three rats with a mass of 600g per group. The temperature range specified for flight units is 50-113 degrees F; the AEM-T maintains rodent chamber temperature within +/- 3deg C of cabin temperatures aboard the ISS. The AEM-T is equipped with a water refill box and dispensers (two per group of housed rodents), chamber lighting to maintain day and night cycles, cage mesh or grid, and capability of storing measured parameters (e.g. temperature and relative humidity) up to 6 months.
+
+--- unit 3 | source=payload record=RR-1 field=description
+NASA's Rodent Research Hardware System provides a research platform aboard the International Space Station (ISS) for long-duration rodent experiments in space. Scientists and engineers at Ames Research Center (ARC) developed the new system for the space station based on the Animal Enclosure Module (AEM) that flew aboard 27 space shuttle missions between 1983 and 2011 and supported studies ranging from four to 18 days. Rodent spaceflight experiments have contributed significantly to our understanding of the effects of microgravity on biological processes that are directly relevant to humans in space. 
+
+The maiden voyage of the system, Rodent Research-1 (RR-1), launched on SpaceX-4 CRS-4 on September 21, 2014, and returned October 25, 2014, during ISS expeditions 41/42. Lasting 37 days, RR1 was the longest duration spaceflight rodent study to date conducted in a NASA facility. RR1 was the first mission to transport rodents aboard an unmanned commercial vehicle. The primary goal is for NASA to validate hardware and demonstrate critical research operations, while supporting the Center for the Advancement of Science in Space (CASIS) in sponsoring the first commercial research study.  Ten mice were flown to the ISS and transferred into habitat.  Five mice were wild type (WT) and identified by an ear notch and the remaining mice, called “Knockouts” had no ear notches. Ten mice were used as ground controls.
+
+PI:  Novartis Pharmaceuticals
+The mission objectives of the validation flight:
+
+•	The addition of the rodent research system expands the utilization of ISS for research on the effects of microgravity on rodents.
+•	The demonstration of the hardware capability to support rodent research for long-duration missions on ISS is accomplished.
+•	A validation of the operational capabilities of the hardware to support rodent research provides valuable information applicable to future long-term space missions.
+•	Validate that the Rodent Research Hardware can deliver and maintain healthy animals. 
+•	Validate that on-orbit activities to support hardware operations can be performed. 
+•	Validate that a limited set of generic on-orbit operations can be performed to support future science objectives including but not limited to euthanasia, gross dissection and sample preservation.
+
+Physiological systems of interest for human exploration of space are targeted at the following systems:
+
+•	Bone loss
+•	Muscle loss
+•	Immune system changes
+•	Cardiovascular system changes
+•	Nervous system changes.
+
+
+IACUC Protocol Numbers:  NASA: NAS-13-002-Y1, CASIS: CAS-13-001-Y1
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: NAS-13-002-Y1 and CASIS: CAS-13-001-Y1 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+The RR-1 payload produced the following Data :
+
+•	Animal enclosure module temperature and relative humidity flight and ground data,
+•	Live Animal Return sensor accelerometer data,
+•	ISS cabin and ground simulation chamber environmental monitoring data for ppCO2 and RH (AEM-X (Habitat) telemetry data),
+•	Rodent data including preflight data, operations time logs, sample shipment data,
+•	Daily Health Check Video
+•	Station telemetry data.
+
+Subjects/Biospecimens:
+RR-1 Basal controls Dissection performed in Colorado 9/12-16/16. BSP tissues collected from the 10 non-treated control group and shipped to ALSDA.
+
+20 Flight: Flight control group Ab Flight experimental group a-M Ab Mice were scanned by a bone densitometer prior to launch and grip strength obtained. During the mission, near the midpoint of inflight operations, live densitometry scans and grip strengths tests were performed. Mice were euthanized at 42 (+ 3 days), hindlimb dissected and whole blood collected. The remaining carcass was frozen at -80C or colder for return. Dissection performed in Colorado 9/12-16/16. BSP tissues collected from the 10 non-treated control group (Ab) and shipped to ALSDA.
+
+
+NASA Space Biology Biospecimen Sharing Program (BSP) Activities
+The NASA Space Biology Biospecimen Sharing Program collected biospecimens from RR-1 to maximize the scientific return from the biological spaceflight.  Rodent Research RR-1 Second Thaw Biospecimen Sharing Program (BSP) Dissection Summary Report.
+
+Available Data: The RR-1 payload produced the following data:
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-	Flight and ground animal behavior video, available for request. 
+
+
+
+
+--- unit 4 | source=payload record=RR-1 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 5 | source=payload record=RR-10 field=description
+Rodent Research-10 (RR-10) investigates the cellular and molecular mechanisms underlying bone regenerative deficits due to disuse on Earth and microgravity in space. This mission examined how aging influences the regenerative potential of the femoral bone marrow stem cell populations.  Specifically, the study examined the role of a gene – Cdkn1a – that produces the CDKN1A protein – that inhibits cell cycle progression in cells. RR-10 (20 female mice, 13-17 weeks old, B6129SF2/J Wild Type (WT) and B6;129S2-Cdkn1atm1Tyj/J (p21-null) to assess the CDKN1a/p21 pathway in regenerative bone formation. The mice will be maintained on the ISS for ~30 days.  This mission was sponsored by NASA.
+
+Tissue degeneration and the failure of tissue to regenerate normally in microgravity are increasing concerns for sustaining life in space, as the duration of future flight missions increase. The cellular mechanisms activated by microgravity unloading in mouse bone during spaceflight are not completely understood, but they include inhibition of the differentiation of bone marrow mesenchymal stem cells and activation of the CDKN1a/p21-mediated cell cycle arrest in proliferative osteoprecursor cells on the bone surface.
+
+In addition to the Flight group, three ground control groups were also part of the study: Basal (representing the pre-launch state), Vivarium (standard vivarium housing for the same duration of time as flight), and Ground (flight habitat in the International Space Station Environment Simulator, ISSES). Twenty mice (10 of each strain) were included in each of these control groups (except Vivarium which included 12 of each strain). These were treated, euthanized and processed on the same schedule and in the same manner as the flight samples. This study includes spatially resolved transcriptional profiling data from hippocampi from 5 WT flight animals, and 5 WT ground control animals. Hippocampi from the right hemisphere were embedded and cryosectioned. Cryosections were placed on gene expression arrays, stained and imaged. Imaging was followed by tissue permeabilization to release mRNA molecules from cells for capture onto the array surface. Subsequently, spatial transcriptomics libraries were prepared and sequenced.
+
+PI: Eduardo Almeida, Ph.D.
+Co-Investigators: Elizabeth Blaber, Ph.D., Ruth Globus, Ph.D., Yasaman Shirazi-Fard, Ph.D., Cassandra Juran, Ph.D.
+
+The mission objectives
+
+To test, in vivo, the hypothesis that CDKN1a/p21 is the key effector of cell cycle arrest in bone tissue in response to the stresses of spaceflight, the following specific aims of the Role of CDKN1a/p21 Pathway in Microgravity-Induced Bone Tissue Regenerative Arrest – A Spaceflight Study of Transgenic CDKN1a/p21-Null Mice in Microgravity (Rodent Research-10) investigation are addressed:
+
+•	Determine and compare the extent of osteoblast proliferation, differentiation, and mineral deposition in microgravity and in 1g (Earth gravity equivalent) in a CDKN1a/p21-null mutant versus wild type (WT) mice.
+•	Assess whether the coupling and balance of increased osteoclastogenesis and decreased osteoblastogenesis in microgravity is altered in a CDKN1a/p21-null background.
+•	Determine whether CDKN1a/p21 expression in microgravity is regulated via mRNA stabilization by the microgravity-induced Cold Induced RNA Binding Protein (CIRBP) in response to oxidative stress in bone.
+
+When completed, these studies will allow researchers to determine whether the presence of CDKN1a/p21 during mechanical unloading in microgravity induces arrest of bone growth and regeneration in vivo. The results from these studies also provide researchers with information to evaluate how CDKN1a/p21-mediated inhibition of osteoblast proliferation and differentiation may be coupled to osteoclastic activity induced by microgravity. Furthermore, these studies seek to connect the potential effector molecular mechanism of regenerative arrest in bone (by CDKN1a/p21) to its inducer, hypothesized here to be stabilization of CDKN1a/p21 message RNA by the oxidative (and other) stress response gene CIRBP.
+
+
+IACUC Protocol Number:  RR-10
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: RR-10 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program Activities 
+
+The NASA Space Biology Biospecimen Sharing Program collected biospecimens from RR-10 to maximize the scientific return from the biological spaceflight.  The collected tissues included the following:  Duodenum., Jejunum, Pancreas, Stomach.
+
+
+Available Data
+
+The RR-10 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+--- unit 6 | source=payload record=RR-10 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 7 | source=payload record=RR-12 field=description
+Rodent Research-12 (RR-12), Tetanus Antibody Response by B cells in Space (TARBIS), examines the effects of spaceflight on the function of antibody production and immune memory. Spaceflight is known to have a dramatic influence on immune response, but there is little research on its effect following an actual challenge to the body’s immune system. Using a mouse model makes this possible, as the mouse immune system closely parallels that of humans.  This investigation was sponsored by NASA Space Life and Physical Science-Space Biology.
+
+
+The mission objectives of the validation flight:
+
+•	The goal of Rodent Research-12, Tetanus Antibody Response by B cells in Space (TARBIS), is to determine the functional level at which spaceflight impacts antibody production. Given that spaceflight disrupts innate population distributions and function ex vivo, it is hypothesized that the spaceflight environment is detrimental to an immune response essential for host resistance during flight.
+•	These studies seek to establish a link between exposure to the spaceflight environment, and a reduction in immune system activation. This is significant because this shows how the host’s immunological health can be compromised.
+•	There have been very few studies characterizing the impact of the spaceflight environment on antibody responses. Spaceflight studies are inconclusive with respect to the response to an actual in vivo immune challenge.
+•	Preliminary studies indicate that the impact on humoral immunity is time-dependent, with decrements occurring mostly after short-duration flights, and enhancements occurring after long-duration flights. Further study is required to confirm this hypothesis.
+
+Specific Aim 1: To determine the impact of the spaceflight environment on primary and secondary antibody responses. C57BL/6J mice are challenged with a TT vaccine either before launch (secondary antibody response in space), or during their stay on the ISS (primary antibody response). Blood and spleen are collected on-orbit from mice euthanized ~two weeks after primary or secondary immunization. Vaccination and assessment schedules are to be matched in ground-based controls.
+ 
+Working Hypothesis: Based on preliminary data, serum and splenic antibody and splenic antigen-specific B cell idiotype levels in response to an in-flight vaccination will be significantly lower than in ground controls. Furthermore, there will be greater decline in the secondary response when the primary exposure is given in-flight, compared to when given preflight. It is hypothesized that these decrements will be due to changes in the distribution and frequency of antigen-specific B cell idiotypes. 
+ 
+Specific Aim 2: Establish that adjuvants that function through Tlr9 receptors are effective during spaceflight.
+ 
+Hypothesis: Spaceflight diminishes many of the cell populations involved in the antibody response (e.g. macrophages, T cells and B cells). Cytosinephosphorothioate-guanine oligodeoxynucleotide (CpG ODN) adjuvants function by stimulating toll-like receptor 9 (Tlr9) to activate and expand these populations. Rodent Research-12 tests the hypothesis that activating Tlr9 signaling reverses the negative impacts of spaceflight on the immune response. 
+ 
+Following sample return, overall levels of IgG, IgA, IgE, and IgM in the plasma is quantified using multiplexed bead arrays, as well as antigen-specific IgG levels via enzyme-linked immunosorbent assay (ELISA). Stress markers in the blood are assessed (corticosterone and catecholoamines). Antigen-specific B cell idiotypes in the spleen are assessed via RNA sequencing (RNASeq) to determine if changes in the humoral response are due to changes in the frequency, or distribution of B cells that are generated following antigen challenge.
+
+
+NG-11, previously known as OA-11, is the twelfth flight of the Northrop Grumman robotic resupply spacecraft Cygnus and its eleventh flight to the International Space Station under the Commercial Resupply Services (CRS-1) contract with NASA. NG-11 launched from NASA Wallop's Flight Facility. Research Highlights: The Rodent Research 12 (RR-12) investigation is to study the immune system response of mice to tetanus vaccinations and examine the effects of spaceflight on both the primary and secondary immune responses. When the immune system of an individual animal encounters a particular toxin or pathogen for the first time, it triggers the primary immune response, activating production of early antibodies and memory cells that later "remember" the toxin or pathogen. Subsequent encounters with the same toxin or pathogen trigger the secondary immune response. This consists of a more accelerated response to infection, in which previously activated memory cells quickly respond and produce antibodies that target antigens, the identifying markers on infected cells. Since the NG vehicle does not return to earth RR-12 transporters and samples were returned on SpX-18.
+
+IACUC Protocol Number:  NA
+
+
+NASA Space Biology Biospecimen Sharing Program Activities
+
+Mice were allocated into four groups: 40 Flight, 80 Ground Control, 80 Vivarium, and 50 Baseline, for a total of 250 animals. Flight animals were dissected/preserved on-orbit by the crew, and the Ground Control, Vivarium, and Baseline animals were dissected/preserved by the PI team at Kennedy Space Center (KSC). Baseline animals were processed on April 19, 2019, two days after launch. The Ground Control animals received the same treatments as the Flight animals on a 3-day delay, whereas the Vivarium groups were processed on a 4-day delay from Flight. All carcasses will be further dissected by the PI and BSP teams during an integrated dissection at LLU. The PI has received the following tissues from all animals: 1. Blood 2. Spleen.  Additionally, the following tissues will be collected by the BSP team, shipped to ARC, and stored in the ISC until tissue recipients are awarded:
+
+1. Brown Adipose Tissue 
+2. Duodenum
+3. Ileum (GeneLab)
+4. Jejunum
+5. Kidneys (GeneLab) 
+6. Lungs(GeneLab) 
+7. Pancreas
+8. Reproductive tract (GeneLab)
+9. Stomach
+10.White Adipose Tissue (GeneLab) 
+
+
+Available Data
+
+The RR-12 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-	Flight and ground animal behavior video, available for request. 
+
+--- unit 8 | source=payload record=RR-12 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 9 | source=payload record=RR-14 field=description
+Rodent Research-14 (RR-14). Microgravity as a Disruptor of the 12-hour Circatidal Clock (Rodent Research-14), uses mice to test whether disruptions to the 12-hour circatidal clock in microgravity affect the body on a cellular and organ level. Previous research established the role of the 12-hour daily clock in maintenance of stress responsive pathways. By exposing cellular systems in mice to the stress of microgravity, this investigation allows examination of cellular adaptation to changes in the daily clock and the effects on behavior.
+
+The mission objectives of the validation flight:
+
+•	The Microgravity as a Disruptor Of The 12-hour Circatidal Clock (Rodent Research-14) investigation documents the effects of microgravity on the biological circadian rhythm at a genetic level by analyzing effects specifically on the liver, but also on other tissues, including the colon, heart, lung, kidney and hypothalamus. Based on preliminary findings, the cell’s autonomous 12-hour clock controls stress levels, protein responses, and coordinates metabolism. The research team hypothesizes that the 12-hour molecular clock is disrupted by exposure to microgravity.
+•	The rationale for this investigation comes from recent discoveries that genes associated with the 12-hour clock program are associated with the most common form of liver disease in humans, termed non-alcoholic fatty liver disease (NAFLD). Although reversible, NAFLD, which is characterized by the aberrant accumulation of lipid in the liver, represents the first step in a spectrum of hepatic disease that contributes to insulin resistance, type 2 diabetes mellitus, and ultimately hepatocellular carcinoma. The essential role of the 12-hour clock for controlling proper metabolic function of the liver has major implications for maintaining whole body energy homeostasis.
+•	The gravitational impact on the 12-hour molecular clock and corresponding effects on the metabolic processing, ER stress, and dynamic bioenergetic metabolism is to be evaluated. The collective physiological importance of this newly discovered 12-hour clock mechanism to maintenance of organismal metabolism and health suggests that development of small molecule modulators, capable of synchronizing or resetting the 12-hour clock, would be useful for managing complications associated with microgravity disruption of these clock machinery.
+•	The objectives of this study are as follows:
+o	To investigate the effect of microgravity on the 12-hour clock from cellular adaptation and its effect(s) on organismal behavior.
+o	To investigate the effect of microgravity on the biological rhythms that are defined as self-sustained oscillations cycling with a fixed period.
+o	To investigate the effect of microgravity on the epidemiological responses to body temperature, cognitive performance, circulating hormones, and sleep patterns through the transcriptional regulation of this 12-hour program and its relationship to the 24-hour rhythm for maintenance of systems biology.
+
+During the Microgravity as a Disruptor Of The 12-hour Circatidal Clock (Rodent Research-14) investigation, the research team tests the hypothesis that the 12-hour molecular clock is disrupted by exposure to microgravity. Mice are flown and housed on board the International Space Station (ISS) for up to 12 weeks and subjected to a 14-day (minimum) entrainment period of 12-hour light/12-hour dark phase in order to establish a predictable pattern of activity. Video monitoring is used to record the activity levels of each mouse. Upon entrainment, the light schedule is changed to a 24-hour period of constant darkness to establish free running conditions. Immediately following this 24-hour dark entrainment, processing occurs in the Life Sciences Glovebox (LSG), and samples are collected for return to Earth for analysis.
+ 
+Ground control mice are also used,housed in identical hardware, and maintained under matched environmental conditions (temperature, humidity, and CO2 levels). The ground control mice are processed on a 3-day offset from the flight mice to allow for downlink and feedback control of environmental conditions, and to obtain the exact timeline of flight operations so that ground controls can be precisely matched.
+ 
+Rodent Research-14 utilizes existing Rodent Research (RR) hardware, including 4 Transporters (2 for flight, 2 for ground), 8 Habitats (4 flight, 4 ground), and various kits; including those used for rodent food bar change, water refill, anesthetization, cardiac puncture, and blood and tissue collection and preservation. This hardware has been characterized and flown as part of all RR missions on the ISS to date. Transportation and ISS cold stowage assets are utilized for this investigation.
+
+
+IACUC Protocol Number:  RR-14
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: RR-14 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+Available Data
+The RR payload produced the following Data (from checklist Excel file):
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+
+
+
+--- unit 10 | source=payload record=RR-14 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 11 | source=payload record=RR-17 field=description
+The Rodent Research-17 (RR-17) investigation utilizes mice flown aboard the International Space Station (ISS), and maintained on Earth, to investigate the physiology of aging in response to microgravity and biological age at onset of the progression of disease. The primary hypothesis of Rodent Research-17 is that exposure to the spaceflight environment accelerates or magnifies the effect of changes observed during the aging process, resulting in significant effects similar to the progression of cellular and metabolic dysfunction associated with aging and senescence on Earth. It is further hypothesized that novel molecular targets may be identified by microgravity exposure that can facilitate the development of treatments related to aging. Furthermore, long-duration exposure to microgravity induces a number of gene expression, protein, and metabolic alterations that may be identifiable as a series of assessable biomarkers for the deleterious effects of aging associated with cellular senescence.  This investigation was sponsored by NASA.
+
+In the Rodent Research Reference Mission (RRRM-2), forty female C57BL/6NTac mice were flown on the International Space Station. To assess differences in outcomes due to age, twenty 12 week-old and twenty 29 week-old mice were flown, respectively. To directly assess spaceflight effects, half of the young and old mice (10 old, 10 young) were sacrificed on-orbit after 55-58 days (ISS Terminal, ISS-T), while the other half (10 old, 10 young) were returned live to Earth after 32 days and allowed to recover for 24 days (Live Animal Return, LAR) before sacrifice. ISS-T and LAR mice were the same age at sacrifice. Both the ISS-T and LAR animals had independent ground controls (10 mice per group housed in flight hardware in matched environmental conditions), basal controls (10 mice per group sacrificed 2 days before launch), and vivarium controls (10 mice per group housed within standard vivarium habitats). Thus RRRM-2 included a total of 160 mice. This study includes single nuclei transcriptomics and epigenomics from left cerebral hemispheres from 4 young ISS-T spaceflight animals, 5 old ISS-T spaceflight animals, 5 young ISS-T ground control animals, and 4 young ISS-T ground control animals.
+
+
+40 Flight Subjects
+Duration: 33 days (LAR), 53-56 days (dissected)
+Launch: 07/25/2019
+Docking: 07/27/2019 13:13:00
+Animal Transfer: 07/27/2019
+Flight Health Checks: July 29-September 18, 2019 (DOY 210 - 261)
+LAR Transfer: 08/25/2019
+Landing: 08/27/2019 20:20:57
+Dissection 1:  9/16/2019
+Dissection 2:  9/17/2019
+Dissection 3:  9/18/2019
+Dissection 4:  9/19/2019
+
+Available Data
+The RR payload produced the following Data (from checklist Excel file):
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+--- unit 12 | source=payload record=RR-17 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 13 | source=payload record=RR-18 field=description
+The purpose of this Rodent Research investigation is to characterize the impact of spaceflight on mouse retinal vasculature and tissue remodeling and study the role of mitochondria in regulating oxidative stress-induced cellular damage and cell-cell interactions in the function of the blood-retina-barrier (BRB). Also, determine the extent to which an antioxidant metalloporphyrin protects against spaceflight environment-induced changes in retinal neurovascular coupling and retinal function. 
+
+The Rodent Research-18 (RR-18) flight experiment launched on SpX24 on December 21, 2021, at 5:06 am Eastern Standard Time (EST) from Kennedy Space Center (KSC). Forty male mice were flown in two Rodent Transporters and were transferred to four Rodent Habitats upon arrival to the International Space Station (ISS). The mice will receive weekly antioxidant or saline treatments during their stay abroad the ISS. Twenty-six mice returned to Earth live in late January 2022. Some of them will be subjected to a 6-month readaptation experiment at the PI's lab in Loma Linda University (LLU). Fourteen mice will remain on the ISS for ~85 days and will be euthanized and processed on-orbit with sample return on SpaceX-25. Ground Control (GC) and Vivarium Control (VC) groups are maintained at Roskamp Institute (Sarasota, FL) and will follow the flight timeline with a 5-day and 8-day delay, respectively
+
+
+Principal Investigator: Xiao (Vivien) Wen Mao, Ph.D.
+Co-Investigators: Michael Pecaut, Ph.D., Shu-Wei (Richard) Sun, Ph.D., James Crapo, Ph.D. Science Sponsor: Space Biology 
+
+
+The mission objectives of the validation flight:
+
+Aim 1: Define the relationships between spaceflight condition-induced oxidative stress in ROS expression and retinal vascular remodeling and BRB function in mature female mice during flight and after return to Earth alive. Cellular oxidative status is correlated with changes in retinal vascular topology, vascular endothelial cells, astrocytes, photoreceptors, BRB integrity, and vision function using neuropathology, stereological and automated image analyses, non-invasive MRI diffusion tensor imaging (DTI) and visual electroretinography (ERG).
+ 
+Aim 2: Determine whether spaceflight condition-induced oxidative damage in the retina is mediated through photoreceptor mitochondrial ROS production. The following are to be analyzed using Western blot assays and histopathology: mitochondrial ROS production, mitochondrial associated-apoptosis and mitochondrial integrity in retinal photoreceptor.
+ 
+Aim 3: Determine the extent to which the antioxidant metalloporphyrin protects against spaceflight environment-induced changes in retinal neurovascular coupling and retinal function. Mice are treated weekly with the antioxidant MnTnBuOE-2-PyP5+ (BuOE) a week before launch and during spaceflight exposure. The neurovascular interaction is examined to determine the degree to which neurovascular unit (NVU) and BRB function is corrected and/or reestablished in metalloporphyrin-treated mice when compared to non-treated flight or ground controls.
+
+
+IACUC Protocol Number:  RR-18
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: RR-18 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program Activities 
+The collected tissues included the following:  Brown Adipose Tissue (BAT), EDL, Forelimb, Kidney, Lung, Pancreas, Quadriceps, Reproductive Tract, Soleus, Stomach, Tibialis Anterior, White Adipose Tissue (WAT).
+
+
+Available Data
+
+The RR-18 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-	Flight and ground animal behavior video, available for request
+
+
+--- unit 14 | source=payload record=RR-18 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 15 | source=payload record=RR-19 field=description
+The Rodent Research 19 (RR19) investigation entitled "Mighty Mice in Space: Pre-clinical Evaluation of a Broad Spectrum Myostatin Inhibitor to Prevent Muscle and Bone Loss Due to Disuse project" explores the efficacy of inhibiting myostatin/activin signaling in mice in a microgravity environment in order to preserve their muscle and/or bone mass, or to enhance the recovery of their skeletal muscle and bone mass after their return to Earth. It is hoped that the results of this research will yield novel treatment options for muscle and bone loss in humans, in the contexts of spaceflight as well as various pathologies on Earth.
+
+RR19 will launch 40 female mice (C57BL/6J, 8 MSTN -/- knock-out, 32 wild type, aged 10-12 weeks) on SpaceX CRS-19, and begin ground control studies with the same number and type of research subjects on a three-day delay. The total compliment of 40 in flight mice will be transported, live, back to Earth.
+
+Available Data
+The RR payload produced the following Data (from checklist Excel file):
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+
+--- unit 16 | source=payload record=RR-19 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 17 | source=payload record=RR-20 field=description
+Current evidence from three space shuttle missions (STS-131, STS-133, and STS-135) demonstrated that ovarian function is severely disrupted in female mice, rendering these adult female mice likely infertile. Both ovarian folliculogenesis and luteal function were disrupted as was uterine function likely as a result of the unbalanced ovarian steroid support. Previous observations raised important fundamental questions on maintenance of female reproductive health that need to be addressed prior to conducting complex multigenerational studies in mammals under space flight conditions. Previous biospecimens collection like RR-1, can add greatly to our current knowledge base by addressing several important intermediate questions that were not addressable in the STS flights. These include an increase in exposure to space flight and collection of adult tissue prior to reentry. So, these studies, will provide for the first time the ability to examine adult ovarian/uterine tissues following long term exposure to space flight without the confounding effects of stress of the reentry.  This mission was sponsored by NASA's Space Biology Program in partnership with NASA's Science Mission Directorate.
+
+These samples will be examined using standard molecular techniques, including quantitative RT-PCR, western blot as well as radioimmunoassay (RIA) for estrogen and progesterone. The team will use steroid (estrogen/progesterone) content of the ovary as determined by RIA as a surrogate for establishing the functional ovarian status of the RR-1 females at the time of their sacrifice. Additionally, key regulatory genes known to be markers of ovarian functional status, including those involved in estrogen and progesterone synthesis (i.e., aromatase, steroidogenic acute regulatory protein, P450 side chain cleave and steroid receptors, etc.) will be examined in ovarian and uterine tissues.
+
+This study consists of 5 experimental groups: 
+•	Flight (FLT), n -40 mice (20 mice dissected on-orbit, 20 Live Animal Return (LAR) 
+mice),
+•	Habitat Ground Control (HGC), n-40 mice,
+•	Vivarium Ground Control (VGC), n-40 mice,
+•	Vivarium Ground Control Plus (VGC+), n-20 mice,
+•	Baseline Ground Control (BGC), n-20 mice.
+
+Principal Investigator: Lane K. Christenson, Ph.D., University of Kansas Medical Center Co-Investigators: Joshua Alwood, Ph.D., NASA Ames Research Center, April Ronca, Ph. D., NASA Ames Research Center, Stephanie Puukila, Ph. D., NASA Ames Research Center
+Science Sponsor: Space Biology 
+
+
+The mission objectives of the validation flight:
+
+ Aim 1. Determine the source (microgravity or re-entry) of the spaceflight-disrupted ovarian function previously observed on short-duration missions. The working hypothesis is that disrupted ovarian function is due to a failure of the periovulatory follicle to ovulate and form a functional corpus luteum. To test this hypothesis, the mice are to undergo a timed follicular stimulation protocol followed by evaluation of established temporally expressed ovarian markers, ovulation, and luteal development immediately following return from space and are compared to mice maintained on the International Space Station and processed identically. This study seeks, for the first time, to determine whether space-induced loss of ovarian function is due to an intrinsic ovarian defect or is a problem with hypothalamic/pituitary support.
+ 
+Aim 2. Determine the fertility (i.e., the ability of ovulate a mature oocyte) in adult female mice following extended (48-60 days) exposure to microgravity. Currently, it is unknown whether females are fertile in space. To address this question, the mice undergo a follicular stimulation and ovulatory protocol in flight, and fertility and tissue biomarkers are evaluated.
+ 
+Aim 3. Determine whether adult female mice exposed to spaceflight are fertile upon return to Earth. The working hypothesis for this aim is that upon return to Earth, fertility will return. To test this hypothesis, flight mice are exposed to male mice after an initial recovery period, and mating reproductive behavior, estrous cyclicity, early embryo implantation, and health and development of F1 offspring are evaluated. These studies provide the first ever examination of long-term space exposure on the female reproductive behavior/physiology, and germ-line stability.
+ 
+In all three specific aims, collection of adrenal tissues allows the research team to determine whether spaceflight-induced stress is occurring. Uterine and bone (femur) tissues are used to address the secondary hypothesis observing the long-term spaceflight effects on ovarian estrogen-responsive tissues. Ultimately, findings of the proposed studies provide critical foundational data to aid in better understanding the impact spaceflight has on female astronaut health.
+
+IACUC Protocol Number:  TBD
+
+
+NASA Space Biology Biospecimen Sharing Program Activities
+ 
+The collected tissues included the following: Calvaria, Cecum, Colon (Decending), Extensor digitorum longus (EDL), Eye, Gastrocnemius Muscle, Liver, Pancreas, Quadricep, Skin (Dorsal), Soleus (Left only), Stomach, Tibialis anterior.
+
+Available Data
+
+The RR-20 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+
+--- unit 18 | source=payload record=RR-23 field=description
+Effects of Microgravity on Ocular Vascular Hydrodynamics, or Rodent Research-23 (RR-23), studies function of arteries, veins, and lymphatic structures in the eye and changes in the retina before and after spaceflight. The aim is to clarify whether these vascular changes impair visual function. At least 40 percent of astronauts experience vision impairment known as Spaceflight-Associated Neuro-ocular Syndrome (SANS) on long-duration spaceflights, which could adversely affect mission success.  Some astronauts who complete long-duration spaceflights experience Spaceflight-Associated Neuro-Ocular Syndrome, or SANS, a condition in which the eyes show physical changes, such as swelling, folding or flattening of different structures of the eye that can lead to decreased quality of near vision. These changes have the potential to affect the success of spaceflights to destinations like the Mars, which will be considerably longer missions than those attempted so far. The information gathered from RR-23 will inform scientists who are working to create effective countermeasures that will protect future astronauts from developing SANS.  This investigation was sponsored by NASA.
+
+Rodent Research-23 will study the effects of spaceflight on the eyes, specifically on the structure and function of the arteries, veins, and lymphatic vessels that are needed to maintain vision. Mice will be housed aboard the station for five weeks and then returned to Earth where researchers will examine the eyes of the mice for changes caused by the time spent in space.
+
+RR-23 flight subjects: Twenty (20) mice (male, C57BL/6J, 16-17 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 38 days. The Flight mice were transferred into a Transporter and returned to Earth for Live Animal Return (LAR) on SpX-21 (January 13th, 2021). After Atlantic Ocean splashdown, the LAR Flight mice were transported via helicopter to Kennedy Space Center. There was no testing or procedures done to the animals while aboard the ISS.
+
+PI: David Zawieja, Ph.D.
+Co-Investigators: Pooneh Bagher, Ph.D., Anatoliy Gashev, Ph.D., Travis Hein, Ph.D., Binu Tharakan, Ph.D., Stuart M. C. Lee, Ph.D., Brandon R. Macias, Ph.D., and Linda Loerch 
+
+
+The mission objectives of the validation flight:
+
+These findings, combined with several related studies, will create a more comprehensive understanding of the impacts of weightlessness on SANS during human spaceflight. New insights into SANS from this research are anticipated to shed light on vascular complications connected to eye diseases found in humans on Earth, such as diabetic macular edema which is a common problem for diabetics who have damage in the blood vessels due to increased pressure in the eye, and ocular hypertension, or high pressure in the eye. In this way, these findings will allow researchers to develop more advanced preventative care strategies and treatments for patients here on Earth.
+
+A subset of each group of mice undergoes post-flight testing including Intraocular Pressure (IOP), ultrasound, and Optical Coherence Tomography (OCT) measurements. Post-flight operations include collecting ocular hydrodynamic data (IOP, OCT, and ultrasound), measuring retinal microvascular permeability, blood from the heart, and dissecting the heart, both eyes with optic nerve, ophthalmic vessels, carotid arteries, heart, mesentery/GI tissue (cecum, colon, duodenum, jejunum, ileum), brain, cervical/ophthalmic lymph nodes with surrounding tissues, and popliteal lymph nodes.
+
+
+IACUC Protocol Number:  RR-23
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: RR-23 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program Activities
+
+This study is comprised of three experimental groups of mice: 1. 20 Flight, 2. 20 Habitat Ground Controls (HGC), 3. 20 Vivarium Ground Controls (VGC).  The RR-23 BSP Tissue Processing and Preservation included the following: Adrenal glands, Brain, Brown adipose tissue (BAT), Extensor digitorum longus (EDL), Feces , Femur, Forelimb, Gastrocnemius, Kidney, Liver, Lung, Mandible, Pancreas, Quadriceps, Reproductive Tract, Skin – dorsal, Soleus, Spine (with pelvis), Spleen, Stomach, Thymus, Tibia, Tibialis anterior (TA), White Adipose Tissue (WAT).
+
+
+Available Data
+
+The RR-23 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+--- unit 19 | source=payload record=RR-23 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 20 | source=payload record=RR-2C field=description
+Rodent Research 2 (RR-2) launched on April 14, 2015 as the second life science research mission utilizing the Rodent Research Hardware System designed by NASA Ames Research Center as a research platform for the International Space Station (ISS). The Center for the Advancement of Science in Space (CASIS) sponsored Novartis lead scientist Samuel Cadena for the commercial research study. CASIS also partnered with the Department of Defense Space Test Program to assess biomarker changes in a variety of tissues following long-duration exposure to spaceflight. The research performed through the RR2 experiment aimed to illustrate the potential use of mice in space to model human cardiovascular, immunological, ocular, metabolic and neurological diseases and disorders. The findings could lead to new treatments in osteoporosis and muscle wasting. 
+
+The RR-2 payload included twenty female experiment mice (strain: C57BL/6J) that were fourteen to eighteen weeks old at the time of launch. Twenty mice were housed in one Transporter (SN 008) for ascent and on April 19, 2015, five days in the transporter, they were transferred into two habitats (ten mice each, five on each side) for long-term habitation onboard the ISS. Two Animal Access Units (AAU, SN 001 and SN 003) were made available for onboard transfers. The mice were processed over four dissection sessions at one, two, four, and eight weeks of microgravity exposure. Divided into four groups of five, each group was processed identically. Ground controls included the vivarium habitat. In order to evaluate structural and molecular changes over time, mice were exposed to the spacecraft environment for various durations: Group 1 for six to eight days, Group 2 for thirteen to fifteen days, Group 3 for twenty-six to thirty days, and group 4 for fifty-four to fifty-eight days.  
+
+The mission objectives
+
+The primary objective of this research is to monitor the effects of the space environment on the musculoskeletal and neurological systems of mice as model organisms of human health and disease. This project will help ISS U.S. National Lab investigators to discover new molecular targets that can facilitate the development of novel therapeutics for the treatment of muscle and bone-related diseases.  Specifically, time-dependency of morphological and molecular changes in the musculoskeletal system of mice exposed to the spaceflight environment (CASIS RR2) were investigated.
+
+Physiological systems of interest for human exploration of space are targeted at the following systems:
+•	Bone loss
+•	Muscle loss
+•	Immune system changes
+•	Cardiovascular system changes
+•	Nervous system changes.
+
+IACUC Protocol Number:  CAS-14-001-Y1
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) number CAS-14-001-Y1for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+
+Available Data
+
+The RR-2 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data
+
+
+--- unit 21 | source=payload record=RR-2C field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 22 | source=payload record=RR-3 field=description
+The Rodent Research-3 (RR-3) mission was sponsored by the pharmaceutical company Eli Lilly and Co. and the Center for the Advancement of Science in Space to study the effectiveness of a potential countermeasure for the loss of muscle and bone mass that occurs during spaceflight. Twenty BALB/c, 12-weeks old female mice (ten controls and ten treated) were flown to the ISS and housed in the Rodent Habitat for 39-42 days. Twenty mice of similar age, sex and strain were used for ground controls housed in identical hardware and matching ISS environmental conditions. Basal controls were housed in standard vivarium cages. Spaceflight, ground controls and basal groups had blood collected, then were euthanized, had one hind limb removed, and finally whole carcasses were stored at -80 C until dissection. All mice in this data set received only the control/sham injection. Microdissection of retinae from previously frozen eyes and RNA isolation were performed in the laboratory of Dr. Xiao Mao at Loma Linda University.
+
+The goal was to evaluate a potential new treatment for skeletal muscle wasting and weakness. Working with NASA, the researchers assessed its ability to prevent these conditions in mice exposed to long-duration spaceflight. Rodent research models have made it possible to study serious diseases involving muscle atrophy, and even age-related weakness. Conducting this study during spaceflight provided the researchers with the rare opportunity to expose all the muscles of an organism to conditions that will produce atrophy – something not easily achieved on Earth.
+
+The mission objectives
+
+Although the primary research focus of Rodent Research-3 is skeletal muscle, the investigators were studying other organ systems, such as bone, both at the tissue and molecular levels. Their goal is to characterize tissue responses to spaceflight and observe how these changes vary with the length of time spent in microgravity. The findings will advance our understanding of the risks that long-term space exploration poses to astronauts and can be applied towards the development of countermeasures to protect astronaut health. 
+
+
+IACUC Protocol Number:  CAS-15-001-Y1
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: CAS-15-001-Y1 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+
+NASA Space Biology Biospecimen Sharing Program (BSP) Activities
+
+The NASA Space Biology Biospecimen Sharing Program collected biospecimens from RR-3 to maximize the scientific return from the biological spaceflight.  Portion of the Rodent Research 3 data collection contains environmental and acceleration data pertain to the SpaceX CRS-8 Dragon vehicle as it carried the Rodent Research payload to the International Space Station.  Another portion of the Rodent Research 3 data collection contains environmental monitoring data for the Rodent Research experiment on the International Space Station (ISS), and in associated ground controls at Kennedy Space Center.  RR3 Basal controls Dissection performed in Colorado 9/12-16/16. BSP tissues collected from the 10 non-treated control group and shipped to ALSDA.
+
+
+Publications
+
+Smith RC, Cramer MS, Mitchell PJ, Lucchesi J, Ortega AM, Livingston EW, Ballard D, Zhang L, Hanson J, Barton K, Berens S, Credille KM, Bateman TA, Ferguson VL, Ma YL, Stodieck LS. Inhibition of myostatin prevents microgravity-induced loss of skeletal muscle mass and strength. PLoS One. 2020 Apr 21;15(4):e0230818. doi: 10.1371/journal.pone.0230818. PMID: 32315311; PMCID: PMC7173869.
+
+Cromer WE, Zawieja SD, Doersch KM, Stagg H, Hunter F, Tharakan B, Childs E, Zawieja DC. Burn Injury-Associated MHCII+ Immune Cell Accumulation Around Lymphatic Vessels of the Mesentery and Increased Lymphatic Endothelial Permeability Are Blocked by Doxycycline Treatment. Lymphat Res Biol. 2018 Feb;16(1):56-64. doi: 10.1089/lrb.2017.0032. Epub 2018 Jan 23. PMID: 29359999; PMCID: PMC5810432.
+
+Talburt, E., French, A., Lopez, D., Polo, S., Boyko, V., Dinh, M., Rask, J., Chakravarty, K. and Stewart, H. (2018). Temporal RNA Integrity Analysis of Archived Spaceflight Biological Samples. Gravitational and Space Research. Vol 6(2), pp. 44-53.
+
+
+Available Data
+
+The RR-3 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-       Flight and ground animal behavior video, available for request. 
+
+--- unit 23 | source=payload record=RR-3 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 24 | source=payload record=RR-4 field=description
+Rodent Research on the International Space Station (ISS) continues with the fourth mission launching aboard SpaceX-10. The science on Rodent Research-4 is sponsored by the Department of Defense (DoD) Space Test Program and the Center for Advancement of Science in Space (CASIS), manager of the ISS National Laboratory. 
+
+The primary objectives are to better understand bone healing and bone tissue regeneration and to study the impacts of microgravity on these processes. Experiment results may help to evaluate the practicality of growing complex bone tissues in spaceflight as well as study the effects of microgravity on bone density. RR-4 launched 40 mice (~9-12 weeks old, male, C57BL/6) on SpX10 to characterize the biological and molecular events associated with tissue regeneration.
+
+Although reduced gravity induces cell proliferation and propagation, which is favorable for tissue regeneration, immunological responses are delayed in this environment. Therefore, microgravity presents a contrasting environment for the healing process. The results from this experiment may help scientists evaluate the practicality of growing complex bone tissues in spaceflight and examine molecular mechanisms underlying the negative effects of microgravity on bone density.
+
+The mission objectives
+
+1. To characterize the biological events associated with the healing and tissue regeneration process in spaceflight.
+2. To gauge the therapeutic success of certain osteoinductive agents capable of inducing bone healing and regeneration in spaceflight.
+3. To evaluate the transcriptomic, epigenomic, proteomic, metabolomic, and metagenomic (microbiome) aspects of the selected biomaterials critical for bone healing and regeneration, as well as sort and integrate the pan-omics results to discover regeneration mechanisms.
+4. To use these methods to identify novel biomarkers of bone regeneration, loss, and healing.
+
+
+IACUC Protocol Number:  NAS-15-015-Y1
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: NAS-15-015-Y1 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program (BSP) Activities
+
+The NASA Space Biology Biospecimen Sharing Program collected biospecimens from RR-4 to maximize the scientific return from the biological spaceflight.  Portion of the Rodent Research 4 data collection contains environmental and acceleration data pertain to the SpaceX CRS-10 Dragon vehicle as it carried the Rodent Research payload to the International Space Station.  Results for this experiment are not targeted for archiving.
+ 
+
+Available Data
+
+The RR-4 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-	Flight and ground animal behavior video, available for request. 
+
+--- unit 25 | source=payload record=RR-4 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 26 | source=payload record=RR-5 field=description
+RR-5 launched 40 mice (~32 weeks old, female, BALB/c) on SpX11 to determine if treatment with NELL1 can reduce or prevent bone loss. 20 mice were maintained for ~30 days in microgravity and then returned live (Live Animal Return-LAR) for dissection at the PI institution and the other 20 mice were maintained in microgravity for ~9 weeks and dissected on-orbit. Samples from the Systemic Therapy of NELL-1 for osteoporosis returned as part of an investigation using rodents as models to test a new drug that can both rebuild bone and block further bone loss, improving crew health. When people and animals spend extended periods of time in space, they experience bone density loss, or osteoporosis. In-flight countermeasures, such as exercise, prevent it from getting worse, but there isn't a therapy on Earth or in space that can restore bone density. The results from this ISS National Laboratory-sponsored investigation are built on previous research also supported by the National Institutes for Health and could lead to new drugs for treating bone density loss in millions of people on Earth.
+
+The mission objectives
+
+The objective of the Rodent Research-5 (RR-5) study was to evaluate bone loss in mice under microgravity conditions and to determine if treatment with NELL1 can reduce or prevent bone loss that would otherwise occur in microgravity. RR-5 launched 40 mice (~32 weeks old, female, BALB/c) on SpX11 to determine if treatment with NELL1 can reduce or prevent bone loss. 20 mice were maintained for ~30 days in microgravity and then returned live (Live Animal Return-LAR) for dissection at the PI institution and the other 20 mice were maintained in microgravity for ~9 weeks and dissected on-orbit. 
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and Use Committees (IACUC) number NAS-16-001-Y1 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+The Center for the Advancement of Science in Space (CASIS) has formed a partnership with the University of California at Los Angeles (UCLA) to evaluate bone atrophy under microgravity conditions and to evaluate a novel therapeutic to mitigate bone loss. Samples from the Systemic Therapy of NELL-1 for osteoporosis returned as part of an investigation using rodents as models to test a new drug that can both rebuild bone and block further bone loss, improving crew health. When people and animals spend extended periods of time in space, they experience bone density loss, or osteoporosis. In-flight countermeasures, such as exercise, prevent it from getting worse, but there isn't a therapy on Earth or in space that can restore bone density. The results from this ISS National Laboratory-sponsored investigation are built on previous research also supported by the National Institutes for Health and could lead to new drugs for treating bone density loss in millions of people on Earth.
+
+IACUC Protocol Number:  NAS-16-001-Y1
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: NAS-16-001-Y1 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program Activities 
+The NASA Space Biology Biospecimen Sharing Program collected biospecimens from RR-5 to maximize the scientific return from the biological spaceflight. Forty mice (female; BALB/c; 32 weeks old; Taconic), launched in two Transporters (20 mice per), then were transferred to Rodent Habitats onboard the International Space Station (ISS) and maintained in microgravity for ~30 days until Live Animal Return (N-20; LAR to UCLA) or for ~9 weeks total which were ISS Terminal (N-20; IT). There was a Baseline of subjects at KSC. A Ground Control group mimicked LAR, which was housed at KSC, then shipped live to UCLA. There was a Ground Control group at KSC which mimicked flight. All animals were kept on a temperature controlled (~28˚C), 12-hr Light/Dark Cycle.
+
+The unused Diaphragm and tail tissues were set to the NASA Biological Institutional Scientific Collection and made available for request.
+
+
+Available Data
+
+The RR-5 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-	Flight and ground animal behavior video, available for request. 
+
+--- unit 27 | source=payload record=RR-5 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 28 | source=payload record=RR-6 field=description
+The Rodent Research-6 (RR-6) mission uses mice flown aboard the International Space Station (ISS) and maintained on Earth to test drug delivery systems for combatting muscular breakdown in space or during disuse conditions. RR-6 includes several groups of mice selectively treated with a placebo or implanted with a nanochannel drug delivery chip that administers compounds meant to maintain muscle in low gravity/disuse conditions. Two groups of 20 mice will be flown aboard the ISS for durations of one and two months. The first group of treated and control mice returns to Earth live after approximately 30 days. The second group of animals remains on the ISS for approximately 60 days. In both cases, animals are euthanized humanely, and tissue samples are harvested for subsequent study and comparison with Earth-based control groups. 40 mice (~35 weeks old, female, C57BL/6) on SpX13. 20 mice were maintained for ~30 days in microgravity and then returned live to Earth.  This mission was sponsored for the ISS National Lab.
+
+The mission objectives
+
+The objective of the Rodent Research-6 (RR-6) study was to evaluate muscle atrophy in mice during spaceflight and to test the efficacy of a novel therapeutic to mitigate muscle wasting. The experiment involved an implantable subcutaneous nanochannel delivery system (nDS; between scapula), which delivered the drug formoterol (FMT; a selective Beta-2 adrenoceptor agonist), over the course of time. To this end, a cohort of forty 32-weeks-old female C57BL/6NTac mice were either sham operated or implanted with vehicle or treatment-filled nDS and launched in two Transporters (20 mice per Transporter) on SpaceX-13 on December 15, 2017. They were transferred to Rodent Habitats onboard the International Space Station (ISS) and maintained in microgravity for 29 days (N-20, Live Animal Return [LAR]), or greater than 50 days (N-20, ISS Terminal). 
+
+IACUC Protocol Number:  FLT-17-107
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: FLT-17-107 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+
+
+Available Data
+
+The RR-6 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data.
+-	Flight and ground animal behavior video, available for request. 
+
+--- unit 29 | source=payload record=RR-6 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 30 | source=payload record=RR-7 field=description
+The Rodent Research (RR-7) investigation examines how the space environment affects the community of microorganisms in the gastrointestinal tract of mice (also known as the microbiota). It also looks at microgravity’s effects on multiple physiological systems known to be affected by the microbiota, including the gastrointestinal, immune, metabolic, circadian, and sleep systems. These studies should help explain mechanisms underlying interactions between these systems and the role of the microbiota in these interactions.  This mission was sponsored for the ISS National Lab.
+
+Identifying these mechanisms will provide new avenues for possible countermeasures to ensure the safety and health of astronauts on long-duration spaceflight missions. RR-7 launched on SpX15 (20 female mice, ~10-12 weeks old, C57BL/6J and C3H/HeJ in two Rodent Habitats.) to evaluate how the space environment affects intestinal microbiota.  10 mice were maintained on the ISS for ~30 days and the remaining 10 mice were maintained on the ISS for up to 90 days.
+
+PIs:  Fred Turek
+Co-Investigators: Stefan Green, Ali Keshavarzian, Christopher Forsyth, and Martha Vitaterna 
+
+
+The mission objectives
+
+Samples of food swabs from living surfaces and fecal pellets were collected from each animal before launch and regularly during the mission. The mission also involved extended video collection (48 hr video segments per Habitat) to monitor circadian rhythms and on-orbit mass measurement.
+
+For this flight, 20 female mice of two different strains are flown to meet the science objectives. Animals are transferred from the Transporter into two Habitats that provide long duration housing abroad the ISS. Fecal pellets from each animal are collected before launch, and at each food bar change out (every 14 days). Samples swabbed from the food bar surfaces are also collected for analysis. Swabs of the Habitats are performed preflight, in flight, and post flight for examination of microflora.
+
+
+
+IACUC Protocol Number:  TBD
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC).
+
+
+NASA Space Biology Biospecimen Sharing Program Activities
+The NASA Space Biology Biospecimen Sharing Program collected biospecimens from RR-7 to maximize the scientific return from the biological spaceflight.  The collected tissues included the following:  Adrenal glands, EDL (Extensor digitorum longus), Femur (preserved with Tibia, Fibula, and Paw), Forelimb (muscles and bones as 1 piece), Kidney, Liver (except left lobe), Lungs, Paws (preserved with Tibia, Fibula and Femur), Quadriceps, Skin (dorsal), Soleus, Stomach, Thymus, Tibia (preserved with Femur, Fibula, and Paw), Tibialis anterior (TA).  
+
+Available Data
+
+The RR-7 payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request. 
+
+--- unit 31 | source=payload record=RR-7 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 32 | source=payload record=RR-9 field=description
+The Rodent Research 9 (RR-9) payload consisted of three space biology experiments that examined the impacts of long-duration spaceflight on human tissue and systems, aiming to better understand the visual impairment and joint tissue degradation that affected astronauts and to investigate possible ways to counteract those health problems. One investigation studied the effects of microgravity on fluid shifts and increased fluid pressures that occurred in the head. A second examined the impact of spaceflight on the vessels that supplied blood to the eyes. The third investigated the extent of knee and hip joint degradation caused by prolonged exposure to weightlessness.
+
+NASA's Space Life and Physical Sciences (SLPS) partnered with Russia's Institute of Biomedical Problems (IMBP) to establish a collaborative and multidisciplinary study to examine the effects of spaceflight on various physiological systems. This mission was sponsored by the NASA Space Biology Program.
+
+The objectives of the Investigator team’s studies were to evaluate physiological changes in mice that occurred during a long-duration spaceflight mission in low Earth orbit. Maximal science return was achieved by distributing dissected tissues from the animals to as many Russian and NASA investigators as possible via the SLPS Biospecimen Sharing Program (BSP) and through agreements with the IMBP.
+
+Twenty (20) mice (male, C57BL/6) between 8–16 weeks old were launched in one Transporter (10 mice per side), transferred to Rodent Habitats onboard the International Space Station (ISS), and maintained in microgravity for approximately 30 days (the SpaceX Dragon docked period). Nominally, no crew activities were required except for standard animal transfers between the Transporter and Habitats, and other activities required to ensure animal welfare, such as health checks and NuRFB replenishments.
+Prior to Dragon unberth, all twenty mice were transferred into a clean Transporter, followed by transfer to a Dragon capsule and then returned to Earth alive (live animal return [LAR]). The duration from splashdown to handover of the mice payload was approximately 48–72 hours. After the handover of the mice to the NASA Rodent Research team, the mice were immediately transported to a facility approved for conducting post-flight rodent gait assessment and dissections. This facility was located as close to the payload handover location as possible to minimize the total duration the mice were exposed to 1G post-splashdown. The primary investigator teams, BSP teams, and the Rodent Research dissection Lead and team conducted the dissection process at this facility immediately following a health check, specimen sampling, and acquisition of walking kinematic data.
+
+The Rodent Research 9 (RR-9) science investigation was conducted by the National Aeronautics and Space Administration’s Space Life and Physical Sciences program. The mission consisted of three experiments led by principal investigators Michael Delp, Xiao Wen Mao, and Jeffrey Willey. Delp’s investigation studied the effects of long-duration spaceflight on fluid shifts and increased fluid pressures in the head, Mao’s examined the impact of spaceflight on the vessels that supplied blood to the eyes, and Willey’s investigated the extent of knee and hip joint degradation caused by prolonged exposure to weightlessness. Specific aims of each experiment are summarized below.
+
+The mission objectives
+
+Michael Delp’s experiment had four aims:
+-	To determine whether spaceflight on the ISS altered rodent basilar artery spontaneous tone, myogenic and KCl (Potassium Chloride)-evoked vasoconstriction, mechanical stiffness, and gross structure.
+-	To estimate whether spaceflight on the ISS altered the blood-brain barrier in rodents, as indicated by ultrastructural examination of the junctional complex of the cerebral capillary endothelium.
+-	To determine whether spaceflight on the ISS altered rodent basal vein (inside cranium) and jugular vein (outside cranium) spontaneous tone, myogenic and KCl-evoked constriction, distension, and gross structure.
+-	To determine whether spaceflight on the ISS altered the ability of the cervical lymphatics to modulate lymph flow, and thus, regulate cerebral fluid homeostasis.
+
+Xiao Wen Mao’s investigation had two aims:
+-	To define the relationships between spaceflight condition-induced oxidative stress in reactive oxygen species (ROS) expression and retinal vascular remodeling and BRB function in mice that returned to Earth alive.
+-	To determine whether spaceflight condition-induced oxidative damage in the retina was mediated through photoreceptor mitochondrial ROS production.
+
+Jeffrey Willey’s investigation had two aims:
+-	To determine the extent of knee and hip joint degradation in mice after 30 days of spaceflight on the ISS.
+-	To use the DigiGait System to assess gait patterns before and after returning from the ISS.
+
+IACUC Protocol Number: FLT-17-107
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and Use Committees (IACUC), with protocol numbers NASA: FLT-17-107 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC), and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program Activities
+N/A
+
+
+Available Data
+The RR payload produced the following Data (from checklist Excel file):
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+
+
+
+--- unit 33 | source=payload record=RR-9 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 34 | source=payload record=RR-D1 field=description
+The Rodent Research-Demonstration 1 (RR-D1) validates equipment and procedures for surgical techniques related to the wound healing process. Normal skin function and wound healing are important for maintaining good health, but spaceflight may impair healing of wounds in astronauts. Results from this investigation are intended to support design of a subsequent study on the effects of spaceflight on wound healing.
+
+The investigations associated with this payload are conducted in flight. There are no associated ground control operations. 
+
+Ten flight animals (n equals 10 female C57Bl/6) are loaded into a transporter and launched to the International Space Station aboard a SpaceX Dragon cargo vehicle, then transferred to a rodent habitat aboard the International Space Station (ISS). The mice are exposed to microgravity for 14 days prior to the procedure evaluation.
+
+ Three experiments are conducted to inform and validate surgical procedures for the biopsy healing mouse model.
+ 
+During biopsy creation, animals are anesthetized via IP injection, two dorsal skin biopsies are excised and preserved, and wound sites are splinted and covered with a secured standard dressing (Tegaderm). Animals are recovered and placed back into their habitats. The wound sites are excised and placed in a tissue preservation kit.
+
+
+Available Data
+The RR payload produced the following Data (from checklist Excel file):
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	ISS cabin and ground simulation chamber environmental monitoring data
+-	Flight and ground animal behavior video, available for request
+
+
+
+--- unit 35 | source=payload record=RR-D1 field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 36 | source=payload record=RRRM-1%20(RR-8) field=description
+The purpose of the Rodent Research Reference Mission 1 (RRRM-1)/Rodent Research 8 (RR-8) mission is to examine the physiology of aging and the effect of age on disease progression using groups of young and old mice flown in space and kept on Earth. Responses to spaceflight in humans and model organisms such as mice resemble certain aspects of accelerated aging. This investigation provides a better understanding of aging-related immune, bone, and muscle disease processes, which may lead to new therapies for use in space and on Earth.  investigation was sponsored by the International Space Station U.S. National Laboratory and New York-based Taconic Biosciences.
+
+•	Spaceflight has been shown to induce several physiological changes in humans and rodent models that resemble accelerated aging.
+•	For the Rodent Research Reference Mission 1 (RRRM-1)/Rodent Research 8 (RR-8) investigation, young and old mice are flown to the International Space Station for 30 to 40-day or 60-day durations.
+•	Tissue samples taken from the mice can provide researchers with better insight into disease processes related to bone loss, immune dysfunction, cardiovascular deconditioning, and loss of skeletal muscle mass and strength, to name a few. These insights may lead to new therapeutics for use in space or on Earth.
+
+The Rodent Research Reference Mission 1 (RRRM-1)/Rodent Research 8 (RR-8) investigation utilizes mice flown aboard the International Space Station (ISS), and maintained on Earth, to investigate the physiology of aging in response to microgravity and the role of aging in the onset and progression of disease. Two groups of 20 BALB/cAnNTac strain female mice (10 young and 10 old per group for a total of 40 mice) live aboard the ISS in specially designed rodent habitats for durations of one and two months.
+ 
+The first group of young and old mice returns to Earth live after 30 to 40 days. The second group of animals remains on the ISS for approximately 60 days. In both cases, animals are euthanized humanely, and tissue samples are harvested for subsequent study and comparison with Earth-based control groups.
+ 
+Tissues from space-flown rodents are rare and are extremely valuable, thus, there is great demand for access to these tissues from the research community - namely academic scientists, the pharmaceutical industry and government agencies, such as the Department of Defense (DoD) and the National Institutes of Health (NIH). The ability for researchers to gain access to these tissues is limited to relatively few opportunities to utilize the ISS, thus, there is urgency to maximize access via this investigation.
+
+The mission objectives
+ 
+Specific Aim 1: To evaluate muscle atrophy under microgravity conditions, and to identify molecular pathways and targets that could be used to develop novel therapeutics for muscle disease. This aim focuses on hind limbs collected from groups of mice exposed to spaceflight for various lengths of time.
+ 
+Specific Aim 2: To quantify changes in various molecular markers from several tissues, such as whole blood, brain, heart, lungs, kidney/adrenal glands, liver, spleen, and small intestines (some tissues are dissected in flight, and the remaining ones on Earth).
+ 
+Specific Aim 3: To scan mice using a bone densitometer at mission middle, and endpoints, to characterize the effects of microgravity on skeletal tissues. This is expected to establish the magnitude and time-course of bone loss during spaceflight exposure for future commercial bone drug testing.
+
+
+Forty female BALB/cAnNTac mice are launched in 2 Transporters, transferred to 4 Rodent Habitats on board the ISS, and housed for up to 8 weeks. Twenty mice are in the 10–16-week-old range (young), and the other 20 mice are in the 30-52 week old range (old) at launch. The Transporter 1 “young” mice (heretofore referred to as Group 1) are divided randomly into 2 groups of 10 each (10 mice in each Habitat with 5 mice on each side); while the Transporter 2 “old” mice (heretofore referred to as Group 2) are also similarly divided. Each group is exposed to the spaceflight environment for ~30 days (animals from both age groups), or 60 days (animals from both age groups).
+ 
+Prior to SpaceX Dragon Vehicle unberth, half of the animals from each age group are transferred to the Dragon Vehicle and transported live back to Earth. After live animal return (~L+30 to +40 days), the remaining 20 mice from Groups 1 and 2 undergo mass measurements and are then anesthetized via intraperitoneal (IP) injection of ketamine/xylazine, scanned by a bone densitometer, and recovered from anesthesia via IP injection of reversal drug and then placement into the Anesthesia Recovery System (ARS). Animals are then placed back into Habitats.
+ 
+At 60 (± 2) days after exposure to microgravity, the remaining 20 mice undergo mass measurements, are anesthetized via IP injection of ketamine/xylazine/acepromazine, scanned with bone densitometer, then euthanized via ketamine/xylazine overdose injection and exsanguination. Spleens are taken from each mouse and fixed in RNAlater. The left hind limb is dissected from each mouse and preserved via formalin. The remaining hind limb remains attached and is frozen with the carcass.
+ 
+Following the dissections, carcasses from all mice are frozen and stored at -80°C or lower and returned to Earth for post-flight analysis. Video showing animal health and behavior is obtained and downlinked for archival recording and analysis.
+
+
+IACUC Protocol Number:  FLT-18-116
+
+All animal procedures performed in these experiments were approved by the Institutional Animal Care and use Committees (IACUC) numbers NASA: FLT-18-116 for flight at the NASA Ames Research Center (ARC) and the Kennedy Space Center (KSC) and the methods were carried out in accordance with relevant guidelines and regulations.
+
+NASA Space Biology Biospecimen Sharing Program Activities 
+NA
+
+Available Data
+
+The RRRM-1 (RR-8) payload produced the following Data (from checklist Excel file):
+
+-	Animal enclosure temperature and relative humidity flight and ground data
+-	Live Animal Return sensor accelerometer data 
+-	ISS cabin and ground simulation chamber environmental monitoring data  
+-	Rodent data including preflight data, operations time logs, sample shipment data
+-	Flight and ground animal behavior video, available for request
+
+--- unit 37 | source=payload record=RRRM-1%20(RR-8) field=hardware_version
+Version used to International Space Station: The hardware was flown as described.
+
+--- unit 38 | source=study record=OSD-576 field=protocol:Animal Husbandry
+Twenty (20) mice (male, C57BL/6J, 16-17 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 38 days. The Flight mice were transferred into a Transporter and returned to Earth for Live Animal Return (LAR) on SpX-21 (January 13th, 2021). After Atlantic Ocean splashdown, the LAR Flight mice were transported via helicopter to Kennedy Space Center. Collectively, 20 Flight, 20 HGC, and 20 VGC mice were transferred from Rodent Transporters (Flight and HGC) or vivarium cages (VGC) and placed into shipping containers. All 60 mice were flown via charter plane to the PI's institution, Texas A and M University (TAMU). The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol (Protocol number RR-23) was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 39 | source=study record=OSD-580 field=protocol:Animal Husbandry
+In the Rodent Research Reference Mission (RRRM-2), forty female C57BL/6NTac mice were flown on the International Space Station. To assess differences in outcomes due to age, twenty 12 week-old and twenty 29 week-old mice were flown, respectively. To directly assess spaceflight effects, half of the young and old mice (10 old, 10 young) were sacrificed on-orbit after 55-58 days (ISS Terminal, ISS-T), while the other half (10 old, 10 young) were returned live to Earth after 32 days and allowed to recover for 24 days (Live Animal Return, LAR) before sacrifice. ISS-T and LAR mice were the same age at sacrifice. Both the ISS-T and LAR animals had independent ground controls (10 mice per group housed in flight hardware in matched environmental conditions), basal controls (10 mice per group sacrificed 2 days before launch), and vivarium controls (10 mice per group housed within standard vivarium habitats). Thus RRRM-2 included a total of 160 mice. GeneLab only processed up to 5 mice from each of the young/ old group from baseline/ flight/ ground control/ vivarium group in this dataset. All mice (C57BL/6NTac) were sourced from Taconic Biosciences (Germantown, NY). Mice were weighed, chipped with BMDS RFID chip (IMI-500) and shipped to NASA KSC for delivery at approximately L-5 weeks. Mice were housed and maintained in the Animal Care Facility (ACF) at NASA KSC with 12:12 light cycle matched in timing to the light cycle used for Transporters and Habitats programmed for flight. All mice were housed in cages of 5 mice/cage with the same littermates as they had been raised. Mice were initially given ad lib standard lab chow and water, which was changed on a schedule of 2x per week. Mice were housed initially on standard bedding and provided igloo-type enrichment. Animal health was checked daily by appropriately trained NASA personnel and contracted lab technicians. At L-4 weeks, mice were placed on raised mesh flooring to simulate spaceflight Transporter and Habitat cage conditions, given water delivered through lixits identical to those used in the flight hardware and put on the NASA Nutrient-Upgraded Rodent Foodbars (NuRFB). Food and water were changed weekly, and mice were weighed bi-weekly. Igloo-type enrichment was provided in all cages. At L-12 days, mice were grouped (10 mice per cage) in larger cages for social acclimation prior to launch. Groupings were done based on age of animals and in a manner to establish similar average weights between any given grouping. At L-2 days, baseline, spaceflight and ground control groups were identified. At L-1 day, spaceflight animals were loaded into spaceflight Transporters. Habitat Ground Control (HGC) mice were loaded into Transporters on a 3-day offset from spaceflight animals. Vivarium Ground Control (VGC) mice (also on a 3-day offset) were returned to 5 mice/cage and placed on standard bedding and provided water through typical sipper tubes at launch equivalent. All mice were maintained on NuRFB throughout the duration of the study. Spaceflight and HGC mice were given new food at weekly intervals. VGC mice were given new food and fresh water also on weekly intervals. An enrichment Hut, in the form of a grated shelter, was provided in the habitat. After splashdown, flight LAR mice were transferred to the animal care facility at Scripps Research Institute where they were assessed and re-caged into standard caging conditions (5 mice/cage, standard bedding and ad lib water from regular sipper tubes). LAR and ISS-T Ground Control mice were shipped from Kennedy Space Center to Scripps and housed under the same conditions as the flight mice. The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC)
+
+--- unit 40 | source=study record=OSD-599 field=protocol:Animal Husbandry
+Female C57BL/6J mice aged 8–9 weeks old were obtained from The Jackson Laboratory (Bar Harbor, ME). Mice were shipped to the Kennedy Space Center (KSC) Space Life Sciences Laboratory (SLSL). Although there were several groups in this study, this report focuses on the transcriptomic changes in the heart when mice are housed in the spaceflight environment for 30 days. Mice were acclimatized for 1–2 weeks prior to the initiation of the study. Their living conditions were controlled for temperature and humidity and included a 12:12 h light–dark cycle. Food and water were provided ad libitum. During this adaptation period, the mice were adapted to the flight hardware (Rodent Research Hardware System). Mice flown on the International Space Station (ISS) and comparable ground control mice were maintained under identical conditions, including a single injection of saline. At 30 days, flight mice were transferred into the ISS Microgravity Sciences Glovebox (MSG), were euthanized via intraperitoneal (IP) injection of Ketamine/Xylazine (150/45 mg/kg) anesthesia followed by closed-cardiac puncture exsanguination and cervical dislocation. After removal of the spleen, mice were wrapped in foil, frozen and stored in the Minus Eighty Laboratory Freezer for ISS (MELFI) at −96 C until sample return. NASA GLACIER and Cold Bag lockers were used to transport samples back to the ground following mission completion.
+
+--- unit 41 | source=study record=OSD-612 field=protocol:Animal Husbandry
+Twenty (20) mice (female, 10 B6129SF2/J Wild Type (WT) and 10 B6;129S2-Cdkn1atm1Tyj/J (p21-null), 14-15 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight (FL) mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 28-29 days. At 7 days before euthanasia (December 26 and 27, 2020), all 20 mice received an intraperitoneal (IP) injection with the bone formation marker (Calcein). At about 48±2 hours before euthanasia (December 31, 2020 and January 1, 2021), all 20 mice received an IP injection with a second dose of Calcein as well as the cell proliferation marker (BrdU). At approximately 28-29 days in microgravity (January 2 and 3, 2021), the Flight mice were euthanized with a Ketamine/Xylazine cocktail, followed by cardiac puncture and thoracotomy. Following skin removal, both hindlimb quarters were removed and preserved or fixed. Each carcass was wrapped in aluminum foil, preserved in the CryoChiller, and stored at -80C or colder until return to PI. Two other groups of mice, 20 for Ground Control (GC) and 24 for Vivarium Control (VC), half B6129SF/J Wild Type (WT) and half B6;129S2-Cdkn1atm1Tyj/J (p21-null), were selected by the PI and underwent the same procedures and treatment as the Flight group but with an offset of 3 days. In addition to the IP injections (Calcein and BrdU) described above, all mice in the FL, GC, and VC groups also received a pre-flight subcutaneous injection of the bone marker (Alizarin Red). The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC). GeneLab only processed samples from 5 WT FL
+
+--- unit 42 | source=study record=OSD-613 field=protocol:Animal Husbandry
+In the Rodent Research Reference Mission (RRRM-2), forty female C57BL/6NTac mice were flown on the International Space Station. To assess differences in outcomes due to age, twenty 12 week-old and twenty 29 week-old mice were flown, respectively. To directly assess spaceflight effects, half of the young and old mice (10 old, 10 young) were sacrificed on-orbit after 55-58 days (ISS Terminal, ISS-T), while the other half (10 old, 10 young) were returned live to Earth after 32 days and allowed to recover for 24 days (Live Animal Return, LAR) before sacrifice. ISS-T and LAR mice were the same age at sacrifice. Both the ISS-T and LAR animals had independent ground controls (10 mice per group housed in flight hardware in matched environmental conditions), basal controls (10 mice per group sacrificed 2 days before launch), and vivarium controls (10 mice per group housed within standard vivarium habitats). Thus RRRM-2 included a total of 160 mice. GeneLab only processed up to 5 mice from each of the young/old group from flight/ground control groups in this dataset. All mice (C57BL/6NTac) were sourced from Taconic Biosciences (Germantown, NY). Mice were weighed, chipped with BMDS RFID chip (IMI-500) and shipped to NASA KSC for delivery at approximately L-5 weeks. Mice were housed and maintained in the Animal Care Facility (ACF) at NASA KSC with 12:12 light cycle matched in timing to the light cycle used for Transporters and Habitats programmed for flight. All mice were housed in cages of 5 mice/cage with the same littermates as they had been raised. Mice were initially given ad lib standard lab chow and water, which was changed on a schedule of 2x per week. Mice were housed initially on standard bedding and provided with igloo as enrichment material. Animal health was checked daily by appropriately trained NASA personnel and contracted lab technicians. At L-4 weeks, mice were placed on raised mesh flooring to simulate spaceflight Transporter and Habitat cage conditions, given water delivered through lixits identical to those used in the flight hardware and put on the NASA Nutrient-Upgraded Rodent Foodbars (NuRFB). Food and water were changed weekly, and mice were weighed bi-weekly. Igloo was provided as enrichment material in all cages. At L-12 days, mice were grouped (10 mice per cage) in larger cages for social acclimation prior to launch. Groupings were done based on age of animals and in a manner to establish similar average weights between any given grouping. At L-2 days, baseline, spaceflight and ground control groups were identified. At L-1 day, spaceflight animals were loaded into spaceflight Transporters. Habitat Ground Control (HGC) mice were loaded into Transporters on a 3-day offset from spaceflight animals. Vivarium Ground Control (VGC) mice (also on a 3-day offset) were returned to 5 mice/cage and placed on standard bedding and provided water through typical sipper tubes at launch equivalent. All mice were maintained on NuRFB throughout the duration of the study. Spaceflight and HGC mice were given new food at weekly intervals. VGC mice were given new food and fresh water also on weekly intervals. An enrichment Hut, in the form of a grated shelter, was provided in the habitat for the flight and habitat ground control group. Igloo was provided in the vivarium ground control group. After splashdown, flight LAR mice were transferred to the animal care facility at Scripps Research Institute where they were assessed and re-caged into standard caging conditions (5 mice/cage, standard bedding and ad lib water from regular sipper tubes). LAR and ISS-T Ground Control mice were shipped from Kennedy Space Center to Scripps and housed under the same conditions as the flight mice. The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 43 | source=study record=OSD-665 field=protocol:Animal Husbandry
+Twenty (20) mice (male, C57BL/6J, 16-17 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 38 days. The Flight mice were transferred into a Transporter and returned to Earth for Live Animal Return (LAR) on SpX-21 (January 13th, 2021). After Atlantic Ocean splashdown, the LAR Flight mice were transported via helicopter to Kennedy Space Center. Collectively, 20 Flight, 20 HGC, and 20 VGC mice were transferred from Rodent Transporters (Flight and HGC) or vivarium cages (VGC) and placed into shipping containers. All 60 mice were flown via charter plane to the PI’s institution, Texas A and M University (TAMU). The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol (Protocol number RR-23) was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 44 | source=study record=OSD-666 field=protocol:Animal Husbandry
+Twenty (20) mice (male, C57BL/6J, 16-17 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 38 days. The Flight mice were transferred into a Transporter and returned to Earth for Live Animal Return (LAR) on SpX-21 (January 13th, 2021). After Atlantic Ocean splashdown, the LAR Flight mice were transported via helicopter to Kennedy Space Center. Collectively, 20 Flight, 20 HGC, and 20 VGC mice were transferred from Rodent Transporters (Flight and HGC) or vivarium cages (VGC) and placed into shipping containers. All 60 mice were flown via charter plane to the PI’s institution, Texas A and M University (TAMU). The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol (Protocol number RR-23) was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 45 | source=study record=OSD-667 field=protocol:Animal Husbandry
+Twenty (20) mice (female, 10 B6129SF2/J Wild Type (WT) and 10 B6;129S2-Cdkn1atm1Tyj/J (p21-null), 14-15 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight (FL) mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 28-29 days. At 7 days before euthanasia (December 26 and 27, 2020), all 20 mice received an intraperitoneal (IP) injection with the bone formation marker (Calcein). At about 48±2 hours before euthanasia (December 31, 2020 and January 1, 2021), all 20 mice received an IP injection with a second dose of Calcein as well as the cell proliferation marker (BrdU). At approximately 28-29 in microgravity (January 2 and 3, 2021), the Flight mice were euthanized with a Ketamine/Xylazine cocktail, followed by cardiac puncture and thoractomy. Following skin removal, both hindlimb quarters were removed and preserved or fixed. Each carcass was wrapped in aluminum foil, preserved in the CryoChiller, and stored at -80C or colder until return to PI. Two other groups of mice, 20 for Ground Control (GC) and 24 for Vivarium Control (VC), half B6129SF/J Wild Type (WT) and half B6;129S2-Cdkn1atm1Tyj/J (p21-null), were selected by the PI and underwent the same procedures and treatment as the Flight group but with an offset of 3 days. In addition to the IP injections (Calcein and BrdU) described above, all mice in the FL, GC, and VC groups also received a pre-flight subcutaneous injection of the bone marker (Alizarin Red). Twenty (20) female mice (half WT and half p21-null) were selected by the PI for the Baseline Control (BL) group. Following a successful Launch, baseline animals were injected with Calcein at the time of Launch (7 days prior to dissection) and at 48±2 hours before dissection. BL animals were also injected with BrdU at 48±2 hours before dissection. Baseline dissections were performed 7 days after launch following the same procedures used for the Flight animals. The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 46 | source=study record=OSD-682 field=protocol:Animal Husbandry
+Ten-week-old C57BL/6 male mice were launched at the Kennedy Space Center (KSC) and spent 35 days aboard the International Space Station (ISS). All mice were maintained at an ambient temperature of 26–28 degrees Celsius with a 12-h light/dark cycle during the flight. All mice were provided NASA Nutrient-upgraded Rodent Food Bar (NuRFB) and autoclaved deionized water ad libitum. MnTnBuOE-2-PyP5+ (BuOE) at 1 mg/kg (0.2 mL) was administrated subcutaneously 7 days prior to the flight launch and weekly aboard the ISS. All mice were subdivided into saline or BuOE-treated groups. Upon return to the Earth, spaceflight mice were transported to the research laboratory at Roskamp Institute, Sarasota, Florida, within 20 h of splashdown. Ground control mice were maintained on Earth for 35 days in flight hardware cages under similar environmental conditions as the flight groups, including the same food, light/dark, temperature, treatment (SAL or BuOE), and euthanasia regimens. The protocol for GC mice commenced three days subsequent to the commencement of the protocol for spaceflight mice. Mice were exsanguinated by closed-cardiac blood collection under deep Ketamine/Xylazine (150/45 mg/kg) anesthesia, followed by cervical dislocation as a secondary euthanasia method to ensure death.
+
+--- unit 47 | source=study record=OSD-685 field=protocol:Animal Husbandry
+Ten-week-old C57BL/6 male mice were launched at the Kennedy Space Center (KSC) and spent 35 days aboard the International Space Station (ISS). All mice were maintained at an ambient temperature of 26–28 degrees Celsius with a 12-h light/dark cycle during the flight. All mice were provided NASA Nutrient-upgraded Rodent Food Bar (NuRFB) and autoclaved deionized water ad libitum. MnTnBuOE-2-PyP5+ (BuOE) at 1 mg/kg (0.2 mL) was administrated subcutaneously 7 days prior to the flight launch and weekly aboard the ISS. All mice were subdivided into saline or BuOE-treated groups. Upon return to the Earth, spaceflight mice were transported to the research laboratory at Roskamp Institute, Sarasota, Florida, within 20 h of splashdown. Ground control mice were maintained on Earth for 35 days in flight hardware cages under similar environmental conditions as the flight groups, including the same food, light/dark, temperature, treatment (SAL or BuOE), and euthanasia regimens. The protocol for GC mice commenced three days subsequent to the commencement of the protocol for spaceflight mice. Mice were exsanguinated by closed-cardiac blood collection under deep Ketamine/Xylazine (150/45 mg/kg) anesthesia, followed by cervical dislocation as a secondary euthanasia method to ensure death.
+
+--- unit 48 | source=study record=OSD-698 field=protocol:Animal Husbandry
+Ten-week-old C57BL/6 male mice were launched at the Kennedy Space Center (KSC) and spent 35 days aboard the International Space Station (ISS). All mice were maintained at an ambient temperature of 26–28 degrees Celsius with a 12-h light/dark cycle during the flight. All mice were provided NASA Nutrient-upgraded Rodent Food Bar (NuRFB) and autoclaved deionized water ad libitum. MnTnBuOE-2-PyP5+ (BuOE) at 1 mg/kg (0.2 mL) was administrated subcutaneously 7 days prior to the flight launch and weekly aboard the ISS. All mice were subdivided into saline or BuOE-treated groups. Upon return to the Earth, spaceflight mice were transported to the research laboratory at Roskamp Institute, Sarasota, Florida, within 20 h of splashdown. Ground control mice were maintained on Earth for 35 days in flight hardware cages under similar environmental conditions as the flight groups, including the same food, light/dark, temperature, treatment (SAL or BuOE), and euthanasia regimens. The protocol for GC mice commenced three days subsequent to the commencement of the protocol for spaceflight mice. Mice were exsanguinated by closed-cardiac blood collection under deep Ketamine/Xylazine (150/45 mg/kg) anesthesia, followed by cervical dislocation as a secondary euthanasia method to ensure death.
+
+--- unit 49 | source=study record=OSD-699 field=protocol:Animal Husbandry
+Ten-week-old C57BL/6 male mice were launched at the Kennedy Space Center (KSC) and spent 35 days aboard the International Space Station (ISS). All mice were maintained at an ambient temperature of 26–28 degrees Celsius with a 12-h light/dark cycle during the flight. All mice were provided NASA Nutrient-upgraded Rodent Food Bar (NuRFB) and autoclaved deionized water ad libitum. MnTnBuOE-2-PyP5+ (BuOE) at 1 mg/kg (0.2 mL) was administrated subcutaneously 7 days prior to the flight launch and weekly aboard the ISS. All mice were subdivided into saline or BuOE-treated groups. Upon return to the Earth, spaceflight mice were transported to the research laboratory at Roskamp Institute, Sarasota, Florida, within 20 h of splashdown. Ground control mice were maintained on Earth for 35 days in flight hardware cages under similar environmental conditions as the flight groups, including the same food, light/dark, temperature, treatment (SAL or BuOE), and euthanasia regimens. The protocol for GC mice commenced three days subsequent to the commencement of the protocol for spaceflight mice. Mice were exsanguinated by closed-cardiac blood collection under deep Ketamine/Xylazine (150/45 mg/kg) anesthesia, followed by cervical dislocation as a secondary euthanasia method to ensure death.
+
+--- unit 50 | source=study record=OSD-742 field=protocol:Animal Husbandry
+In the Rodent Research Reference Mission (RRRM-1), forty female BALB/cAnNTac mice were flown on the International Space Station. To assess differences in outcomes due to age, twenty 10-12 week-old and twenty 32 week-old mice were flown, respectively. To directly assess spaceflight effects, half of the young and old mice (10 old, 10 young) were sacrificed on-orbit after 22-23 days (ISS Terminal, ISS-T), while the other half (10 old, 10 young) were returned live to Earth after 40 days and allowed to recover for 2 days (Live Animal Return, LAR) before sacrifice. Both the ISS-T and LAR animals had independent ground controls (10 mice housed in flight hardware in matched environmental conditions), basal controls (10 mice sacrificed 1 day after launch), and vivarium controls (10 mice housed within standard vivarium habitats). Thus RRRM-1 included a total of 160 mice. All mice (BALB/cAnNTac) were sourced from Taconic Biosciences (Germantown, NY). Mice were weighed, chipped with BMDS RFID chip (IMI-500) and shipped to NASA KSC for delivery at approximately L-4 weeks. Mice were housed and maintained in the Animal Care Facility (ACF) at NASA KSC with 12:12 light cycle matched in timing to the light cycle used for Transporters and Habitats programmed for flight. All mice were housed in cages of 5 mice/cage with the same littermates as they had been raised. Mice were initially given ad lib standard lab chow and water, which was changed on a schedule of 2x per week. Mice were housed initially on standard bedding and provided igloo-type enrichment. Animal health was checked daily by appropriately trained NASA personnel and contracted lab technicians. At L-3 weeks, mice were placed on raised mesh flooring to simulate spaceflight Transporter and Habitat cage conditions, given water delivered through lixits identical to those used in the flight hardware and put on the NASA Nutrient-Upgraded Rodent Foodbars (NuRFB). Food and water was changed weekly and mice were weighed bi-weekly. Igloo-type enrichment was provided in all cages. At L-10 days, mice were grouped (10 mice per cage) in larger cages for social acclimation prior to launch. Groupings were done based on age of animals and with regard to establishing similar average weights between any given grouping. At L-2 days, baseline, spaceflight and ground control groups were identified. At L-1 day, spaceflight animals were loaded into spaceflight Transporters. Habitat Ground Control (HGC) mice were loaded into Transporters on a 3-day offset from spaceflight animals. Vivarium Ground Control (VGC) mice (also on a 3-day offset) were returned to 5 mice/cage and placed on standard bedding and provided water through typical sipper tubes at launch equivalent. All mice were maintained on NuRFB throughout the duration of the study. Spaceflight and HGC mice were given new food at weekly intervals. VGC mice were given new food and fresh water also on weekly intervals. Mold contamination of food: Spaceflight and Habitat Ground Control mice were exposed to mold in their food to unknown relative degrees. The Vivarium Control and Baseline Control mice had clean food throughout their habitation. Loose food bars: Food bars came loose and fell to the bottom of the cage for the HGC mice and was free floating for the Spaceflight mice. This did not prevent the mice from eating. This may have caused some degree of stress for these animals that would have been experienced differently between the Spaceflight and HGC groups. Live animal return: Because weather in the Pacific was very poor, mice experienced double density housing (10 per cage instead of 5) for at least 7 days instead of the expected 2-3 days. Habitat Ground Control mice were treated the same way but this duration of double-density housing probably created additional stress on both groups of mice. In addition, because of rough seas, the Spaceflight mice might have experienced some sea sickness-type conditions that would not have been experienced by the HGC mice. The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC). GeneLab only processed 68 and 77 samples from LAR and ISS-T groups, respectively, in this dataset for a total of 145 processed samples.
+
+--- unit 51 | source=study record=OSD-770 field=protocol:Animal Husbandry
+Twenty (20) mice (male, C57BL/6J, 16-17 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 38 days. The Flight mice were transferred into a Transporter and returned to Earth for Live Animal Return (LAR) on SpX-21 (January 13th, 2021). The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol (Protocol number RR-23) was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 52 | source=study record=OSD-771 field=protocol:Animal Husbandry
+In the Rodent Research Reference Mission (RRRM-2), forty female C57BL/6NTac mice were flown on the International Space Station. To assess differences in outcomes due to age, twenty 12 week-old and twenty 29 week-old mice were flown, respectively. To directly assess spaceflight effects, half of the young and old mice (10 old, 10 young) were sacrificed on-orbit after 55-58 days (ISS Terminal, ISS-T), while the other half (10 old, 10 young) were returned live to Earth after 3 days and allowed to recover for 24 days (Live Animal Return, LAR) before sacrifice. ISS-T and LAR mice were the same age at sacrifice.
+
+--- unit 53 | source=study record=OSD-899 field=protocol:Animal Husbandry
+Rodent Research-10 (RR-10) investigates the cellular and molecular mechanisms underlying bone regenerative deficits due to disuse on Earth and microgravity in space. This mission examined how aging influences the regenerative potential of the femoral bone marrow stem cell populations. Specifically, the study examined the role of a gene – Cdkn1a – that produces the CDKN1A protein – that inhibits cell cycle progression in cells. RR-10 (20 female mice, 13-17 weeks old, B6129SF2/J Wild Type (WT) and B6;129S2-Cdkn1atm1Tyj/J (p21-null) to assess the CDKN1a/p21 pathway in regenerative bone formation. The mice will be maintained on the ISS for ~30 days. In addition to the Flight group, three ground control groups were also part of the study: Basal (representing the pre-launch state), Vivarium (standard vivarium housing for the same duration of time as flight), and Ground (flight habitat in the International Space Station Environment Simulator, ISSES). Twenty mice (10 of each strain) were included in each of these control groups (except Vivarium which included 12 of each strain). These were treated, euthanized and processed on the same schedule and in the same manner as the flight samples. The objective of the Rodent Research-10 mission (RR-10) was to investigate how spaceflight affects the cellular and molecular mechanisms of normal bone tissue regeneration in space. To this end, ten (10) 14-15 weeks-old female B6129SF2/J Wild Type (WT), and ten (10) 14-15 weeks-old female B6;129S2-Cdkn1atm1Tyj/J (p21-null) mice received a pre-flight subcutaneous injection of the bone marker (Alizarin Red), and were then delivered to the ISS aboard SpaceX-21. At 7 days before euthanasia, all 20 mice received an intraperitoneal (IP) injection with a bone formation marker (Calcein). At 48 +/- 2 hours before euthanasia, all 20 mice received an IP injection with a second dose of Calcein as well as a cell proliferation marker (BrdU). Then, following 28-29 days in microgravity, the Flight mice were euthanized. Following removal of hindlimbs, carcasses were wrapped in aluminum foil, preserved in the CryoChiller, and stored at -80 C or colder until return to Earth. In addition to the Flight group, three ground control groups were also part of the study: Basal (representing the pre-launch state), Vivarium (standard vivarium housing for the same duration of time as flight), and Ground (flight habitat in the International Space Station Environment Simulator, ISSES). Twenty mice (10 of each strain) were included in each of these control groups (except Vivarium which included 12 of each strain). These were treated, euthanized and processed on the same schedule and in the same manner as the flight samples. The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC). This study includes bulk RNA sequencing ribodepleted gene expression data from 20 Basal animals (10 WT and 10 p21-null), 10 Flight animals (5 WT and 5 p21-null), 10 Ground animals (5 WT and 5 p21-null), and 24 Vivarium animals (12 WT and 12 p21-null).
+
+--- unit 54 | source=study record=OSD-900 field=protocol:Animal Husbandry
+Twenty (20) mice (female, 10 B6129SF2/J Wild Type (WT) and 10 B6;129S2-Cdkn1atm1Tyj/J (p21-null), 14-15 weeks old) were launched in one Transporter on SpaceX-21 (SpX-21) on December 6, 2020. The Flight (FL) mice were transferred into two Rodent Habitats upon arrival to the International Space Station (ISS) and were maintained in microgravity for 28-29 days. At 7 days before euthanasia (December 26 and 27, 2020), all 20 mice received an intraperitoneal (IP) injection with the bone formation marker (Calcein). At about 48 +/- 2 hours before euthanasia (December 31, 2020 and January 1, 2021), all 20 mice received an IP injection with a second dose of Calcein as well as the cell proliferation marker (BrdU). At approximately 28-29 in microgravity (January 2 and 3, 2021), the Flight mice were euthanized with a Ketamine/Xylazine cocktail, followed by cardiac puncture and thoractomy. Following skin removal, both hindlimb quarters were removed and preserved or fixed. Each carcass was wrapped in aluminum foil, preserved in the CryoChiller, and stored at -80C or colder until return to PI. Two other groups of mice, 20 for Ground Control (GC) and 24 for Vivarium Control (VC), half B6129SF/J Wild Type (WT) and half B6;129S2-Cdkn1atm1Tyj/J (p21-null), were selected by the PI and underwent the same procedures and treatment as the Flight group but with an offset of 3 days. In addition to the IP injections (Calcein and BrdU) described above, all mice in the FL, GC, and VC groups also received a pre-flight subcutaneous injection of the bone marker (Alizarin Red). Twenty (20) female mice (half WT and half p21-null) were selected by the PI for the Baseline Control (BL) group. Following a successful Launch, baseline animals were injected with Calcein at the time of Launch (7 days prior to dissection) and at 48 +/- 2 hours before dissection. BL animals were also injected with BrdU at 48 +/- 2 hours before dissection. Baseline dissections were performed 7 days after launch following the same procedures used for the Flight animals. The study followed recommendations in the Guide for the Care and Use of Laboratory Animals and the protocol was approved by the NASA Flight Institutional Animal Care and Use Committee (IACUC).
+
+--- unit 55 | source=study record=OSD-918 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 56 | source=study record=OSD-919 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 57 | source=study record=OSD-920 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 58 | source=study record=OSD-921 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 59 | source=study record=OSD-922 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 60 | source=study record=OSD-923 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 61 | source=study record=OSD-924 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+
+--- unit 62 | source=study record=OSD-926 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 63 | source=study record=OSD-927 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 64 | source=study record=OSD-928 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 65 | source=study record=OSD-929 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 66 | source=study record=OSD-930 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 67 | source=study record=OSD-931 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 68 | source=study record=OSD-932 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol
+
+--- unit 69 | source=study record=OSD-933 field=protocol:Animal Husbandry
+Rodent Research Reference Mission 1 (RRR-1) / Rodent Research-8 (RR-8) consisted of 40 BALB/cAnNTac females (8 used for this study) termed Flight which were sent on 12/5/2018 to the International Space Station (ISS), and a control group of 40 mice remained on Earth, termed Habitat Ground Control (HC). Furthermore, two age groups were used, younger (∼3 months) and older (∼8 months). All mouse work was completed with approval of the NASA Flight Animal Care and Use Committee (Protocol FLT-18-116). Mice were received following landing at Scripps Research Institute (09-0004, for animal receipt upon landing) and transported to Stanford University IACUC (WYS1591). Flight mice were housed at double density on launch and again during the return to earth. HC mice were housed to match, as closely as possible, conditions experienced by Flight mice. This included double density housing in identical Mouse Habitat Units and Transporters as used by NASA during launch for Flight mice, and matched temperature, humidity, and carbon dioxide levels (elevated on the ISS compared to Earth) based on actual flight environmental monitoring. All mice were adapted to NASA Nutrient Food Bars, four weeks prior to launch, and bars were exchanged weekly. Mice had ad libitum access to both food and water. Mice had ad libitum access to both food and water. During the mission we encountered the following issues, altering the planned experimental design, or that must be considered upon interpretation of results. (1) Within 24h of the planned launch, mold was found on the food bars, affecting both Flight and HGC mice to an unknown degree. It is possible that the mice were able to eat around the mold. The late replacement of the food bars, now secured with double-sided tape instead of epoxy, caused the bars to free-float during launch and return. The bars of the HGC mice fell to the bottom of the cage. Although the Flight mice appeared healthy upon arrival to the ISS, this might have induced additional stress. Due to concerns about mold, as more was discovered aboard the ISS, the ISS Term mice were sacrificed after approximately 3 weeks of microgravity rather than the planned 8 weeks, and ground controls were sacrificed to match this new timeline.(2) Due to poor weather, the return of the Flight LAR mice was delayed and the mice spent 7 instead of the normal 2-3 days in double density housing. This housing is more confined (10 mice per cage side instead of the 5 in the normal habitat), video monitoring was not possible and food bars likely became unsecured and were free-floating. Conditions of the HGC mice were matched to these conditions, likely causing additional stress for both groups. Due to the weather, the Flight group likely experienced rough seas upon splashdown and shipping back to shore, which was not controlled for in the HGC group.
+

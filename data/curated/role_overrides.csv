@@ -1,0 +1,6 @@
+# Curated role fixes, keyed by any member node of the entity (S<splash id> or R<registry id>).
+node,role,reason
+R1381,processing_fixation,"Animal Access Unit: transfer interface between the AEM Transporter and the Rodent Habitat (registry 1381); animals are not housed in it"
+R2052,ground_facility,"Sterile Growth Chambers: Class III cabinets in the Lunar Receiving Laboratory, JSC (registry 2052 description); linked to 36 unrelated studies only through the catch-all payload 'Simulated_Environmental_Factors'"
+S25,habitat_growth,"BRIC-PDFU: specimens grow in Petri dishes inside the canister for days before on-orbit fixation (registry 2020 description)"
+S27,habitat_growth,"GAP-FPA: cultures grow in the 6.5 mL FPA glass barrel before activation/termination (registry 1173 description)"

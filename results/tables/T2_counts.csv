@@ -1,0 +1,60 @@
+group,key,n
+total,hardware entities,328
+total,in SPLASH,147
+total,in OSDR registry,157
+total,named by >=1 OSD study platform field,87
+total,linked to >=1 OSD study (any route),124
+role,habitat_growth,104
+role,sensor_dosimetry,37
+role,hosting_facility,35
+role,ground_facility,23
+role,analysis_instrument,22
+role,nonbio,21
+role,processing_fixation,17
+role,vehicle_or_location,14
+role,exposure_facility,10
+role,generic_or_unclear,9
+role,experiment_unique_other,4
+role,ground_analog,4
+role,program,1
+bio,bio-payload capable,164
+bio,specimen habitats (live specimens housed in flight),112
+bio,bio-capable with >=1 OSD study,70
+organism class (text),aquatic_vertebrate,8
+organism class (text),avian,3
+organism class (text),cell_tissue,39
+organism class (text),human,1
+organism class (text),invertebrate,27
+organism class (text),microbe,53
+organism class (text),plant,54
+organism class (text),primate,4
+organism class (text),rodent,18
+"platform (missions, bio-capable)",Aircraft / parabolic,4
+"platform (missions, bio-capable)",Apollo/Gemini,3
+"platform (missions, bio-capable)",Free-flyer (Bion/Cosmos/Biosatellite),19
+"platform (missions, bio-capable)",ISS,18
+"platform (missions, bio-capable)",Mir,3
+"platform (missions, bio-capable)",Shuttle,38
+"platform (missions, bio-capable)",Skylab,1
+"platform (missions, bio-capable)",Suborbital,1
+"location (text, bio-capable)",Free_flyer_Bion_Cosmos,37
+"location (text, bio-capable)",Ground_facility,26
+"location (text, bio-capable)",ISS_Columbus,2
+"location (text, bio-capable)",ISS_EXPRESS_rack,10
+"location (text, bio-capable)",ISS_JEM_Kibo,6
+"location (text, bio-capable)",ISS_US_lab_MSG,4
+"location (text, bio-capable)",ISS_external,9
+"location (text, bio-capable)",ISS_general,85
+"location (text, bio-capable)",Lunar_or_beyond,14
+"location (text, bio-capable)",Mir,6
+"location (text, bio-capable)",Shuttle_middeck,58
+"location (text, bio-capable)",Spacelab,23
+"location (text, bio-capable)",Suborbital,3
+nutrient mode (habitats),agar_gel,11
+nutrient mode (habitats),animal_food_water,16
+nutrient mode (habitats),aquatic_water_loop,6
+nutrient mode (habitats),arcillite_substrate,6
+nutrient mode (habitats),hydroponic_aeroponic,5
+nutrient mode (habitats),liquid_culture_medium,21
+nutrient mode (habitats),water_only_wick,6
+nutrient mode (habitats),none evidenced,60

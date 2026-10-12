@@ -1,0 +1,65 @@
+ENTITY HW146: Frog Environmental Unit
+
+--- unit 1 | source=splash record=146 field=name
+Frog Environmental Unit
+
+--- unit 2 | source=splash record=146 field=background
+The Frog Environmental Unit (FEU) was part of the Spacelab‑J mission (STS‑47, 1992), designed for amphibian reproductive biology experiments in microgravity. It enabled timed hormone-induced ovulation and fertilization of adult Xenopus laevis, incubation of eggs and embryos under both microgravity and simulated 1 g (via an internal centrifuge), then transfer for crew fixation and observation.
+
+--- unit 3 | source=splash record=146 field=dims
+Approx cylindrical canister ~457 mm diameter × 457 mm length
+
+--- unit 4 | source=splash record=146 field=volume
+Middeck Spacelab locker
+
+--- unit 5 | source=splash record=146 field=flight_heritage
+Shuttle (STS-47 via Spacelab-J)
+
+--- unit 6 | source=splash record=146 field=operations
+CREW TIME REQUIRED + SAMPLE RETURN REQUIRED
+
+--- unit 7 | source=splash record=146 field=lighting
+N
+
+--- unit 8 | source=splash record=146 field=pressure
+Sealed (internal); Ambient (external)
+
+--- unit 9 | source=splash record=146 field=measurements
+ECG, vestibular nerve telemetry; video observation; microscopy via GPWS dissecting microscope
+
+--- unit 10 | source=splash record=146 field=note_specs
+Pumps and fluidics require thermal control via BEU/CBEF interfaces.
+
+--- unit 11 | source=splash record=146 field=category
+Life Sciences - Culturing, Growth, Animal Habitat
+
+--- unit 12 | source=splash record=146 field=nutrient_production
+N
+
+--- unit 13 | source=registry record=241 field=name
+Frog Environmental Unit (FEU)
+
+--- unit 14 | source=registry record=241 field=description
+The Frog Environmental Unit (FEU) provides a ventilated and temperature-controlled habitat for four female frogs as well as groups of developing embryos. A centrifuge inside the FEU provides an artificial Earth 1 g environment, and can accommodate up to 28 Egg Chamber Units (ECUs). A separate compartment inside the FEU provides exposure to microgravity conditions for an additional 28 ECUs. Together, these systems offer the capability for simultaneous side-by-side experiments consisting of both a zero-g "treatment" group and a 1 g "control" group.
+
+--- unit 15 | source=registry record=241 field=components_text
+Adult Frog Box/Frog Box Chamber: The box can house four adult female frogs and is divided into two compartments, with each compartment accommodating two frogs. The frog comparatments are lined with a soft, absorbent material to prevent skin abrasion. Frogs are kept moist with Ringer's solution, a solution of chlorides of sodium, potassium, and calcium, that is isotonic to animal tissue. The frog box slides into the FEU and mates with an air supply via quick disconnects. An aquarium-style air pump provides ventilation. | Kits: The Human Chorionic Gonadotrophin (HCG)/Sperm Kit contains separate syringes filled with HCG and Ringer's solution, and Sperm Packages for holding sperm suspension and whole frog testes. The Egg Chamber Operations Kit holds forceps and petri dishes for egg handling. Ringer's Kits contain separate syringes for Ringer's solution and a mixture of Ringer's and Ficoll. Fixation Kits contain separate syrings for two types of fixative: a dilute acetic acid/dichromate buffer and formaldehyde. The Fixed Egg Chamber Kits contain boxes for holding egg chambers after fixation, as well as extra syringes for fixation. | Egg Chamber Units (ECUs): Egg chamber units consist of three Lexan pieces assembled to form an incubation chamber for the growing embryos. The eggs are placed on a stainless steel grid inside an egg basket and fitted onto the eyepiece unit. The eyepiece features a viewport for examining embryos using a microscope and video equipment. The chambers may be filled with Ringer's solution, and can accommodate injections of fixatives or other materials. | Power and Control Systems: The Power Conditioning Unit (PCU) accepts power from the Spacelab and distributes it to the various FEU subsystems. The PCU controls and indicators provide for set-up, monitoring, and operation of the FEU. | Centrifuge: The centrifuge provides an artificial gravity force of 1 g for onboard egg chambers. It has a double row of slots, color-coded to match the egg chambers.
+
+--- unit 16 | source=payload record=SL-J field=description
+The Spacelab J mission was a cooperative effort between the National Aeronautics and Space Administration (NASA) and the National Space Development Agency of Japan (NASDA).  This internationally funded Shuttle flight was dedicated to fundamental materials and life sciences research utilizing the weightless and radiation environments of an orbiting space laboratory, and contained an ARC and a JSC Life Science payload.  The SL-J mission was flown on STS-47 which was launched from Kennedy Space Center on September 12, 1992 and landed on September 20, 1992 at Kennedy Space Center, Florida.  As part of this International mission, a crew of 7, including a payload specialists from Japan (the first time a NASDA astronaut flew in space), performed experiments developed by scientists from NASA and the National Space Development Agency of Japan (NASDA).  These experiments were performed in Spacelab, a reusable orbiting laboratory developed jointly by the European Space Agency (ESA) and NASA, and carried aloft by the Shuttle.  
+
+International cooperation during the SL-J mission enabled the participating agencies to attain mutually beneficial goals. NASA provided mission management, payload integration, and Shuttle transportation to and from orbit, and hardware for certain NASA and joint experiments. NASDA provided hardware that their own scientists used. Joint use of facilities reduces the cost of space experimentation for each agency.  Investigators also shared certain data and samples so that the scientific return was multiplied.
+
+The mission included a NASA and a NASDA payload.  The NASA payload included 9 experiments, of which 7 were life science experiments and 2 were microgravity science investigations.  The First Material Processing Test (FMPT) payload, developed by NASDA, was a set of 35 investigations (13 in Life Sciences and 22 in Materials Sciences) which also flew on SL-J.  This complement of experiments allowed a maximum number of Japanese scientists to participate in space-based research, gather data on mission 
+
+The SL-J life sciences experiments encompassed a diverse group of biological investigations including physiology, cell growth and development, separation processes for purification of biological materials, enzyme crystal growth, and radiation biology. Several experiments were designed to evaluate the specific effects of the space environment, such as radiation and microgravity, on biological systems and may have direct applications for improving the health and well being of astronauts. Other life sciences investigations utilized the microgravity environment to study methods to improve purification of biological materials and to grow protein crystals of interest to the biotechnology and pharmaceutical industries.
+
+The three investigations sponsored by NASA/ARC were a human experiment, Autogenic Feedback Training. and two non-human experiments, the Effects of Weightlessness on the Development of Amphibian Eggs in Space (Frog Embryology Experiment - FEE) and the Gravity, chromosomes and organized development in aseptically cultured plant cells (PCR). 
+
+The Autogenic Feedback Training was a reflight of an SL-3 experiment with new crew members to increase statistical significance. The experiment tested the astronauts' ability to minimize their motion sickness symptoms that result from space adaptation syndrome by using biofeedback techniques that do not use drugs. The FEE experiment examined questions related to the early development and growth of organisms in space. FEE studied frog eggs that were laid in space and their subsequent fertilization and development in to tadpoles. PCR examined how microgravity affects plant cell division and development.
+
+Spacelab J added much to the on-going research in life and microgravity sciences and helped scientists understand better how the human body and biological and metallurgical materials react to the microgravity and radiation environment of space. The SL-J mission was also a step towards the future for two space agencies that will be working together in an international effort to build a space station.
+
+--- unit 17 | source=payload record=SL-J field=hardware_version
+Version used on SL-J: The hardware was flown on SL-J with all the components as described.
+

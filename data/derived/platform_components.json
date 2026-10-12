@@ -1,0 +1,1299 @@
+[
+ {
+  "platform_string":"3D Clinostat",
+  "component":"3D Clinostat",
+  "method":"curated_kind",
+  "kind":"ground_analog",
+  "entity_ids":[
+   "HW274"
+  ]
+ },
+ {
+  "platform_string":"ADvanced Space Experiment Processor (ADSEP)",
+  "component":"ADvanced Space Experiment Processor (ADSEP)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW046"
+  ]
+ },
+ {
+  "platform_string":"Advanced Biological Research System (ABRS)",
+  "component":"Advanced Biological Research System (ABRS)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW064"
+  ]
+ },
+ {
+  "platform_string":"Advanced Plant Experiment (APEX), The Transgenic Arabidopsis Gene Expression System (TAGES), Orbital Environmental Simulator (OES)",
+  "component":"Advanced Plant Experiment (APEX)",
+  "method":"curated_kind",
+  "kind":"program",
+  "entity_ids":[
+   "HW275"
+  ]
+ },
+ {
+  "platform_string":"Advanced Plant Experiment (APEX), The Transgenic Arabidopsis Gene Expression System (TAGES), Orbital Environmental Simulator (OES)",
+  "component":"The Transgenic Arabidopsis Gene Expression System (TAGES)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW064"
+  ]
+ },
+ {
+  "platform_string":"Advanced Plant Experiment (APEX), The Transgenic Arabidopsis Gene Expression System (TAGES), Orbital Environmental Simulator (OES)",
+  "component":"Orbital Environmental Simulator (OES)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW241"
+  ]
+ },
+ {
+  "platform_string":"Advanced Plant Habitat (APH)",
+  "component":"Advanced Plant Habitat (APH)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW034"
+  ]
+ },
+ {
+  "platform_string":"Animal Enclosure Module (AEM)",
+  "component":"Animal Enclosure Module (AEM)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW068"
+  ]
+ },
+ {
+  "platform_string":"Aquatic Habitat",
+  "component":"Aquatic Habitat",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW069"
+  ]
+ },
+ {
+  "platform_string":"BB-2 blocks of the BB-1F scientific equipment",
+  "component":"BB-2 blocks of the BB-1F scientific equipment",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW276"
+  ]
+ },
+ {
+  "platform_string":"BION-M1",
+  "component":"BION-M1",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW279"
+  ]
+ },
+ {
+  "platform_string":"BRIC-LED",
+  "component":"BRIC-LED",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW246"
+  ]
+ },
+ {
+  "platform_string":"BRIC-PDFU",
+  "component":"BRIC-PDFU",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW025"
+  ]
+ },
+ {
+  "platform_string":"BRIC-PDFU (Biological Research In Canisters - Petri Dish Fixation Unit)",
+  "component":"BRIC-PDFU (Biological Research In Canisters - Petri Dish Fixation Unit)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW025"
+  ]
+ },
+ {
+  "platform_string":"BRIC-PDFU (Petri Dish Fixation Unit)",
+  "component":"BRIC-PDFU (Petri Dish Fixation Unit)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW025"
+  ]
+ },
+ {
+  "platform_string":"BioCell Habitat",
+  "component":"BioCell Habitat",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW019"
+  ]
+ },
+ {
+  "platform_string":"BioCell, Plate Habitats (PHABs)",
+  "component":"BioCell",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW019"
+  ]
+ },
+ {
+  "platform_string":"BioCell, Plate Habitats (PHABs)",
+  "component":"Plate Habitats (PHABs)",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW019"
+  ]
+ },
+ {
+  "platform_string":"BioLab Yeast Bioreactor",
+  "component":"BioLab Yeast Bioreactor",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW278"
+  ]
+ },
+ {
+  "platform_string":"BioServe BioCells Cell Culture Chambers and Commercial Generic Bioprocessing Apparatus (CGBA)",
+  "component":"BioServe BioCells Cell Culture Chambers",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW019"
+  ]
+ },
+ {
+  "platform_string":"BioServe BioCells Cell Culture Chambers and Commercial Generic Bioprocessing Apparatus (CGBA)",
+  "component":"Commercial Generic Bioprocessing Apparatus (CGBA)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW044"
+  ]
+ },
+ {
+  "platform_string":"BioServe Space Technologies' Fluid Processing Apparatus (FPA)",
+  "component":"BioServe Space Technologies' Fluid Processing Apparatus (FPA)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW027"
+  ]
+ },
+ {
+  "platform_string":"Biocell",
+  "component":"Biocell",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW019"
+  ]
+ },
+ {
+  "platform_string":"Biological Reseach In a Canister (BRIC)",
+  "component":"Biological Reseach In a Canister (BRIC)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW024"
+  ]
+ },
+ {
+  "platform_string":"Biological Research In Canisters (BRIC)",
+  "component":"Biological Research In Canisters (BRIC)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW024"
+  ]
+ },
+ {
+  "platform_string":"Biological Research in Canister - Petri Dish Fixation Unit (BRIC-PDFU)",
+  "component":"Biological Research in Canister - Petri Dish Fixation Unit (BRIC-PDFU)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW025"
+  ]
+ },
+ {
+  "platform_string":"Biological Research in Canisters (BRIC)",
+  "component":"Biological Research in Canisters (BRIC)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW024"
+  ]
+ },
+ {
+  "platform_string":"Biological Research in Canisters-Petri Dish Fixation Unit (BRIC-PDFU)",
+  "component":"Biological Research in Canisters-Petri Dish Fixation Unit (BRIC-PDFU)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW025"
+  ]
+ },
+ {
+  "platform_string":"Biomass Production System (BPS): As Flown on STS-110, Orbital Environmental Simulator (OES)",
+  "component":"Biomass Production System (BPS): As Flown on STS-110",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW221"
+  ]
+ },
+ {
+  "platform_string":"Biomass Production System (BPS): As Flown on STS-110, Orbital Environmental Simulator (OES)",
+  "component":"Orbital Environmental Simulator (OES)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW241"
+  ]
+ },
+ {
+  "platform_string":"Block Obespecheniya Soderzhaniya (BOS)",
+  "component":"Block Obespecheniya Soderzhaniya (BOS)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW280"
+  ]
+ },
+ {
+  "platform_string":"Boron And Carbon Cosmic Rays in the Upper Stratosphere (BACCUS) hardware",
+  "component":"Boron",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW282"
+  ]
+ },
+ {
+  "platform_string":"Boron And Carbon Cosmic Rays in the Upper Stratosphere (BACCUS) hardware",
+  "component":"Carbon Cosmic Rays in the Upper Stratosphere (BACCUS) hardware",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW287"
+  ]
+ },
+ {
+  "platform_string":"C-20A Gulfstream III aircraft",
+  "component":"C-20A Gulfstream III aircraft",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW284"
+  ]
+ },
+ {
+  "platform_string":"C-20A aircraft",
+  "component":"C-20A aircraft",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW283"
+  ]
+ },
+ {
+  "platform_string":"C-9 aircraft",
+  "component":"C-9 aircraft",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW285"
+  ]
+ },
+ {
+  "platform_string":"C. elegans Habitat (CHab)",
+  "component":"C. elegans Habitat (CHab)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW286"
+  ]
+ },
+ {
+  "platform_string":"CUBELAB",
+  "component":"CUBELAB",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW293"
+  ]
+ },
+ {
+  "platform_string":"Cell Biology Experiment Facility",
+  "component":"Cell Biology Experiment Facility",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW037"
+  ]
+ },
+ {
+  "platform_string":"Cell Biology Experiment Facility (CBEF)",
+  "component":"Cell Biology Experiment Facility (CBEF)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW037"
+  ]
+ },
+ {
+  "platform_string":"Cell Culture Module (CCM)",
+  "component":"Cell Culture Module (CCM)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW219"
+  ]
+ },
+ {
+  "platform_string":"Clinostat",
+  "component":"Clinostat",
+  "method":"curated_kind",
+  "kind":"ground_analog",
+  "entity_ids":[
+   "HW290"
+  ]
+ },
+ {
+  "platform_string":"Commercial Biomedical Testing Module (CBTM)",
+  "component":"Commercial Biomedical Testing Module (CBTM)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW291"
+  ]
+ },
+ {
+  "platform_string":"CubeLab",
+  "component":"CubeLab",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW293"
+  ]
+ },
+ {
+  "platform_string":"EXPOSE-E",
+  "component":"EXPOSE-E",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW296"
+  ]
+ },
+ {
+  "platform_string":"European Modular Cultivation System (EMCS)",
+  "component":"European Modular Cultivation System (EMCS)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW042"
+  ]
+ },
+ {
+  "platform_string":"European Modular Cultivation System (EMCS), Experimental Reference Module (ERM2)",
+  "component":"European Modular Cultivation System (EMCS)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW042"
+  ]
+ },
+ {
+  "platform_string":"European Modular Cultivation System (EMCS), Experimental Reference Module (ERM2)",
+  "component":"Experimental Reference Module (ERM2)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW295"
+  ]
+ },
+ {
+  "platform_string":"F-104 Starfighter",
+  "component":"F-104 Starfighter",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW297"
+  ]
+ },
+ {
+  "platform_string":"FIT (Fly Immunity and Tumors) cassette and changeout platform",
+  "component":"FIT (Fly Immunity and Tumors) cassette",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW228"
+  ]
+ },
+ {
+  "platform_string":"FIT (Fly Immunity and Tumors) cassette and changeout platform",
+  "component":"changeout platform",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW289"
+  ]
+ },
+ {
+  "platform_string":"Fluid Processing Apparatus (FPA)",
+  "component":"Fluid Processing Apparatus (FPA)",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW027"
+  ]
+ },
+ {
+  "platform_string":"Group Activation Pack (GAP), Multiple Orbital Bioreactor with Instrumentation and Automated Sampling (MOBIAS)",
+  "component":"Group Activation Pack (GAP)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW027"
+  ]
+ },
+ {
+  "platform_string":"Group Activation Pack (GAP), Multiple Orbital Bioreactor with Instrumentation and Automated Sampling (MOBIAS)",
+  "component":"Multiple Orbital Bioreactor with Instrumentation",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW121"
+  ]
+ },
+ {
+  "platform_string":"Group Activation Pack (GAP), Multiple Orbital Bioreactor with Instrumentation and Automated Sampling (MOBIAS)",
+  "component":"Automated Sampling (MOBIAS)",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW121"
+  ]
+ },
+ {
+  "platform_string":"HEPA Filter Covering Dust\/Debris",
+  "component":"HEPA Filter Covering Dust\/Debris",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW298"
+  ]
+ },
+ {
+  "platform_string":"Habitat Cage Unit, Multiple Artificial-gravity Research System (MARS)",
+  "component":"Habitat Cage Unit",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW105"
+  ]
+ },
+ {
+  "platform_string":"Habitat Cage Unit, Multiple Artificial-gravity Research System (MARS)",
+  "component":"Multiple Artificial-gravity Research System (MARS)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW311"
+  ]
+ },
+ {
+  "platform_string":"High Aspect Ratio Vessel (HARV)",
+  "component":"High Aspect Ratio Vessel (HARV)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW299"
+  ]
+ },
+ {
+  "platform_string":"High Aspect Ratio Vessels (HARVs)",
+  "component":"High Aspect Ratio Vessels (HARVs)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW300"
+  ]
+ },
+ {
+  "platform_string":"High aspect ratio vessels (HARV) in a rotary cell culture system (RCCS)",
+  "component":"High aspect ratio vessels (HARV) in a rotary cell culture system (RCCS)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW299"
+  ]
+ },
+ {
+  "platform_string":"Hindlimb Unloading",
+  "component":"Hindlimb Unloading",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW233"
+  ]
+ },
+ {
+  "platform_string":"ICE Cubes",
+  "component":"ICE Cubes",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW301"
+  ]
+ },
+ {
+  "platform_string":"ISS, Bio-Containers",
+  "component":"ISS",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW303"
+  ]
+ },
+ {
+  "platform_string":"ISS, Bio-Containers",
+  "component":"Bio-Containers",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW277"
+  ]
+ },
+ {
+  "platform_string":"International Space Station (ISS)",
+  "component":"International Space Station (ISS)",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW302"
+  ]
+ },
+ {
+  "platform_string":"International space station (ISS)",
+  "component":"International space station (ISS)",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW302"
+  ]
+ },
+ {
+  "platform_string":"KIBO",
+  "component":"KIBO",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW305"
+  ]
+ },
+ {
+  "platform_string":"KSC Fixation Tubes (KFTs)",
+  "component":"KSC Fixation Tubes (KFTs)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW270"
+  ]
+ },
+ {
+  "platform_string":"KUBIC interface container single level (KIC-SL), SCD Experiment Unit (EU)",
+  "component":"KUBIC interface container single level (KIC-SL)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW040"
+  ]
+ },
+ {
+  "platform_string":"KUBIC interface container single level (KIC-SL), SCD Experiment Unit (EU)",
+  "component":"SCD Experiment Unit (EU)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW320"
+  ]
+ },
+ {
+  "platform_string":"KUBIK",
+  "component":"KUBIK",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW040"
+  ]
+ },
+ {
+  "platform_string":"Kayser experimental unit (KEU-RO)",
+  "component":"Kayser experimental unit (KEU-RO)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW304"
+  ]
+ },
+ {
+  "platform_string":"Kennedy Space Center Fixation Tubes (KFTs)",
+  "component":"Kennedy Space Center Fixation Tubes (KFTs)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW270"
+  ]
+ },
+ {
+  "platform_string":"Kubik Incubator",
+  "component":"Kubik Incubator",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW040"
+  ]
+ },
+ {
+  "platform_string":"Kubik incubator",
+  "component":"Kubik incubator",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW040"
+  ]
+ },
+ {
+  "platform_string":"Lada",
+  "component":"Lada",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW306"
+  ]
+ },
+ {
+  "platform_string":"Low Pressure Growth Chambers (LPGC)",
+  "component":"Low Pressure Growth Chambers (LPGC)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW307"
+  ]
+ },
+ {
+  "platform_string":"MSS Container T\/P",
+  "component":"MSS Container T\/P",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW310"
+  ]
+ },
+ {
+  "platform_string":"Magenta Vessels",
+  "component":"Magenta Vessels",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW308"
+  ]
+ },
+ {
+  "platform_string":"Mice Drawer System (MDS)",
+  "component":"Mice Drawer System (MDS)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW112"
+  ]
+ },
+ {
+  "platform_string":"Mouse Habitat Unit",
+  "component":"Mouse Habitat Unit",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW105"
+  ]
+ },
+ {
+  "platform_string":"Mouse Habitat Unit (MHU)",
+  "component":"Mouse Habitat Unit (MHU)",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW105"
+  ]
+ },
+ {
+  "platform_string":"Mouse habitat Unit",
+  "component":"Mouse habitat Unit",
+  "method":"containment",
+  "kind":null,
+  "entity_ids":[
+   "HW105"
+  ]
+ },
+ {
+  "platform_string":"Multi-use Variable-gravity Platform (MVP)",
+  "component":"Multi-use Variable-gravity Platform (MVP)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW036"
+  ]
+ },
+ {
+  "platform_string":"Multiple Artificial- gravity Research System (MARS)",
+  "component":"Multiple Artificial- gravity Research System (MARS)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW311"
+  ]
+ },
+ {
+  "platform_string":"NASA Space Radiation Laboratory at Brookhaven National Laboratory",
+  "component":"NASA Space Radiation Laboratory at Brookhaven National Laboratory",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW247"
+  ]
+ },
+ {
+  "platform_string":"NSRL",
+  "component":"NSRL",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW247"
+  ]
+ },
+ {
+  "platform_string":"NanoRack",
+  "component":"NanoRack",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW312"
+  ]
+ },
+ {
+  "platform_string":"Opticell",
+  "component":"Opticell",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW313"
+  ]
+ },
+ {
+  "platform_string":"Opticell Processing Module",
+  "component":"Opticell Processing Module",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW314"
+  ]
+ },
+ {
+  "platform_string":"Oxford Nanopore Technologies MinION",
+  "component":"Oxford Nanopore Technologies MinION",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW014"
+  ]
+ },
+ {
+  "platform_string":"Partial Weight Bearing",
+  "component":"Partial Weight Bearing",
+  "method":"curated_kind",
+  "kind":"ground_analog",
+  "entity_ids":[
+   "HW315"
+  ]
+ },
+ {
+  "platform_string":"RR-1 Flight Hardware",
+  "component":"RR-1 Flight Hardware",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW142"
+  ]
+ },
+ {
+  "platform_string":"Random Positioning Machine (RPM)",
+  "component":"Random Positioning Machine (RPM)",
+  "method":"curated_kind",
+  "kind":"ground_analog",
+  "entity_ids":[
+   "HW316"
+  ]
+ },
+ {
+  "platform_string":"Rodent Flight Hardware (Transporter and Habitat)",
+  "component":"Rodent Flight Hardware (Transporter and Habitat)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW142",
+   "HW232"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat",
+  "component":"Rodent Habitat",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW142"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Suspension",
+  "component":"Rodent Habitat",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW142"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Suspension",
+  "component":"Hindlimb Suspension",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW233"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Suspension, Block Obespecheniya Soderzhaniya (BOS)",
+  "component":"Rodent Habitat",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW142"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Suspension, Block Obespecheniya Soderzhaniya (BOS)",
+  "component":"Hindlimb Suspension",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW233"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Suspension, Block Obespecheniya Soderzhaniya (BOS)",
+  "component":"Block Obespecheniya Soderzhaniya (BOS)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW280"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Unloading",
+  "component":"Rodent Habitat",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW142"
+  ]
+ },
+ {
+  "platform_string":"Rodent Habitat, Hindlimb Unloading",
+  "component":"Hindlimb Unloading",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW233"
+  ]
+ },
+ {
+  "platform_string":"Rodetn Habitat",
+  "component":"Rodetn Habitat",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW142"
+  ]
+ },
+ {
+  "platform_string":"Rotary Cell Culture System, High Aspect Rotating Vessel (HARV)",
+  "component":"Rotary Cell Culture System",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW317"
+  ]
+ },
+ {
+  "platform_string":"Rotary Cell Culture System, High Aspect Rotating Vessel (HARV)",
+  "component":"High Aspect Rotating Vessel (HARV)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW299"
+  ]
+ },
+ {
+  "platform_string":"Rotary Cell Culture System, Random positioning machine",
+  "component":"Rotary Cell Culture System",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW317"
+  ]
+ },
+ {
+  "platform_string":"Rotary Cell Culture System, Random positioning machine",
+  "component":"Random positioning machine",
+  "method":"curated_kind",
+  "kind":"ground_analog",
+  "entity_ids":[
+   "HW316"
+  ]
+ },
+ {
+  "platform_string":"Rotating Wall Vessel",
+  "component":"Rotating Wall Vessel",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW318"
+  ]
+ },
+ {
+  "platform_string":"Shuttle Life Sciences Research (Middeck)",
+  "component":"Shuttle Life Sciences Research (Middeck)",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW321"
+  ]
+ },
+ {
+  "platform_string":"Shuttle Life Sciences Research (Middeck), Group Activation Packs (GAPS)",
+  "component":"Shuttle Life Sciences Research (Middeck)",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW321"
+  ]
+ },
+ {
+  "platform_string":"Shuttle Life Sciences Research (Middeck), Group Activation Packs (GAPS)",
+  "component":"Group Activation Packs (GAPS)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW027"
+  ]
+ },
+ {
+  "platform_string":"Space Automated Bioproduct Laboratory (SABL)",
+  "component":"Space Automated Bioproduct Laboratory (SABL)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW043"
+  ]
+ },
+ {
+  "platform_string":"Space Tango High-Throughput Passive System",
+  "component":"Space Tango High-Throughput Passive System",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW322"
+  ]
+ },
+ {
+  "platform_string":"Spacelab and Animal Enclosure Module (AEM)",
+  "component":"Spacelab and Animal Enclosure Module (AEM)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW068"
+  ]
+ },
+ {
+  "platform_string":"Storage rack, cooling rack, working rack",
+  "component":"Storage rack",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW323"
+  ]
+ },
+ {
+  "platform_string":"Storage rack, cooling rack, working rack",
+  "component":"cooling rack",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW292"
+  ]
+ },
+ {
+  "platform_string":"Storage rack, cooling rack, working rack",
+  "component":"working rack",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW328"
+  ]
+ },
+ {
+  "platform_string":"Surfaces",
+  "component":"Surfaces",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW324"
+  ]
+ },
+ {
+  "platform_string":"TEXUS-51",
+  "component":"TEXUS-51",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW325"
+  ]
+ },
+ {
+  "platform_string":"Tissue Chips in Space",
+  "component":"Tissue Chips in Space",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW326"
+  ]
+ },
+ {
+  "platform_string":"VEGGIE",
+  "component":"VEGGIE",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (VEGGIE)",
+  "component":"Vegetable Production System (VEGGIE)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (VEGGIE), APEX Growth Unit",
+  "component":"Vegetable Production System (VEGGIE)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (VEGGIE), APEX Growth Unit",
+  "component":"APEX Growth Unit",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW275"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (VPS\/Veggie)",
+  "component":"Vegetable Production System (VPS\/Veggie)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (Veggie)",
+  "component":"Vegetable Production System (Veggie)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (Veggie) Vegetable Production System (VPS)",
+  "component":"Vegetable Production System (Veggie) Vegetable Production System (VPS)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (Veggie), ISS Environmental Simulator (ISSES)",
+  "component":"Vegetable Production System (Veggie)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (Veggie), ISS Environmental Simulator (ISSES)",
+  "component":"ISS Environmental Simulator (ISSES)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW242"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (Veggie), International Space Station Environment Simulator (ISSES)",
+  "component":"Vegetable Production System (Veggie)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vegetable Production System (Veggie), International Space Station Environment Simulator (ISSES)",
+  "component":"International Space Station Environment Simulator (ISSES)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW242"
+  ]
+ },
+ {
+  "platform_string":"Veggie",
+  "component":"Veggie",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW033"
+  ]
+ },
+ {
+  "platform_string":"Vented Fly Box, Cargo Transfer Bag (CTB)",
+  "component":"Vented Fly Box",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW234"
+  ]
+ },
+ {
+  "platform_string":"Vented Fly Box, Cargo Transfer Bag (CTB)",
+  "component":"Cargo Transfer Bag (CTB)",
+  "method":"curated_kind",
+  "kind":"generic_or_unclear",
+  "entity_ids":[
+   "HW288"
+  ]
+ },
+ {
+  "platform_string":"Vented Vly Box (VFB), a modified Nanoracks Box",
+  "component":"Vented Vly Box (VFB)",
+  "method":"exact_or_acronym",
+  "kind":null,
+  "entity_ids":[
+   "HW234"
+  ]
+ },
+ {
+  "platform_string":"Vented Vly Box (VFB), a modified Nanoracks Box",
+  "component":"a modified Nanoracks Box",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW234"
+  ]
+ },
+ {
+  "platform_string":"Virgin Galactic SpaceShipTwo, Blue Origin New Shepard",
+  "component":"Virgin Galactic SpaceShipTwo",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW327"
+  ]
+ },
+ {
+  "platform_string":"Virgin Galactic SpaceShipTwo, Blue Origin New Shepard",
+  "component":"Blue Origin New Shepard",
+  "method":"curated_kind",
+  "kind":"vehicle_or_location",
+  "entity_ids":[
+   "HW281"
+  ]
+ },
+ {
+  "platform_string":"eOSTEO (enhanced Osteoporosis Experiments on Orbit)",
+  "component":"eOSTEO (enhanced Osteoporosis Experiments on Orbit)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW294"
+  ]
+ },
+ {
+  "platform_string":"microphysiological system (MPS)",
+  "component":"microphysiological system (MPS)",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW309"
+  ]
+ },
+ {
+  "platform_string":"mouse habitat cage units (HCU)",
+  "component":"mouse habitat cage units (HCU)",
+  "method":"curated",
+  "kind":null,
+  "entity_ids":[
+   "HW105"
+  ]
+ },
+ {
+  "platform_string":"rotating-wall vessel (RWV) bioreactor",
+  "component":"rotating-wall vessel (RWV) bioreactor",
+  "method":null,
+  "kind":null,
+  "entity_ids":[
+   "HW319"
+  ]
+ }
+]

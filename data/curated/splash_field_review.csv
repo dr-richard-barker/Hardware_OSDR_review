@@ -1,0 +1,47 @@
+splash_id,field,verdict,likely_source_id,reason,independent_evidence
+127,specimen_types_supported,misattributed,125.0,"Succinonitrile is the transparent model alloy studied by PFMI (#125), not a protein-crystallization specimen",
+128,specimen_types_supported,misattributed,126.0,PCAM crystallization trays are the PCG-STES (#126) specimen format; BioMole is a molecular-biology (DNA/RNA) instrument,
+128,specimen_size,misattributed,126.0,'up to 6 cylinders per STES' explicitly names STES (#126),
+129,note_specs,misattributed,127.0,"'One Ryutai Rack holds ~6 cartridges' describes PCRF (#127), which is installed in the Ryutai Rack",
+131,specimen_size,uncertain,129.0,Syringe-pinned drop of ~25.4 mm matches Ring Sheared Drop (#129) rather than SUBSA ampoules,
+132,specimen_types_supported,misattributed,130.0,"Solid combustible materials (PMMA, cotton) are SoFIE (#130) specimens, not solution crystals",
+133,specimen_types_supported,misattributed,131.0,Semiconductor/crystal melts are SUBSA (#131) specimens; SALI is a biological incubator,
+133,specimen_size,misattributed,131.0,Ampoules with a hot zone describe the SUBSA furnace (#131),
+134,specimen_types_supported,uncertain,132.0,Generic solution samples; consistent with the -2 row offset seen in neighbouring records,
+136,specimen_types_supported,misattributed,134.0,'Small live animals' cannot be a thermal-cycler (SmartCycler) specimen,
+137,specimen_types_supported,misattributed,135.0,Blood/saliva/urine/swab list belongs to the Wet Lab Kit (#135); identity of #137 is an aquatic habitat,SPLASH #137 own background text names the Aquatic Habitat (AQH)
+137,specimen_size,misattributed,135.0,"Vials, syringes, needles, gloves are Wet Lab Kit (#135) contents",SPLASH #137 own background text names the Aquatic Habitat (AQH)
+137,background,duplicate_of,69.0,"Background describes the JAXA Aquatic Habitat (AQH), which is also record #69",SPLASH #137 own background text names the Aquatic Habitat (AQH)
+138,specimen_types_supported,misattributed,136.0,RNA from microbial cultures describes the Wet Lab RNA SmartCycler (#136),SPLASH #138 own background text names the Advanced Plant Habitat
+138,specimen_size,misattributed,136.0,16 reaction tubes per run is a SmartCycler (#136) specification,SPLASH #138 own background text names the Advanced Plant Habitat
+138,background,duplicate_of,34.0,Record is named Plant Growth Unit but its background describes the Advanced Plant Habitat (#34),SPLASH #138 own background text names the Advanced Plant Habitat
+139,specimen_types_supported,misattributed,137.0,Medaka/zebrafish are Aquatic Habitat (#137/#69) specimens; AAU is a rodent transfer unit,
+139,specimen_size,misattributed,137.0,Two aquaria of ~0.7 L each describe the Aquatic Habitat,
+140,specimen_types_supported,misattributed,138.0,"Arabidopsis, dwarf wheat, lettuce, peppers are the APH crop list (#138 background = APH); BRIC-Opti is a small passive canister",OSDR registry 2047 description: four OptiCells for microbial growth; flown once (POEMS 2006-07)
+140,specimen_size,misattributed,138.0,Shoot area ~1708 cm2 and 43 cm shoot height match APH; impossible in a BRIC canister,OSDR registry 2047 description: four OptiCells for microbial growth; flown once (POEMS 2006-07)
+141,specimen_types_supported,misattributed,142.0,Live adult mice belong to the Rodent Habitat (#142); ESA Biopack hosted cells and small organisms,"OSDR registry 999 description: bacterial cultures, mammalian cells, tissue cultures, small plants, insects"
+141,specimen_size,misattributed,139.0,Mice in Transporter/Habitat and AAU transfers describe the rodent system (#139/#142),"OSDR registry 999 description: bacterial cultures, mammalian cells, tissue cultures, small plants, insects"
+142,specimen_types_supported,misattributed,140.0,"Microbes and plant tissue cultures in OptiCell plates describe a culture canister (BRIC-Opti #140), not the Rodent Habitat",OSDR registry 1379 (Rodent Habitat AEM-X)
+142,specimen_size,misattributed,140.0,Up to 4 OptiCell plates is a BRIC-Opti (#140) capacity,OSDR registry 1379 (Rodent Habitat AEM-X)
+142,note_specs,misattributed,140.0,Text names BRIC-Opti explicitly,OSDR registry 1379 (Rodent Habitat AEM-X)
+144,specimen_types_supported,misattributed,142.0,Mice belong to the rodent habitat; the Cell Culture Model hosts cells and microbes,
+144,specimen_size,misattributed,142.0,Up to 10 adult mice belongs to the rodent habitat,
+145,specimen_types_supported,misattributed,143.0,"Bacteria, fungi, cell cultures, small plants match BioRack (#143); AAEU housed aquatic animals",OSDR registry 239 components: aquarium package for newts and Medaka fish
+146,specimen_types_supported,misattributed,144.0,Mammalian cell lines and microbial cultures match the Cell Culture Model (#144); FEU housed frogs,OSDR registry 241 description: habitat for four female frogs and embryos
+146,specimen_size,misattributed,144.0,CEU/CEU2/MEU chamber specifications name the Cell Culture Model (#144) units,OSDR registry 241 description: habitat for four female frogs and embryos
+146,temperature_range,misattributed,144.0,CEU/CEU2/MEU set points name the Cell Culture Model (#144) units,OSDR registry 241 description: habitat for four female frogs and embryos
+147,specimen_types_supported,misattributed,145.0,"Medaka, newt, toadfish were AAEU (#145) specimens; CEBAS flew swordtail fish, snails and hornwort","OSDR registry 907 description: swordtail fish (Xiphophorus helleri), water snails"
+123,note_specs,misattributed,121.0,Text names MOBIAS (#121) explicitly,
+120,note_specs,uncertain,123.0,"5000x magnification at 10 kV describes an electron microscope, not a rack",
+39,specimen_size,uncertain,42.0,'Type IV and Passive EUE' is EMCS (#42) experiment-container terminology,
+39,lighting,uncertain,42.0,'EUE specific' is EMCS (#42) terminology,
+39,specimen_types_supported,plausible,,Generic multi-organism list consistent with a multi-use facility,
+107,specimen_types_supported,plausible,,KOBAIRO is a gradient-heating furnace for crystal growth; field is correct,
+17,specimen_size,plausible,,Sibling record (#18 single-cassette variant) shares wording,
+94,dims,plausible,,Generic EXPRESS-drawer statement shared with many records,
+89,volume,uncertain,91.0,"ELF is a JEM facility; 'EXPRESS rack drawer' unlikely, but non-biological",
+84,gas_control,plausible,,Ultra-high vacuum is correct for Cold Atom Lab,
+32,temperature_range,plausible,,Generic room-temperature statement,
+60,note_specs,plausible,,RadFET resolution statement is consistent with the instrument,
+62,note_specs,plausible,,Dosimeter range/resolution consistent with the instrument,
+48,background,plausible,,"Background mentions MixStix support, which Black Box provides",

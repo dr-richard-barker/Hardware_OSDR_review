@@ -1,0 +1,16 @@
+key,label,group,critical
+G1,Enclosure dimensions,geometry,True
+G2,Specimen-chamber volume or dimensions,geometry,True
+G3,Specimen layout / number of units,geometry,False
+F1,Ventilation mode (forced / passive / sealed),flow,True
+F2,Airflow rate or velocity,flow,True
+E1,Temperature at specimen,environment,True
+E2,Relative humidity,environment,False
+E3,Gas composition / CO2-O2 control,environment,False
+E4,Pressure,environment,False
+E5,"Lighting (type, flux or darkness)",environment,False
+B1,Specimen types,biology,True
+B2,Nutrient / water delivery,biology,False
+B3,Specimen gas-exchange / metabolic load,biology,False
+T1,Heat load / power,thermal,False
+W1,Wall / membrane gas permeability,boundary,False

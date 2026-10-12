@@ -1,0 +1,29 @@
+ENTITY HW264: XROOTS
+
+--- unit 1 | source=registry record=2039 field=name
+XROOTS
+
+--- unit 2 | source=registry record=2039 field=description
+Hardware Type: Active aeroponic irrigation system inserted into VEGGIE.
+
+
+In the future, plants may play a significant role in long-duration life support in space by providing food, producing oxygen, removing carbon dioxide, and purifying water. In the near term, plants will provide a means to supplement crew diet through the production of salad crops as a source of fresh food. For example, Sierra Space is developing the conceptual Astro Garden large-scale vegetable production system to produce sufficient garden vegetables for a crew of four. The eXposed Root On-Orbit Test System (XROOTS) tests critical aspects of the Astro Garden system by using hydroponic and aeroponic techniques to grow crop plants without soil, making large scale plant production in space feasible.
+
+Current space-based plant systems are small and use particulate-media-based water and nutrient delivery systems. These systems do not scale well in a space environment due to mass, containment, maintenance, and sanitation issues. To grow sufficient crops to provide fresh food to crews in space vehicles or habitats it is necessary to develop a water and nutrient delivery system that can be scaled for large volume plant production. Hydroponic and aeroponic techniques could provide a vital alternative to enable plant systems of sufficient size to contribute to future space exploration.
+
+On Earth, these soilless technologies can sustain high productivity rates in commercial settings, provide a degree of configuration flexibility, and are relatively simple to maintain. However, to be effective in the space environment these systems need to be adapted to operate in microgravity while providing sufficient water and nutrients to support crop growth, maintaining good aeration in the root zone, and accommodating a variety of plant types including leafy green, fruiting (e.g., tomato), and root (e.g., carrot) crops. Important characteristics for operating in the space environment include low mass, power, volume, and crew-time requirements, coupled with high reliability, cleanability, and maintainability.
+
+The objective of the XROOTS Technology Demonstration is to evaluate soilless nutrient delivery and recovery techniques over the course of plant growth in the microgravity environment of the space station. XROOTS will be integrated with one of the Veggie plant growth units currently being used aboard the space station. The existing baseplate in the Veggie unit is replaced with the XROOTS enclosure, and a custom bellows replaces the standard Veggie bellows. XROOTS uses power and data feeds from the EXPRESS rack as well as thermal conditioning. XROOTS is designed to test variables such as nutrient delivery and usage, nutrient recovery, power utilization, spray characteristics and protocols, and root zone atmosphere. 
+
+Following launch, the base plate and bellows will be removed from the Veggie Facility, the XROOTS module will be mounted below Veggie, and data and power connections established. Veggie will provide lighting and air exchange between the Veggie growing volume containing XROOTS and the space station cabin. After a thorough checkout of the XROOTS system, seed cartridges will be placed in the XROOTS chambers, the nutrient solution will be mixed and placed in the XROOTS reservoir, and the XROOTS module will be powered up and initiated to begin testing. There are multiple independent growth chambers that are imaged from seed germination onward. 
+
+The Sierra Space XROOTS team has successfully brought the XROOTS from concept to flight hardware completion. Initial efforts included design of special capillary configurations for controlling water movement in the XROOTS root modules, and preliminary testing of these concepts on a parabolic flight aircraft. The team then completed the XROOTS system design and software architecture, and developed a high-fidelity ground unit for preliminary testing. The flight unit was then fabricated, and the XROOTS team is currently working to complete the final test so that the system may be turned over to NASA for flight.
+
+The ability to effectively produce fresh food in space will be critical for long-duration NASA missions, including exploration missions. The XROOTS Technology Demonstration is a significant step in transitioning from small-scale plant production systems currently being flown to systems of sufficient scale to supplement the crew’s diet and to enhance the quality of the crew’s habitation. This project will advance the Technology Readiness Levels (TRLs) of plant-culture technologies for space applications, and help scale up current space-based plant growth system technologies to levels appropriate for life-support applications. Furthermore, it will generate information to understand plant-based systems operating in the real space environment, demonstrate root zone configurations that adhere to real-life space vehicle and space operational constraints, and provide data necessary to better evaluate hybrid life-support architectures for different mission scenarios.
+
+
+
+--- unit 3 | source=registry record=2039 field=components_text
+Media Components: Nutrients, minerals and water.
+
+

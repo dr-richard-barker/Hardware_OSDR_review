@@ -1,0 +1,51 @@
+ENTITY HW215: Vestibular Function Experiment Unit (VFEU)
+
+--- unit 1 | source=registry record=924 field=name
+Vestibular Function Experiment Unit (VFEU)
+
+--- unit 2 | source=registry record=924 field=description
+The Vestibular Function Experiment Unit (VFEU) is a rack-mounted piece of hardware built to provide life support capability for the Oyster toadfish, Opsanus tau, in the Shuttle Spacelab. The VFEU contains the Fish Package Control Unit (FPCU) and two Fish Packages (FP). The Neural Data Acquisition System (NDAS), consisting of the Telemetry System, the Data Recorder (DR) and the Data Interface Unit (DIU), is used for fish neural data acquisition in addition to the VFEU. Each Fish Package includes 1 fish container that houses 1 fish (implanted with multichannel electrodes or microwire electrode) in artificial seawater. Two fish total can be housed in each VFEU.
+
+--- unit 3 | source=registry record=924 field=components_text
+Neural Data Acquisition System (NDAS): The NDAS is composed of the Data Interface Unit (DIU), the Data Recorder (DR), the Telemetry Data Processing Unit (TDPU), transmitters (Tx), receivers (Rx), tank coil, and wire harness.  The purpose of the NDAS is to monitor the nerve impulse and the acceleration signal from toadfish within the Fish Packages. | Fish Package (FP): The Fish Package holds one toadfish within a fish container, which contains a front window, water pump, air pump, water accumulator, artificial lung, and water purification system. The Telemetry Data Processing Unit (TDPU) and receiver (Rx) of the NDAS are assembled on the FP. | Fish Package Control Unit (FPCU): The FPCU is the main structural housing unit and the controller for the Fish Packages.  Each FPCU holds two Fish Packages. | Data Recorder: The Data Recorder records fish neural and acceleration data, the water temperature and pressure, the acceleration of the FP, and the time code. | Data Interface Unit: The DIU receives the measurement data from the TDPU on each FP.  The data is then sent to the Data Recorder. | Overslide Protection Kit: To prevent the FP from sliding out of the FPCU, an Overslide Protection Wire is attached between the  FP and FPCU, and a Stopper is attached to the VFEU Front Panel just before the FP slide operation is performed.  This wire protects the FP from sliding over 25 cm and the stopper prevents the FP from QD reconnection during the operation. | Water Sample and Refill Kit: The Water Sample Kit contains syringes with bags and a needle guide for FP water sampling. The Water Refill Kit contains syringes filled with seawater or freshwater for FP water supplement.
+
+--- unit 4 | source=payload record=Neurolab field=description
+Mission Overview
+
+Supported by NASA, international space agencies and domestic partners, the Neurolab mission is a dedicated 16 day life sciences mission scheduled for March 1998 which will focus on neuroscience research.  Neurolab's  international partners are CSA (Canadian Space Agency), ESA (European Space Agency), CNES (Canadian Space Agency), DARA (German Space Agency) and NASDA (Japanese Space Agency; domestic partners include several institutes at the National Institutes of Health (NIH) including the Division of Research Grants; the National Institute on Aging; the National Institute on Deafness, and other Communication Disorders; National Heart, Lung, and Blood Institute; National Institute on Neurological Disorders and Strokes; and the Office of Naval Research.  Funding and development of equipment and experiment hardware for the Neurolab mission will be shared between all partners.
+
+Neurolab will use the orbiting space laboratory called Spacelab, which can be placed in the cargo bay of the Space Shuttle, to conduct life sciences experiments.  The goals and objectives of the Neurolab mission are:  1) to use the unique environment of space flight to study fundamental neurobiological processes; 2) to increase the understanding of the mechanisms responsible for neurologic and behavioral changes that occur in space flight; 3) to further life sciences goals in support of human space flight; and 4) to apply results from space studies to the health, well-being, and economic benefits of people on Earth.
+
+The Neurolab science payload is organized into eight science teams; each principal investigator is assigned to one of these teams. Johnson Space Center oversees the human life sciences teams:  Autonomic Nervous System, Sensory Motor and Performance, Sleep and Vestibular, while Ames Research Center oversees the four animal life sciences teams:  Aquatic, Adult Neuronal Plasticity, Mammalian Development and Neurobiology.  The philosophy of team development was to merge complimentary scientific objectives to enhance data collection, and to share data collection, procedures, subjects, facilities and/or analysis of results. 
+
+Autonomic Nervous System investigations will study the effects of microgravity on the autonomic nervous system (ANS); specifically, on its role in cardiovascular regulation.  In order to monitor the sympathetic response to various ANS stressors and determine the effect of microgravity on the ANS, measurements of muscle sympathetic nerve activity, lower body negative pressure, plasma volume, blood pressure, cardiac performance by electrocardiogram (ECG) testing, and metabolite levels.
+
+The Sensory and Performance Team will examine the effects of space flight on sensory-motor function, performance and perception.  Several tests are planned to examine the coordination between vision and motor activity during acclimation to microgravity, the compensation for movement in near-weightlessness, and the after-effects upon return to Earth.
+
+The Sleep investigation team will evaluate the normal sleep patterns of crew members before, during and after space flight to identify factors which may be contributing to sleep disturbances in space.  Sleep experiments will examine whether microgravity contributes to the alterations in sleep patterns.  Scientists will also investigate the use of melatonin as a hypnotic agent for the treatment of sleep disturbances and the improvement of mood and cognitive performance of the crewmembers.
+
+The Vestibular System is made up of a cavity situated at the entrance to the bony labyrinth in the inner ear which contains the tiny organs governing equilibrium and balance -- the saccule and utricle.  This team will measure eye movements and perception of astronauts during artificial linear acceleration to determine how spatial orientation of the vestibulo-ocular and optokinetic responses are altered in microgravity.
+
+The Aquatic Team will study the afferent and efferent responses of the vestibular cranial nerve in Toadfish in response to linear stimuli, before, during and after space flight.  The team will also study the development and formation of the gravity-sensing apparatus in fresh water snails and sword tail fish, both of which are planned to undergo significant portions of their embryonic and larval development in flight.
+
+The Adult Neuronal Plasticity Team will examine the neural and physiological changes during and following space flight to address the response in the adult Central Nervous System to altered gravity.  Three critical areas of neural adaptation will be examined:  vestibular and motor plasticity, circadian and sleep/wake physiology and anatomy, and homeostatic regulation.
+
+The Mammalian Development team will investigate the effects of space flight on the development of the mammalian nervous system.  The development of the autonomic nervous system (ANS) and neuromuscular system will be carefully studied and measured so that differences in neurological development in space versus that on Earth can be determined.
+
+The Neurobiology team will research the role that gravity plays in specifying the pathways through which nerves send signals throughout the body.  Scientists plan to examine the sensory neurons which are controlled by genetic and environmental cues in both the development and regeneration of gravity sensing systems in crickets.
+
+The Neurolab mission encompasses many areas of neuroscience research and will allow in-depth study of several species in space.  Currently scheduled for early 1998, Neurolab will continue to undergo further definition and planning in the upcoming years.
+
+--- unit 5 | source=payload record=Neurolab field=hardware_version
+As Flown on STS-90 and STS-95: Two VFEUs were flown with all the components as described on the Neurolab mission.
+
+One VFEU was flown on STS-95 in a reflight of the Neurolab experiment.
+
+--- unit 6 | source=payload record=VFEU field=description
+Life sciences research included assessments of the effects of microgravity on the vestibular system and how its efferent control can add to our knowledge of its function and may suggest future therapies for control of Earth-bound motion sickness.
+
+--- unit 7 | source=payload record=VFEU field=hardware_version
+As Flown on STS-90 and STS-95: Two VFEUs were flown with all the components as described on the Neurolab mission.
+
+One VFEU was flown on STS-95 in a reflight of the Neurolab experiment.
+

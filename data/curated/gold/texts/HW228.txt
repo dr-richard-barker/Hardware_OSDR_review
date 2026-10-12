@@ -1,0 +1,26 @@
+ENTITY HW228: Fungal Immunity (FIT) Fly Kit
+
+--- unit 1 | source=registry record=1332 field=name
+Fungal Immunity (FIT) Fly Kit
+
+--- unit 2 | source=registry record=1332 field=description
+The Fly Kit consisted of 1) ten vented FIT Fly Kits (one fly cassette containing a food tray housed in a European Space Agency (ESA) vented Type 1 Container per kit, 2) one FIT Fungus Kit (two fungus tubes (10 ml) that are housed in an ESA vented Type 1 Container, 3) one RAM Kit (one Passive Radiation Dosimeter stored in an ESA vented Type 1 Container), 4) one Hobo data logger, and 5) five Platform Kits (one Food Tray Change Out Platform carrying one filled food tray per kit).
+
+--- unit 3 | source=payload record=FIT field=description
+Fungal Pathogenesis, Tumorigenesis, and Effects of Host Immunity in the Space Environment (FIT) Project was a manifested Shuttle Sortie payload and all operations occurred on-board the Orbiter. 
+The Life Sciences Division, Code SL at Ames Research Center· (ARC) managed this project's In-flight activities.
+The FIT payload was a passive middeck locker experiment. On-orbit operations were limited to a one-time food replenishment for the adult Drosophila and transfer of larvae to new experiment containers to support second-generation specimen growth. The fungal container, RAM and HOBO had no on-orbit operations. 
+
+As astronauts begin to leave the orbit of Earth to explore the moon, Mars, and beyond, they will leave the protective environment of the Earth system. Also, their travel will take them far away from Earth, which will result in a longer time to return to Earth in the event of a medical emergency or illness. Therefore, it is critical that a sound understanding of how the space flight environment affects humans be developed so that the biomedical risks can be reduced or eliminated. The NASA Fungal Pathogenesis, Tumorigenesis and Effects of Host Immunity in Space (FIT) experiment was designed to use a simple, well studied model organism to gain preliminary data that is statistically meaningful and focuses on three important issues to astronaut health in space: 1) immune system function, 2) infection due to bacteria or fungus, and 3) pathogen virulence. The FIT experiment was a life science research study that was conducted on the space shuttle (STS-121). This experiment addressed important issues concerning changes in immune system function during space flight. This experiment used the model organism, Drosophila, that is easy to grow in large numbers in a relatively small space and requires very few shuttle resources. The immune system cellular and molecular functions are highly conserved and similar to those in humans. Also, FIT examined the seeming link between the space flight environment and changes in the pathogenic behavior of a microorganism. Data from past space flight experiments of microbiological specimens suggested that these organisms would become more virulent in the space environment. FIT exposed a common fungus used in agricultural insect control to the space flight environment. After the fungus was returned to Earth, infection studies were conducted to investigate changes in the virulence of the organism and whether there are any changes in how the organism interacted with the host. Overall, this fungal study addressed how hosts responded to pathogens that might have altered virulence from the space environment.
+(was Payload ID ULF1.1)
+
+--- unit 4 | source=payload record=FIT field=hardware_version
+As Flown on STS-121: FIT Configuration:
+
+Flies were housed in fly kits and placed in stowage foam on the Shuttle middeck at ambient temperature and relative humidity. Each of the
+ten fly kits consisted of a polycarbonate fly cassette, with a 2ml food tray, inside a TypeI aluminum container developed by the European Space Agency. Ten virgin females and 5 males were housed in 5 of the fly cassettes, and food trays containing eggs and larvae were transferred
+on day 6 of flight to 5 new empty cassettes. The temperature and relative humidity on the Shuttle middeck were monitored continuously using a HOBO data logger (Onset Computer Corporation).
+
+--- unit 5 | source=study record=OSD-278 field=protocol:growth protocol
+The hardware used in this study was the FIT (Fly Immunity and Tumors) cassette and changeout platform, as described in our previous Drosophila experiments on the ISS. Food trays were prepared using the methods described below, and stored in a cargo transfer bag (CTB) at 4 C for launch. Serratia marcescens Db11 was obtained from the University of Minnesota C. elegans stock center. To prepare for the spaceflight experiment, the Db11 strain was grown for 20 h in liquid LB broth with 100
+
