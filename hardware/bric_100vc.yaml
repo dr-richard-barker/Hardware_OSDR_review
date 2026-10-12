@@ -1,0 +1,195 @@
+entity_id: HW269
+name: BRIC-100VC (Biological Research in Canisters, 100 mm Petri dish vacuum containment unit)
+vendor: NASA Kennedy Space Center
+splash_ids: []
+registry_ids: ['2046']
+curated: '2026-10-12'
+location:
+  value: ISS stowage locker (6 or 9 canisters per locker); flown on Mir (BRIC-MIR, STS-81 to STS-84)
+  unit: '-'
+  source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact sheet
+    SP-2015-07-291-KSC; NTRS 20160005064
+  url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+  quote: Depending on storage orientation, up to 6 or 9 canisters have been flown within an International Space
+    Station (ISS) stowage locker.
+  kind: specified
+  note: 'Payload BRIC-MIR: "delivered to the Mir Space Station on STS-81 and returned 4.5 months later on STS-84".'
+geometry:
+  enclosure_cylinder_mm:
+    value: null
+    unit: mm
+    note: Internal diameter/height not sourced; only external dimensions (below).
+  enclosure_external_cylinder_mm:
+    value: [114, 160]
+    unit: mm
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: The outside dimensions of the BRIC-100VC canisters are 16.0 cm (height) x 11.4 cm (outside diameter).
+    kind: specified
+    note: '[outside diameter, height]. Registry 2046 and NASA SMD page give the same values.'
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Not sourced.
+  specimen_container:
+    value: standard 100 mm Petri dishes or 50 mL conical tubes
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: The BRIC-100VC canister has been optimized to accommodate standard 100 mm laboratory petri dishes or
+      50 mL conical tubes.
+    kind: specified
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: Dish/tube dimensions not given in the BRIC sources.
+  n_specimen_units:
+    value: 4
+    unit: Petri dishes per canister
+    source: Levine HG, Anderson KF, Krikorian AD (2000) The "gaseous" environment in sealed BRIC-100VC canisters
+      flown on Mir with embryogenic daylily cell cultures. Adv Space Res 26:307-310. doi:10.1016/s0273-1177(99)00576-1
+      (abstract only)
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%22BRIC-100VC%22&format=json&resultType=core
+    quote: each containing four 100 mm dia polycarbonate petri dishes with embryogenic daylily (Hemerocallis sp.)
+      cultures
+    kind: specified
+    note: 'ESA 2003 workshop report: "can accommodate up to four 100 mm Petri plates". Planarian flight (Morokuma
+      2017): 8 x 50 mL tubes in two canisters, secured by 3D-printed retainers.'
+  layout:
+    value: null
+    note: Lower portion holds data loggers (fact sheet); dish/tube arrangement not sourced.
+specimen:
+  types:
+    value: daylily somatic embryo cultures (Mir, 4.5 months, 5% CO2); planarian flatworms in 50 mL tubes (29 days)
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: has supported Dugesia japonica (flatworm) within spring under normal atmospheric conditions for 29 days
+      in space and Hemerocallis lilioasphodelus L. (daylily) somatic embryo development within a 5% CO2 gaseous
+      environment for 4.5 months in space.
+    kind: specified
+ventilation:
+  mode:
+    value: sealed
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: BRIC-100VC is a completely sealed, anodized-aluminum cylinder (Fig. 1) providing containment and structural
+      support of the experimental specimens.
+    kind: specified
+    note: Gas composition is set pre-flight by purging through lid valves; no in-flight exchange.
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not applicable (sealed).
+  inlet:
+    value: rapid-disconnect purge valves in top and bottom lids (pre-flight gas fill only); toggle-latch + O-ring
+      top lid
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: The top and bottom lids of the canister include rapid disconnect valves for filling the canister with
+      selected gases.
+    kind: specified
+  outlet:
+    value: null
+    note: Opposite-lid purge valve (pre-flight only).
+environment:
+  temperature_C:
+    value: null
+    unit: degC
+    note: Not sourced. Levine et al. 2000 present flight temperature, RH, CO2 and ethylene data for BRIC-MIR but
+      the values are not in the abstract (full text not accessible). Planarian flight (Morokuma 2017) logged water
+      temperature but reports no numeric range.
+  rh_percent:
+    value: null
+    unit: '%'
+    note: Not sourced (see Levine et al. 2000 - full text needed).
+  co2_ppm:
+    value: 50000
+    unit: ppm
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: Hemerocallis lilioasphodelus L. (daylily) somatic embryo development within a 5% CO2 gaseous environment
+      for 4.5 months in space.
+    kind: derived
+    note: '5% CO2 (v/v) = 50,000 ppm; initial purge composition for the daylily (BRIC-MIR) configuration. Planarian
+      flight: "normal atmospheric conditions".'
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: null
+    note: Not sourced (no light-tightness statement for BRIC-100VC).
+nutrients:
+  mode:
+    value: 'experiment-specific: culture medium (daylily embryogenic cultures) or spring water in sealed 50 mL tubes
+      (planaria)'
+    unit: '-'
+    source: 'Morokuma J, Durant F, Williams KB, et al. (2017) Planarian regeneration in space: Persistent anatomical,
+      behavioral, and bacteriological changes induced by space travel. Regeneration 4:85. doi:10.1002/reg2.79'
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5469732/fullTextXML
+    quote: This led us to determine the optimal condition for 30‐day survival of adding 25 mL of fresh Poland Spring
+      water and air filling the rest of the 50 mL volume
+    kind: specified
+    note: 'Planarian tubes: 50% air / 50% water.'
+  detail:
+    value: null
+    note: Daylily culture medium volumes not sourced.
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: anodized aluminum; O-ring sealed top lid
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-100VC. NASA KSC fact
+      sheet SP-2015-07-291-KSC; NTRS 20160005064
+    url: https://ntrs.nasa.gov/api/citations/20160005064/downloads/20160005064.pdf
+    quote: BRIC-100VC is a completely sealed, anodized-aluminum cylinder (Fig. 1) providing containment and structural
+      support of the experimental specimens.
+    kind: specified
+  gas_permeability:
+    value: null
+    note: Sealed metal canister; no permeance value sourced.
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: ESA-ISLSWG Arabidopsis Workshop, ESTEC 1-2 July 2003 - Report (NASA-hosted PDF)
+    url: https://www.nasa.gov/pdf/185050main_arabidopsis_workshop_07-2003.pdf
+    quote: BRICs are passive hardware, do not have centrifugation capability, and when sealed, result in elevated
+      ethylene levels in the hardware.
+    kind: specified
+    note: 'Fact sheet: lower portion has "sufficient storage space for passive temperature and relative humidity
+      data loggers".'
+searched: |
+  Opened this session: OSDR registry 2046 + payload BRIC-MIR; NTRS 20160005064 (BRIC-100VC fact sheet SP-2015-07-291-KSC);
+  NASA SMD plant hardware page; ESA-ISLSWG 2003 workshop report; Levine et al. 2000 Adv Space Res abstract (Europe PMC);
+  Morokuma et al. 2017 (PMC5469732). Full text of Levine et al. 2000 (Elsevier) not accessible - it holds the measured
+  temperature, RH, CO2 and ethylene in flight canisters. Missing: internal dimensions/free volume, flight temperature.

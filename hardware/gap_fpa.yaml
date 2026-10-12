@@ -1,0 +1,206 @@
+entity_id: HW027
+name: Group Activation Pack - Fluid Processing Apparatus (GAP-FPA)
+vendor: BioServe Space Technologies, University of Colorado Boulder
+splash_ids: [27]
+registry_ids: ['1173']
+curated: '2026-10-12'
+location:
+  value: inside a temperature-controlled incubator (CGBA up to 16 GAPs; SABL up to 18 GAPs) or at cabin ambient
+  unit: '-'
+  source: BioServe Space Technologies (Univ. Colorado Boulder), FPA/GAP spaceflight-hardware page (accessed 2026-10-12)
+  url: https://www.colorado.edu/center/bioserve/node/47
+  quote: For GAP experiments requiring temperature control, CGBA can accommodate up to 16 GAPs (for a total of 128
+    FPAs) and SABL can accommodate up to 18 GAPs (for a total of 144 FPAs).
+  kind: specified
+  note: 'Ambient example: STS-115 (Microbe, OSD-20) cultures grown "at ambient temperature (23C)". Older flights
+    used MOBIAS (registry 1173, Microbe configuration).'
+geometry:
+  enclosure_cylinder_mm:
+    value: null
+    unit: mm
+    note: GAP (outer canister holding 8 FPAs) dimensions not found in any source opened.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Not sourced (GAP internal free volume unknown).
+  specimen_container:
+    value: 'FPA: glass barrel (test-tube-like) in a Lexan sheath, divided by rubber septa into 2-3 fluid chambers;
+      plunger-driven mixing through a barrel bypass'
+    unit: '-'
+    source: OSDR Hardware Registry 1173 (Group Activation Pack (GAP)), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1173
+    quote: A total of 6.5-ml of fluid is contained inside a glass barrel (1.35 cm inner diameter x 11.7 cm) surrounded
+      by a LexanTM sheath and initially can be isolated into three volumes by a rubber septum.
+    kind: specified
+  specimen_container_mm:
+    value: [13.5, 117]
+    unit: mm
+    source: OSDR Hardware Registry 1173 (Group Activation Pack (GAP)), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1173
+    quote: A total of 6.5-ml of fluid is contained inside a glass barrel (1.35 cm inner diameter x 11.7 cm) surrounded
+      by a LexanTM sheath and initially can be isolated into three volumes by a rubber septum.
+    kind: specified
+    note: '[inner diameter, barrel length]. 11.7 cm is read as the barrel length (the record gives no label). Liquid
+      volume 6.5 mL (BioServe: "A total of 6.5 mL of fluid is contained inside the FPA''s glass barrel.").'
+  fpa_liquid_volume_mL:
+    value: 6.5
+    unit: mL
+    source: BioServe Space Technologies (Univ. Colorado Boulder), FPA/GAP spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/node/47
+    quote: A total of 6.5 mL of fluid is contained inside the FPA's glass barrel.
+    kind: specified
+    note: 'Split by experiment, e.g. OSD-554: 2.75 mL medium + 0.5 mL inoculum + 1.75 mL fixative (5.0 mL loaded);
+      some flights overlay an air bubble (Micro-14 Candida, Life 2021, PMC8067245).'
+  n_specimen_units:
+    value: 8
+    unit: FPAs per GAP
+    source: BioServe Space Technologies (Univ. Colorado Boulder), FPA/GAP spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/node/47
+    quote: FPAs are typically flown in groups of eight packed within a Group Activation Pack (GAP).
+    kind: specified
+  layout:
+    value: 8 FPAs per GAP; common plunger activation by hand crank (motorized GAPs in the past)
+    unit: '-'
+    source: BioServe Space Technologies (Univ. Colorado Boulder), FPA/GAP spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/node/47
+    quote: Each GAP provides a common activation mechanism for the eight FPAs.
+    kind: specified
+    note: 'BioServe: "The most common method employed currently is a manually-actuated hand crank." Orientation
+      of FPAs in GAP not sourced.'
+specimen:
+  types:
+    value: microorganisms, mammalian cells, viruses/bacteria, protein crystals, biomaterials, small plants/seeds
+    unit: '-'
+    source: 'SPLASH instrument #27 (Group Activation Pack-Fluid Processing Apparatus ; Group Activation Pack), snapshot
+      2026-10-12'
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/27
+    quote: microorganisms, mammalian cells and tissues, viruses and bacteria, protein crystal growth, biomaterials,
+      small plants/seed germination
+    kind: specified
+    note: 'OSDR examples: OSD-11/15/20 (STS-115 Salmonella, Pseudomonas, Candida), OSD-50 (BONEMAC mouse bone-marrow
+      cells), OSD-554/627 (P. aeruginosa biofilms).'
+ventilation:
+  mode:
+    value: sealed (closed glass barrel; limited gas exchange; optional gas-permeable membrane / gas-exchange insert)
+    unit: '-'
+    source: BioServe Space Technologies (Univ. Colorado Boulder), FPA/GAP spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/node/47
+    quote: The default FPA configuration provides limited gas exchange and can be upgraded with gas permeable membranes
+      to further improve performance for experiments with moderate metabolic requirements.
+    kind: specified
+    note: 'Kim et al. 2013 (PLoS One): "With the solid inserts, the conditions in the FPA are most likely microaerophilic
+      to anaerobic as the cells consume the oxygen available in the liquid and air bubble present in the closed
+      system." OSD-554: "The use of solid inserts prevents gas exchange and forces anaerobic growth of P. aeruginosa."
+      Registry 1173: "It has gas-permeable membranes; however, gas exchange is limited."'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not applicable (no forced flow; static culture).
+  inlet:
+    value: optional gas-exchange (GE) insert with a gas-permeable membrane (replaces the solid insert closing the
+      culture chamber)
+    unit: '-'
+    source: Kim W, Tengra FK, Shong J, et al. (2013) Effect of spaceflight on Pseudomonas aeruginosa final cell
+      density is modulated by nutrient and oxygen availability. BMC Microbiol 13:241. doi:10.1186/1471-2180-13-241
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4228280/fullTextXML
+    quote: To test this hypothesis, we substituted the solid inserts used in the experiments described above with
+      gas exchange (GE) inserts that allow the movement of gases via a gas-permeable membrane.
+    kind: specified
+    note: Membrane area/material permeance not sourced.
+  outlet:
+    value: null
+    note: None.
+  gap_gas_charge:
+    value: GAP can be charged with a predefined gas composition
+    unit: '-'
+    source: BioServe Space Technologies (Univ. Colorado Boulder), FPA/GAP spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/node/47
+    quote: All components of the GAP and integral FPAs are autoclavable and the GAP can be charged with a predefined
+      gas composition to support unique experiment requirements.
+    kind: specified
+environment:
+  temperature_C:
+    value: 23
+    unit: degC
+    source: OSDR study OSD-20 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-20/
+    quote: Cultures were grown in spaceflight conditions or synchronous ground control conditions for 25 hours at
+      ambient temperature (23C).
+    kind: measured
+    note: 'Experiment-specific; the GAP itself has no thermal control in the hand-crank version. Other flights:
+      37 °C in CGBA (Kim 2013, OSD-50 BONEMAC), 30 °C activation (Micro-6 payload), 37 °C in SABL (OSD-554/627).
+      SPLASH #27 operational_temperature "-120C to +60C" is a survival range.'
+  rh_percent:
+    value: null
+    unit: '%'
+    note: Not applicable (liquid culture).
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: Not sourced.
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced; O2 limited to dissolved O2 plus any air bubble (Kim 2013).
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: null
+    note: Not sourced (FPA in an opaque GAP; no lighting statement found).
+nutrients:
+  mode:
+    value: 'culture_medium (liquid, chambered: medium / inoculum / termination reagent)'
+    unit: '-'
+    source: OSDR payload record Micro_2, snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/payload/Micro_2
+    quote: Each FPA contained growth medium with membranes in chamber A, a microbial culture suspended in stasis
+      medium in chamber B, and a termination reagent in chamber C.
+    kind: specified
+  detail:
+    value: null
+    note: Volumes per chamber are experiment-specific (6.5 mL total).
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: 'FPA: glass barrel, Lexan sheath, rubber septa'
+    unit: '-'
+    source: OSDR Hardware Registry 1173 (Group Activation Pack (GAP)), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1173
+    quote: A total of 6.5-ml of fluid is contained inside a glass barrel (1.35 cm inner diameter x 11.7 cm) surrounded
+      by a LexanTM sheath and initially can be isolated into three volumes by a rubber septum.
+    kind: specified
+    note: GAP material not stated for the standard GAP; registry 908 describes a modified TEC-GAP as "an aluminum
+      GAP cylinder" (different configuration).
+  gas_permeability:
+    value: null
+    note: Glass barrel impermeable; GE-insert membrane permeance not sourced.
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: 'SPLASH #27 power: "dependent on version (hand-crank vs motorized)"; hand-crank GAP is unpowered. No wattage
+      found.'
+searched: |
+  Opened this session: OSDR registry 1173 + payloads 12A, YeastGAP1, Micro_2, BONEMAC, MDRV, Micro-4, Micro-2A, Micro-6; SPLASH #27;
+  OSD-11/15/20/50/554/627 protocols; BioServe FPA/GAP page; ISS National Lab GAP-FPA page (WebFetch); Kim et al. 2013 PLoS One and BMC Microbiol;
+  Zea et al. 2018 Acta Astronaut (PMC6235448); Life 2021 Candida (PMC8067245); NTRS 19960021742 (Hilaire et al. 1995 FPA paper - scanned
+  image, no text layer); Hoehn et al. 2004 J Gravit Physiol (abstract only, not opened in full).
+  Missing: GAP canister dimensions/free volume, FPA wall thickness, GE membrane permeance, organism loads.

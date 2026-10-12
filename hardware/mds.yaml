@@ -206,6 +206,23 @@ thermal:
     unit: W
     note: "Not found (SPLASH 112 power field empty)."
 
+specimen:
+  type:
+    value: "Mus musculus, male, C57BL/10J background: 3 wild-type and 3 pleiotrophin-transgenic, 2 months old at launch"
+    unit: '-'
+    source: "Cancedda R. et al. (2012) The Mice Drawer System (MDS) experiment and the space endurance record-breaking mice. PLoS ONE 7(5):e32243"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3362598/
+    quote: "three wild type (Wt) and three transgenic male mice over-expressing pleiotrophin"
+    kind: specified
+    note: "Age: 'At the time of launch, animals were 2-months old.' Background: 'a strain of PTN-Tg with a C57BlJ10 genetic background.' Added 2026-10-12 by the modelling stage."
+  body_mass_g:
+    value: 30
+    unit: g
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3362598/
+    quote: "the reduced mass of an adult mouse (about 30 grams)"
+    kind: specified
+    note: "Generic adult-mouse figure from the MDS paper, not the measured launch mass (per-mouse weights are only plotted, Fig. 2). Added 2026-10-12 by the modelling stage."
 searched: |
   SPLASH 112 (dims only); Cancedda et al. 2012 PLoS ONE (PMC3362598); Liu et al. 2009 Basic Appl Myol (bio.unipd.it PDF,
   incl. cross-facility comparison table); OSDR OSD-33 and OSD-61 protocol text; Ronca 2019 and Shiba 2017 background text.

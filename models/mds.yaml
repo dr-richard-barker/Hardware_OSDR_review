@@ -1,0 +1,39 @@
+# Mice Drawer System - one single-mouse cage (CFD unit) during the 2009 ISS mission.
+hardware: mds
+domain: {shape: box, size: {ref: geometry.enclosure_internal_mm}}
+zones:
+  - name: mouse
+    shape: box
+    size: [80, 30, 30]
+    center: [58, 49, 15]
+    sources:
+      CO2:  {rate: {ref: specimen_load.co2_flux}, unit: mL/h, count: {ref: specimen.body_mass_g}}
+      H2O:  {rate: {ref: specimen_load.h2o_flux}, unit: g/h, count: {ref: specimen.body_mass_g, scale: 0.001}}
+      heat: {rate: {ref: specimen_load.heat_W}, unit: W, count: {ref: specimen.body_mass_g, scale: 0.001}}
+openings:
+  - {name: inlet,  role: inlet,  face: zmax, size: [116, 98], center: [58, 49], velocity_m_s: {ref: ventilation.air_velocity_m_s}}
+  - {name: outlet, role: outlet, face: zmin, size: [116, 98], center: [58, 49]}
+environment:
+  temperature_C: {ref: environment.temperature_C}
+  co2_ppm: {ref: "cabin:environment.co2_ppm"}
+  rh_percent: {ref: environment.rh_percent}
+numerics: {cell_mm: 4, surface_level: 0, obstacle_level: 0, end_time_s: 30, write_every_s: 2, max_dt_s: 0.02, max_co: 0.9, probe_every_steps: 20}
+assumptions:
+  - param: zones[0].size
+    why: "Mouse represented as a distributed source volume of 80 x 30 x 30 mm (adult-mouse scale) resting on the cage floor; body geometry not modelled as a solid."
+  - param: zones[0].center
+    why: "Mouse at the floor centre."
+  - param: openings[0].size
+    why: "Flow direction through the cage is not stated; waste filters are 'located below each Habitat' (Liu 2009, mds.yaml note), so air is taken to enter through the whole top grid and leave through the whole floor grid."
+  - param: openings[0].center
+    why: "As openings[0].size."
+  - param: openings[1].size
+    why: "As openings[0].size."
+  - param: openings[1].center
+    why: "As openings[0].size."
+  - param: openings.velocity_interpretation
+    why: "Cancedda 2012: airflow of 0.2-0.3 m/s through the cages; applied as a uniform face velocity (mid-point 0.25 m/s)."
+  - param: environment.co2_reference
+    why: "In-cage CO2 is controlled but not reported; supply air is set to the ISS U.S. Lab cabin CO2 measured during RR-1 (Choi et al. 2020; mid-point of 788-4690 ppm). MDS flew in 2009 in JEM, so this is a proxy."
+  - param: zones.mouse.co2_load
+    why: "Organism-level C57BL/6 rates (ICES-2014-101) and BALB/c heat and moisture (Riskowski 2006) scaled by the generic 30 g adult mass from Cancedda 2012; MDS flew C57BL/10J males."

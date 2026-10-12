@@ -12,3 +12,4 @@ latex/build/
 *.fdb_latexmk
 *.synctex.gz
 latex/build/
+dist/

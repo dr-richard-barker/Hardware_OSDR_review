@@ -9,7 +9,7 @@ not an 'n/a' placeholder (and, by the provenance test, carries a source + quote)
   F1  ventilation.mode
   F2  ventilation.flow_rate_L_min or air_velocity_m_s - waived when mode is sealed/passive
   E1  environment.temperature_C
-  B1  specimen.type(s)
+  B1  specimen.type(s), or an organism named in a sourced specimen-unit record
 
 Writes results/tables/T6_curated_tiers.csv.
 """
@@ -70,6 +70,14 @@ def assess(d: dict) -> dict:
     t = _get(d, "environment.temperature_C")
     s["E1"] = _ok(t) and (_numeric(t["value"]) or _numeric(t["value"], 2))
     s["B1"] = _ok(_get(d, "specimen.type")) or _ok(_get(d, "specimen.types"))
+    if not s["B1"]:
+        # organism named in a sourced specimen-unit record (value or verbatim quote)
+        from .lexicon import ORG_RE, classes_in
+        for path in ("geometry.n_specimen_units", "geometry.specimen_container", "geometry.layout"):
+            r = _get(d, path)
+            if _ok(r) and classes_in(f"{r.get('value')} {r.get('unit', '')} {r.get('quote', '')}", ORG_RE) - {"human"}:
+                s["B1"] = True
+                break
     crit = [s[k] for k in CRIT]
     s["tier"] = "A" if all(crit) else ("B" if sum(crit) >= 4 else "C")
     s["missing"] = "; ".join(k for k in CRIT if not s[k])

@@ -118,13 +118,24 @@ def build(slug: str, gravity: str = "0g", mesh: str = "medium", nprocs: int = 8,
     props = physics.provenance(T_c, p_kpa)
     air = props["air"]
     D_CO2, D_H2O = props["D_CO2_m2_s"], props["D_H2O_m2_s"]
-    co2_0 = _env(m, "co2_ppm", R)
-    h2o_0 = _env(m, "h2o_mmol_mol", R) if "h2o_mmol_mol" in m.spec.get("environment", {}) else None
-    if h2o_0 is None:
-        rh = _env(m, "rh_percent", R)
-        es = physics.p_sat_water_kpa(T_c)                       # IAPWS via CoolProp
-        h2o_0 = rh / 100 * es / p_kpa * 1000                   # mmol mol-1
+    medium = m.spec.get("medium", "air")
+    if medium == "water":                      # aquatic habitats: Boussinesq water, no gas species
+        fluid = physics.water(T_c, p_kpa)
+        props["water"] = {k: v for k, v in fluid.items() if k != "source"}
+        props["water_source"] = fluid["source"]
+        species = []
+        co2_0 = h2o_0 = None
+    else:
+        fluid = air
+        species = ["CO2", "H2O"]
+        co2_0 = _env(m, "co2_ppm", R)
+        h2o_0 = _env(m, "h2o_mmol_mol", R) if "h2o_mmol_mol" in m.spec.get("environment", {}) else None
+        if h2o_0 is None:
+            rh = _env(m, "rh_percent", R)
+            es = physics.p_sat_water_kpa(T_c)                   # IAPWS via CoolProp
+            h2o_0 = rh / 100 * es / p_kpa * 1000               # mmol mol-1
     c_air = air["molar_density"]
+    init_c = {"CO2": co2_0, "H2O": h2o_0}
 
     # --- blockMesh background: domain bounding box, cubic cells
     lo, hi = m.domain.bounds()
@@ -231,8 +242,8 @@ mergeTolerance 1e-6;
 
     # --- physical properties
     write(case / "constant" / "transportProperties", "dictionary", "transportProperties", {
-        "transportModel": "Newtonian", "nu": air["nu"], "beta": air["beta"], "TRef": T_c + 273.15,
-        "Pr": air["Pr"], "Prt": 0.85})
+        "transportModel": "Newtonian", "nu": fluid["nu"], "beta": fluid["beta"], "TRef": T_c + 273.15,
+        "Pr": fluid["Pr"], "Prt": 0.85})
     write(case / "constant" / "turbulenceProperties", "dictionary", "turbulenceProperties",
           {"simulationType": "laminar"})
     gz = -9.80665 if gravity == "1g" else 0.0       # standard gravity, CGPM 1901 (exact)
@@ -256,10 +267,10 @@ mergeTolerance 1e-6;
             if tot["heat_W"]:
                 fvopt_T[f"heat_{nm}"] = {"type": "scalarSemiImplicitSource", "selectionMode": "cellZone",
                                          "cellZone": nm, "volumeMode": "absolute",
-                                         "sources": {"T": {"explicit": tot["heat_W"] * q / (air["rho"] * air["cp"]),
+                                         "sources": {"T": {"explicit": tot["heat_W"] * q / (fluid["rho"] * fluid["cp"]),
                                                            "implicit": 0}}}
             for sp, key, scale in (("CO2", "CO2_mol_s", 1e6), ("H2O", "H2O_mol_s", 1e3)):
-                if tot[key]:
+                if tot[key] and sp in species:
                     fvopt[sp][f"{sp}_{nm}"] = {"type": "scalarSemiImplicitSource", "selectionMode": "cellZone",
                                                "cellZone": nm, "volumeMode": "absolute",
                                                "sources": {sp: {"explicit": tot[key] * q / c_air * scale, "implicit": 0}}}
@@ -270,7 +281,10 @@ mergeTolerance 1e-6;
     T0 = T_c + 273.15
     # snappyHexMesh names region patches <surface>_<region>
     patches = [f"domain_{r}" for r in roles] + (["obstacles"] if has_obs else [])
-    U_bc, p_bc, prgh_bc, T_bc, a_bc, S_bc = {}, {}, {}, {}, {}, {"CO2": {}, "H2O": {}}
+    has_flow = any(roles.get(r) in ("inlet", "vent") for r in roles)
+    scal = species + (["AoA"] if has_flow else [])
+    U_bc, p_bc, prgh_bc, T_bc, a_bc = {}, {}, {}, {}, {}
+    S_bc = {sp: {} for sp in scal}
     open_by_name = {o["name"]: o for o in m.openings}
     mem_by_name = {o["name"]: o for o in m.membranes}
     for pfull in patches:
@@ -280,18 +294,45 @@ mergeTolerance 1e-6;
         a_bc[pfull] = {"type": "calculated", "value": "uniform 0"}
         if role == "inlet":
             o = open_by_name[pch]
-            Q = _mid(R(o["flow_L_min"], f"openings.{pch}.flow_L_min")) / 1000 / 60
-            U_bc[pfull] = {"type": "flowRateInletVelocity", "volumetricFlowRate": Q, "value": "uniform (0 0 0)"}
+            if "velocity_m_s" in o:
+                vin = _mid(R(o["velocity_m_s"], f"openings.{pch}.velocity_m_s"))
+                U_bc[pfull] = {"type": "surfaceNormalFixedValue", "refValue": f"uniform {-vin}",
+                               "value": "uniform (0 0 0)"}
+            else:
+                Q = _mid(R(o["flow_L_min"], f"openings.{pch}.flow_L_min")) / 1000 / 60
+                U_bc[pfull] = {"type": "flowRateInletVelocity", "volumetricFlowRate": Q, "value": "uniform (0 0 0)"}
             prgh_bc[pfull] = {"type": "fixedFluxPressure", "value": "uniform 0"}
             T_bc[pfull] = {"type": "fixedValue", "value": f"uniform {T0}"}
-            S_bc["CO2"][pfull] = {"type": "fixedValue", "value": f"uniform {co2_0}"}
-            S_bc["H2O"][pfull] = {"type": "fixedValue", "value": f"uniform {h2o_0}"}
-        elif role == "outlet":
+            for sp in species:
+                S_bc[sp][pfull] = {"type": "fixedValue", "value": f"uniform {init_c[sp]}"}
+            if "AoA" in scal:
+                S_bc["AoA"][pfull] = {"type": "fixedValue", "value": "uniform 0"}
+        elif role in ("outlet", "vent"):
+            # outlet: supply-side composition on backflow; vent: passive opening to the exterior
+            o = open_by_name[pch]
+            ext = {"T": T0}
+            for sp in species:
+                ext[sp] = (_mid(R(o["outside"][sp], f"openings.{pch}.outside.{sp}"))
+                           if role == "vent" and "outside" in o and sp in o["outside"] else init_c[sp])
+            if role == "vent" and "outside" in o and "T" in o["outside"]:
+                ext["T"] = _mid(R(o["outside"]["T"], f"openings.{pch}.outside.T")) + 273.15
             U_bc[pfull] = {"type": "pressureInletOutletVelocity", "value": "uniform (0 0 0)"}
             prgh_bc[pfull] = {"type": "fixedValue", "value": "uniform 0"}
-            T_bc[pfull] = {"type": "inletOutlet", "inletValue": f"uniform {T0}", "value": f"uniform {T0}"}
-            for sp, c0 in (("CO2", co2_0), ("H2O", h2o_0)):
-                S_bc[sp][pfull] = {"type": "inletOutlet", "inletValue": f"uniform {c0}", "value": f"uniform {c0}"}
+            if role == "vent":
+                # passive vent: the well-mixed exterior is imposed at the vent face, so diffusive exchange
+                # occurs even with zero net flow (an inletOutlet condition would act as zeroGradient at phi=0)
+                T_bc[pfull] = {"type": "fixedValue", "value": f"uniform {ext['T']}"}
+                for sp in species:
+                    S_bc[sp][pfull] = {"type": "fixedValue", "value": f"uniform {ext[sp]}"}
+                if "AoA" in scal:
+                    S_bc["AoA"][pfull] = {"type": "fixedValue", "value": "uniform 0"}
+            else:
+                T_bc[pfull] = {"type": "inletOutlet", "inletValue": f"uniform {ext['T']}", "value": f"uniform {T0}"}
+                for sp in species:
+                    S_bc[sp][pfull] = {"type": "inletOutlet", "inletValue": f"uniform {ext[sp]}",
+                                       "value": f"uniform {init_c[sp]}"}
+                if "AoA" in scal:
+                    S_bc["AoA"][pfull] = {"type": "inletOutlet", "inletValue": "uniform 0", "value": "uniform 0"}
         else:
             U_bc[pfull] = {"type": "noSlip"}
             prgh_bc[pfull] = {"type": "fixedFluxPressure", "value": "uniform 0"}
@@ -300,57 +341,74 @@ mergeTolerance 1e-6;
                 o = mem_by_name[pch]
                 k = _mid(R(o["permeance_m_s"], f"membranes.{pch}.permeance_m_s"))
                 delta = h / 1000 / 2
-                for sp, D, c0 in (("CO2", D_CO2, co2_0), ("H2O", D_H2O, h2o_0)):
+                for sp, D in (("CO2", D_CO2), ("H2O", D_H2O)):
+                    if sp not in species:
+                        continue
                     ext = _mid(R(o["outside"][sp], f"membranes.{pch}.outside.{sp}"))
                     f = 1.0 / (1.0 + D / (k * delta))
                     S_bc[sp][pfull] = {"type": "mixed", "refValue": f"uniform {ext}", "refGradient": "uniform 0",
-                                     "valueFraction": f"uniform {f:.6g}", "value": f"uniform {c0}"}
+                                       "valueFraction": f"uniform {f:.6g}", "value": f"uniform {init_c[sp]}"}
+                if "AoA" in scal:
+                    S_bc["AoA"][pfull] = {"type": "zeroGradient"}
             else:
-                for sp in ("CO2", "H2O"):
+                for sp in scal:
                     S_bc[sp][pfull] = {"type": "zeroGradient"}
     write_field(case, "U", "[0 1 -1 0 0 0 0]", "uniform (0 0 0)", U_bc, cls="volVectorField")
     write_field(case, "p", "[0 2 -2 0 0 0 0]", "uniform 0", p_bc)
     write_field(case, "p_rgh", "[0 2 -2 0 0 0 0]", "uniform 0", prgh_bc)
     write_field(case, "T", "[0 0 0 1 0 0 0]", f"uniform {T0}", T_bc)
     write_field(case, "alphat", "[0 2 -1 0 0 0 0]", "uniform 0", a_bc)
-    write_field(case, "CO2", "[0 0 0 0 0 0 0]", f"uniform {co2_0}", S_bc["CO2"])
-    write_field(case, "H2O", "[0 0 0 0 0 0 0]", f"uniform {h2o_0}", S_bc["H2O"])
+    for sp in species:
+        write_field(case, sp, "[0 0 0 0 0 0 0]", f"uniform {init_c[sp]}", S_bc[sp])
+    if "AoA" in scal:
+        write_field(case, "AoA", "[0 0 0 0 0 0 0]", "uniform 0", S_bc["AoA"])
+    fields_list = "(" + " ".join(["U", "T"] + scal) + ")"
+    scal_list = "(" + " ".join(["T"] + scal) + ")"
 
     # --- numerics + function objects
     probes = [list(np.round(z.center / 1000, 9)) for z in m.zones] or [list(loc)]
     funcs = {}
     for sp, D in (("CO2", D_CO2), ("H2O", D_H2O)):
+        if sp not in species:
+            continue
         fo = {"type": "scalarTransport", "libs": '("libsolverFunctionObjects.so")', "field": sp,
               "D": D, "nCorr": 1, "writeControl": "writeTime"}
         if fvopt[sp]:
             fo["fvOptions"] = fvopt[sp]
         funcs[f"transport_{sp}"] = fo
+    if "AoA" in scal:
+        # mean age of air (s): source 1 s/s everywhere, zero at inflow; D = nu (Schmidt number 1, convention)
+        funcs["transport_AoA"] = {"type": "scalarTransport", "libs": '("libsolverFunctionObjects.so")',
+                                  "field": "AoA", "D": fluid["nu"], "nCorr": 1, "writeControl": "writeTime",
+                                  "fvOptions": {"age": {"type": "scalarSemiImplicitSource", "selectionMode": "all",
+                                                        "volumeMode": "specific",
+                                                        "sources": {"AoA": {"explicit": 1, "implicit": 0}}}}}
     funcs["probes"] = {"type": "probes", "libs": '("libsampling.so")', "writeControl": "timeStep",
                        "writeInterval": num.get("probe_every_steps", 10),
-                       "fields": "(U T CO2 H2O)",
+                       "fields": fields_list,
                        "probeLocations": foam.Raw("(" + " ".join(f"({p[0]} {p[1]} {p[2]})" for p in probes) + ")")}
     for nm in zone_names:
         funcs[f"zone_{nm}"] = {"type": "volFieldValue", "libs": '("libfieldFunctionObjects.so")',
                                "writeControl": "timeStep", "writeInterval": num.get("probe_every_steps", 10),
                                "writeFields": "false", "regionType": "cellZone", "name": nm,
-                               "operation": "volAverage", "fields": "(T CO2 H2O)"}
+                               "operation": "volAverage", "fields": scal_list}
     funcs["domainAvg"] = {"type": "volFieldValue", "libs": '("libfieldFunctionObjects.so")',
                           "writeControl": "timeStep", "writeInterval": num.get("probe_every_steps", 10),
                           "writeFields": "false", "regionType": "all", "operation": "volAverage",
-                          "fields": "(T CO2 H2O)"}
+                          "fields": scal_list}
     for o in m.openings:
         funcs[f"flux_{o['name']}"] = {"type": "surfaceFieldValue", "libs": '("libfieldFunctionObjects.so")',
                                      "writeControl": "timeStep", "writeInterval": num.get("probe_every_steps", 10),
                                      "writeFields": "false", "regionType": "patch", "name": f"domain_{o['name']}",
                                      "operation": "weightedAverage", "weightField": "phi",
-                                     "fields": "(T CO2 H2O)"}
+                                     "fields": scal_list}
         funcs[f"flow_{o['name']}"] = {"type": "surfaceFieldValue", "libs": '("libfieldFunctionObjects.so")',
                                      "writeControl": "timeStep", "writeInterval": num.get("probe_every_steps", 10),
                                      "writeFields": "false", "regionType": "patch", "name": f"domain_{o['name']}",
                                      "operation": "sum", "fields": "(phi)"}
     funcs["minmax"] = {"type": "fieldMinMax", "libs": '("libfieldFunctionObjects.so")', "writeControl": "timeStep",
                        "writeInterval": num.get("probe_every_steps", 10), "mode": "magnitude",
-                       "fields": "(U T CO2 H2O)"}
+                       "fields": fields_list}
     write(case / "system" / "controlDict", "dictionary", "controlDict", {
         "application": "buoyantBoussinesqPimpleFoam", "startFrom": "latestTime", "startTime": 0,
         "stopAt": "endTime", "endTime": num["end_time_s"], "deltaT": num.get("dt0_s", 1e-3),
@@ -363,7 +421,7 @@ mergeTolerance 1e-6;
         "gradSchemes": {"default": "Gauss linear"},
         "divSchemes": {"default": "none", "div(phi,U)": "Gauss linearUpwind grad(U)",
                        "div(phi,T)": "Gauss limitedLinear 1", "div(phi,CO2)": "Gauss limitedLinear 1",
-                       "div(phi,H2O)": "Gauss limitedLinear 1",
+                       "div(phi,H2O)": "Gauss limitedLinear 1", "div(phi,AoA)": "Gauss limitedLinear 1",
                        "div((nuEff*dev2(T(grad(U)))))": "Gauss linear"},
         "laplacianSchemes": {"default": "Gauss linear limited corrected 0.5"},
         "interpolationSchemes": {"default": "linear"},
@@ -373,8 +431,8 @@ mergeTolerance 1e-6;
         "solvers": {
             "p_rgh": {"solver": "GAMG", "smoother": "DIC", "tolerance": 1e-8, "relTol": 0.01},
             "p_rghFinal": {"solver": "GAMG", "smoother": "DIC", "tolerance": 1e-8, "relTol": 0},
-            "\"(U|T|CO2|H2O)\"": {"solver": "PBiCGStab", "preconditioner": "DILU", "tolerance": 1e-10, "relTol": 0},
-            "\"(U|T|CO2|H2O)Final\"": {"solver": "PBiCGStab", "preconditioner": "DILU", "tolerance": 1e-10,
+            "\"(U|T|CO2|H2O|AoA)\"": {"solver": "PBiCGStab", "preconditioner": "DILU", "tolerance": 1e-10, "relTol": 0},
+            "\"(U|T|CO2|H2O|AoA)Final\"": {"solver": "PBiCGStab", "preconditioner": "DILU", "tolerance": 1e-10,
                                         "relTol": 0},
         },
         "PIMPLE": {"momentumPredictor": "yes", "nOuterCorrectors": 1, "nCorrectors": 2,
@@ -383,7 +441,8 @@ mergeTolerance 1e-6;
     write(case / "system" / "decomposeParDict", "dictionary", "decomposeParDict",
           {"numberOfSubdomains": nprocs, "method": "scotch"})
     meta = {"slug": slug, "gravity": gravity, "mesh": mesh, "cell_mm": h, "background_cells": int(np.prod(n)),
-            "geometry": info, "physics": props, "initial": {"T_C": T_c, "CO2_ppm": co2_0, "H2O_mmol_mol": h2o_0},
+            "geometry": info, "physics": props, "medium": medium, "scalars": scal,
+            "initial": {"T_C": T_c, "CO2_ppm": co2_0, "H2O_mmol_mol": h2o_0},
             "sources_total": src_log, "provenance": m.provenance + R.used,
             "assumptions": m.spec.get("assumptions") or [], "numerics": num}
     (case / "case_meta.json").write_text(json.dumps(meta, indent=1, default=str))

@@ -122,15 +122,15 @@ environment:
     unit: ppm
     source: "NASA TM-102237 (1989), Table 1 (12-day ground biocompatibility test, 24 rodents), NTRS 19900002835"
     url: https://ntrs.nasa.gov/citations/19900002835
-    quote: "MAXIMUM 0.39 20.61 20.78 MINIMUM 0,18 20,36 20.23 AVERAGE 0.28 20.49 20.58"
+    quote: "MAXIMUM 0.39 20.61 20.78 MINIMUM* 0.18 20.36 20.23 AVERAGE 0.28 20.49 20.58"
     kind: measured
-    note: "Table columns: cage-module CO2 %, cage-module O2 %, bleed-air-out O2 %. Average 0.28 % CO2 (range 0.18-0.39 %). Design requirement: cage CO2 partial pressure not to exceed 7.6 mm Hg. Ground test, not flight."
+    note: "Quote transcribed from the scanned table image (the OCR layer garbles it). Table columns: cage-module CO2 %, cage-module O2 %, bleed-air-out O2 %. Average 0.28 % CO2 (range 0.18-0.39 %). Design requirement: cage CO2 partial pressure not to exceed 7.6 mm Hg. Ground test, not flight."
   o2_percent:
     value: 20.49
     unit: "%"
     source: "NASA TM-102237 (1989), Table 1, NTRS 19900002835"
     url: https://ntrs.nasa.gov/citations/19900002835
-    quote: "MAXIMUM 0.39 20.61 20.78 MINIMUM 0,18 20,36 20.23 AVERAGE 0.28 20.49 20.58"
+    quote: "MAXIMUM 0.39 20.61 20.78 MINIMUM* 0.18 20.36 20.23 AVERAGE 0.28 20.49 20.58"
     kind: measured
     note: "Cage-module average (range 20.36-20.61 %). Requirement: within 1 % of Spacelab ambient (~160 mm Hg)."
   pressure_kPa:

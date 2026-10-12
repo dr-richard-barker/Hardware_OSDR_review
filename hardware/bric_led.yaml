@@ -1,0 +1,238 @@
+entity_id: HW246
+name: BRIC-LED (Biological Research in Canisters - Light Emitting Diode)
+vendor: NASA Kennedy Space Center
+splash_ids: []
+registry_ids: ['2021']
+curated: '2026-10-12'
+location:
+  value: 'ISS US Lab, EXPRESS rack: resident BRIC-LED locker/tray holding 6 BRIC-LED canisters'
+  unit: '-'
+  source: Caron AR (2016) Biological Research in Canisters - Light Emitting Diode (BRIC-LED). ISS R&D Conference
+    presentation, 11 July 2016; NTRS 20160009001
+  url: https://ntrs.nasa.gov/api/citations/20160009001/downloads/20160009001.pdf
+  quote: Resides indefinitely in US Lab on ISS • Holds 6 BRIC Canisters
+  kind: specified
+  note: 'ISS National Lab: "The BRIC-LED facility is permanently installed in an EXPRESS Rack and is used to house
+    BRIC-LED canisters." Canisters travel up/down each mission (Caron 2016).'
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: BRIC-LED canister and tray dimensions not found in any source opened (NTRS 20160009001/20160009021 give
+      no dimensions). The BRIC-PDFU canister envelope (7 x 4 x 4 in) is NOT transferred.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Not sourced.
+  specimen_container:
+    value: 60 mm Petri dish inside a (LED-modified) Petri Dish Fixation Unit
+    unit: '-'
+    source: Levine HG, Caron A (2016) Biological Research in Canisters (BRIC) - Light Emitting Diode (LED). NASA
+      KSC poster; NTRS 20160009021
+    url: https://ntrs.nasa.gov/api/citations/20160009021/downloads/20160009021.pdf
+    quote: Each petri dish is then placed inside a single Petri Dish Fixation Unit (PDFU) that remains contained
+      within the BRIC canisters during all phases of flight operations.
+    kind: specified
+  specimen_container_mm:
+    value: [60, null]
+    unit: mm
+    source: Levine HG, Caron A (2016) Biological Research in Canisters (BRIC) - Light Emitting Diode (LED). NASA
+      KSC poster; NTRS 20160009021
+    url: https://ntrs.nasa.gov/api/citations/20160009021/downloads/20160009021.pdf
+    quote: What differentiates this hardware from the BRIC-PDFU series is the customizable discrete lighting that
+      illuminates the individual 60 mm petri dishes.
+    kind: specified
+    note: Nominal dish diameter only; height not stated for BRIC-LED.
+  specimen_container_measured_mm:
+    value:
+      base_OD: [54.8, 55.6]
+      height: [13, 15]
+    unit: mm
+    source: R. Barker (PI), dish measurements supplied 2026-10-08, recorded in LunarLeaf-CFD/validation/dishes.ts
+    url: file:///Users/drb_laptop/Documents/LunarLeaf-CFD/validation/dishes.ts
+    quote: 'BRIC  60 mm round dish (packed without lid): base O.D. 54.8–55.6 mm, height 13–15 mm,'
+    kind: user_supplied
+    note: Supplied by R. Barker 2026-10-08 for "BRIC 60 mm round dish"; variant not named by the PI. BRIC-LED uses
+      the same PDFU/60 mm dish format (Levine & Caron 2016), so recorded here as well; confirm with PI.
+  fluid_reservoir_mL:
+    value: 17
+    unit: mL
+    source: Caron AR (2016) Biological Research in Canisters - Light Emitting Diode (BRIC-LED). ISS R&D Conference
+      presentation, 11 July 2016; NTRS 20160009001
+    url: https://ntrs.nasa.gov/api/citations/20160009001/downloads/20160009001.pdf
+    quote: Discrete Single or Dual Fluid Injections – 17mL total fluid volume
+    kind: specified
+  n_specimen_units:
+    value: 6
+    unit: PDFUs per canister
+    source: Levine HG, Caron A (2016) Biological Research in Canisters (BRIC) - Light Emitting Diode (LED). NASA
+      KSC poster; NTRS 20160009021
+    url: https://ntrs.nasa.gov/api/citations/20160009021/downloads/20160009021.pdf
+    quote: A single BRIC-LED canister is capable of containing six PDFUs.
+    kind: specified
+    note: 'Caron 2016: "Up to 36 total 60mm Petri dishes available in one mission" (6 canisters x 6 PDFUs).'
+  layout:
+    value: 6 canisters x 6 PDFUs; dishes loaded horizontally (media face parallel to ground at integration)
+    unit: '-'
+    source: OSDR study OSD-522 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-522/
+    quote: Seeded plates were loaded in a horizontal orientation, with the face of the growth media parallel to
+      the ground in the BRIC LED hardware petri dish fixation units (PDFUs).
+    kind: specified
+    note: 'OSD-522 (BRIC-LED-001): "This configuration was replicated 6 times, making a total of 36 seeded 60mm
+      plates loaded aboard ISS."'
+specimen:
+  types:
+    value: plant seedlings, callus cultures, C. elegans, microbes
+    unit: '-'
+    source: Levine HG, Caron A (2016) Biological Research in Canisters (BRIC) - Light Emitting Diode (LED). NASA
+      KSC poster; NTRS 20160009021
+    url: https://ntrs.nasa.gov/api/citations/20160009021/downloads/20160009021.pdf
+    quote: A diverse range of organisms can be supported, including plant seedlings, callus cultures, Caenorhabditis
+      elegans, microbes, and others.
+    kind: specified
+    note: 'Flown: BRIC-LED-001 Arabidopsis thaliana seedlings (OSD-522, SpaceX-13/14).'
+ventilation:
+  mode:
+    value: sealed (specimen PDFU/canister); canisters cooled externally by forced air in the tray
+    unit: '-'
+    source: ISS National Lab facility page "Biological Research In Canisters" (text extracted with WebFetch; site
+      blocks direct download)
+    url: https://issnationallab.org/?p=42263
+    quote: BRIC-PDFUs and BRIC-LEDs are aluminum boxes with sealed lids that house biological specimens
+    kind: specified
+    note: 'Supporting statements: Caron 2016 lists "PDFU and Canister Leak Tests; proving containment" and "3 levels
+      of containment"; canister pressure is telemetered (Levine & Caron 2016). Nicholson et al. 2021 (BRIC-PDFU)
+      state PDFUs are "hermetically sealed". An explicit gas-exchange specification for the BRIC-LED PDFU was not
+      found. ISS National Lab quote extracted via WebFetch.'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not applicable inside the sealed canister. Cooling-air flow rate of the tray (EXPRESS AAA air) not sourced.
+  inlet:
+    value: Forced-air cooling of tray/canisters using EXPRESS rack avionics (AAA) air (external to specimen volume)
+    unit: '-'
+    source: Caron AR (2016) Biological Research in Canisters - Light Emitting Diode (BRIC-LED). ISS R&D Conference
+      presentation, 11 July 2016; NTRS 20160009001
+    url: https://ntrs.nasa.gov/api/citations/20160009001/downloads/20160009001.pdf
+    quote: Forced air cooling to reject heat – 1°C between Canisters – 3°C from EXPRESS AAA air
+    kind: specified
+    note: Inlet/outlet geometry and airflow not sourced.
+  outlet:
+    value: null
+    note: Not sourced.
+environment:
+  temperature_C:
+    value: surrounding (EXPRESS AAA) air +/- 3
+    unit: degC
+    source: Levine HG, Caron A (2016) Biological Research in Canisters (BRIC) - Light Emitting Diode (LED). NASA
+      KSC poster; NTRS 20160009021
+    url: https://ntrs.nasa.gov/api/citations/20160009021/downloads/20160009021.pdf
+    quote: Temperature will be controlled to ± 3°C of the surrounding air temperature, with no more than a 1.5°C
+      differential between canisters, using forced air cooling.
+    kind: specified
+    note: 'CONFLICT: Caron 2016 slides give "1°C between Canisters" (vs 1.5 °C). BRIC-LED-001 seedlings were "placed
+      at ambient temperature aboard the ISS" (Olanrewaju 2023); no logged values found.'
+  rh_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: Not sourced.
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Canister pressure is telemetered (Levine & Caron 2016) but no value was found.
+  light:
+    value: 'BRIC-LED-001: 85% red / 15% blue, 60 umol m-2 s-1, 4 h light / 2 h dark, 10 d'
+    unit: '-'
+    source: Olanrewaju GO, Haveman NJ, Naldrett MJ, Paul A-L, Ferl RJ, Wyatt SE (2023) Integrative transcriptomics
+      and proteomics profiling of Arabidopsis thaliana elucidates novel mechanisms underlying spaceflight adaptation.
+      Front. Plant Sci. 14:1260429. doi:10.3389/fpls.2023.1260429
+    url: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1260429/full
+    quote: with a light wavelength composition of 85% red, 15% blue, and 60 µmol m −2 s −1 intensity.
+    kind: specified
+    note: 'Photoperiod from same paper: "The plants were grown for 10 days with a 4-hour/2-hour light-dark cycle".
+      CONFLICT: registry 2021 says "The hardware cycles between 4 hours of light and dark periods to prevent overheating";
+      OSD-522 adds "lighting could not be maintained longer than 4 hours at a time".'
+  light_capability:
+    value: 4 LED types per dish (blue, red, far-red, white; 430-750 nm); up to 55 umol m-2 s-1 at 1 degC canister
+      spread (capable >150); >70% uniformity
+    unit: '-'
+    source: Caron AR (2016) Biological Research in Canisters - Light Emitting Diode (BRIC-LED). ISS R&D Conference
+      presentation, 11 July 2016; NTRS 20160009001
+    url: https://ntrs.nasa.gov/api/citations/20160009001/downloads/20160009001.pdf
+    quote: Up to 55 µmol/m2/s while maintaining 1°C between Canisters • capable of >150 µmol/m2/s
+    kind: specified
+    note: 'Same slide: "currently ranging from 430-750nm (blue, red, white and far-red)", ">70% light uniformity",
+      "Light tight from external sources".'
+nutrients:
+  mode:
+    value: agar (Phytagel) in 60 mm dishes
+    unit: '-'
+    source: Levine HG, Caron A (2016) Biological Research in Canisters (BRIC) - Light Emitting Diode (LED). NASA
+      KSC poster; NTRS 20160009021
+    url: https://ntrs.nasa.gov/api/citations/20160009021/downloads/20160009021.pdf
+    quote: Briefly, biological specimens are placed onto (or into) 60 mm petri dishes containing agar-solidified
+      media, although alternative approaches will be considered.
+    kind: specified
+  detail:
+    value: 'BRIC-LED-001: ~30 Arabidopsis seeds per 60 mm plate on 6.7 mL medium'
+    unit: '-'
+    source: Olanrewaju GO, Haveman NJ, Naldrett MJ, Paul A-L, Ferl RJ, Wyatt SE (2023) Integrative transcriptomics
+      and proteomics profiling of Arabidopsis thaliana elucidates novel mechanisms underlying spaceflight adaptation.
+      Front. Plant Sci. 14:1260429. doi:10.3389/fpls.2023.1260429
+    url: https://www.frontiersin.org/journals/plant-science/articles/10.3389/fpls.2023.1260429/full
+    quote: Approximately 30 seeds were plated on each 60mm round petri plate containing 6.7ml of 0.5× + Benomyl
+      Murashige and Skoog (MS) growth media
+    kind: specified
+    note: 'PI-supplied agar volume for the "BRIC  60 mm round dish": 10-15 mL (dishes.ts, 2026-10-08) - conflicts
+      with 6.7 mL used on BRIC-LED-001.'
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: aluminum canister ("box") with sealed lid; PDFU polycarbonate (BRIC-PDFU heritage, not confirmed for
+      LED PDFU)
+    unit: '-'
+    source: ISS National Lab facility page "Biological Research In Canisters" (text extracted with WebFetch; site
+      blocks direct download)
+    url: https://issnationallab.org/?p=42263
+    quote: BRIC-PDFUs and BRIC-LEDs are aluminum boxes with sealed lids that house biological specimens
+    kind: specified
+  gas_permeability:
+    value: null
+    note: Not sourced.
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: 'LED/electronics power not sourced. Registry 2021: "The hardware cycles between 4 hours of light and dark
+      periods to prevent overheating."'
+searched: |
+  Opened this session: OSDR registry 2021, payload BRIC-LED-001 (= text of NTRS 20160009021), OSD-522 protocol;
+  NTRS 20160009021 (Levine & Caron poster) and 20160009001 (Caron slides); Olanrewaju et al. 2023 (Front Plant Sci);
+  NASA SMD plant hardware page; ISS National Lab BRIC page (WebFetch); web searches for BRIC-LED ICES papers (none found).
+  Missing: canister and tray dimensions, internal free volume, cooling-air flow rate, LED electrical/heat load, logged
+  canister temperature/pressure for BRIC-LED-001. A KSC BRIC-LED fact sheet / design certification report would close these.

@@ -53,7 +53,12 @@ class Resolver:
 
     def __call__(self, v, where: str):
         if isinstance(v, dict) and "ref" in v:
-            rec = _dig(self.hw, v["ref"])
+            ref = v["ref"]
+            if ref.startswith("cabin:"):
+                hw_dir = Path(os.environ.get("HWREVIEW_HARDWARE", HARDWARE))
+                rec = _dig(yaml.safe_load((hw_dir / "_iss_cabin.yaml").read_text()), ref[6:])
+            else:
+                rec = _dig(self.hw, ref)
             val = rec["value"] if isinstance(rec, dict) else rec
             if val is None:
                 raise ValueError(f"{where}: {v['ref']} is null in the hardware file")
@@ -61,7 +66,7 @@ class Resolver:
                 val = val[v["index"]]
             if "scale" in v:
                 val = (np.asarray(val, float) * v["scale"]).tolist() if isinstance(val, list) else val * v["scale"]
-            self.used.append({"where": where, "ref": v["ref"], "value": val,
+            self.used.append({"where": where, "ref": ref, "value": val,
                               "source": rec.get("source") if isinstance(rec, dict) else None})
             return val
         if isinstance(v, list):

@@ -1,0 +1,76 @@
+"""Run the CFD campaign: every Tier-A model in 0 g and 1 g, with mesh ladders for the GCI study.
+
+    python -m hwreview.campaign [--np 12] [--only aph,mds]
+
+Resumable: a case whose solver log reached its end time is skipped. Progress is
+appended to runs/campaign.log; failures are logged and the queue continues.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import json
+import re
+import traceback
+
+from . import cases, foam, geometry
+from .paths import RUNS
+
+# (model, meshes) - three meshes where the grid-convergence study is done
+CAMPAIGN = [
+    ("mds", ["coarse", "medium", "fine"]),
+    ("aph", ["coarse", "medium", "fine"]),
+    ("vented_fly_box_vent20", ["coarse", "medium", "fine"]),
+    ("vented_fly_box_vent60", ["medium"]),
+    ("aph_fanmax", ["medium"]),
+    ("aqh", ["medium"]),
+]
+
+
+def done(case) -> bool:
+    log = case / "log.reconstructPar_-newTimes"
+    if not log.exists():
+        return False
+    end = float(json.loads((case / "case_meta.json").read_text())["numerics"]["end_time_s"])
+    times = [float(t) for t in foam.time_dirs(case)]
+    return bool(times) and max(times) >= end - 1e-6
+
+
+def log(msg: str):
+    line = f"{dt.datetime.now().isoformat(timespec='seconds')} {msg}"
+    print(line, flush=True)
+    with open(RUNS / "campaign.log", "a") as f:
+        f.write(line + "\n")
+
+
+def main(argv=None):
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--np", type=int, default=12)
+    ap.add_argument("--only")
+    a = ap.parse_args(argv)
+    only = set(a.only.split(",")) if a.only else None
+    for slug, meshes in CAMPAIGN:
+        if only and slug not in only:
+            continue
+        for mesh in meshes:
+            for g in ("0g", "1g"):
+                case = RUNS / f"{slug}_{g}_{mesh}"
+                try:
+                    if case.exists() and done(case):
+                        log(f"skip  {case.name} (complete)")
+                        continue
+                    t0 = dt.datetime.now()
+                    case = cases.build(slug, g, mesh, a.np)
+                    if not (case / "constant" / "polyMesh" / "cellZones").exists():
+                        cases.mesh_case(case, a.np)
+                    ncell = re.search(r"cells:\s+(\d+)", (case / "log.checkMesh").read_text()).group(1)
+                    log(f"start {case.name} cells={ncell}")
+                    cases.solve(case, a.np)
+                    log(f"done  {case.name} in {(dt.datetime.now() - t0).total_seconds():.0f} s")
+                except Exception as e:  # keep the queue moving; the failure is recorded
+                    log(f"FAIL  {case.name}: {type(e).__name__}: {str(e).splitlines()[0][:200]}")
+                    (RUNS / f"{case.name}.error.txt").write_text(traceback.format_exc())
+
+
+if __name__ == "__main__":
+    main()

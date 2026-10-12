@@ -84,7 +84,7 @@ ventilation:
     unit: "-"
     source: "OSDR Hardware Registry 1379, Air Filter System component"
     url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
-    quote: "Cabin air is drawn through front panel inlet slots directly though the inlet filter located at the front of the habitat, into the animal habitat."
+    quote: "Cabin air is drawn through the front panel inlet slots directly though the inlet filter located at the front of the habitat, into the animal habitat."
     kind: specified
     note: "Two of the four cameras are mounted in the inlet filter (registry Cameras component). Slot/filter dimensions not found."
   outlet:

@@ -1,0 +1,203 @@
+entity_id: HW044
+name: Commercial Generic Bioprocessing Apparatus (CGBA)
+vendor: BioServe Space Technologies, University of Colorado Boulder
+splash_ids: [44]
+registry_ids: ['908']
+curated: '2026-10-12'
+location:
+  value: 'single locker: Shuttle middeck / Mir-Priroda stowage locker; on ISS installed in an EXPRESS rack'
+  unit: '-'
+  source: OSDR Hardware Registry 908 (Commercial Generic Bioprocessing Apparatus (CGBA)), snapshot 2026-10-12
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/908
+  quote: a self-contained, autonomous system providing a temperature-controlled environment in a single Shuttle
+    middeck locker or a Mir-Priroda single stowage locker.
+  kind: specified
+  note: 'BioServe CGBA page photo caption: "CGBA installed into an EXPRESS rack". SPLASH #44 dims: "middeck locker
+    size". One unit remains on ISS for contingency (BioServe).'
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: 'Experiment-volume dimensions not found in any source opened (BioServe: "Full technical specifications
+      for CGBA are available upon request").'
+  free_air_volume_L:
+    value: 27
+    unit: L
+    source: BioServe Space Technologies, CGBA spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/spaceflight-hardware/cgba
+    quote: 'Refrigerator-mode temperature range: 4 °C to 37 °C (27 L experiment volume) Freezer-mode temperature
+      range: -16 °C to 37 °C (13 L experiment volume)'
+    kind: specified
+    note: 'Gross experiment volume, refrigerator mode (13 L in freezer mode); free air = volume minus GAPs/habitats.
+      SPLASH #44 gives the same 27 L / 13 L. Shuttle-era ICM v3 (STS-106) instead had 8 independently controlled
+      sample containers of ~1 L each.'
+  specimen_container:
+    value: Group Activation Packs (GAP-FPA), gas-exchange GAPs with 100 mm Petri dishes, PHAB/BioCell habitats,
+      custom habitats
+    unit: '-'
+    source: 'Stodieck L, Klaus D (2001) ISS Flight 2A.2B (STS-106): Commercial Generic Bioprocessing Apparatus (CGBA)
+      Payload - Operational Accomplishments Report, BioServe Space Technologies; NTRS 20010071970'
+    url: https://ntrs.nasa.gov/api/citations/20010071970/downloads/20010071970.pdf
+    quote: Each GE-GAP contained eight 100 mm Petri dishes, 7 of which housed the fruit fly larvae samples on agar,
+      with one used to stow a temperature-recording device (StowawayD).
+    kind: specified
+    note: 'Kim et al. 2013 (PLoS One): "GAPs were stored in a Commercial Generic Bioprocessing Apparatus (CGBA)
+      that accommodates 16 GAPs and enables temperature control."; OSD-114/118: BioCells in habitats inside CGBA.'
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: Container-specific; see gap_fpa / biocell_phab.
+  n_specimen_units:
+    value: 16
+    unit: GAPs
+    source: Kim W, Tengra FK, Young Z, Shong J, Marchand N, Chan HK, Pangule RC, Parra M, Dordick JS, Plawsky JL,
+      Collins CH (2013) Spaceflight promotes biofilm formation by Pseudomonas aeruginosa. PLoS One 8(4):e62437.
+      doi:10.1371/journal.pone.0062437
+    url: https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0062437
+    quote: GAPs were stored in a Commercial Generic Bioprocessing Apparatus (CGBA) that accommodates 16 GAPs and
+      enables temperature control.
+    kind: specified
+    note: 'BioServe FPA/GAP page: "CGBA can accommodate up to 16 GAPs (for a total of 128 FPAs)".'
+  layout:
+    value: 'STS-106 ICM v3: middeck-locker insert with 8 independently temperature-controlled sample containers'
+    unit: '-'
+    source: 'Stodieck L, Klaus D (2001) ISS Flight 2A.2B (STS-106): Commercial Generic Bioprocessing Apparatus (CGBA)
+      Payload - Operational Accomplishments Report, BioServe Space Technologies; NTRS 20010071970'
+    url: https://ntrs.nasa.gov/api/citations/20010071970/downloads/20010071970.pdf
+    quote: The ICM v3 is a middeck locker insert that provides processing and independent thermal control for 8
+      experimental sample containers, with -l-liter of total volume in each
+    kind: specified
+    note: '"-l-liter" is the report''s (OCR) text, read as ~1 liter. ISS-era internal layout not sourced.'
+specimen:
+  types:
+    value: 'experiment-dependent: microbes and cells (GAP-FPA, BioCells), Drosophila, C. elegans, spiders, yeast
+      colonies'
+    unit: '-'
+    source: 'Stodieck L, Klaus D (2001) ISS Flight 2A.2B (STS-106): Commercial Generic Bioprocessing Apparatus (CGBA)
+      Payload - Operational Accomplishments Report, BioServe Space Technologies; NTRS 20010071970'
+    url: https://ntrs.nasa.gov/api/citations/20010071970/downloads/20010071970.pdf
+    quote: Each GE-GAP contained eight 100 mm Petri dishes, 7 of which housed the fruit fly larvae samples on agar,
+      with one used to stow a temperature-recording device (StowawayD).
+    kind: specified
+    note: 'Other CGBA specimens in opened sources: C. elegans (Oczypok 2012), human fibroblasts in BioCells (OSD-114/118),
+      yeast in PHABs (Hammond), P. aeruginosa in FPAs (Kim 2013), BONEMAC mouse marrow cells (OSD-50).'
+ventilation:
+  mode:
+    value: null
+    note: 'Not sourced. Registry 908: heat is moved "by way of a fluid cooling loop that circulates through all
+      six walls of the enclosure"; STS-106: crew "ensured that adequate flow into the air inlet was maintained"
+      (heat-rejection air path, not shown to enter the experiment volume); Oczypok 2012 (C. elegans in CGBA): "We
+      relied upon the ISS for oxygen and power in-flight". Whether cabin air ventilates the experiment volume is
+      not stated.'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not sourced.
+  inlet:
+    value: air inlet (cabin air; crew keeps it unobstructed) - function (heat rejection vs experiment ventilation)
+      not stated
+    unit: '-'
+    source: 'Stodieck L, Klaus D (2001) ISS Flight 2A.2B (STS-106): Commercial Generic Bioprocessing Apparatus (CGBA)
+      Payload - Operational Accomplishments Report, BioServe Space Technologies; NTRS 20010071970'
+    url: https://ntrs.nasa.gov/api/citations/20010071970/downloads/20010071970.pdf
+    quote: the crew provided daily status reports for the CGBA and ensured that adequate flow into the air inlet
+      was maintained.
+    kind: specified
+  outlet:
+    value: null
+    note: Not sourced.
+environment:
+  temperature_C:
+    value: [-16, 37]
+    unit: degC
+    source: BioServe Space Technologies, CGBA spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/spaceflight-hardware/cgba
+    quote: The Commercial Generic Bioprocessing Apparatus (CGBA) is a dual-function incubator/freezer capable of
+      operation between -16 °C and 37 °C depending on configuration.
+    kind: specified
+    note: 'Refrigerator mode 4-37 °C, freezer mode -16-37 °C (BioServe; SPLASH #44 agrees). CONFLICT: registry 908
+      ISS configuration says freezer unit "16°C to 40°C" and refrigeration unit "4°C to 40°C" (upper limit 40 vs
+      37; missing minus sign likely). Flight examples: 22 ± 1 °C (C. elegans, Oczypok 2012), 25 °C (spiders, Zschokke
+      2020), 37 °C (Kim 2013; OSD-50/118), water loop 20.0 ± 2 °C (STS-106).'
+  rh_percent:
+    value: null
+    unit: '%'
+    note: 'Not sourced (SPLASH #44 temp_gas_rh_sensors: "can be installed").'
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: Not controlled by CGBA (sourced only for habitats charged with 5% CO2, e.g. OSD-118).
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: none as standard; lighting can be installed
+    unit: '-'
+    source: 'SPLASH instrument #44 (Commercial Generic Bioprocessing Apparatus), snapshot 2026-10-12'
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/44
+    quote: can be installed
+    kind: specified
+    note: 'SPLASH #44 lighting field.'
+nutrients:
+  mode:
+    value: null
+    note: Experiment/container-specific (see gap_fpa, biocell_phab).
+  detail:
+    value: null
+    note: Not applicable at facility level.
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: null
+    note: Wall material not sourced; walls carry the TEC fluid cooling loop (registry 908).
+  gas_permeability:
+    value: null
+    note: Not sourced.
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: 'Wattage not sourced; SPLASH #44 power field "28V" (supply voltage).'
+  thermal_control:
+    value: thermoelectric coolers + fluid loop through all six enclosure walls
+    unit: '-'
+    source: OSDR Hardware Registry 908 (Commercial Generic Bioprocessing Apparatus (CGBA)), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/908
+    quote: The hardware utilizes thermoelectric coolers (TECs) to maintain a set temperature between 4°C and 37°C,
+      transferring heat by way of a fluid cooling loop that circulates through all six walls of the enclosure to
+      reduce thermal gradients.
+    kind: specified
+  mass_kg:
+    value: 25
+    unit: kg
+    source: 'SPLASH instrument #44 (Commercial Generic Bioprocessing Apparatus), snapshot 2026-10-12'
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/44
+    quote: ~25kg (loaded)
+    kind: specified
+    note: Approximate, loaded.
+searched: |
+  Opened this session: OSDR registry 908 + payloads BONEMAC, Micro_2, Micro-2A, Micro-4, Micro5, Micro-6, Micro-9, Micro-10, NIH.B1a/b; SPLASH #44;
+  BioServe CGBA and FPA/GAP pages; NTRS 20010071970 (STS-106 CGBA report) and 20090014799 (CSI-03 - no hardware data); Kim et al. 2013 (PLoS One, BMC);
+  Oczypok et al. 2012; Zschokke et al. 2020 (PMC7716925); Lu et al. 2017; Hammond et al.; web searches for CGBA/ICM ICES papers (none open; SAE 972543 paywalled).
+  Missing: experiment-volume dimensions, internal air circulation/ventilation mode, air-inlet flow rate, power draw, wall material.

@@ -231,3 +231,30 @@ if __name__ == "__main__":
     TABLES.mkdir(parents=True, exist_ok=True)
     tag = ("_" + a.only if a.only else "") + ("_Ra" + "_".join(f"{r:.0e}" for r in a.ra) if a.ra else "")
     (TABLES / f"V_verification{tag}.json").write_text(json.dumps(out, indent=1))
+
+
+def summarise():
+    """Verification table T8: cavity ladders with observed order and Richardson extrapolation."""
+    import pandas as pd
+    from .gci import gci3
+    rows = []
+    for ra, tag in ((1e4, "1e+04"), (1e5, "1e+05"), (1e6, "1e+06")):
+        f = TABLES / f"V_verification_cavity_Ra{tag}.json"
+        if not f.exists():
+            continue
+        c = sorted(json.loads(f.read_text())["cavity"], key=lambda r: -r["n"])
+        if len(c) < 3:
+            continue
+        g = gci3([x["Nu"] for x in c], [1 / x["n"] for x in c])
+        dvd, hort = REF_NU[ra]
+        rows.append({"Ra": ra, "Nu_64": c[2]["Nu"], "Nu_96": c[1]["Nu"], "Nu_128": c[0]["Nu"],
+                     "p_observed": g["p"], "Nu_extrapolated": g["phi_ext"], "gci_fine_pct": g["gci_fine_pct"],
+                     "ref_deVahlDavis": dvd, "ref_Hortmann": hort,
+                     "err_fine_vs_Hortmann_pct": 100 * (c[0]["Nu"] - hort) / hort,
+                     "err_ext_vs_Hortmann_pct": 100 * (g["phi_ext"] - hort) / hort,
+                     "convergence": g["convergence"]})
+    d = json.loads((TABLES / "V_verification_diffusion.json").read_text())["diffusion"]
+    df = pd.DataFrame(rows)
+    df.to_csv(TABLES / "T8_verification_cavity.csv", index=False)
+    pd.DataFrame(d).to_csv(TABLES / "T8b_verification_diffusion.csv", index=False)
+    return df

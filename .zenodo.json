@@ -1,0 +1,19 @@
+{
+  "title": "Hardware_OSDR_review: metadata audit and 3-D transient CFD of NASA space-biology hardware",
+  "upload_type": "software",
+  "description": "Code, frozen data snapshot (2026-10-12) of NASA's SPLASH hardware catalogue, OSDR hardware registry and OSDR study metadata, a hardware crosswalk, a minimum-information checklist for CFD of specimen environments (MI-CFD-HW) with a validated automated scorer, a meta-analysis of hardware metadata sufficiency, literature-curated hardware specifications in which every value carries a verbatim source quotation, OpenFOAM v2606 case generators with verification (heated-cavity benchmark, diffusion, grid convergence), reduced 0 g / 1 g CFD results, orthographic drawings and the LaTeX manuscript sources with PDF/DOCX/HTML builds.",
+  "creators": [
+    {"name": "Barker, Richard", "orcid": "0000-0001-5681-9857"}
+  ],
+  "license": "MIT",
+  "keywords": ["spaceflight", "space biology", "computational fluid dynamics", "OpenFOAM", "NASA OSDR", "SPLASH", "spaceflight hardware", "metadata", "FAIR", "microgravity"],
+  "related_identifiers": [
+    {"identifier": "https://visualization.osdr.nasa.gov/splash/instruments", "relation": "isDerivedFrom", "scheme": "url"},
+    {"identifier": "https://osdr.nasa.gov/geode-py/ws/api/hardware", "relation": "isDerivedFrom", "scheme": "url"},
+    {"identifier": "https://visualization.osdr.nasa.gov/biodata/api/v2", "relation": "isDerivedFrom", "scheme": "url"},
+    {"identifier": "10.1093/nar/gkae1116", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.1002/fld.1650110206", "relation": "references", "scheme": "doi"},
+    {"identifier": "10.1115/1.2960953", "relation": "references", "scheme": "doi"}
+  ],
+  "notes": "Code: MIT. Data, curated specifications, figures and manuscript: CC BY 4.0 (see LICENSE-DATA.md). SPLASH data were obtained from NASA's Space Life Sciences Archive of Scientific Hardware (SPLASH)."
+}

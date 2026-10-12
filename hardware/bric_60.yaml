@@ -1,0 +1,212 @@
+entity_id: HW245
+name: BRIC-60 (Biological Research in Canisters, 60 mm Petri dish canister)
+vendor: NASA Kennedy Space Center
+splash_ids: []
+registry_ids: ['2018']
+curated: '2026-10-12'
+location:
+  value: 'Passive stowage: Shuttle middeck (STS-63..93) or ISS stowage locker (up to 8 full / 20 single-chamber
+    canisters per locker)'
+  unit: '-'
+  source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+    SP-2015-07-289-KSC; NTRS 20160005063
+  url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+  quote: Up to eight full canisters or 20 single chamber canisters can be flown in an International Space Station
+    (ISS) stowage locker configuration (Fig. 3).
+  kind: specified
+  note: Registry 2018 hardware versions list STS-68, -63, -69, -80, -85, -93 and ISS.
+geometry:
+  enclosure_cylinder_mm:
+    value: null
+    unit: mm
+    note: Internal diameter/height not sourced; only external dimensions (below).
+  enclosure_external_cylinder_mm:
+    value: [82, 159]
+    unit: mm
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: The total weight of the BRIC-60 is 0.9 lbs., and the physical dimensions are 15.9 cm (height) x 8.2 cm
+      (outside diameter).
+    kind: specified
+    note: '[outside diameter, height]. The fact sheet does not say whether 15.9 cm is the full (upper+lower chamber)
+      or half canister; full canister assumed but unconfirmed.'
+  canister_mass_kg:
+    value: 0.41
+    unit: kg
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: The total weight of the BRIC-60 is 0.9 lbs., and the physical dimensions are 15.9 cm (height) x 8.2 cm
+      (outside diameter).
+    kind: derived
+    note: 0.9 lb x 0.4536 kg/lb = 0.408 kg.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Not sourced.
+  specimen_container:
+    value: 60 mm Petri dishes (or Teflon tubes)
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: The BRIC-60 can hold a maximum of twelve 60 mm petri dishes per half canister (a total of twenty-four
+      per full canister) or thirteen Teflon tubes per half canister (a total of twenty-six per full canister) (Fig.
+      2).
+    kind: specified
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: Dish height/OD and Teflon tube dimensions not given for BRIC-60.
+  n_specimen_units:
+    value: [12, 24]
+    unit: Petri dishes (half, full canister)
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: The BRIC-60 can hold a maximum of twelve 60 mm petri dishes per half canister (a total of twenty-four
+      per full canister) or thirteen Teflon tubes per half canister (a total of twenty-six per full canister) (Fig.
+      2).
+    kind: specified
+    note: 'Tubes: 13 per half / 26 per full canister.'
+  layout:
+    value: stacked dishes in lower (+ optional upper) chamber; half canister = lower chamber + lid; full = upper
+      + lower + lid
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: Two optional configurations are available with capabilities of flying as a half canister (lower chamber
+      + chamber lid) or full canister (upper chamber + lower chamber + chamber lid).
+    kind: specified
+specimen:
+  types:
+    value: tomato, Arabidopsis, soybean seedlings; Physarum cells; gypsy moth eggs; Ceratodon moss
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: Specimens flown in the BRIC 60 mm petri dish (BRIC-60) hardware include Lycoperscion esculentum (tomato),
+      Arabidopsis thaliana (thale cress), Glycine max (soybean) seedlings, Physarum polycephalum (slime mold) cells,
+      Pothetria dispar (gypsy moth) eggs and Ceratodon purpureus (moss).
+    kind: specified
+ventilation:
+  mode:
+    value: passive (4 light-tight labyrinth pressure-relief vents per chamber lid)
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: Four pressure relief vents in each chamber lid adhere to the rapid depressurization requirements for
+      space flight. These specialized vents make a series of unique convoluted turns maintaining a light-tight environment
+      inside the canister chamber.
+    kind: specified
+    note: 'ESA-ISLSWG 2003 workshop report: "BRIC-60 (vented) accommodates 60 mm Petri dishes". The vents are specified
+      for depressurization; their gas-exchange conductance is not quantified anywhere found, so "passive" here means
+      vented, not a measured exchange rate. The BRIC-60M variant is described as a "sealed canister" with 2 gas-sampling
+      ports.'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not applicable (passive, unpowered).
+  inlet:
+    value: 4 convoluted (light-tight) pressure-relief vents in each chamber lid
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: Four pressure relief vents in each chamber lid adhere to the rapid depressurization requirements for
+      space flight.
+    kind: specified
+    note: Vent dimensions not sourced.
+  outlet:
+    value: null
+    note: Same vents (no separate outlet).
+environment:
+  temperature_C:
+    value: null
+    unit: degC
+    note: Unpowered; follows cabin/middeck ambient. No logged canister temperature found for BRIC-60 flights.
+  rh_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: Not sourced.
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: dark (light-tight canister)
+    unit: '-'
+    source: OSDR Hardware Registry 2018 (BRIC-60), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2018
+    quote: BRIC-60 maintains a light-tight environment inside the canister chamber.
+    kind: specified
+nutrients:
+  mode:
+    value: experiment-specific (e.g. seeds on nylon membrane in Petri dishes; soybean in germination paper in tubes)
+    unit: '-'
+    source: OSDR payload record BRIC-09, snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/payload/BRIC-09
+    quote: The experiment uses approximately 200 seeds evenly distributed on the Nylon membrane inside 22 petri
+      dishes, which will be loaded into five BRIC-60 canisters.
+    kind: specified
+    note: 'BRIC-03 (soybean): "soybean seeds are rolled in germination paper and placed in tubes located inside
+      BRIC canisters."'
+  detail:
+    value: null
+    note: Medium composition/volume per dish not sourced for BRIC-60 flights.
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: anodized aluminum
+    unit: '-'
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: The Biological Research in Canisters (BRIC) is an anodized-aluminum cylinder used to provide passive
+      stowage for investigations evaluating the effects of space flight on small organisms.
+    kind: specified
+  gas_permeability:
+    value: null
+    note: Not sourced (vent conductance unknown).
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: Richards SE, Levine HG, Romero V (2016) Biological Research in Canisters (BRIC)-60. NASA KSC fact sheet
+      SP-2015-07-289-KSC; NTRS 20160005063
+    url: https://ntrs.nasa.gov/api/citations/20160005063/downloads/20160005063.pdf
+    quote: The BRIC-60 unit requires no operational power and consists of both an upper and lower chamber (Fig.
+      1).
+    kind: specified
+searched: |
+  Opened this session: OSDR registry 2018 + payloads BRIC-01/03/06/09/10/11/12; NTRS 20160005063 (BRIC-60 fact sheet);
+  NASA SMD plant hardware page; ESA-ISLSWG 2003 Arabidopsis workshop report; NTRS search "Biological Research in Canisters";
+  web searches for BRIC-60 dimensions / Shuttle press kits (STS-70 press kit link dead; STS-107 press kit >10 MB, not read).
+  Missing: internal dimensions, vent geometry/conductance, any logged canister temperature or gas composition, medium details.

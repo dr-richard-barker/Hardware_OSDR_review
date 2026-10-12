@@ -1,24 +1,38 @@
 slug,entity_id,name,G1,G2,F1,F2,F2_waived,E1,B1,tier,missing,ventilation_mode,n_parameters,n_sourced
+_iss_cabin,,"ISS cabin (U.S. Lab, RR-1 in-flight phase)",False,False,False,False,False,True,False,C,G1; G2; F1; F2; B1,,3,3
 abrs,HW064,Advanced Biological Research System (ABRS),True,True,True,False,False,True,True,B,F2,forced,28,18
+adf,HW072,Avian Development Facility (ADF),True,False,True,False,False,True,True,B,G2; F2,forced,29,19
 adsep,HW046,ADvanced Space Experiment Processor (ADSEP),False,True,False,False,False,True,True,C,G1; F1; F2,,29,12
-aem,HW068,"Animal Enclosure Module (AEM, Space Shuttle middeck)",True,False,True,False,False,True,False,C,G2; F2; B1,forced,27,21
-aem_t,HW232,Animal Enclosure Module Transporter (AEM-T) with AEM-E life-support companion,False,False,True,True,False,True,False,C,G1; G2; B1,forced,27,21
-aph,HW034,Advanced Plant Habitat (APH),True,True,True,True,False,True,True,A,,forced,29,21
+aem,HW068,"Animal Enclosure Module (AEM, Space Shuttle middeck)",True,False,True,False,False,True,True,B,G2; F2,forced,27,21
+aem_t,HW232,Animal Enclosure Module Transporter (AEM-T) with AEM-E life-support companion,False,False,True,True,False,True,True,B,G1; G2,forced,27,21
+aph,HW034,Advanced Plant Habitat (APH),True,True,True,True,False,True,True,A,,forced,34,26
 aqh,HW069,Aquatic Habitat (AQH),True,True,True,True,False,True,True,A,,forced,30,16
+biocell_phab,HW019,BioCell Cell Culture and Plate Habitats (PHAB),False,False,True,True,True,True,True,B,G1; G2,sealed (co2-charged for transport) or passive (vented; vent cover removed inside incubator),28,15
 bioculture,HW017,Bioculture System (Bioculture System Facility),False,True,True,False,False,True,True,B,G1; F2,forced,32,17
 botex,HW205,BOTEX incubator (BOTany EXperiments; DLR/DARA),False,True,False,False,False,True,True,C,G1; F1; F2,,28,9
 bps,HW221,Biomass Production System (BPS),True,False,True,False,False,True,True,B,G2; F2,forced,30,18
+bric_100,HW024,Biological Research In Canisters - BRIC-100 (100 mm Petri dish canister),False,False,True,True,True,False,True,C,G1; G2; E1,passive (breathable lids: semi-permeable membrane) - or sealed with solid lids,27,11
+bric_100vc,HW269,"BRIC-100VC (Biological Research in Canisters, 100 mm Petri dish vacuum containment unit)",False,False,True,True,True,False,True,C,G1; G2; E1,sealed,28,11
+bric_60,HW245,"BRIC-60 (Biological Research in Canisters, 60 mm Petri dish canister)",False,False,True,True,True,False,True,C,G1; G2; E1,passive (4 light-tight labyrinth pressure-relief vents per chamber lid),29,13
+bric_led,HW246,BRIC-LED (Biological Research in Canisters - Light Emitting Diode),False,True,True,False,False,False,True,C,G1; F2; E1,sealed (specimen pdfu/canister); canisters cooled externally by forced air in the tray,30,16
+bric_pdfu,HW025,Biological Research in Canisters - Petri Dish Fixation Unit (BRIC-PDFU),False,True,True,True,True,True,True,B,G1,sealed,33,19
+cbef_peu,HW037,Cell Biology Experiment Facility / Plant Experiment Unit (CBEF/PEU),True,True,True,False,False,True,True,B,F2,forced,28,16
 ccm,HW219,Cell Culture Module (CCM) / Space Tissue Loss (STL) modules,False,True,True,True,True,True,True,B,G1,sealed,29,12
 cebas,HW147,Closed Equilibrated Biological Aquatic System (C.E.B.A.S.) Minimodule,False,False,True,True,False,True,True,B,G1; G2,forced,30,16
+cgba,HW044,Commercial Generic Bioprocessing Apparatus (CGBA),False,False,False,False,False,True,True,C,G1; G2; F1; F2,,29,11
 e150_eue,HW220,E150 Experiment Unique Equipment (EUE) - Animal Walking Apparatus suite (Neurolab),False,False,False,False,False,False,True,C,G1; G2; F1; F2; E1,,27,6
 emcs,HW042,European Modular Cultivation System (EMCS),True,False,True,False,False,True,True,B,G2; F2,forced,28,17
 fit_fly_kit,HW228,Fungal Immunity (FIT) Fly Kit (STS-121),False,False,True,True,True,True,True,B,G1; G2,passive,29,16
 fruit_fly_lab,HW100,"Fruit Fly Lab (FFL) / Fruit Fly Lab Experiment Hardware (Phase I, FFL-01)",False,False,True,True,True,True,True,B,G1; G2,passive,30,16
-jaxa_mhu,HW105,JAXA Mouse Habitat Unit (MHU) - Habitat Cage Units (HCU) in CBEF / CBEF-L (MARS centrifuge),False,False,True,True,False,True,False,C,G1; G2; B1,forced,27,21
+gap_fpa,HW027,Group Activation Pack - Fluid Processing Apparatus (GAP-FPA),False,True,True,True,True,True,True,B,G1,sealed (closed glass barrel; limited gas exchange; optional gas-permeable membrane / gas-exchange insert),29,13
+jaxa_mhu,HW105,JAXA Mouse Habitat Unit (MHU) - Habitat Cage Units (HCU) in CBEF / CBEF-L (MARS centrifuge),False,False,True,True,False,True,True,B,G1; G2,forced,27,21
 jellyfish_kit,HW150,Jellyfish Kit (SLS-1),False,False,True,True,True,True,True,B,G1; G2,sealed,29,11
+kubik,HW040,Kubik incubator (ESA; Bioreactor Express),False,True,False,False,False,True,True,C,G1; F1; F2,,29,12
+mds,HW112,"Mice Drawer System (MDS, ASI / Thales Alenia Space Italia)",True,True,True,True,False,True,True,A,,forced,29,23
 mobias,HW121,Multiple Orbital Bioreactor with Instrumentation and Automated Sampling (MOBIAS),False,False,True,True,True,True,True,B,G1; G2,passive,29,10
 mvp,HW036,Multi-use Variable-g Platform (MVP),False,True,True,False,False,True,True,B,G1; F2,forced,35,20
-rodent_habitat,HW142,Rodent Habitat (AEM-X) / Rodent Research Facility (ISS),False,False,True,True,False,True,False,C,G1; G2; B1,forced,27,19
+rahf,HW191,"Research Animal Holding Facility (RAHF, Spacelab) - rodent configuration",True,False,True,True,False,False,True,B,G2; E1,forced,27,22
+rodent_habitat,HW142,Rodent Habitat (AEM-X) / Rodent Research Facility (ISS),False,False,True,True,False,True,True,B,G1; G2,forced,27,19
 sabl,HW043,Space Automated Bioproduct Laboratory (SABL),True,False,True,True,True,True,True,B,G2,sealed,31,18
 veggie,HW033,Vegetable Production System (Veggie),True,False,True,False,False,True,True,B,G2; F2,forced,29,19
 vented_fly_box,HW234,Vented Fly Box (VFB),True,True,True,True,True,True,True,A,,passive,28,16

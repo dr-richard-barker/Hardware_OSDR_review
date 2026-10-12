@@ -1,0 +1,282 @@
+entity_id: HW025
+name: Biological Research in Canisters - Petri Dish Fixation Unit (BRIC-PDFU)
+vendor: NASA Kennedy Space Center (PDFU originally built by The Bionetics Corp.)
+splash_ids: [25]
+registry_ids: ['2020']
+curated: '2026-10-12'
+location:
+  value: 'Unpowered stowage: Shuttle middeck (8 canisters in foam inserts, half middeck locker) or ISS cabin stowage
+    at ambient'
+  unit: '-'
+  source: Millar KD, Johnson CM, Edelmann RE, Kiss JZ (2011) An endogenous growth pattern of roots is revealed in
+    seedlings grown in microgravity. Astrobiology. doi:10.1089/ast.2011.0699
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3233217/
+  quote: During the BRIC-16 project, eight BRIC units (labeled A–H) were placed into foam inserts that fit into
+    a standard half-middeck locker on the space shuttle.
+  kind: specified
+  note: 'ISS-era flights (BRIC-17 to BRIC-25) were incubated at ISS cabin ambient and terminated in MELFI (Fajardo-Cavazos
+    & Nicholson 2016: "incubated at ambient ISS temperature"). SPLASH #25 dims/volume field: "Single Mid-Deck Locker"
+    (stowage envelope, not the canister).'
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: Internal cavity dimensions of the BRIC-PDFU canister were not found in any source opened. Only the external
+      envelope (below) is sourced.
+  enclosure_external_mm:
+    value: [177.8, 101.6, 101.6]
+    unit: mm
+    source: Granath B (4 Mar 2013) Experiment Canisters Aid in Helping Study Plant Growth in Space. NASA (Kennedy)
+      feature
+    url: https://www.nasa.gov/science-research/experiment-canisters-aid-in-helping-study-plant-growth-in-space/
+    quote: The BRIC canisters in which the experiments will travel are seven inches by four inches by four inches
+      and hold five or six Petri dish fixation units.
+    kind: derived
+    note: '7 x 4 x 4 in converted at 25.4 mm/in (nominal, rounded inch values; EXTERNAL). Consistency check: Millar
+      et al. 2011 Fig. 2 legend gives "Scale: length of a BRIC unit is 17.3 cm" (vs 177.8 mm here; difference within
+      the rounding of a press-article value). Wall thickness unknown.'
+  canister_mass_kg:
+    value: 1.8
+    unit: kg
+    source: Millar KD, Johnson CM, Edelmann RE, Kiss JZ (2011) An endogenous growth pattern of roots is revealed
+      in seedlings grown in microgravity. Astrobiology. doi:10.1089/ast.2011.0699
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3233217/
+    quote: which is an anodized aluminum container (total mass=1.8 kg) with one level of containment
+    kind: specified
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Canister free air volume not sourced (internal dimensions and PDFU block volume unknown).
+  specimen_container:
+    value: 60 mm polystyrene Petri dish (lower half only) inside a Petri Dish Fixation Unit (PDFU, polycarbonate
+      body); dish covered by a PDFU manifold and cover; separate fluid chamber for injection
+    unit: '-'
+    source: Millar KD, Johnson CM, Edelmann RE, Kiss JZ (2011) An endogenous growth pattern of roots is revealed
+      in seedlings grown in microgravity. Astrobiology. doi:10.1089/ast.2011.0699
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3233217/
+    quote: The lower half of a standard polystyrene Petri dish (PD), with dimensions of 60×15 mm, is placed into
+      a PDFU, which has a chamber (Ch) for the dish and a fluid chamber (FC) filled with fixative.
+    kind: specified
+  specimen_container_mm:
+    value: [60, 15]
+    unit: mm
+    source: Millar KD, Johnson CM, Edelmann RE, Kiss JZ (2011) An endogenous growth pattern of roots is revealed
+      in seedlings grown in microgravity. Astrobiology. doi:10.1089/ast.2011.0699
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC3233217/
+    quote: Standard laboratory Petri dishes (60×15 mm) were placed into a PDFU with a polycarbonate body.
+    kind: specified
+    note: Nominal catalogue size [diameter, height]; measured dish below.
+  specimen_container_measured_mm:
+    value:
+      base_OD: [54.8, 55.6]
+      height: [13, 15]
+    unit: mm
+    source: R. Barker (PI), dish measurements supplied 2026-10-08, recorded in LunarLeaf-CFD/validation/dishes.ts
+    url: file:///Users/drb_laptop/Documents/LunarLeaf-CFD/validation/dishes.ts
+    quote: 'BRIC  60 mm round dish (packed without lid): base O.D. 54.8–55.6 mm, height 13–15 mm,'
+    kind: user_supplied
+    note: 'Supplied by R. Barker 2026-10-08. The PI did not name the BRIC variant; "packed without lid" matches
+      the PDFU practice of discarding the dish lid (Millar 2011: "the top cover was discarded and replaced by a
+      PDFU manifold"). dishes.ts adds an UNSOURCED 1.0 mm wall/base thickness assumption - not used here.'
+  pdfu_dish_air_volume_mL:
+    value: 8.5
+    unit: mL
+    source: Nicholson WL, Fajardo-Cavazos P, Turner C, Currie TM, Gregory G, Jurca T, Weislogel M (2021) Design
+      and Validation of a Device for Mitigating Fluid Microgravity Effects in Biological Research in Canister Spaceflight
+      Hardware. Front. Space Technol. 2:797518. doi:10.3389/frspt.2021.797518
+    url: https://www.frontiersin.org/journals/space-technologies/articles/10.3389/frspt.2021.797518/full
+    quote: In the BRIC-PDFU system, injection of medium results in the establishment of a 2-phase system consisting
+      of approximately equal volumes of liquid culture and trapped air space
+    kind: derived
+    note: 'Approximate. Liquid-culture protocol only: 8.5 mL of medium is injected per dish (Fajardo-Cavazos & Nicholson
+      2016: "Growth was initiated by injection of 8.5 mL of medium into each 60 mm Petri dish"), so trapped air
+      ~= 8.5 mL after actuation. For agar plates the dish-chamber air volume is NOT sourced.'
+  fluid_reservoir_mL:
+    value: 17
+    unit: mL
+    source: Fajardo-Cavazos P, Nicholson WL (2016) Establishing Standard Protocols for Bacterial Culture in Biological
+      Research in Canisters (BRIC) Hardware. Gravitational and Space Research 4(2):58-69. doi:10.2478/gsr-2016-0013
+    url: https://reference-global.com/download/article/10.2478/gsr-2016-0013.pdf
+    quote: each PDFU contains a 17 mL dual-septum plunger that permits injection of 2 solutions of 8.5 mL each
+    kind: specified
+    note: 'OSD-38 protocol: "loaded with up to 17mL of either one or two fluids". BRIC-16 used the fluid chamber
+      as a single 13 mL fixative volume (Millar 2011: "fluid chamber (volume=13 mL)"); BRIC-19 loaded 13 mL RNAlater
+      (OSD-37).'
+  n_specimen_units:
+    value: 6
+    unit: PDFU slots per canister
+    source: OSDR study OSD-38 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-38/
+    quote: Six PDFUs or five PDFUs plus one temperature data logger, depending on the investigator's requirements,
+      are then loaded into each BRIC canister.
+    kind: specified
+    note: Most flights used 5 PDFUs + 1 HOBO logger (BRIC-16, -21, -23). Nicholson et al. 2021 describe "five separate
+      compartments called Petri Dish Fixation Units" - consistent with the 5+logger practice.
+  layout:
+    value: PDFU polycarbonate blocks installed in one aluminum box canister (arrangement/orientation inside the
+      box not sourced)
+    unit: '-'
+    source: OSDR study OSD-38 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-38/
+    quote: The BRIC-PDFU configuration allows biological specimens contained within 60 mm Petri dishes to be installed
+      into polycarbonate blocks that are then installed into an aluminum box.
+    kind: specified
+    note: 'Exact block arrangement/orientation inside the box not sourced. Millar 2011: pre-launch the agar surface
+      was held vertical.'
+specimen:
+  types:
+    value: plant seedlings (Arabidopsis, Medicago), plant callus/cell cultures, microbes (B. subtilis, S. aureus,
+      S. epidermidis)
+    unit: '-'
+    source: OSDR Hardware Registry 2020 (BRIC-PDFU), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2020
+    quote: Recent research includes work on plant seedlings, callus cultures, and microbes.
+    kind: specified
+    note: 'OSDR examples: OSD-17/44/121 (BRIC-16, Arabidopsis), OSD-37 (BRIC-19), OSD-38 (BRIC-20), OSD-147/205
+      (BRIC-17 cell cultures), OSD-185 (BRIC-21, B. subtilis), OSD-138/145/500 (BRIC-23), OSD-321 (BRIC-22). Payload
+      records: BRIC-SyNRGE (Medicago truncatula + Sinorhizobium), BRIC-18 (B. subtilis, S. epidermidis).'
+ventilation:
+  mode:
+    value: sealed
+    unit: '-'
+    source: Nicholson WL, Fajardo-Cavazos P, Turner C, Currie TM, Gregory G, Jurca T, Weislogel M (2021) Design
+      and Validation of a Device for Mitigating Fluid Microgravity Effects in Biological Research in Canister Spaceflight
+      Hardware. Front. Space Technol. 2:797518. doi:10.3389/frspt.2021.797518
+    url: https://www.frontiersin.org/journals/space-technologies/articles/10.3389/frspt.2021.797518/full
+    quote: note that this air space provides needed oxygen to the culture, as the PDFUs are otherwise hermetically
+      sealed.
+    kind: specified
+    note: 'Millar 2011: "each sealed PDFU provided two levels of containment"; ISS National Lab: BRIC-PDFUs are
+      "aluminum boxes with sealed lids". Unpowered, no fan. Millar 2011 found no ethylene triple-response in the
+      sealed PDFU vs open dishes; the 2003 ESA workshop report states BRICs "when sealed, result in elevated ethylene
+      levels".'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: 'Not applicable: hermetically sealed, unpowered PDFU/canister (no forced flow).'
+  inlet:
+    value: null
+    note: None (sealed). Fluid enters only by crew actuation of the PDFU plunger (actuator tool).
+  outlet:
+    value: null
+    note: None (sealed).
+environment:
+  temperature_C:
+    value: [22.0, 22.5]
+    unit: degC
+    source: Fajardo-Cavazos P, Nicholson WL (2016) Establishing Standard Protocols for Bacterial Culture in Biological
+      Research in Canisters (BRIC) Hardware. Gravitational and Space Research 4(2):58-69. doi:10.2478/gsr-2016-0013
+    url: https://reference-global.com/download/article/10.2478/gsr-2016-0013.pdf
+    quote: complete temperature data was recorded by the other adjacent data loggers as 22.0±0.6˚C (Canister A),
+      22.5±0.4˚C (Canister C), and 22.3 ±0.3˚C (Canister D).
+    kind: measured
+    note: 'HOBO loggers inside BRIC-23 canisters on ISS (2016), cabin ambient (no thermal control). Same paper:
+      BRIC-18 25.1±0.1 °C, BRIC-21 22.8±0.5 °C. Shuttle STS-131 (BRIC-16): "the temperature was within 22–25°C during
+      the growth phase" (Millar 2011). SPLASH #25 temperature_range: "cabin".'
+  rh_percent:
+    value: null
+    unit: '%'
+    note: Not sourced (sealed; humidity set by the agar/medium).
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: Not sourced; no CO2 control (sealed at integration with ambient air).
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced; O2 limited to the air sealed in at integration (Nicholson 2021).
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: dark (light-tight PDFU lid)
+    unit: '-'
+    source: OSDR study OSD-44 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-44/
+    quote: After planting, a single Petri dish was inserted into a Petri Dish Fixation Unit (PDFU) and sealed with
+      a light-tight metal lid.
+    kind: specified
+    note: 'Millar 2011 (BRIC-16): "Both flight and ground experiments were performed in darkness." The light-capable
+      variant is BRIC-LED (separate file).'
+nutrients:
+  mode:
+    value: agar (seedlings, cell cultures) or injected liquid medium (microbes)
+    unit: '-'
+    source: OSDR study OSD-38 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-38/
+    quote: Biological specimens are placed into the 60 mm Petri dishes containing agar-solidified media, although
+      alternative approaches will be considered.
+    kind: specified
+  detail:
+    value: medium depth <= 5 mm (~6.7 mL per 60 mm dish)
+    unit: '-'
+    source: OSDR study OSD-147 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-147/
+    quote: The media in the plates for BRIC had to be 5mm deep or less to accommodate the biology and the PDFU cover
+      hardware.
+    kind: specified
+    note: 'Same protocol: "For a 60mm dish, this calculates out to 6.7 mLs." CONFLICT with other flights: BRIC-19
+      planted on 15 mL Phytagel medium per 60 mm dish (OSD-37); PI-supplied agar volume 10-15 mL (dishes.ts, 2026-10-08);
+      liquid cultures 8.5 mL TSY (BRIC-23).'
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: 'canister: anodized aluminum; PDFU body: black polycarbonate; manifold: black-anodized aluminum; dish:
+      polystyrene; valves: Teflon + stainless steel'
+    unit: '-'
+    source: Nicholson WL, Fajardo-Cavazos P, Turner C, Currie TM, Gregory G, Jurca T, Weislogel M (2021) Design
+      and Validation of a Device for Mitigating Fluid Microgravity Effects in Biological Research in Canister Spaceflight
+      Hardware. Front. Space Technol. 2:797518. doi:10.3389/frspt.2021.797518
+    url: https://www.frontiersin.org/journals/space-technologies/articles/10.3389/frspt.2021.797518/full
+    quote: In standard BRIC-PDFU hardware, cells and media are in contact with various materials including the black
+      polycarbonate PDFU itself, the black-anodized aluminum manifold, polystyrene Petri dish bottoms, and Teflon
+      and stainless-steel valve components.
+    kind: specified
+    note: Canister material from Millar 2011 ("anodized aluminum container").
+  gas_permeability:
+    value: null
+    note: Not sourced; PDFUs described as hermetically sealed (Nicholson 2021).
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: OSDR study OSD-38 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-38/
+    quote: No electrical power is provided to the BRIC-PDFU.
+    kind: specified
+  thermal_inertia_note:
+    value: high thermal inertia (slow freezing at -80 °C)
+    unit: '-'
+    source: OSDR study OSD-138 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-138/
+    quote: The BRIC hardware has significant thermal inertia, thus the freezing rate of samples placed at -80 C
+      is quite slow.
+    kind: specified
+searched: |
+  Opened this session: OSDR registry 2020 + payloads BRIC-16..25; SPLASH #25; OSDR protocols OSD-17/37/38/44/121/138/145/147/185/205/321/500;
+  Millar et al. 2011 (PMC3233217); Fajardo-Cavazos & Nicholson 2016 (GSR 4(2)); Nicholson et al. 2021 (Front Space Technol);
+  Wells et al. 2001 SAE 2001-01-2286 (abstract only - full text paywalled); NASA feature Granath 2013; NASA SMD plant hardware page;
+  ISS National Lab BRIC page; NTRS search "Biological Research in Canisters" / "Petri Dish Fixation Unit" (no PDFU fact sheet;
+  NTRS 20100027517 abstract has no dimensions).
+  Missing: canister INTERNAL dimensions and free volume; PDFU block dimensions and dish-chamber headspace for agar plates;
+  organism gas-exchange loads. Wells et al. 2001 (SAE) is the most likely primary source for PDFU drawings.
+  Note: OSD-17/147/205 protocols (BRIC-16/17, 2010/2013) say the hardware was "the NASA BRIC-LED" with the LED component
+  disabled. The SAE 2001 abstract shows a 1990s "BRIC-LED ... PDFU apparatus" existed, distinct from the 2016-2018 BRIC-LED
+  facility (HW246); OSDR registry links these payloads to BRIC-PDFU (2020). Treated here as BRIC-PDFU.

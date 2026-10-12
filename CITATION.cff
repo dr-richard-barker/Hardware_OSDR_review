@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "Hardware_OSDR_review: metadata audit and 3-D transient CFD of NASA space-biology hardware"
+version: 0.1.0
+license: MIT
+authors:
+  - family-names: Barker
+    given-names: Richard
+    orcid: "https://orcid.org/0000-0001-5681-9857"
+keywords:
+  - spaceflight
+  - space biology
+  - computational fluid dynamics
+  - OpenFOAM
+  - NASA OSDR
+  - SPLASH
+  - metadata
+  - FAIR
+references:
+  - type: article
+    title: "NASA open science data repository: open science for life in space"
+    doi: 10.1093/nar/gkae1116
+    year: 2025
+    journal: "Nucleic Acids Research"
+    authors:
+      - family-names: Gebre
+        given-names: Samrawit G.
+      - family-names: Scott
+        given-names: Ryan T.
+      - family-names: Saravia-Butler
+        given-names: Amanda M.
+      - family-names: Lopez
+        given-names: Danielle K.
+      - family-names: Sanders
+        given-names: Lauren M.
+      - family-names: Costes
+        given-names: Sylvain V.

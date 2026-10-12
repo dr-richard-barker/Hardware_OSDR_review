@@ -1,0 +1,216 @@
+entity_id: HW019
+name: BioCell Cell Culture and Plate Habitats (PHAB)
+vendor: BioServe Space Technologies, University of Colorado Boulder
+splash_ids: [19]
+registry_ids: ['2005']
+curated: '2026-10-12'
+location:
+  value: 'inside a BioServe incubator on ISS (SABL: 24-36 BioCells or 4-6 habitats; also CGBA)'
+  unit: '-'
+  source: 'SPLASH instrument #19 (BioCell Cell Culture and Plate Habitats (PHAB)), snapshot 2026-10-12'
+  url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/19
+  quote: Each frame holds 20 ml of fluid. 24-36 BioCells or 4-6 BioCell Habitats in one SABL
+  kind: specified
+  note: 'CGBA use: Lu et al. 2017 (OSD-114) "The habitat was then placed into a Commercial Generic Bioprocessing
+    Apparatus (CGBA ...) at a pre-set temperature".'
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: PHAB (aluminum box) dimensions not found in any source opened (BioServe PHAB page, Wnorowski 2019, Hupka
+      2023, registry 2005).
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Not sourced.
+  specimen_container:
+    value: 'BioCell (6-well: aluminum frame, polysulfone body, gas-permeable membranes) or Nunc OmniTray / multiwell
+      plates, housed in a PHAB'
+    unit: '-'
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: The 6-well BioCell has an aluminum frame and a polysulfone center with 6 individual wells, each with
+      its own access port.
+    kind: specified
+    note: 'Registry 2005: "The PHAB can hold a number of single well or multi-well OmniTraysTM." BioServe: BioCells
+      in 1-12 well formats.'
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: BioCell external/well dimensions not sourced. (OmniTray catalogue dimensions exist but were not opened.)
+  well_volume_mL:
+    value: 2.5
+    unit: mL per well (6-well BioCell)
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: Each well has a maximum volume of 2.5 mL.
+    kind: specified
+    note: 'CONFLICT/scope: SPLASH #19 "each frame holds 20 ml of fluid" (6 x 2.5 = 15 mL for the 6-well); BioServe:
+      formats "varying in culture volume (2-200ml)".'
+  n_specimen_units:
+    value: '5 BioCells per habitat (OSD-118); other flights: 6-7 OmniTrays or 4 x 24-well plates per PHAB'
+    unit: units per PHAB
+    source: OSDR study OSD-118 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-118/
+    quote: One day before launch, medium in the BioCell was replaced with fresh medium, and the cell culture chambers
+      were inserted in sealed habitats (5 BioCells per habitat) that were each flushed with 5% CO2/balance air.
+    kind: specified
+    note: 'OSD-233 (Micro-10): "with six OmniTray plates in each PHAB"; payload Micro-9: "six Plate Habitats (PHABs),
+      each loaded with seven omniplates"; Hupka 2023: four 24-well plates per PHAB.'
+  layout:
+    value: null
+    note: 'Stacking/orientation inside the PHAB not sourced (Hupka 2023 Fig. 3: plates stacked in a bag, absorbent
+      mats on lid and floor).'
+specimen:
+  types:
+    value: mammalian cells/tissues, C. elegans, yeast, bacteria, fungi, algae, biofilms
+    unit: '-'
+    source: 'SPLASH instrument #19 (BioCell Cell Culture and Plate Habitats (PHAB)), snapshot 2026-10-12'
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/19
+    quote: mammalian cells/tissues; small organisms (C. elegans), yeast, bacteria, fungi, algae, biofilm formation
+      studies
+    kind: specified
+    note: 'OSDR: OSD-114/118 (human fibroblasts), OSD-258 (hiPSC-cardiomyocytes), OSD-344 (cardiac progenitors),
+      OSD-233 (A. nidulans), OSD-628 (P. rubens biofilms).'
+ventilation:
+  mode:
+    value: sealed (CO2-charged for transport) or passive (vented; vent cover removed inside incubator)
+    unit: '-'
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: The Plate Habitat (PHAB) is an aluminum box that can be sealed or vented.
+    kind: specified
+    note: 'BioServe PHAB page: configurable vents/seals allow "either active gas exchange with the environment for
+      example when placed in a 5% CO2 environment such as in SABL or sealed to provide a passive (non-powered) 5%
+      CO2 environment during launch". Registry 2005: "a sealed container that allows for gas exchange". No fan in
+      the PHAB; incubator air circulation not sourced.'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not applicable at PHAB level (no forced flow sourced).
+  inlet:
+    value: removable vent cover (aluminum + Kapton tape) over PHAB vents
+    unit: '-'
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: Vents are then sealed with a cover made of aluminum and Kapton tape.
+    kind: specified
+    note: Vent size/number not sourced.
+  outlet:
+    value: null
+    note: Not sourced.
+environment:
+  temperature_C:
+    value: 37
+    unit: degC
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: On board the ISS, the vent cover is removed and the PHAB is placed in an on-board incubator (SABL) that
+      provides 37°C and active 5% CO 2 control.
+    kind: specified
+    note: 'Mammalian-cell set point (incubator, not PHAB-internal measurement). Measured inside PHABs for fungal
+      biofilms (Hupka 2023): "25.6 ± 0.9 °C" (flight). OSD-118: CGBA preset 37 °C. SPLASH #19 temperature_range
+      "-80C to +43C" (hardware compatibility).'
+  rh_percent:
+    value: 96.6
+    unit: '%'
+    source: Hupka M, Kedia R, Schauer R, et al. (2023) Morphology of Penicillium rubens Biofilms Formed in Space.
+      Life 13:1001. doi:10.3390/life13041001
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10144393/fullTextXML
+    quote: The RH during incubation was 96.6 ± 6.0% for all spaceflight samples, while for Earth PHABs, the humidity
+      was less stable for some cases.
+    kind: measured
+    note: Fungal-biofilm configuration with absorbent mats wetted with 9 mL water per PHAB; not a general PHAB property.
+  co2_ppm:
+    value: [45000, 50000]
+    unit: ppm
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: The PHAB, in this configuration, can maintain 4.5%–5% CO 2 for up to 9 days once charged and sealed.
+    kind: derived
+    note: 4.5-5% (v/v) converted to ppm; sealed transport configuration. In SABL/ACM the CO2 is actively held at
+      5%.
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced (ISS cabin air when vented).
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: dark (fungal-biofilm run); otherwise not specified
+    unit: '-'
+    source: Hupka M, Kedia R, Schauer R, et al. (2023) Morphology of Penicillium rubens Biofilms Formed in Space.
+      Life 13:1001. doi:10.3390/life13041001
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10144393/fullTextXML
+    quote: and darkness, rendering the ideal environment for fungal growth.
+    kind: specified
+nutrients:
+  mode:
+    value: culture_medium in BioCell wells (2-200 mL formats) or agar in OmniTrays
+    unit: '-'
+    source: BioServe Space Technologies, BioCell spaceflight-hardware page (accessed 2026-10-12)
+    url: https://www.colorado.edu/center/bioserve/spaceflight-hardware/biocell
+    quote: BioCells are available in a wide variety of formats varying in culture volume (2-200ml), sample size
+      (1-12 wells), cell type (attached or suspended)
+    kind: specified
+    note: 'OmniTray example (OSD-233): "Nunc OmniTray plates ... containing 46 mL of solid GMM media".'
+  detail:
+    value: gas-permeable membrane on both sides of each well; membrane is also the cell growth surface
+    unit: '-'
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: A gas-permeable membrane covers both sides of the well.
+    kind: specified
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: 'PHAB: aluminum; BioCell: aluminum frame + polysulfone body + gas-permeable membranes'
+    unit: '-'
+    source: Wnorowski A, Sharma A, Chen H, et al. (2019) Effects of Spaceflight on Human Induced Pluripotent Stem
+      Cell-Derived Cardiomyocyte Structure and Function. Stem Cell Reports 13:960. doi:10.1016/j.stemcr.2019.10.006
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6915842/fullTextXML
+    quote: The Plate Habitat (PHAB) is an aluminum box that can be sealed or vented.
+    kind: specified
+  gas_permeability:
+    value: BioCell top membrane porous to O2/CO2 (qualitative, no permeance value)
+    unit: '-'
+    source: OSDR study OSD-118 protocol/description (biodata API, snapshot 2026-10-12)
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-118/
+    quote: The top surface of the chamber was made of a porous membrane that allowed for the exchange of O2 and
+      CO2 with the medium.
+    kind: specified
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: PHAB is unpowered ("passive (non-powered)", BioServe); thermal control by host incubator.
+searched: |
+  Opened this session: OSDR registry 2005; SPLASH #19; OSD-114/118/233/258/344/628 protocols; payload Micro-9/Micro-10;
+  BioServe BioCell and PHAB pages; Wnorowski et al. 2019 (PMC6915842); Hupka et al. 2023 (PMC10144393); Lu et al. 2017 (PMC5332164);
+  Hammond et al. (PMC6560652); Zea et al. 2018 (PMC6235448). Web search for PHAB dimensions returned none.
+  Missing: PHAB internal/external dimensions and free volume, vent geometry, BioCell dimensions, membrane permeance.

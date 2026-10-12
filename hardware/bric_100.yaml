@@ -1,0 +1,177 @@
+entity_id: HW024
+name: Biological Research In Canisters - BRIC-100 (100 mm Petri dish canister)
+vendor: NASA Kennedy Space Center
+splash_ids: [24]
+registry_ids: ['2019']
+curated: '2026-10-12'
+location:
+  value: Shuttle middeck stowage (STS-64, -70, -77, -78, -95); registry also lists an ISS version
+  unit: '-'
+  source: OSDR payload record BRIC-02, snapshot 2026-10-12
+  url: https://osdr.nasa.gov/geode-py/ws/api/payload/BRIC-02
+  quote: The experiment will be sealed and housed in the mid-deck of the Space Shuttle.
+  kind: specified
+  note: 'SPLASH #24 (BRIC facility, alternate name "BRIC-100") dims field: "Single Mid-Deck Locker" (stowage envelope).
+    CONFLICT: SPLASH #24 specimen_size "48-60 mm petri dishes" describes the BRIC suite generally, not BRIC-100.'
+geometry:
+  enclosure_cylinder_mm:
+    value: null
+    unit: mm
+    note: 'BRIC-100 canister dimensions not found (no BRIC-100 fact sheet in NTRS; registry and NASA SMD page give
+      none). Unverified lead NOT used: 1995 Arizona Daily Wildcat news item on M. sexta canisters "each 15 inches
+      high and four and one half inches in diameter" (pre-flight press, hardware not named).'
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: Not sourced.
+  specimen_container:
+    value: 100 mm Petri dishes
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: BRIC-100 can accommodate nine 100-mm Petri dishes.
+    kind: specified
+    note: 'Payload BRIC-13: "The BRIC cylinder can accommodate nine 100 mm petri dishes." How M. sexta pupae (BRIC-04/07)
+      were held is not sourced.'
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: Dish height not sourced.
+  n_specimen_units:
+    value: 9
+    unit: Petri dishes per canister
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: BRIC-100 can accommodate nine 100-mm Petri dishes.
+    kind: specified
+  layout:
+    value: null
+    note: Stacking arrangement not sourced (threaded lids at both ends per registry).
+specimen:
+  types:
+    value: Manduca sexta pupae; daylily and orchard grass embryos/cultures
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: Specimens flown in the BRIC-100 mm Petri dish (BRIC-100) include Manduca sexta (tobacco hornworm) pupae,
+      Hemerocallis lillioasphodelus L. (daylily) and Dactylis glomerta L. (orchard grass) embryos.
+    kind: specified
+ventilation:
+  mode:
+    value: 'passive (breathable lids: semi-permeable membrane) - or sealed with solid lids'
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: This configuration allows passive gas exchange of oxygen and carbon dioxide through a semi-permeable
+      membrane.
+    kind: specified
+    note: 'Same record: "if gas exchange is not required the breathable lid (containing the semi-permeable membrane)
+      can be replaced with a solid lid providing a sealed, closed experimental environment." ESA 2003 report: "BRIC-100
+      (vented or sealed)". Configuration per flight not recorded.'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not applicable (passive diffusion, unpowered).
+  inlet:
+    value: top and bottom lids each with 25 x 1.0 cm holes covered by a Teflon membrane (0.5 um pore); 2 septa for
+      gas sampling
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: The bottom and top lids of each breathable canister have 25 1.0 cm holes and a Teflon membrane (pore
+      size 0.5 µm).
+    kind: specified
+    note: '"Two septa located in the lid allow for gas sampling." Hole pattern/membrane thickness not sourced.'
+  outlet:
+    value: null
+    note: Same membrane-covered holes in the opposite lid (diffusive, no directed flow).
+environment:
+  temperature_C:
+    value: null
+    unit: degC
+    note: Unpowered; follows middeck ambient. No logged value found.
+  rh_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: Not sourced.
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: not light-tight in vented configuration (light-tightness with solid lids not stated)
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: The vented BRIC-100 configuration is not a light-tight container
+    kind: specified
+    note: Light level reaching specimens through the membrane-covered holes not sourced.
+nutrients:
+  mode:
+    value: culture_medium (plant tissue/embryo culture in Petri dishes)
+    unit: '-'
+    source: OSDR payload record BRIC-02, snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/payload/BRIC-02
+    quote: For Dr. Conger’s research, orchard grass leaf segments will be placed in a special nutrient broth in
+      petri dishes in a BRIC 100 canister.
+    kind: specified
+  detail:
+    value: null
+    note: Medium volumes not sourced.
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: anodized aluminum cylinder; Teflon membrane in breathable lids
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: The Biological Research in Canisters (BRIC) unit is an anodized-aluminum cylinder used to provide passive
+      stowage for investigations into the effects of space flight on small specimens.
+    kind: specified
+  gas_permeability:
+    value: Teflon membrane, 0.5 um pore size, over 25 x 1.0 cm holes per lid (qualitative; no permeance value)
+    unit: '-'
+    source: OSDR Hardware Registry 2019 (BRIC-100), snapshot 2026-10-12
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2019
+    quote: The bottom and top lids of each breathable canister have 25 1.0 cm holes and a Teflon membrane (pore
+      size 0.5 µm).
+    kind: specified
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: ESA-ISLSWG Arabidopsis Workshop, ESTEC 1-2 July 2003 - Report (NASA-hosted PDF)
+    url: https://www.nasa.gov/pdf/185050main_arabidopsis_workshop_07-2003.pdf
+    quote: BRICs are passive hardware, do not have centrifugation capability, and when sealed, result in elevated
+      ethylene levels in the hardware.
+    kind: specified
+searched: |
+  Opened this session: OSDR registry 2019 + payloads BRIC-02/04/05/07/08/13; SPLASH #24; NASA SMD plant hardware page;
+  ESA-ISLSWG 2003 workshop report; NTRS API search "BRIC-100" (only the BRIC-100VC fact sheet exists);
+  searches for Conger/Tomaszewski orchardgrass (STS-64) and Tischler M. sexta (STS-70/77) hardware descriptions;
+  Arizona Daily Wildcat 2 Mar 1995 news item (canister size stated but hardware unnamed - not used); STS-70 press kit URL dead.
+  Missing: canister dimensions and volume, membrane permeance, flight temperatures and gas composition.

@@ -1,0 +1,57 @@
+# Advanced Plant Habitat - CFD model of the growth chamber during PH-04 (OSD-772) set-points.
+# Every number is a ref into hardware/aph.yaml or a listed assumption.
+hardware: aph
+domain: {shape: box, size: {ref: geometry.enclosure_internal_mm}}
+obstacles:
+  - name: science_carrier
+    shape: box
+    size: {ref: geometry.specimen_container_mm}
+    center: [227, 204, 25.5]
+zones:
+  - name: canopy
+    shape: box
+    size: [434, 388, 100]
+    center: [227, 204, 101]
+    sources:
+      CO2:
+        rate: {ref: specimen_load.co2_flux}
+        unit: umol m-2 s-1
+        area_m2: {ref: geometry.growing_area_m2}
+        uptake: true
+openings:
+  - {name: inlet_left,  role: inlet,  face: xmin, size: [300, 60], center: [204, 101], velocity_m_s: {ref: run_setpoints.PH04.air_velocity_m_s}}
+  - {name: inlet_right, role: inlet,  face: xmax, size: [300, 60], center: [204, 101], velocity_m_s: {ref: run_setpoints.PH04.air_velocity_m_s}}
+  - {name: outlet_left,  role: outlet, face: xmin, size: [300, 60], center: [204, 410]}
+  - {name: outlet_right, role: outlet, face: xmax, size: [300, 60], center: [204, 410]}
+environment:
+  temperature_C: {ref: run_setpoints.PH04.temperature_C}
+  co2_ppm: {ref: run_setpoints.PH04.co2_ppm}
+  rh_percent: {ref: run_setpoints.PH04.rh_percent}
+numerics: {cell_mm: 16, surface_level: 0, obstacle_level: 0, end_time_s: 120, write_every_s: 10, max_dt_s: 0.05, max_co: 0.9, probe_every_steps: 20}
+assumptions:
+  - param: obstacles[0].center
+    why: "Science Carrier fills the chamber floor ('installed into the base of the growth chamber', registry 2017); footprint equal to the chamber footprint by construction (enclosure footprint was derived from the carrier)."
+  - param: zones[0].size
+    why: "Canopy zone spans the planted surface minus 10 mm margins; 100 mm height represents a young canopy (PH-04 plants were 14 days old at the first RH change). Sensitivity: canopy height not sourced."
+  - param: zones[0].center
+    why: "Canopy zone sits directly on the Science Carrier surface (z = 51 mm)."
+  - param: openings[0].size
+    why: "Vent sizes not published ('Vent sizes not published', aph.yaml). 300 x 60 mm slots assumed on each ECS side."
+  - param: openings[0].center
+    why: "ECS returns air 'at plant level from opposing sides' (Monje et al. 2020): inlets centred 50 mm above the carrier."
+  - param: openings[1].size
+    why: "As openings[0]."
+  - param: openings[1].center
+    why: "As openings[0]."
+  - param: openings[2].size
+    why: "Outlet size not published; equal to inlets."
+  - param: openings[2].center
+    why: "ECS fans 'remove air from the top of the growth chamber above the plants' (Monje et al. 2020): outlets centred 40 mm below the ceiling on the same side walls (ECS modules are 'mounted on each side')."
+  - param: openings[3].size
+    why: "As openings[2]."
+  - param: openings[3].center
+    why: "As openings[2]."
+  - param: openings.inlet_velocity_interpretation
+    why: "The PH-04 'wind speed of 0.3 m/s' set-point is applied as the inlet face velocity; where APH measures wind speed is not stated (aph.yaml note)."
+  - param: zones.canopy.co2_load
+    why: "Canopy net CO2 uptake uses the wheat range 7-25 umol m-2 s-1 (Wheeler 1996 as cited by Monje et al. 2020; mid-point 16) over the 0.19 m2 growth area; no pepper rate was found. Transpiration and lamp/canopy heat are not modelled (no sourced value)."

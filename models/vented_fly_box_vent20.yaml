@@ -1,0 +1,57 @@
+# Vented Fly Box - passive box of 15 fly vials in the ISS cabin; vent size is NOT published,
+# so the model is run for two assumed vent sizes (this file: 20 x 20 mm on each end wall).
+hardware: vented_fly_box
+domain: {shape: box, size: {ref: geometry.enclosure_internal_mm}}
+obstacles:
+  - name: vial
+    shape: cylinder
+    axis: x
+    D: {ref: geometry.specimen_container_mm, index: 0}
+    H: {ref: geometry.specimen_container_mm, index: 1}
+    center: [47, 15, 15]
+    repeat: {n: [1, 3, 5], pitch: [0, 32, 25]}
+zones:
+  - name: plug
+    shape: cylinder
+    axis: x
+    D: {ref: geometry.specimen_container_mm, index: 0}
+    H: 4
+    center: [86.5, 15, 15]
+    repeat: {n: [1, 3, 5], pitch: [0, 32, 25]}
+    sources:
+      CO2: {rate: {ref: specimen_load.co2_flux, scale: 0.001}, unit: mL/h, count: 195}
+openings:
+  - {name: vent_plug_end, role: vent, face: xmax, size: [20, 20], center: [47, 65], outside: {CO2: {ref: "cabin:environment.co2_ppm"}, T: {ref: environment.temperature_C}}}
+  - {name: vent_base_end, role: vent, face: xmin, size: [20, 20], center: [47, 65], outside: {CO2: {ref: "cabin:environment.co2_ppm"}, T: {ref: environment.temperature_C}}}
+environment:
+  temperature_C: {ref: environment.temperature_C}
+  co2_ppm: {ref: "cabin:environment.co2_ppm"}
+  rh_percent: {ref: "cabin:environment.rh_percent"}
+numerics: {cell_mm: 3, surface_level: 0, obstacle_level: 1, end_time_s: 3600, write_every_s: 300, max_dt_s: 2.0, max_co: 0.9, probe_every_steps: 20}
+assumptions:
+  - param: obstacles[0].center
+    why: "15 vials (24 x 75 mm) fit the 94 x 94 x 130 mm box only lying along x in a 3 x 5 stack (upright, at most 12 fit); g-load at launch was directed into the food at the vial bottoms (OSD-347). Vials treated as solid (food + flies inside not resolved)."
+  - param: obstacles[0].repeat.n
+    why: "3 x 5 stack, see centre."
+  - param: obstacles[0].repeat.pitch
+    why: "Vials spaced 32 mm (y) and 25 mm (z) to fill the box cross-section."
+  - param: zones[0].H
+    why: "CO2 leaves each vial through its open foam plug (OSD-347; Researcher's Guide); released in a 4 mm layer at the plug end (x = 84.5-88.5 mm)."
+  - param: zones[0].center
+    why: "Plug end of each vial."
+  - param: zones[0].repeat.n
+    why: "As obstacles."
+  - param: zones[0].repeat.pitch
+    why: "As obstacles."
+  - param: zones.plug.sources.CO2.count
+    why: "13 flies per vial (OSD-347: '8 virgin females and 5 male adult virgin flies') x 15 vials = 195 adults; progeny that emerge during the mission (20-60 per vial on return) are not included, so the load is a lower bound."
+  - param: openings[0].size
+    why: "Vent hole number, size and position are not published (vented_fly_box.yaml). Run at two sizes, 20 x 20 and 60 x 60 mm per end wall, to show the sensitivity."
+  - param: openings[0].center
+    why: "Vents centred on the end walls."
+  - param: openings[1].size
+    why: "As openings[0]."
+  - param: openings[1].center
+    why: "As openings[0]."
+  - param: openings.exterior
+    why: "The exterior at each vent is taken as well mixed ISS cabin air (CO2 mid-point of the RR-1 U.S. Lab range, Choi et al. 2020) at the box temperature."

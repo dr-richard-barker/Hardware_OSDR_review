@@ -251,3 +251,45 @@ searched: |
   PH-01/PH-04; SPLASH #34; OSD-772 protocol. Not found: volumetric fan flow, internal chamber wall-to-wall
   dimensions (footprint taken from the root tray), vent sizes/positions beyond the verbal description, wall
   material, electrical power / heat load, O2 and pressure values.
+
+# Set-points of a specific flight run, used by models/aph.yaml. Added 2026-10-12 by the
+# modelling stage; each quote was checked verbatim against the frozen OSDR snapshot
+# (data/raw/2026-10-12/biodata/dataset_metadata.json, OSD-772).
+run_setpoints:
+  PH04:
+    temperature_C:
+      value: 23
+      unit: °C
+      source: "OSDR OSD-772 study protocol (PH-04 Chile Peppers in Space)"
+      url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+      quote: "an average air temperature setting of 23 degrees C, 80% Relative Humidity, and a wind speed of 0.3 m/s were selected set points"
+      kind: specified
+    rh_percent:
+      value: 80
+      unit: '%'
+      source: "OSDR OSD-772 study protocol (PH-04 Chile Peppers in Space)"
+      url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+      quote: "an average air temperature setting of 23 degrees C, 80% Relative Humidity, and a wind speed of 0.3 m/s were selected set points"
+      kind: specified
+      note: "First 14 days; 'After 14 days the relative humidity was reduced to 50%'."
+    air_velocity_m_s:
+      value: 0.3
+      unit: m/s
+      source: "OSDR OSD-772 study protocol (PH-04 Chile Peppers in Space)"
+      url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+      quote: "an average air temperature setting of 23 degrees C, 80% Relative Humidity, and a wind speed of 0.3 m/s were selected set points"
+      kind: specified
+    co2_ppm:
+      value: 550
+      unit: ppm
+      source: "OSDR OSD-772 study protocol (PH-04 Chile Peppers in Space)"
+      url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+      quote: "The CO2 concentration was controlled at 550 ppm throughout the experiment"
+      kind: specified
+    ppfd_umol_m2_s:
+      value: 300
+      unit: umol m-2 s-1
+      source: "OSDR OSD-772 study protocol (PH-04 Chile Peppers in Space)"
+      url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+      quote: "an average photosynthetic photon flux of 300 micromol per meter squared per second"
+      kind: specified

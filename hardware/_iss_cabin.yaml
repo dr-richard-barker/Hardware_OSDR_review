@@ -1,0 +1,27 @@
+# ISS cabin conditions used as the exterior of passive / cabin-ventilated hardware.
+# Values copied (with their quotes) from hardware/rodent_habitat.yaml, where they were
+# curated from Choi et al. (2020); they describe the U.S. Lab cabin during RR-1
+# (Sept 25 - Oct 31, 2014), not any hardware interior.
+name: ISS cabin (U.S. Lab, RR-1 in-flight phase)
+environment:
+  co2_ppm:
+    value: [788, 4690]
+    unit: ppm
+    source: "Choi S.Y. et al. (2020) Validation of a New Rodent Experimental System to Investigate Consequences of Long Duration Space Habitation. Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "In the U.S. Lab portion of the ISS where habitats were located, CO2 ranged from 788–4690 ppm, temperature from 21.3–24.1 °C, and humidity from 32–58% during the in-flight phase of the experiment (Sept 25 – Oct 31, 2014)."
+    kind: measured
+  temperature_C:
+    value: [21.3, 24.1]
+    unit: °C
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "In the U.S. Lab portion of the ISS where habitats were located, CO2 ranged from 788–4690 ppm, temperature from 21.3–24.1 °C, and humidity from 32–58% during the in-flight phase of the experiment (Sept 25 – Oct 31, 2014)."
+    kind: measured
+  rh_percent:
+    value: [32, 58]
+    unit: '%'
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "In the U.S. Lab portion of the ISS where habitats were located, CO2 ranged from 788–4690 ppm, temperature from 21.3–24.1 °C, and humidity from 32–58% during the in-flight phase of the experiment (Sept 25 – Oct 31, 2014)."
+    kind: measured

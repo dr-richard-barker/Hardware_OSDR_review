@@ -1,0 +1,53 @@
+pattern	produced_by	description
+data/raw/*/splash/*.json	hwreview.fetch	SPLASH instrument catalogue snapshot (verbatim API responses)
+data/raw/*/registry/*.json	hwreview.fetch	OSDR hardware registry, payload and experiment records (verbatim)
+data/raw/*/biodata/*.json	hwreview.fetch	OSDR study platform query and per-dataset metadata (verbatim)
+data/raw/*/SHA256SUMS	hwreview.fetch	checksums of the snapshot files
+data/raw/*/FETCH_INFO.json	hwreview.fetch	retrieval times, user agent and endpoints
+data/raw/fetch.log	hwreview.fetch	fetch progress log
+data/curated/splash_field_review.csv	manual (reviewed hwreview.consistency flags)	verdict and reason for every flagged SPLASH field
+data/curated/splash_block_rule.yaml	manual	SPLASH displaced-row block (#121-147) excluded from use
+data/curated/crosswalk_overrides.csv	manual	curated crosswalk links, no-links and platform kinds, each with a reason
+data/curated/role_overrides.csv	manual	curated role corrections, each with a reason
+data/curated/gold/sample.csv	hwreview (seeded draw, seed 20261012)	random sample of 12 habitats for the scorer validation
+data/curated/gold/CHECKLIST.md	manual	rater instructions for MI-CFD-HW
+data/curated/gold/texts/*.txt	hwreview.evidence	frozen text units shown to the raters
+data/curated/gold/rater_*.csv	blind raters A and B	item scores with unit numbers and verbatim quotes
+data/curated/gold/adjudication.csv	manual	adjudicated score and reason for every rater disagreement
+data/curated/quote_audit_sample.csv	scripted seeded draw (seed 20261012)	40 curated parameter records for the independent quote audit
+data/curated/quote_audit_results.csv	independent auditor	quote found / value supported per sampled record
+data/derived/entities.json	hwreview.crosswalk	hardware entities (SPLASH ids, registry ids, platform strings)
+data/derived/crosswalk_links.csv	hwreview.crosswalk	every automatic or curated S/R link and its basis
+data/derived/crosswalk_proposals.csv	hwreview.crosswalk	unresolved fuzzy/ambiguous matches left for review
+data/derived/platform_components.json	hwreview.crosswalk	study platform components and the entities they map to
+data/derived/classification.json	hwreview.classify	role, organisms, platforms, locations and nutrient modes per entity
+hardware/*.yaml	literature curation (see hardware/CURATION_NOTES.md)	sourced hardware specifications; every value has source, URL and verbatim quote
+hardware/SCHEMA.md	manual	specification file schema
+hardware/CURATION_NOTES.md	manual	curation log, source conflicts and inaccessible sources
+hardware/QUOTE_AUDIT.md	independent auditor	summary of the quote audit
+models/*.yaml	manual	CFD model definitions: refs into hardware files plus declared assumptions
+results/tables/T0_splash_consistency.csv	hwreview.consistency	automated SPLASH field-attribution and organism checks
+results/tables/T1_hardware_catalogue.csv	hwreview.classify	catalogue of all hardware entities
+results/tables/T2_counts.csv	hwreview.classify	headline counts (bio-capable, habitats, platforms, nutrient modes)
+results/tables/T2b_nutrient_evidence.csv	hwreview.classify	verbatim evidence for each nutrient/water delivery mode
+results/tables/T3_sufficiency_scores.csv	hwreview.sufficiency	MI-CFD-HW item scores and tiers (SPLASH-only and public scopes)
+results/tables/T3a_checklist_items.csv	hwreview.sufficiency	checklist item definitions
+results/tables/T3b_sufficiency_evidence.csv	hwreview.sufficiency	quote that earned each automated item score
+results/tables/T4*_*.csv	hwreview.meta	meta-analysis tables (per habitat, groups, items, usage quadrant)
+results/tables/T4_summary.json	hwreview.meta	meta-analysis statistics and catalogue-defect counts
+results/tables/T5*	hwreview.gold	scorer validation (agreement, kappa, precision, recall, gold cells)
+results/tables/T6_curated_tiers.csv	hwreview.curated	tiers after literature curation
+results/tables/T7_gci.csv	hwreview.gci	grid convergence index for the hardware mesh ladders
+results/tables/T8*_verification_*.csv	hwreview.verify_cfd	heated-cavity ladders and diffusion verification
+results/tables/V_verification_*.json	hwreview.verify_cfd	raw verification outputs
+results/tables/M_*.json	hwreview.post	per-model metrics (0 g and 1 g)
+results/tables/T9_cfd_results_*.csv	hwreview.results	cross-hardware CFD metrics
+results/figures/F*.p*	hwreview.figures_meta / hwreview.results	manuscript figures (PDF + PNG)
+results/figures/ortho_*.p*	hwreview.ortho	orthographic engineering sheets of each CFD geometry
+results/figures/fields_*.p*	hwreview.post	0 g / 1 g mid-plane field slices
+results/figures/card_*.p*	hwreview.results	environment cards (specimen-zone time series)
+results/figures/anim_*.mp4	hwreview.post.animate	mid-plane animations, 0 g | 1 g
+results/fields/timeseries_*.csv	hwreview.post	zone, domain and outlet time series per run
+results/fields/vtk_*.tar.gz	hwreview.results	VTK time series (4-D field record) per medium-mesh run
+results/macros.tex	hwreview.macros	every number quoted in the manuscript
+latex/output/*	latex/Makefile	manuscript and supplement in PDF, DOCX and HTML

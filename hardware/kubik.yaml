@@ -1,0 +1,199 @@
+entity_id: HW040
+name: Kubik incubator (ESA; Bioreactor Express)
+vendor: ESA; commercial operation Kayser Italia (Bioreactor Express Service)
+splash_ids: [40]
+registry_ids: ['1172']
+curated: '2026-10-12'
+location:
+  value: ISS Columbus module (two units permanently installed since 2010)
+  unit: '-'
+  source: ESA (7 Dec 2017) "Kubik" image caption, ESA Multimedia
+  url: https://www.esa.int/ESA_Multimedia/Images/2017/12/Kubik
+  quote: Two Kubik are currently on the International Space Station, housed in the Columbus module.
+  kind: specified
+  note: 'ESA 2025: "In 2010, two KUBIKs were permanently installed in ESA’s Columbus module". Earlier units flew
+    from 2004 (Delta mission) and in Zvezda/Soyuz configurations (registry 1172, OSD-546).'
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: Thermal-chamber dimensions not found in a source opened (only volume, below). An unopened Wikipedia mirror
+      reportedly gives 26 x 26 x 12.8 cm - not used.
+  enclosure_external_mm:
+    value: [370, 370, 370]
+    unit: mm
+    source: 'SPLASH instrument #40 (Kubik/Bioreactor Express; Kubik Incubator), snapshot 2026-10-12'
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/40
+    quote: 37 x 37 x 37cm
+    kind: specified
+    note: 'ESA image caption: "Kubik is a 37x 37cm temperature-controlled incubator"; ESA 2018 caption calls it
+      "this 40 cm cube" (rounded).'
+  free_air_volume_L:
+    value: 9
+    unit: L
+    source: Kayser Italia, Bioreactor Express home page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/
+    quote: KUBIK is a small controlled-temperature incubator (volume of the thermal chamber around nine litres)
+      used to perform biological experiments in space.
+    kind: specified
+    note: 'Gross thermal-chamber ("tank") volume, approximate; free air = 9 L minus insert and experiment containers.
+      Kayser KUBIK page: "the whole KUBIK’s tank volume (roughly 9 liters)".'
+  specimen_container:
+    value: Kayser Italia experiment containers (e.g. KIC-SL) holding experiment units (bioreactors), mounted on
+      a removable insert
+    unit: '-'
+    source: Kayser Italia, Bioreactor Express "KUBIK based" page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/?page_id=310
+    quote: KUBIK features a thermal chamber that is designed to host removable inserts. The inserts are designed
+      to accommodate the experiment containers. The experiment containers host the bioreactors where the experiment
+      is performed.
+    kind: specified
+  specimen_container_mm:
+    value: [82, 42, 21]
+    unit: mm
+    source: Kayser Italia, Bioreactor Express "Experiment Containers" page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/?page_id=315
+    quote: External Envelope 98x62x23 mm (LxWxH) Internal Dimensions 82x42x21 mm (LxWxH) – for EU accommodation
+      Internal volume 72 ml (whole available volume is ≈84 ml)
+    kind: specified
+    note: KIC-SL internal [L, W, H]; external 98 x 62 x 23 mm; one level of containment. KIC-SL used in OSD-426/546/1005.
+      Other ECs differ (e.g. ICE used vented "Type I Experiment Containers (EC1)"; rotifers used KIC Magnum NLA).
+  n_specimen_units:
+    value: 24
+    unit: 'EC slots (centrifuge insert: 16 static + 8 on centrifuge)'
+    source: Kayser Italia, Bioreactor Express "KUBIK based" page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/?page_id=310
+    quote: The Centrifuge Insert has 16 static slots and 8 slots on the centrifuge.
+    kind: specified
+    note: 'ESA BES: "room for 24 experiment containers"; Kayser: Passive Insert "has 32 slots". CONFLICT: SPLASH
+      #40 "Accommodates 16 Airbus standard Type-1 containers".'
+  layout:
+    value: removable insert; centrifuge at centre of chamber, settable 0.2-2 g
+    unit: '-'
+    source: Kayser Italia, Bioreactor Express "KUBIK based" page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/?page_id=310
+    quote: A centrifuge with settable gravity level between 0.2g to 2g is available inside the facility.
+    kind: specified
+    note: 'ESA 2018: "At the centre of the temperature-controlled Kubik is a centrifuge to simulate gravity". Rotor
+      radius not sourced (Cockell 2020: "small radius of the centrifuge rotor").'
+specimen:
+  types:
+    value: bacteria, fungi, human immune and stem cells, plant seedlings, tadpoles, rotifers, nematodes
+    unit: '-'
+    source: ESA (7 Feb 2018) "Kubik on Space Station" image caption, ESA Multimedia
+    url: https://www.esa.int/ESA_Multimedia/Images/2018/02/Kubik_on_Space_Station
+    quote: Kubik has over the years hosted samples of bacteria, fungi, human white blood cells and stem cells from
+      bone marrow and umbilical cords, plant seedlings, and swimming tadpoles.
+    kind: specified
+    note: 'Registry 1172: ICE (C. elegans in culture bags in EC1). OSDR: OSD-13 (T cells), OSD-29 (mouse BMSC),
+      OSD-426/430/1005 (cell lines), OSD-431 (HMEC-1), OSD-546 (hBMSC), OSD-824 (rotifers).'
+ventilation:
+  mode:
+    value: null
+    note: 'Not sourced: no statement found on air circulation (fan) inside the Kubik chamber or on exchange of chamber
+      air with the cabin. Related: MicroAge (Jones 2026) calls Kubik "a temperature-controlled, atmospheric CO₂
+      incubator" and its EC exchanged gas with Kubik air through gas-permeable membranes; registry 1172 (ICE): vented
+      EC1s "allow air exchange between the cabin and the worm cultures within the cassette". KIC-SL itself is a
+      closed 1-LoC container.'
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: Not sourced.
+  inlet:
+    value: null
+    note: Not sourced.
+  outlet:
+    value: null
+    note: Not sourced.
+environment:
+  temperature_C:
+    value: [6, 38]
+    unit: degC
+    source: Kayser Italia, Bioreactor Express "KUBIK based" page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/?page_id=310
+    quote: KUBIK allows experiments to operate in the range of 6°C to 38°C, and can accommodate up to 32 standard
+      experiment containers (less in case of extended size containers).
+    kind: specified
+    note: 'SPLASH #40 temperature_range "6 - 38C" (agrees). Flight examples: 37 ± 0.5 °C (MicroAge, Jones 2026);
+      20.16 °C logged (BioRock, Cockell 2020); 15 °C (Rotifer-B1, Moris 2025); 37 °C (OSD-426/430/1005).'
+  rh_percent:
+    value: ambient (uncontrolled)
+    unit: '-'
+    source: 'SPLASH instrument #40 (Kubik/Bioreactor Express; Kubik Incubator), snapshot 2026-10-12'
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/40
+    quote: Ambient
+    kind: specified
+    note: SPLASH rh_range field value.
+  co2_ppm:
+    value: ISS cabin (atmospheric) level; not controlled
+    unit: '-'
+    source: 'Jones SW, Shigdar S, Temple J, et al. (2026) MicroAge mission: experimental design and hardware for
+      a bespoke culture system supporting tissue-engineered skeletal muscle. NPJ Microgravity 12:29. doi:10.1038/s41526-026-00579-z'
+    url: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13039470/fullTextXML
+    quote: Kubik, a temperature-controlled, atmospheric CO₂ incubator located on the Columbus module of the ISS.
+    kind: specified
+    note: 'Same paper: "neither the launch stowage assets or Kubik could maintain an environmental CO 2 concentration
+      of 5% (v/v)".'
+  o2_percent:
+    value: null
+    unit: '%'
+    note: Not sourced.
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: Not sourced.
+  light:
+    value: null
+    note: No lighting statement found for the Kubik facility.
+  gravity_g:
+    value: [0.2, 2]
+    unit: g
+    source: Kayser Italia, Bioreactor Express "KUBIK based" page (accessed 2026-10-12)
+    url: http://www.bioreactorexpress.com/?page_id=310
+    quote: A centrifuge with settable gravity level between 0.2g to 2g is available inside the facility.
+    kind: specified
+nutrients:
+  mode:
+    value: null
+    note: Experiment-unit specific (liquid media in Kayser EUs, culture bags, etc.); no facility-level value.
+  detail:
+    value: null
+    note: See OSDR protocols per experiment.
+specimen_load:
+  co2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  o2_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  h2o_flux:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+  heat_W:
+    value: null
+    note: 'Not curated: no organism-level gas-exchange or heat value was opened in this session for the specimens
+      flown in this hardware.'
+walls:
+  material:
+    value: null
+    note: Chamber wall material not sourced.
+  gas_permeability:
+    value: null
+    note: Not sourced.
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: 'Facility power not sourced. Jones 2026: "the power limitations of the Kubik incubator rendered the concurrent
+      execution of the electrical stimulation protocol across all relevant units unfeasible". SPLASH #40 heat_sink:
+      "Y".'
+searched: |
+  Opened this session: OSDR registry 1172 + payloads Leukin-2, IRISS, ROTIFER-B1/B2, hBMSC-OSTEO; SPLASH #40; OSD-13/29/426/430/431/546/824/1005 protocols;
+  ESA image captions (2017, 2018), ESA BES (2019) and 20-years (2025) articles; Kayser Italia Bioreactor Express pages (home, KUBIK, containers, bioreactors);
+  Jones et al. 2026 MicroAge (PMC13039470); Cockell et al. 2020 BioRock (PMC7656455); Moris et al. 2025 (PMC12220480); Vukich 2015 Kayser slides.
+  Unavailable: Comat KUBIK product sheets (404), Wikipedia KUBIK article (deleted; IPFS mirror HTTP 418), spacestationresearch.com (connection refused),
+  Nanoracks Release 96 PDF (TLS error), web.archive.org (blocked).
+  Missing: chamber internal dimensions, internal air circulation/fan and cabin exchange, centrifuge radius, power.
