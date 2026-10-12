@@ -12,7 +12,7 @@ import pandas as pd
 
 from . import style
 from .paths import TABLES
-from .style import CLASS_COLOR, CLASS_LABEL, INK, INK2, LEVEL_COLOR, MUTED, plt
+from .style import CLASS_COLOR, CLASS_LABEL, INK, INK2, LEVEL_COLOR, MUTED, plt  # noqa: F401
 
 
 SHORT = {"HW033": "Veggie", "HW034": "APH", "HW142": "Rodent Habitat", "HW232": "AEM Transporter",
@@ -183,7 +183,59 @@ def run():
     fig3_groups()
     fig4_usage()
     fig5_validation()
+    fig7_curated_gaps()
 
 
 if __name__ == "__main__":
     run()
+
+
+def _short(name: str) -> str:
+    import re
+    base = name.split(" (")[0]
+    if " - " in base and len(base.split(" - ")[-1]) <= 12:
+        return base.split(" - ")[-1]
+    paren = re.search(r"\(([^)]+)\)", name)
+    if len(base) > 34 and paren:
+        return paren.group(1).split(",")[0][:30]
+    if len(base) > 34 and " - " in base:
+        return base.split(" - ")[-1][:34]
+    return base[:34]
+
+
+def fig7_curated_gaps():
+    """Critical-item matrix after literature curation (rows: hardware, grouped by tier)."""
+    d = pd.read_csv(TABLES / "T6_curated_tiers.csv")
+    order = {"A": 0, "B": 1, "C": 2}
+    d = d.assign(_o=d.tier.map(order), _n=(d[["G1", "G2", "F1", "F2", "E1", "B1"]].sum(axis=1))) \
+         .sort_values(["_o", "_n", "name"], ascending=[True, False, True]).reset_index(drop=True)
+    items = ["G1", "G2", "F1", "F2", "E1", "B1"]
+    labels = ["Enclosure\ndims", "Specimen\ncontainer", "Ventilation\nmode", "Airflow\nrate", "Temper-\nature",
+              "Specimen\ntype"]
+    fig, ax = plt.subplots(figsize=(5.4, 0.2 * len(d) + 1.4))
+    for i, r in d.iterrows():
+        y = len(d) - 1 - i
+        for j, k in enumerate(items):
+            if k == "F2" and r.F2_waived:
+                ax.add_patch(plt.Rectangle((j, y), 0.92, 0.82, fc="white", ec=MUTED, lw=0.6, hatch="////"))
+            else:
+                ax.add_patch(plt.Rectangle((j, y), 0.92, 0.82, fc=LEVEL_COLOR[1.0] if r[k] else LEVEL_COLOR[0.0],
+                                           ec="white", lw=0.8))
+        ax.text(len(items) + 0.15, y + 0.41, r.tier, va="center", fontsize=7, fontweight="bold",
+                color=style.VERMILION if r.tier == "A" else INK2)
+        ax.text(-0.15, y + 0.41, _short(r["name"]), va="center", ha="right", fontsize=6.4, color=INK)
+    ax.set_xlim(-0.1, len(items) + 0.6)
+    ax.set_ylim(-0.2, len(d))
+    ax.set_xticks(np.arange(len(items)) + 0.46, labels, fontsize=6.4)
+    ax.xaxis.tick_top()
+    ax.set_yticks([])
+    for sp in ax.spines.values():
+        sp.set_visible(False)
+    ax.grid(False)
+    handles = [plt.Rectangle((0, 0), 1, 1, fc=LEVEL_COLOR[1.0], label="sourced (verbatim quotation)"),
+               plt.Rectangle((0, 0), 1, 1, fc=LEVEL_COLOR[0.0], label="not found"),
+               plt.Rectangle((0, 0), 1, 1, fc="white", ec=MUTED, hatch="////", label="not applicable (sealed / passive)")]
+    ax.legend(handles=handles, loc="upper center", bbox_to_anchor=(0.35, -0.01), ncol=3, fontsize=6.4,
+              handlelength=1.2)
+    ax.set_title("Critical CFD inputs after literature curation (tier at right)", fontsize=8.5, x=0.2, pad=26)
+    style.save(fig, "F7_curated_gaps")

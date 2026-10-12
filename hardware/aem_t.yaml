@@ -4,7 +4,7 @@ splash_ids: []
 registry_ids: ["1380"]
 
 location:
-  value: "powered middeck-locker payload in SpaceX Dragon (ascent/return) or Cygnus; can run as a non-rack payload on ISS"
+  value: "launched and returned mounted (powered) on SpaceX Dragon; middeck-locker form factor"
   unit: "-"
   source: "OSDR Hardware Registry 1380, Animal Enclosure Module Transporter (AEM-T) (snapshot 2026-10-12)"
   url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380

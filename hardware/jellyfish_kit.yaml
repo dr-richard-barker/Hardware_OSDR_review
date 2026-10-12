@@ -128,13 +128,13 @@ nutrients:
 
 specimen:
   type:
-    value: "moon jellyfish Aurelia (aurita) polyps (scyphistomae) and ephyrae (1-2 mm), 9-day SLS-1 exposure"
+    value: "Aurelia polyps (scyphistomae) and ephyrae (1-2 mm), 9-day SLS-1 exposure"
     unit: "-"
     source: "Spangenberg DB et al. (1994) Development studies of Aurelia (jellyfish) ephyrae which developed during the SLS-1 mission. Adv Space Res 14(8):239-247 (PubMed abstract, PMID 11537923)"
     url: https://pubmed.ncbi.nlm.nih.gov/11537923/
     quote: "Aurelia polyps (scyphistomae) and ephyrae were exposed to microgravity for nine days aboard the space shuttle during the SLS-1 mission."
     kind: specified
-    note: "Ephyra size '(1-2 mm)' from Spangenberg final report NAG10-0178 (NTRS 19990062734)."
+    note: "Ephyra size '(1-2 mm)' from Spangenberg final report NAG10-0178 (NTRS 19990062734). Species epithet removed 2026-10-12 after the quote audit: neither source names A. aurita."
 
 specimen_load:
   co2_flux:

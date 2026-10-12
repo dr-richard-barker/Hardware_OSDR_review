@@ -22,7 +22,6 @@ HW112,Mice Drawer System Facility,rodent,2001-2010,2009.0,Legacy,no mission reco
 HW069,Aquatic Habitat,other_animal,>2010,2012.0,Legacy,no mission record,SPLASH only,2,0.4,0.6667,C,F1; F2,0.3333,C,unknown,C,C,documented
 HW219,Cell Culture Module (CCM),cell_microbe,1981-2000,1998.0,not in SPLASH,Shuttle,registry only,2,0.4667,0.5833,C,G1; G2; F2,0.0,C,sealed,C,C,documented
 HW150,Jellyfish Kit,mixed,1981-2000,1991.0,not in SPLASH,Shuttle,registry only,1,0.1667,0.3333,C,G1; G2; F2; E1,0.0,C,sealed,C,C,under-documented
-HW220,E150 Experiment Unique Hardware (EUE),rodent,1981-2000,1998.0,not in SPLASH,Shuttle,registry only,1,0.1667,0.25,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C,under-documented
 HW215,Vestibular Function Experiment Unit (VFEU),mixed,1981-2000,1998.0,not in SPLASH,Shuttle,registry only,1,0.2,0.25,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C,under-documented
 HW205,BOTEX,mixed,1981-2000,1998.0,not in SPLASH,Shuttle,registry only,1,0.2667,0.4167,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C,under-documented
 HW072,Avian Development Facility,mixed,2001-2010,2001.0,Legacy,Shuttle,SPLASH+registry,1,0.3333,0.4167,C,G1; G2; F1; F2; E1,0.0,C,sealed,C,C,documented

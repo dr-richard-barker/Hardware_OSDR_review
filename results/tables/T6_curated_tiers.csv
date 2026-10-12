@@ -1,5 +1,4 @@
 slug,entity_id,name,G1,G2,F1,F2,F2_waived,E1,B1,tier,missing,ventilation_mode,n_parameters,n_sourced
-_iss_cabin,,"ISS cabin (U.S. Lab, RR-1 in-flight phase)",False,False,False,False,False,True,False,C,G1; G2; F1; F2; B1,,3,3
 abrs,HW064,Advanced Biological Research System (ABRS),True,True,True,False,False,True,True,B,F2,forced,28,18
 adf,HW072,Avian Development Facility (ADF),True,False,True,False,False,True,True,B,G2; F2,forced,29,19
 adsep,HW046,ADvanced Space Experiment Processor (ADSEP),False,True,False,False,False,True,True,C,G1; F1; F2,,29,12

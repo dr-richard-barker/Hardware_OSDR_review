@@ -51,3 +51,5 @@ results/fields/timeseries_*.csv	hwreview.post	zone, domain and outlet time serie
 results/fields/vtk_*.tar.gz	hwreview.results	VTK time series (4-D field record) per medium-mesh run
 results/macros.tex	hwreview.macros	every number quoted in the manuscript
 latex/output/*	latex/Makefile	manuscript and supplement in PDF, DOCX and HTML
+openfoam/docker/IMAGE.md	manual	pinned OpenFOAM runtime image and how it is invoked
+results/tex/*.tex	hwreview.tables_tex	LaTeX tables rendered from the result CSVs

@@ -116,23 +116,41 @@ and catalogue coverage with Kruskal--Wallis tests and pairwise Mann--Whitney tes
 Benjamini--Hochberg correction, and related to the number of OSDR studies using the hardware by
 Spearman correlation.
 
-\subsection{Literature curation}
-For specimen-housing hardware with OSDR studies, parameters were sought in peer-reviewed papers, NASA
-technical reports, mission documentation and the snapshot itself. Each parameter record carries its value,
-unit, source, URL and a verbatim quotation of at most 40 words; values were never transferred between
-hardware items or filled with typical values, and unresolved parameters are left empty with a note of
-where they were sought. Conflicting sources are recorded.
+\subsection{Literature curation and audit}
+For the \hwNCurated{} specimen-housing hardware items linked to OSDR studies (and their close
+relatives), parameters were sought in peer-reviewed papers, NASA technical reports, mission
+documentation, vendor pages and the snapshot itself, by five curation passes organised by hardware family.
+Each parameter record carries its value, unit, source, URL and a verbatim quotation of at most 40 words;
+values were never transferred between hardware items or filled with typical values, unresolved
+parameters are left empty with a note of where they were sought, and conflicting sources are recorded
+(Supplementary Note~S1). Each pass checked its quotations against saved copies of the sources. An
+independent auditor then re-opened the sources of a seeded random sample of \hwNAudit{} records:
+\hwNAuditQuoteFound{} quotations were found verbatim and no value was contradicted
+(\hwNAuditValueYes{} fully supported; \hwNAuditValuePartial{} supported but with descriptive wording
+partly drawn from a second source named in the record's note); three records were corrected.
+Tiers after curation use the six critical items, with the airflow requirement waived for sealed or
+passive hardware.
 
 \subsection{CFD models}
-For Tier~A hardware we generated geometry from parametric primitives in which every dimension is either
-a reference to a sourced parameter or a declared assumption, and produced orthographic drawings from the
-same primitives. Meshes were built with \texttt{snappyHexMesh} and solved with
-\texttt{buoyantBoussinesqPimpleFoam} in OpenFOAM v2606 \citep{weller1998,openfoam2606} (laminar,
-second-order backward time integration). Air properties were computed with CoolProp
-\citep{bell2014,lemmon2000,lemmon2004}; CO$_2$ and water-vapour diffusivities are those tabulated by
-\citet{monteith2008}. CO$_2$ (ppm) and water vapour (mmol\,mol$^{-1}$) were transported as passive scalars
-with specimen sources in cell zones; heat sources enter the energy equation. Each case was run with
-gravity off (flight) and on (ground control).
+For Tier~A hardware we generated geometry from parametric primitives (boxes, cylinders, repeated arrays)
+in which every number is either a reference to a sourced parameter or a declared modelling assumption
+(Supplementary Table~\ref{tab:assumptions}); the model loader refuses any other literal. Orthographic
+drawings are produced from the same primitives. Meshes were built with \texttt{snappyHexMesh} from a
+cubic background mesh whose margin is a non-integer number of cells (so that no background face coincides
+with a geometry surface) and solved with \texttt{buoyantBoussinesqPimpleFoam} in OpenFOAM v2606
+\citep{weller1998,openfoam2606} with second-order backward time integration. Air properties at the
+hardware set-point were computed with CoolProp \citep{bell2014,lemmon2000,lemmon2004} and the aquarium was
+modelled with water properties (IAPWS-95 via CoolProp). CO$_2$ (ppm) and water vapour
+(mmol\,mol$^{-1}$) were transported as passive scalars with the diffusivities tabulated by
+\citet{monteith2008}; specimen fluxes from the curated files were converted to volumetric sources in cell
+zones (gas volumes at 0\,$^\circ$C and 1\,atm, 22.414\,L\,mol$^{-1}$), and specimen heat enters the energy
+equation. Inlets impose the sourced volumetric flow or face velocity and the supply composition; outlets
+fix the pressure; passive vents impose the exterior (ISS cabin) state; gas-permeable membranes use a Robin
+condition. The mean age of air was computed with a passive scalar (unit source, zero at inflow). Flow was
+treated as laminar: inlet Reynolds numbers (hydraulic diameter) were at most \hwCfdMaxReInletLaminar{} in
+all cases except the APH fan-maximum sensitivity case (\hwCfdReInletFanmax{}), which is above transition and
+is therefore reported only as a laminar approximation. Each case was run with gravity off (flight) and on (ground control,
+$9.80665$\,m\,s$^{-2}$), from the supply state at rest, until the specimen-zone quantities reached a plateau.
 
 \paragraph{Verification.} The solver configuration was verified on the differentially heated square
 cavity against the reference Nusselt numbers of \citet{devahldavis1983} and \citet{hortmann1990} (as
@@ -140,7 +158,8 @@ tabulated by \citet{gjesdal2003}) at three Rayleigh numbers on three meshes (mea
 \hwNuRaFiveNSixFour{}, \hwNuRaFiveNNineSix{} and \hwNuRaFiveNOneTwoEight{} at
 $Ra=10^5$ versus 4.522), on one-dimensional diffusion against the analytic solution, and by closing the
 transient CO$_2$ balance (source = outflow + accumulation) in every hardware run. Discretisation
-uncertainty was estimated with the grid convergence index \citep{celik2008}.
+uncertainty of the hardware results was estimated with the grid convergence index \citep{celik2008} on three
+meshes (refinement ratio $\sqrt2$) for three hardware items.
 
 \section{Results}
 \subsection{The hardware catalogue}

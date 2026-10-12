@@ -68,6 +68,29 @@ def card(slug: str, mesh: str):
     style.save(fig, f"card_{slug}_{mesh}")
 
 
+def inlet_reynolds(case, slug: str, meta: dict) -> float | None:
+    """Re = U_mean D_h / nu at each inlet: U_mean from the solved flow rate and patch area,
+    D_h = 4A/P of the specified (rectangular) opening. Returns the largest over inlets."""
+    from . import geometry
+    nu = (meta["physics"].get("water") or meta["physics"]["air"])["nu"]
+    best = None
+    for o in geometry.load(slug).openings:
+        if o.get("role") != "inlet":
+            continue
+        f = sorted((case / "postProcessing" / f"flow_{o['name']}").glob("*/surfaceFieldValue.dat"),
+                   key=lambda q: float(q.parent.name))
+        if not f:
+            continue
+        txt = f[-1].read_text()
+        area = float(txt.split("Area")[1].split(":")[1].split()[0])
+        q = abs(float(txt.strip().splitlines()[-1].split()[1]))
+        a, b = (x / 1000 for x in o["size"])
+        dh = 4 * a * b / (2 * (a + b))
+        re_ = q / area * dh / nu
+        best = re_ if best is None else max(best, re_)
+    return best
+
+
 def table(mesh: str) -> pd.DataFrame:
     rows = []
     for slug, meshes in CAMPAIGN:
@@ -91,7 +114,8 @@ def table(mesh: str) -> pd.DataFrame:
                 "T_excess_K": m.get(f"{pre}:T:final_excess"),
                 "age_of_air_s": m.get(f"{pre}:AoA:final_excess"),
                 "domain_CO2_excess_ppm": m.get("domainAvg:CO2:final_excess"),
-                "U_max_m_s": m.get("U_max_late_m_s"), "Re": m.get("Re"), "Ri_1g": m.get("Ri_1g"),
+                "U_max_m_s": m.get("U_max_late_m_s"), "Re": m.get("Re"), "Re_inlet": inlet_reynolds(c, slug, meta),
+                "Ri_1g": m.get("Ri_1g"),
                 "Ra_1g": m.get("Ra_1g"),
                 "CO2_balance_rel_imbalance": (m.get("conservation_CO2") or {}).get("rel_imbalance"),
                 "t90_CO2_s": m.get(f"{pre}:CO2:t90_s"),

@@ -12032,8 +12032,8 @@
   "platform_strings":[
 
   ],
-  "role":"habitat_growth",
-  "role_basis":"registry 998 text: 'cage'",
+  "role":"analysis_instrument",
+  "role_basis":"curated: E150 Experiment Unique Hardware: a walking-test platform used in short sessions inside the Spacelab General Purpose Work Station; the rats were housed elsewhere (literature curation 2026-10-12, NTRS 20020073543 Neurolab Final Report)",
   "organism_classes_text":[
    "rodent"
   ],
@@ -12051,7 +12051,7 @@
    "payload"
   ],
   "bio_payload_capable":true,
-  "specimen_habitat":true,
+  "specimen_habitat":false,
   "nonbio_term_hits":2,
   "missions":[
    "STS-90"

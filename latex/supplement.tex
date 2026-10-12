@@ -1,10 +1,84 @@
 \documentclass[11pt]{article}
-\usepackage[a4paper,margin=2.3cm]{geometry}
-\usepackage{graphicx,booktabs,amsmath}
+\usepackage[a4paper,margin=2.0cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage[hidelinks]{hyperref}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
 \input{../results/macros}
-\title{Supplementary Information}
+
+\title{Supplementary Information\\\large Which spaceflight biology hardware can be modelled?}
 \date{}
-\begin{document}\maketitle
-Supplementary tables are generated from results/tables (see MANIFEST.tsv).
+
+\begin{document}
+\maketitle
+
+\section*{Supplementary Note S1. Catalogue defects and source conflicts}
+SPLASH records \#121--\#147 carry descriptive fields displaced from neighbouring rows (offsets mostly $-2$).
+All fields of these records except the name, alternate names, background, category and status are excluded
+from every analysis. Table~\ref{tab:splash} lists the fields reviewed individually. Further defects found
+during curation: SPLASH \#36 (MVP) lists ``MOBIAS'', a different bioreactor, as an alternate name; the OSDR
+registry links a ground cabinet of the Lunar Receiving Laboratory (registry 2052) to \hwNCatchallStudies{} unrelated studies
+through a catch-all payload, and links MOBIAS to the STS-115 Group Activation Pack experiment, which used
+hand-cranked packs; \hwNDatasetsNoPlatform{} of \hwNDatasets{} OSDR datasets have no experiment-platform
+entry. Source conflicts recorded during literature curation are listed, per hardware item, in
+\texttt{hardware/CURATION\_NOTES.md} and in the \texttt{note} field of each affected parameter.
+
+\input{../results/tex/splash_review}
+
+\section*{Supplementary Note S2. The MI-CFD-HW checklist}
+\input{../results/tex/items}
+
+\section*{Supplementary Note S3. Literature curation}
+\input{../results/tex/curated}
+
+\section*{Supplementary Note S4. Modelling assumptions}
+\input{../results/tex/assumptions}
+
+\section*{Supplementary Note S5. Discretisation uncertainty}
+\input{../results/tex/gci}
+
+\section*{Supplementary Note S6. Geometry of the modelled hardware}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.78\linewidth]{../results/figures/ortho_aph.pdf}
+\caption{Advanced Plant Habitat growth chamber as modelled (PH-04 set-points).}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.78\linewidth]{../results/figures/ortho_mds.pdf}
+\caption{One Mice Drawer System cage as modelled.}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.78\linewidth]{../results/figures/ortho_vented_fly_box_vent20.pdf}
+\caption{Vented Fly Box as modelled (20\,mm vents; the 60\,mm variant differs only in vent size).}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.78\linewidth]{../results/figures/ortho_aqh.pdf}
+\caption{One Aquatic Habitat aquarium as modelled (water).}
+\end{figure}
+
+\section*{Supplementary Note S7. Field slices}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.8\linewidth]{../results/figures/fields_mds_medium.pdf}
+\caption{MDS cage, vertical mid-plane at the end of the run, 0\,$g$ and 1\,$g$.}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.8\linewidth]{../results/figures/fields_aph_medium.pdf}
+\caption{APH growth chamber, vertical mid-plane at the end of the run, 0\,$g$ and 1\,$g$.}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.8\linewidth]{../results/figures/fields_vented_fly_box_vent20_medium.pdf}
+\caption{Vented Fly Box (20\,mm vents), vertical mid-plane at the end of the run, 0\,$g$ and 1\,$g$.}
+\end{figure}
+\begin{figure}[htbp]\centering
+\includegraphics[width=0.8\linewidth]{../results/figures/fields_aqh_medium.pdf}
+\caption{AQH aquarium, vertical mid-plane at the end of the run, 0\,$g$ and 1\,$g$.}
+\end{figure}
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
 \end{document}

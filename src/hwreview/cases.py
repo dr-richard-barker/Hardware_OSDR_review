@@ -140,7 +140,9 @@ def build(slug: str, gravity: str = "0g", mesh: str = "medium", nprocs: int = 8,
     # --- blockMesh background: domain bounding box, cubic cells
     lo, hi = m.domain.bounds()
     h = float(num["cell_mm"]) * MESH_FACTOR[mesh]
-    margin = h
+    # a non-integer margin keeps background-mesh faces off the geometry surfaces (faces coinciding
+    # with the STL stall snappyHexMesh; seen on the MDS fine mesh, 2 mm cells, 2 mm margin)
+    margin = 1.37 * h
     blo, bhi = (lo - margin) / 1000, (hi + margin) / 1000
     n = np.maximum(1, np.round((bhi - blo) * 1000 / h)).astype(int)
     v = [(blo[0], blo[1], blo[2]), (bhi[0], blo[1], blo[2]), (bhi[0], bhi[1], blo[2]), (blo[0], bhi[1], blo[2]),

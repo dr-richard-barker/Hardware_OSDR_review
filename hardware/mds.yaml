@@ -144,13 +144,13 @@ nutrients:
     quote: "The Liquid Handling Subsystem delivers drinkable water to each cage individually by means of commercial stem activated drinking valves (made by Edstrom, Waterfors, WI, USA) connected to a Main Water Tank of about 0.5 liters capacity."
     kind: specified
   detail:
-    value: "2 food bars per cage (~90 g total; bar 149 x 73 x 7.5 mm), programmed ration 5 g/mouse/day; 0.5 L water tank refilled ~every 10 days; expected max water 7 mL/day/mouse"
+    value: "food bars with a programmed ration of 5 g/mouse/day; 0.5 L water tank refilled ~every 10 days; expected max water 7 mL/day/mouse"
     unit: "-"
     source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
     url: https://doi.org/10.1371/journal.pone.0032243
     quote: "The water is delivered “ad libitum” (expected max. water consumption is 7 ml/day/mouse)."
     kind: specified
-    note: "Food-bar dimensions from Liu 2009 ('a food bar of 149 x 73 x 7.5 mm and a mass of about 90 grams'); daily 5 g ration from Cancedda 2012."
+    note: "CONFLICT (quote audit 2026-10-12): Cancedda 2012 gives 2 food bars of about 90 g in total per cage; Liu 2009 describes a single bar of 149 x 73 x 7.5 mm and about 90 g. Bar number and size are left unresolved and are not used in the CFD model. Daily 5 g ration from Cancedda 2012."
 
 specimen_load:
   o2_flux:

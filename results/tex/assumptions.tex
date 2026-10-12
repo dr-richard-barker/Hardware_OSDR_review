@@ -1,0 +1,73 @@
+\footnotesize
+\begin{longtable}{p{0.16\linewidth}p{0.22\linewidth}p{0.56\linewidth}}
+\caption{Every modelling assumption in the CFD models (all other numbers reference sourced parameters).}\label{tab:assumptions}\\
+\toprule Model & Parameter & Reason \\ \midrule \endhead
+aph & obstacles[0].center & Science Carrier fills the chamber floor ('installed into the base of the growth chamber', registry 2017); footprint equal to the chamber footprint by construction (enclosure footprint was derived from the carrier). \\
+aph & zones[0].size & Canopy zone spans the planted surface minus 10 mm margins; 100 mm height represents a young canopy (PH-04 plants were 14 days old at the first RH change). Sensitivity: canopy height not sourced. \\
+aph & zones[0].center & Canopy zone sits directly on the Science Carrier surface (z = 51 mm). \\
+aph & openings[0].size & Vent sizes not published ('Vent sizes not published', aph.yaml). 300 x 60 mm slots assumed on each ECS side. \\
+aph & openings[0].center & ECS returns air 'at plant level from opposing sides' (Monje et al. 2020): inlets centred 50 mm above the carrier. \\
+aph & openings[1].size & As openings[0]. \\
+aph & openings[1].center & As openings[0]. \\
+aph & openings[2].size & Outlet size not published; equal to inlets. \\
+aph & openings[2].center & ECS fans 'remove air from the top of the growth chamber above the plants' (Monje et al. 2020): outlets centred 40 mm below the ceiling on the same side walls (ECS modules are 'mounted on each side'). \\
+aph & openings[3].size & As openings[2]. \\
+aph & openings[3].center & As openings[2]. \\
+aph & openings.inlet\_velocity\_interpretation & The PH-04 'wind speed of 0.3 m/s' set-point is applied as the inlet face velocity; where APH measures wind speed is not stated (aph.yaml note). \\
+aph & zones.canopy.co2\_load & Canopy net CO2 uptake uses the wheat range 7-25 umol m-2 s-1 (Wheeler 1996 as cited by Monje et al. 2020; mid-point 16) over the 0.19 m2 growth area; no pepper rate was found. Transpiration and lamp/canopy heat are not modelled (no sourced value). \\
+aph\_fanmax & obstacles[0].center & Science Carrier fills the chamber floor ('installed into the base of the growth chamber', registry 2017); footprint equal to the chamber footprint by construction (enclosure footprint was derived from the carrier). \\
+aph\_fanmax & zones[0].size & Canopy zone spans the planted surface minus 10 mm margins; 100 mm height represents a young canopy (PH-04 plants were 14 days old at the first RH change). Sensitivity: canopy height not sourced. \\
+aph\_fanmax & zones[0].center & Canopy zone sits directly on the Science Carrier surface (z = 51 mm). \\
+aph\_fanmax & openings[0].size & Vent sizes not published ('Vent sizes not published', aph.yaml). 300 x 60 mm slots assumed on each ECS side. \\
+aph\_fanmax & openings[0].center & ECS returns air 'at plant level from opposing sides' (Monje et al. 2020): inlets centred 50 mm above the carrier. \\
+aph\_fanmax & openings[1].size & As openings[0]. \\
+aph\_fanmax & openings[1].center & As openings[0]. \\
+aph\_fanmax & openings[2].size & Outlet size not published; equal to inlets. \\
+aph\_fanmax & openings[2].center & ECS fans 'remove air from the top of the growth chamber above the plants' (Monje et al. 2020): outlets centred 40 mm below the ceiling on the same side walls (ECS modules are 'mounted on each side'). \\
+aph\_fanmax & openings[3].size & As openings[2]. \\
+aph\_fanmax & openings[3].center & As openings[2]. \\
+aph\_fanmax & openings.inlet\_velocity\_interpretation & The PH-04 'wind speed of 0.3 m/s' set-point is applied as the inlet face velocity; where APH measures wind speed is not stated (aph.yaml note). \\
+aph\_fanmax & zones.canopy.co2\_load & Canopy net CO2 uptake uses the wheat range 7-25 umol m-2 s-1 (Wheeler 1996 as cited by Monje et al. 2020; mid-point 16) over the 0.19 m2 growth area; no pepper rate was found. Transpiration and lamp/canopy heat are not modelled (no sourced value). \\
+aqh & openings[0].size & Water inlet/outlet geometry of the aquarium is not published (aqh.yaml: 'aquarium water inlet/outlet geometry'). 20 x 20 mm ports assumed. \\
+aqh & openings[0].center & Inlet low on one end wall, outlet high on the opposite end wall (assumed cross-flow arrangement). \\
+aqh & openings[1].size & As openings[0]. \\
+aqh & openings[1].center & As openings[0]. \\
+aqh & domain.water\_only & The aquarium is modelled full of water; the air pocket of the air-water interface ('air stabilizer') and the fish are not represented (no dimensions or O2 uptake sourced). Walls held at the set-point temperature; no heat sources, so 0 g and 1 g are expected to coincide. \\
+mds & zones[0].size & Mouse represented as a distributed source volume of 80 x 30 x 30 mm (adult-mouse scale) resting on the cage floor; body geometry not modelled as a solid. \\
+mds & zones[0].center & Mouse at the floor centre. \\
+mds & openings[0].size & Flow direction through the cage is not stated; waste filters are 'located below each Habitat' (Liu 2009, mds.yaml note), so air is taken to enter through the whole top grid and leave through the whole floor grid. \\
+mds & openings[0].center & As openings[0].size. \\
+mds & openings[1].size & As openings[0].size. \\
+mds & openings[1].center & As openings[0].size. \\
+mds & openings.velocity\_interpretation & Cancedda 2012: airflow of 0.2-0.3 m/s through the cages; applied as a uniform face velocity (mid-point 0.25 m/s). \\
+mds & environment.co2\_reference & In-cage CO2 is controlled but not reported; supply air is set to the ISS U.S. Lab cabin CO2 measured during RR-1 (Choi et al. 2020; mid-point of 788-4690 ppm). MDS flew in 2009 in JEM, so this is a proxy. \\
+mds & zones.mouse.co2\_load & Organism-level C57BL/6 rates (ICES-2014-101) and BALB/c heat and moisture (Riskowski 2006) scaled by the generic 30 g adult mass from Cancedda 2012; MDS flew C57BL/10J males. \\
+vented\_fly\_box\_vent20 & obstacles[0].center & 15 vials (24 x 75 mm) fit the 94 x 94 x 130 mm box only lying along x in a 3 x 5 stack (upright, at most 12 fit); g-load at launch was directed into the food at the vial bottoms (OSD-347). Vials treated as solid (food + flies inside not resolved). \\
+vented\_fly\_box\_vent20 & obstacles[0].repeat.n & 3 x 5 stack, see centre. \\
+vented\_fly\_box\_vent20 & obstacles[0].repeat.pitch & Vials spaced 32 mm (y) and 25 mm (z) to fill the box cross-section. \\
+vented\_fly\_box\_vent20 & zones[0].H & CO2 leaves each vial through its open foam plug (OSD-347; Researcher's Guide); released in a 4 mm layer at the plug end (x = 84.5-88.5 mm). \\
+vented\_fly\_box\_vent20 & zones[0].center & Plug end of each vial. \\
+vented\_fly\_box\_vent20 & zones[0].repeat.n & As obstacles. \\
+vented\_fly\_box\_vent20 & zones[0].repeat.pitch & As obstacles. \\
+vented\_fly\_box\_vent20 & zones.plug.sources.CO2.count & 13 flies per vial (OSD-347: '8 virgin females and 5 male adult virgin flies') x 15 vials = 195 adults; progeny that emerge during the mission (20-60 per vial on return) are not included, so the load is a lower bound. \\
+vented\_fly\_box\_vent20 & openings[0].size & Vent hole number, size and position are not published (vented\_fly\_box.yaml). Run at two sizes, 20 x 20 and 60 x 60 mm per end wall, to show the sensitivity. \\
+vented\_fly\_box\_vent20 & openings[0].center & Vents centred on the end walls. \\
+vented\_fly\_box\_vent20 & openings[1].size & As openings[0]. \\
+vented\_fly\_box\_vent20 & openings[1].center & As openings[0]. \\
+vented\_fly\_box\_vent20 & openings.exterior & The exterior at each vent is taken as well mixed ISS cabin air (CO2 mid-point of the RR-1 U.S. Lab range, Choi et al. 2020) at the box temperature. \\
+vented\_fly\_box\_vent60 & obstacles[0].center & 15 vials (24 x 75 mm) fit the 94 x 94 x 130 mm box only lying along x in a 3 x 5 stack (upright, at most 12 fit); g-load at launch was directed into the food at the vial bottoms (OSD-347). Vials treated as solid (food + flies inside not resolved). \\
+vented\_fly\_box\_vent60 & obstacles[0].repeat.n & 3 x 5 stack, see centre. \\
+vented\_fly\_box\_vent60 & obstacles[0].repeat.pitch & Vials spaced 32 mm (y) and 25 mm (z) to fill the box cross-section. \\
+vented\_fly\_box\_vent60 & zones[0].H & CO2 leaves each vial through its open foam plug (OSD-347; Researcher's Guide); released in a 4 mm layer at the plug end (x = 84.5-88.5 mm). \\
+vented\_fly\_box\_vent60 & zones[0].center & Plug end of each vial. \\
+vented\_fly\_box\_vent60 & zones[0].repeat.n & As obstacles. \\
+vented\_fly\_box\_vent60 & zones[0].repeat.pitch & As obstacles. \\
+vented\_fly\_box\_vent60 & zones.plug.sources.CO2.count & 13 flies per vial (OSD-347: '8 virgin females and 5 male adult virgin flies') x 15 vials = 195 adults; progeny that emerge during the mission (20-60 per vial on return) are not included, so the load is a lower bound. \\
+vented\_fly\_box\_vent60 & openings[0].size & Vent hole number, size and position are not published (vented\_fly\_box.yaml). Run at two sizes, 20 x 20 and 60 x 60 mm per end wall, to show the sensitivity. \\
+vented\_fly\_box\_vent60 & openings[0].center & Vents centred on the end walls. \\
+vented\_fly\_box\_vent60 & openings[1].size & As openings[0]. \\
+vented\_fly\_box\_vent60 & openings[1].center & As openings[0]. \\
+vented\_fly\_box\_vent60 & openings.exterior & The exterior at each vent is taken as well mixed ISS cabin air (CO2 mid-point of the RR-1 U.S. Lab range, Choi et al. 2020) at the box temperature. \\
+\bottomrule
+\end{longtable}
+\normalsize

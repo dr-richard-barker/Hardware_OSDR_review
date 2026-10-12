@@ -4,11 +4,11 @@ total,in SPLASH,147
 total,in OSDR registry,157
 total,named by >=1 OSD study platform field,87
 total,linked to >=1 OSD study (any route),124
-role,habitat_growth,104
+role,habitat_growth,103
 role,sensor_dosimetry,37
 role,hosting_facility,35
+role,analysis_instrument,23
 role,ground_facility,23
-role,analysis_instrument,22
 role,nonbio,21
 role,processing_fixation,17
 role,vehicle_or_location,14
@@ -18,7 +18,7 @@ role,experiment_unique_other,4
 role,ground_analog,4
 role,program,1
 bio,bio-payload capable,164
-bio,specimen habitats (live specimens housed in flight),112
+bio,specimen habitats (live specimens housed in flight),111
 bio,bio-capable with >=1 OSD study,70
 organism class (text),aquatic_vertebrate,8
 organism class (text),avian,3
@@ -57,4 +57,4 @@ nutrient mode (habitats),arcillite_substrate,6
 nutrient mode (habitats),hydroponic_aeroponic,5
 nutrient mode (habitats),liquid_culture_medium,21
 nutrient mode (habitats),water_only_wick,6
-nutrient mode (habitats),none evidenced,60
+nutrient mode (habitats),none evidenced,59

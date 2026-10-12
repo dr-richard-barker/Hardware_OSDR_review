@@ -87,7 +87,7 @@ def assess(d: dict) -> dict:
 
 def run() -> pd.DataFrame:
     rows = []
-    for f in sorted(HARDWARE.glob("*.yaml")):
+    for f in sorted(p for p in HARDWARE.glob("*.yaml") if not p.name.startswith("_")):
         d = yaml.safe_load(f.read_text())
         a = assess(d)
         n_rec = n_src = 0
