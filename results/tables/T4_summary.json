@@ -1,0 +1,371 @@
+{
+ "n_habitats": 112,
+ "n_used": 34,
+ "completeness_median_public": 0.3,
+ "completeness_median_splash": 0.0667,
+ "spearman_studies_completeness_all": {
+  "rho": 0.5228725161799941,
+  "p": 3.3379858095115595e-09
+ },
+ "spearman_studies_completeness_used": {
+  "rho": 0.44785164594036025,
+  "p": 0.007906681616296263
+ },
+ "tests": [
+  {
+   "factor": "hw_class",
+   "k": 5,
+   "n": 112,
+   "H": 16.83341073374302,
+   "p": 0.002082429395541985,
+   "epsilon2": 0.11993841807236466,
+   "pairwise": [
+    {
+     "a": "cell_microbe",
+     "b": "mixed",
+     "p": 0.00142785037826828,
+     "q_BH": 0.013296523949590315
+    },
+    {
+     "a": "cell_microbe",
+     "b": "other_animal",
+     "p": 0.005602274375956838,
+     "q_BH": 0.014005685939892095
+    },
+    {
+     "a": "cell_microbe",
+     "b": "plant",
+     "p": 0.003988957184877095,
+     "q_BH": 0.013296523949590315
+    },
+    {
+     "a": "cell_microbe",
+     "b": "rodent",
+     "p": 0.003156392253292993,
+     "q_BH": 0.013296523949590315
+    },
+    {
+     "a": "mixed",
+     "b": "other_animal",
+     "p": 0.2002817247356592,
+     "q_BH": 0.34342593825796264
+    },
+    {
+     "a": "mixed",
+     "b": "plant",
+     "p": 0.24039815678057386,
+     "q_BH": 0.34342593825796264
+    },
+    {
+     "a": "mixed",
+     "b": "rodent",
+     "p": 1.0,
+     "q_BH": 1.0
+    },
+    {
+     "a": "other_animal",
+     "b": "plant",
+     "p": 0.7331996064506925,
+     "q_BH": 0.8146662293896583
+    },
+    {
+     "a": "other_animal",
+     "b": "rodent",
+     "p": 0.35277878432651066,
+     "q_BH": 0.44097348040813833
+    },
+    {
+     "a": "plant",
+     "b": "rodent",
+     "p": 0.22583288044947825,
+     "q_BH": 0.34342593825796264
+    }
+   ]
+  },
+  {
+   "factor": "era",
+   "k": 4,
+   "n": 90,
+   "H": 2.572068831727805,
+   "p": 0.46240729578875495,
+   "epsilon2": -0.004975943817118546,
+   "pairwise": [
+    {
+     "a": "1981-2000",
+     "b": "2001-2010",
+     "p": 0.8938811428545407,
+     "q_BH": 0.8938811428545407
+    },
+    {
+     "a": "1981-2000",
+     "b": "<1981",
+     "p": 0.14107160821795287,
+     "q_BH": 0.4232148246538586
+    },
+    {
+     "a": "1981-2000",
+     "b": ">2010",
+     "p": 0.5761533438949065,
+     "q_BH": 0.8338951616607886
+    },
+    {
+     "a": "2001-2010",
+     "b": "<1981",
+     "p": 0.11867976233343577,
+     "q_BH": 0.4232148246538586
+    },
+    {
+     "a": "2001-2010",
+     "b": ">2010",
+     "p": 0.5592439680880796,
+     "q_BH": 0.8338951616607886
+    },
+    {
+     "a": "<1981",
+     "b": ">2010",
+     "p": 0.6949126347173239,
+     "q_BH": 0.8338951616607886
+    }
+   ]
+  },
+  {
+   "factor": "status",
+   "k": 4,
+   "n": 112,
+   "H": 5.190228792596555,
+   "p": 0.15838598314334024,
+   "epsilon2": 0.02027989622774588,
+   "pairwise": [
+    {
+     "a": "Active",
+     "b": "In Development",
+     "p": 0.24131463342991555,
+     "q_BH": 0.28957756011589864
+    },
+    {
+     "a": "Active",
+     "b": "Legacy",
+     "p": 0.22215625376735482,
+     "q_BH": 0.28957756011589864
+    },
+    {
+     "a": "Active",
+     "b": "not in SPLASH",
+     "p": 0.07404024355403739,
+     "q_BH": 0.28957756011589864
+    },
+    {
+     "a": "In Development",
+     "b": "Legacy",
+     "p": 0.18790455385980542,
+     "q_BH": 0.28957756011589864
+    },
+    {
+     "a": "In Development",
+     "b": "not in SPLASH",
+     "p": 0.35680912462366277,
+     "q_BH": 0.3568091246236628
+    },
+    {
+     "a": "Legacy",
+     "b": "not in SPLASH",
+     "p": 0.23894366245360277,
+     "q_BH": 0.28957756011589864
+    }
+   ]
+  },
+  {
+   "factor": "platform",
+   "k": 6,
+   "n": 110,
+   "H": 30.666388301978433,
+   "p": 1.0900530024918548e-05,
+   "epsilon2": 0.24679219521133108,
+   "pairwise": [
+    {
+     "a": "Aircraft / parabolic",
+     "b": "Apollo/Gemini",
+     "p": 0.26828588367711736,
+     "q_BH": 0.36584438683243276
+    },
+    {
+     "a": "Aircraft / parabolic",
+     "b": "Free-flyer (Bion/Cosmos/Biosatellite)",
+     "p": 0.10922686267905868,
+     "q_BH": 0.1668988773304732
+    },
+    {
+     "a": "Aircraft / parabolic",
+     "b": "ISS",
+     "p": 0.09191067223913071,
+     "q_BH": 0.1668988773304732
+    },
+    {
+     "a": "Aircraft / parabolic",
+     "b": "Shuttle",
+     "p": 0.662920722500219,
+     "q_BH": 0.662920722500219
+    },
+    {
+     "a": "Aircraft / parabolic",
+     "b": "no mission record",
+     "p": 0.11126591822031548,
+     "q_BH": 0.1668988773304732
+    },
+    {
+     "a": "Apollo/Gemini",
+     "b": "Free-flyer (Bion/Cosmos/Biosatellite)",
+     "p": 0.0329145740450531,
+     "q_BH": 0.08228643511263276
+    },
+    {
+     "a": "Apollo/Gemini",
+     "b": "ISS",
+     "p": 0.6362401640010044,
+     "q_BH": 0.662920722500219
+    },
+    {
+     "a": "Apollo/Gemini",
+     "b": "Shuttle",
+     "p": 0.40189653420241434,
+     "q_BH": 0.5023706677530179
+    },
+    {
+     "a": "Apollo/Gemini",
+     "b": "no mission record",
+     "p": 0.02124779555963544,
+     "q_BH": 0.0637433866789063
+    },
+    {
+     "a": "Free-flyer (Bion/Cosmos/Biosatellite)",
+     "b": "ISS",
+     "p": 0.0025244956234289494,
+     "q_BH": 0.012622478117144747
+    },
+    {
+     "a": "Free-flyer (Bion/Cosmos/Biosatellite)",
+     "b": "Shuttle",
+     "p": 0.005569267387694727,
+     "q_BH": 0.020884752703855227
+    },
+    {
+     "a": "Free-flyer (Bion/Cosmos/Biosatellite)",
+     "b": "no mission record",
+     "p": 0.5646691635618121,
+     "q_BH": 0.6515413425713217
+    },
+    {
+     "a": "ISS",
+     "b": "Shuttle",
+     "p": 0.07221410436805216,
+     "q_BH": 0.15474450936011178
+    },
+    {
+     "a": "ISS",
+     "b": "no mission record",
+     "p": 0.00016337277289910527,
+     "q_BH": 0.0012252957967432896
+    },
+    {
+     "a": "Shuttle",
+     "b": "no mission record",
+     "p": 8.400002208362792e-05,
+     "q_BH": 0.0012252957967432896
+    }
+   ]
+  },
+  {
+   "factor": "coverage",
+   "k": 3,
+   "n": 112,
+   "H": 27.693747332925952,
+   "p": 9.69123612160026e-07,
+   "epsilon2": 0.23572245259565094,
+   "pairwise": [
+    {
+     "a": "SPLASH only",
+     "b": "SPLASH+registry",
+     "p": 1.0135765482819292e-06,
+     "q_BH": 3.0407296448457877e-06
+    },
+    {
+     "a": "SPLASH only",
+     "b": "registry only",
+     "p": 0.01260229949205438,
+     "q_BH": 0.01260229949205438
+    },
+    {
+     "a": "SPLASH+registry",
+     "b": "registry only",
+     "p": 0.00014960016897893632,
+     "q_BH": 0.00022440025346840447
+    }
+   ]
+  },
+  {
+   "factor": "used",
+   "k": 2,
+   "n": 112,
+   "H": 27.205076373618848,
+   "p": 1.8297761043997409e-07,
+   "epsilon2": 0.2382279670328986,
+   "pairwise": [
+    {
+     "a": "no OSD studies",
+     "b": "with OSD studies",
+     "p": 1.8613591164877204e-07,
+     "q_BH": 1.8613591164877204e-07
+    }
+   ]
+  }
+ ],
+ "tier_sensitivity": {
+  "public_tier": {
+   "C": 110,
+   "B": 1,
+   "A": 1
+  },
+  "splash_tier": {
+   "C": 112
+  },
+  "tier_waiveF2": {
+   "C": 103,
+   "B": 7,
+   "A": 2
+  },
+  "tier_lenient": {
+   "C": 103,
+   "A": 9
+  }
+ },
+ "integrity_defects": {
+  "splash_records": 147,
+  "splash_displaced_block": "121-147 (27 records)",
+  "splash_field_verdicts": {
+   "misattributed": 29,
+   "plausible": 9,
+   "uncertain": 6,
+   "duplicate_of": 2
+  },
+  "splash_fields_all_empty": [
+   "study_links",
+   "sources",
+   "schematics",
+   "related_tools"
+  ],
+  "osdr_datasets": 641,
+  "osdr_datasets_without_platform": 310,
+  "distinct_platform_strings": 116,
+  "platform_components_not_hardware": 32,
+  "veggie_spellings": 9,
+  "registry_catchall_payload": "Simulated_Environmental_Factors links a ground cabinet (registry 2052) to 36 studies",
+  "splash_alias_conflict": "SPLASH #36 (MVP) lists 'MOBIAS' (a different bioreactor) as an alternate name"
+ },
+ "under_documented_used": [
+  "Vented Fly Box (VFB)",
+  "Jellyfish Kit",
+  "E150 Experiment Unique Hardware (EUE)",
+  "Vestibular Function Experiment Unit (VFEU)",
+  "BOTEX"
+ ]
+}
