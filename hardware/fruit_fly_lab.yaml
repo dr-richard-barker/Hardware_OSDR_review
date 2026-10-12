@@ -1,0 +1,211 @@
+entity_id: HW100
+name: Fruit Fly Lab (FFL) / Fruit Fly Lab Experiment Hardware (Phase I, FFL-01)
+vendor: NASA Ames Research Center; Airbus DS (Observation Units), Kayser Italia (Controller Units), NanoRacks (Platform-3 + centrifuge)
+splash_ids: [100]
+registry_ids: ["1389"]
+curated: "2026-10-12"
+
+location:
+  value: "ISS, NanoRacks Platform-3 (centrifuge + microgravity slots) in an EXPRESS Rack; flown on SpaceX-5 (FFL-01, Jan-Feb 2015)"
+  unit: "-"
+  source: "Mains R, Reynolds S, Lera M, Ellingson L (2016, rev. 2018) A Researcher's Guide to: Fruit Fly Research. NASA ISS Program Science Office"
+  url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+  quote: "The third was the NanoRacks, LLC Platform-3 (http://nanoracks.com/products/platform-3/) with Centrifuge and Microgravity Containers (Fig. 5) that housed Cassettes at microgravity and would provide an artificial gravity environment"
+  kind: specified
+  note: >-
+    Guide Fig. 8 caption: "NanoRacks Platform 3 assembly for insertion in an ExPRESS Rack." Same Fly Cassette
+    system flew on STS-121 (FIT, see fit_fly_kit.yaml) - NASA Facts FS-2016-10-03-ARC: "The system was flown
+    on the shuttle middeck on STS-121 in 2006 and to the station in 2015 for the Fruit Fly Lab-01 mission."
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Fly Cassette / Observation Unit internal dimensions not found in any opened source."
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "Not found. Guide notes Phase I Type I cassettes 'have limited space for sample growth'."
+  specimen_container:
+    value: "Fly Cassette: aluminium body with slot for removable Food Tray, transparent polycarbonate (Lexan) lid, side ventilation holes covered with stainless-steel mesh; housed in an Airbus DS Observation Unit"
+    unit: "-"
+    source: "OSDR registry hardware 1389, component 'Fly Cassette' (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1389
+    quote: "The Fly Cassette consists of an aluminum body that has a slot through which a Food Tray is inserted. The Cassette lid is made of transparent polycarbonate plastic (Lexan.)"
+    kind: specified
+    note: >-
+      Same record: "The sides of the Cassettes include holes for ventilation that are covered with a stainless
+      steel mesh". Researcher's Guide: for FFL-01 the cassettes were used "without Type I container lids"
+      inside new Airbus DS Observation Units. SOURCE CONFLICT: SPLASH _id 100 specimen_size "15 vials per
+      cassette, 12 cassettes per rack" - vials belong to the Vented Fly Box, not the cassette (not used).
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Not found."
+  food_volume_mL:
+    value: 3.4
+    unit: mL per cassette food tray
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, 'FFL Phase II Systems'"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "A larger food volume: Current Phase I hardware only provides 3.4 ml of food, which does not sustain a large population of flies for long."
+    kind: specified
+    note: "SOURCE CONFLICT: STS-121 FIT description and Marcu et al. 2011 give a '2 ml food tray' for the same cassette family; OSD-278 (FFL-01) trays contained '2 mL of solid semi-defined fly food'."
+  n_specimen_units:
+    value: 12
+    unit: cassettes per run (6 centrifuge + 6 microgravity)
+    source: "OSDR registry hardware 1389, component 'Observation and Lighting System'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1389
+    quote: "The system can accommodate a total of 12 Cassettes for one experimental run with as many as six of the Cassettes on the centrifuge and six of the Cassettes on the microgravity rack."
+    kind: specified
+  layout:
+    value: "one Fly Cassette per Observation Unit; 6 OUs on NanoRacks centrifuge rotor + 6 in microgravity slots; 2 centrifuge slots hold Controller Units"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "Six each of the above fly cassettes, contained within new Observation Units (Fig. 4) would be inserted in the NanoRacks microgravity and centrifuge slots (Fig. 5) at any given time."
+    kind: specified
+
+ventilation:
+  mode:
+    value: passive
+    unit: "-"
+    source: "Bhattacharya S, Lera M, Hosamani R. Drosophila Habitat Developed to Support Research on the International Space Station (NASA ARC poster, NTRS 20190001070)"
+    url: https://ntrs.nasa.gov/citations/20190001070
+    quote: "Cassettes constrain flies while allowing for passive gas exchange through mesh screens on either side."
+    kind: specified
+    note: >-
+      Passive diffusion at the cassette level. The surrounding Platform-3 had ambient airflow: Researcher's
+      Guide: "The thermal load produced by the avionics in the NanoRacks Platform 3 system was upstream from
+      the ambient airflow going to the Fly Cassettes inside the Experiment Containers." Each Controller Unit
+      drives "a cooling fan"; the OU has "the ventilation exhaust on top" (Fig. 4 caption). Phase I had no
+      active environmental control.
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Platform-3 / OU airflow rate not found (mode recorded as passive at cassette level)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: "stainless-steel-mesh-covered ventilation holes on both cassette sides"
+    unit: "-"
+    source: "OSDR registry hardware 1389, component 'Fly Cassette'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1389
+    quote: "The sides of the Cassettes include holes for ventilation that are covered with a stainless steel mesh to prevent flies and larvae from escaping."
+    kind: specified
+    note: "Hole size, number, mesh opening not found."
+  outlet:
+    value: "Observation Unit ventilation exhaust on top"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, Fig. 4 caption"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "Enlarged cut-away back view of OU showing fly cassette (dark green), camera lens and the ventilation exhaust on top."
+    kind: specified
+
+environment:
+  temperature_C:
+    value: [23, 25]
+    unit: degC
+    source: "OSDR OSD-278 study protocol description (FFL-01, SpaceX-5) (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-278/
+    quote: "The platform was placed in a canvas CTB at ISS ambient temperature (23–25 C) for 5 days, plus 2 days in the SpaceX Dragon (22–25 C) for undocking/descent and retrieval."
+    kind: measured
+    note: >-
+      Applies to the Food Changeout Platform (with bacterial food trays) stowed in a CTB, not to cassettes in
+      Platform-3. Researcher's Guide reports that in Platform-3 on FFL-01 "Since there was no active
+      temperature control in Platform 3 the resulting high temperatures killed the flies" (no value given).
+      SPLASH operational_temperature: 'ambient'.
+  rh_percent:
+    value: null
+    note: "Temperature/RH sensors present (SPLASH 'Temp/RH Sensors'); values not found."
+  co2_ppm:
+    value: null
+    note: "OSD-278: CO2, O2, temperature and RH were recorded during FFL-01; values not published in opened sources."
+  o2_percent:
+    value: null
+  pressure_kPa:
+    value: null
+  light:
+    value: "LED day/night cycle (visible) + infrared LEDs for dark-period imaging, per Observation Unit"
+    unit: "-"
+    source: "OSDR registry hardware 1389, component 'Observation and Lighting System'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1389
+    quote: "The Observation and Lighting Unit contains LED lights to simulate daylight. Infrared LED lights allow monitoring of the flies under dark conditions."
+    kind: specified
+    note: "Photoperiod and intensity not found."
+
+nutrients:
+  mode:
+    value: "food tray (semi-defined Drosophila medium), exchanged on orbit with the Food Changeout Platform"
+    unit: "-"
+    source: "OSDR OSD-278 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-278/
+    quote: "two trays containing 2 mL of solid semi-defined fly food media containing 4% Brewer’s yeast (Redstar), 6% glucose, 3% sucrose, 2% yeast extract, 2% peptone, 1% agar"
+    kind: specified
+  detail:
+    value: "Food Changeout Platform (Delrin + Lexan) with T-bar pushes a fresh tray in while pushing the spent tray (eggs/larvae) out; used inside a Disposable Glove Bag"
+    unit: "-"
+    source: "OSDR registry hardware 1389, component 'Food Changeout Platform'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1389
+    quote: "The T-Bar is used to push a fresh food tray into a Fly Cassette while simultaneously pushing the spent food tray out the opposite side of the Cassette."
+    kind: specified
+
+specimen:
+  type:
+    value: "Drosophila melanogaster, multigenerational cultures; typical starting population ~10 virgin females + 5 virgin males per cassette"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, 'Fruit Fly Specific' lessons"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "Initial Fly Population in Cassettes: has typically been about 10 virgin females and 5 virgin males to produce the optimal number of progeny for flight experiments."
+    kind: specified
+    note: "FFL-01 NASA page: 'More than a hundred flies will be aboard the space station for up to 30 days.'"
+
+specimen_load:
+  co2_flux:
+    value: [2, 4.68]
+    unit: uL CO2 per adult fly per hour (25 degC)
+    source: "Yatsenko AS, Marrone AK, Kucherenko MM, Shcherbata HR (2014) Measurement of metabolic rate in Drosophila using respirometry. J Vis Exp (88):51681, Table 1"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4205100/
+    quote: "4.68 ± 1.04 CO2 | CO2 respirometry system"
+    kind: measured
+    note: >-
+      Organism-level literature values at 25 degC compiled in Table 1 (units ul/fly x hour): 2-3 (Van Voorhies,
+      Khazaeli et al. 2004) and 4.68 ± 1.04 (Khazaeli, Van Voorhies et al. 2005). Larvae not covered.
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "aluminium cassette body; polycarbonate (Lexan) lid; stainless-steel mesh over vent holes"
+    unit: "-"
+    source: "OSDR registry hardware 1389, component 'Fly Cassette'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1389
+    quote: "The Fly Cassette consists of an aluminum body that has a slot through which a Food Tray is inserted. The Cassette lid is made of transparent polycarbonate plastic (Lexan.)"
+    kind: specified
+    note: "SOURCE CONFLICT: Marcu et al. 2011 (STS-121) describe 'a polycarbonate fly cassette ... held in a ventilated aluminum container'."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: null
+    note: "Not found."
+  thermal_note:
+    value: "FFL-01: Platform-3 avionics heat upstream of cassette airflow overheated and killed flies"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, 'Recently Flown'"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "Since there was no active temperature control in Platform 3 the resulting high temperatures killed the flies."
+    kind: measured
+
+searched: |
+  OSDR snapshot 2026-10-12: SPLASH _id 100; registry hardware 1389, payload FFL01, experiment OS-740; biodata OSD-278.
+  NASA Researcher's Guide to Fruit Fly Research (2016/2018 PDF); NASA Facts FS-2016-10-03-ARC and FS-2017-10-08-ARC;
+  NTRS 20190001070 (poster), 20190001366 (2013 symposium slides), 20190025356 (2017 slides); NASA FFL-01 page.
+  Not found: cassette/OU dimensions, vent-hole and mesh geometry, Platform-3 airflow, logged FFL-01 T/RH/CO2/O2 values,
+  light schedule/intensity, power.

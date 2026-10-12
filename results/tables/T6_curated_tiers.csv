@@ -1,0 +1,25 @@
+slug,entity_id,name,G1,G2,F1,F2,F2_waived,E1,B1,tier,missing,ventilation_mode,n_parameters,n_sourced
+abrs,HW064,Advanced Biological Research System (ABRS),True,True,True,False,False,True,True,B,F2,forced,28,18
+adsep,HW046,ADvanced Space Experiment Processor (ADSEP),False,True,False,False,False,True,True,C,G1; F1; F2,,29,12
+aem,HW068,"Animal Enclosure Module (AEM, Space Shuttle middeck)",True,False,True,False,False,True,False,C,G2; F2; B1,forced,27,21
+aem_t,HW232,Animal Enclosure Module Transporter (AEM-T) with AEM-E life-support companion,False,False,True,True,False,True,False,C,G1; G2; B1,forced,27,21
+aph,HW034,Advanced Plant Habitat (APH),True,True,True,True,False,True,True,A,,forced,29,21
+aqh,HW069,Aquatic Habitat (AQH),True,True,True,True,False,True,True,A,,forced,30,16
+bioculture,HW017,Bioculture System (Bioculture System Facility),False,True,True,False,False,True,True,B,G1; F2,forced,32,17
+botex,HW205,BOTEX incubator (BOTany EXperiments; DLR/DARA),False,True,False,False,False,True,True,C,G1; F1; F2,,28,9
+bps,HW221,Biomass Production System (BPS),True,False,True,False,False,True,True,B,G2; F2,forced,30,18
+ccm,HW219,Cell Culture Module (CCM) / Space Tissue Loss (STL) modules,False,True,True,True,True,True,True,B,G1,sealed,29,12
+cebas,HW147,Closed Equilibrated Biological Aquatic System (C.E.B.A.S.) Minimodule,False,False,True,True,False,True,True,B,G1; G2,forced,30,16
+e150_eue,HW220,E150 Experiment Unique Equipment (EUE) - Animal Walking Apparatus suite (Neurolab),False,False,False,False,False,False,True,C,G1; G2; F1; F2; E1,,27,6
+emcs,HW042,European Modular Cultivation System (EMCS),True,False,True,False,False,True,True,B,G2; F2,forced,28,17
+fit_fly_kit,HW228,Fungal Immunity (FIT) Fly Kit (STS-121),False,False,True,True,True,True,True,B,G1; G2,passive,29,16
+fruit_fly_lab,HW100,"Fruit Fly Lab (FFL) / Fruit Fly Lab Experiment Hardware (Phase I, FFL-01)",False,False,True,True,True,True,True,B,G1; G2,passive,30,16
+jaxa_mhu,HW105,JAXA Mouse Habitat Unit (MHU) - Habitat Cage Units (HCU) in CBEF / CBEF-L (MARS centrifuge),False,False,True,True,False,True,False,C,G1; G2; B1,forced,27,21
+jellyfish_kit,HW150,Jellyfish Kit (SLS-1),False,False,True,True,True,True,True,B,G1; G2,sealed,29,11
+mobias,HW121,Multiple Orbital Bioreactor with Instrumentation and Automated Sampling (MOBIAS),False,False,True,True,True,True,True,B,G1; G2,passive,29,10
+mvp,HW036,Multi-use Variable-g Platform (MVP),False,True,True,False,False,True,True,B,G1; F2,forced,35,20
+rodent_habitat,HW142,Rodent Habitat (AEM-X) / Rodent Research Facility (ISS),False,False,True,True,False,True,False,C,G1; G2; B1,forced,27,19
+sabl,HW043,Space Automated Bioproduct Laboratory (SABL),True,False,True,True,True,True,True,B,G2,sealed,31,18
+veggie,HW033,Vegetable Production System (Veggie),True,False,True,False,False,True,True,B,G2; F2,forced,29,19
+vented_fly_box,HW234,Vented Fly Box (VFB),True,True,True,True,True,True,True,A,,passive,28,16
+vfeu,HW215,Vestibular Function Experiment Unit (VFEU) - Neurolab/STS-95 marine-fish version,False,False,True,True,False,True,True,B,G1; G2,forced,33,16

@@ -1,0 +1,226 @@
+entity_id: HW072
+name: Avian Development Facility (ADF)
+vendor: Space Hardware Optimization Technology (SHOT) Inc., Greenville IN (now Techshot/Redwire); SBIR managed by NASA Ames SSBRP
+splash_ids: [72]
+registry_ids: ["1001"]
+curated: "2026-10-12"
+
+location:
+  value: "Space Shuttle middeck (STS-108 / UF-1, 5-17 Dec 2001), single middeck locker"
+  unit: "-"
+  source: "OSDR registry hardware 1001, description (snapshot 2026-10-12)"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+  quote: "The ADF fits into an Orbiter middeck locker, allowing access very shortly prior to launch and again, very soon after return."
+  kind: specified
+  note: "Registry payload CBTM: 'Located in the middeck area were the Avian Development Facility and the Commercial Biomedical Testing Module Animal Enclosure Module.' SPLASH _id 72 has no populated fields."
+
+geometry:
+  enclosure_internal_mm:
+    value: [376, 384, 218]
+    unit: mm (L x W x H)
+    source: "US Patent 7,261,860 B1 (2007) Apparatus and method for centrifugation and robotic manipulation of samples. Vellinger JC et al., assignee Space Hardware Optimization Technology Inc."
+    url: https://patents.google.com/patent/US7261860
+    quote: "the inner housing 50 provides a specimen volume 51 of approximately 14.8 inches long by 15.1 inches wide by 8.6 inches tall."
+    kind: derived
+    note: >-
+      Converted from inches (14.8, 15.1, 8.6 in x 25.4). The patent describes the ADF as its preferred
+      embodiment ("as an avian development facility ('ADF')"; "containing thirty-six Japanese quail egg
+      samples") - it is a patent, not a flight-unit drawing, so treat as design-level.
+  free_air_volume_L:
+    value: 31.5
+    unit: L
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "This yields a specimen volume 51 of approximately 1,925 cubic inches."
+    kind: derived
+    note: "1,925 in3 x 16.387 cm3/in3 = 31.5 L gross specimen volume (carousels, egg holders and eggs not subtracted)."
+  specimen_container:
+    value: "individual vibration-isolating egg holders, 18 per carousel on two independently rotating carousels"
+    unit: "-"
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "The ADF was designed and manufactured by SHOT, Inc (Greenville, IN) to house Japanese quail eggs in 36 egg holders. The egg holders have been designed to isolate the eggs from vibration"
+    kind: specified
+    note: "Patent: 'egg samples 12 are contained in eighteen containers known as egg holders 20 in each of two carousels 30'. Egg-holder dimensions not found for the egg carousel."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: >-
+      Not found. (Patent mentions 'machined plastic cylinders approximately 6 cm high and 2 cm in diameter' on
+      a ~20 cm radius carousel 'in one embodiment' - not clearly the quail egg holder, so not used.)
+  n_specimen_units:
+    value: 36
+    unit: eggs / egg holders (2 carousels x 18)
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "Egg holders are mounted on two independently rotating centrifuges (carousels) that can support both microgravity (when stopped) and variable gravity environments."
+    kind: specified
+    note: "36 holders per the same record. SOURCE CONFLICT: 1995 design paper (Vellinger et al., NTRS 19970004930) states the ADF 'accommodates 24 chicken eggs or 48 quail eggs' - pre-flight design, superseded."
+  layout:
+    value: "two stacked independently rotating carousels; one stopped (microgravity), one spun to 1 g as on-board control (0.1 g increments up to 1 g)"
+    unit: "-"
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "provides separate carousel rotation inflight to accommodate centrifugation controls up to 1-g in 0.1-g increments."
+    kind: specified
+    note: "Patent: 'the carousel drive subsystem 60 rotates the carousels 30 at approximately 77 RPM'; eggs also turned periodically about their axis."
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "Each egg holding carousel 30 contains four small 25 mm square fans 214."
+    kind: specified
+    note: >-
+      Semi-closed: internal recirculation (inner loop: "An inner air circulation loop circulates air from the
+      inner ThermoElectric Device (TED) heat sink (heat exchanger 212)" ...) plus a separate outer cabin-air
+      loop through the external heat sink. Registry 1001: "The ADF is programmable and provides a semiclosed
+      environmental system. Air exchange between the incubator chamber and cabin occurs through a filtered port."
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: >-
+      Delivered flow not reported. Only a fan rating is available: "Each small fan 214 is rated for 1.3 CFM at
+      zero flow resistance" (patent) = 36.8 L/min free-air per fan, 4 fans per carousel. This is an upper
+      bound, NOT an operating flow; actual flow depends on system pressure drop.
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: "outer (cooling) loop: cabin air drawn through the front panel's left-side air vent; incubator-cabin exchange through a filtered port"
+    unit: "-"
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "Each fan 213 draws air directly from the crew cabin via the front panels left side air vent 216"
+    kind: specified
+    note: "Filtered-port size/location not found. Vent containment: hydrophobic membranes + '50-mesh screen' (patent)."
+  outlet:
+    value: "outer loop exhaust screen opening on right side of front panel"
+    unit: "-"
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "a second exhaust screen opening 219 on the right side of front panel 41"
+    kind: specified
+
+environment:
+  temperature_C:
+    value: [26, 40]
+    unit: degC (incubation range; setpoint control ±0.5)
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "The temperature ranges are 13-16 ˚C for cooling and 26-40 ˚C for incubation.  Temperature setpoints are maintained within ±0.5 ˚C."
+    kind: specified
+    note: >-
+      Capability range; the STS-108 incubation setpoint was not found. Design paper (Vellinger et al. 1995,
+      NTRS 19970004930): quail require "37.6°C the first fourteen days", chilling to 13°C suspends development
+      (design guidance, not a flight log). Eggs launched in chill mode and incubated on orbit.
+  rh_percent:
+    value: [50, 70]
+    unit: "% (±7.5 about setpoint)"
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "The relative humidity range is  50-70%, with ±7.5% variation about the setpoint."
+    kind: specified
+    note: "Patent target: 'maintained at approximately 65% RH' for the first sixteen days. 1995 design paper: 66% RH ± 3%."
+  co2_ppm:
+    value: 10000
+    unit: ppm (maximum, = 1 %)
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "The O2 partial pressure is ≥21% and CO2 is maintained at ≤1% at an atmospheric pressure of 14.7 psia."
+    kind: specified
+    note: >-
+      SOURCE CONFLICT: patent targets "carbon dioxide below about 0.5% since higher levels have been found to
+      inhibit metabolism of the developing embryos" (LiOH scrubber; 38 g LiOH for a typical 13-day mission).
+  o2_percent:
+    value: 21
+    unit: "% (minimum)"
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "The O2 partial pressure is ≥21% and CO2 is maintained at ≤1% at an atmospheric pressure of 14.7 psia."
+    kind: specified
+    note: "O2 make-up from an on-board tank: patent 'the air within air tank 201 is comprised of 30% oxygen and 70% nitrogen'."
+  pressure_kPa:
+    value: 101.4
+    unit: kPa
+    source: "OSDR registry hardware 1001, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1001
+    quote: "The O2 partial pressure is ≥21% and CO2 is maintained at ≤1% at an atmospheric pressure of 14.7 psia."
+    kind: derived
+    note: "14.7 psia x 6.895 kPa/psi = 101.4 kPa."
+  light:
+    value: null
+    note: "No lighting described (closed incubator); not found."
+
+nutrients:
+  mode:
+    value: "none (self-contained avian egg)"
+    unit: "-"
+    source: "Vellinger JC, Deuser MS, Hullinger RL (1995) Engineering support of microgravity life science research: development of an Avian Development Facility. AIAA-95-1060 (NASA-CR-202583; NTRS 19970004930)"
+    url: https://ntrs.nasa.gov/api/citations/19970004930/downloads/19970004930.pdf
+    quote: "The avian egg is a self-contained, individual development package with its own life-support system, requiring no additional food, water, or waste-removal systems."
+    kind: specified
+  detail:
+    value: "humidity by automated misting + moisture removal; CO2 by LiOH canister and diaphragm pump; automated fixative injection"
+    unit: "-"
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "the carbon dioxide system 190 consists of the LiOH canister 191, diaphragm pump 192"
+    kind: specified
+    note: "Misting/moisture-removal subsystems from the 1995 design paper; fixative injection from registry 1001."
+
+specimen:
+  type:
+    value: "fertile Japanese quail eggs (Coturnix japonica), 36 (18 at 0 g, 18 at 1 g on centrifuge), ~12 days incubation on STS-108"
+    unit: "-"
+    source: "OSDR registry experiment OS-490, approach field (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/experiment/OS-490
+    quote: "The flight lasted 12 days, which represents 75% of total embryonic development."
+    kind: specified
+    note: "Egg count/split: registry 1001 ('36 egg holders') and Purdue news 30 Nov 2001 ('36 fertilized Japanese quail eggs, half of which will be placed in a centrifuge')."
+
+specimen_load:
+  co2_flux:
+    value: null
+    note: "No per-egg CO2 output from an opened source (LiOH sizing of 38 g per 13-day mission for 36 eggs is a design allowance, not a measurement)."
+  o2_flux:
+    value: null
+    note: "1995 design paper Fig. 3 plots O2 absorption/CO2 release vs incubation day (chicken) - values only graphical, not digitised."
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: null
+    note: "Not found."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: [100, 130]
+    unit: W (typical, max)
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "Power requirements: 100 Watts typical, 130 Watts max."
+    kind: specified
+  cooling:
+    value: "thermoelectric devices (Peltier) with cabin-air-cooled external heat sink; phase-change material for passive chilling (design)"
+    unit: "-"
+    source: "US Patent 7,261,860 B1"
+    url: https://patents.google.com/patent/US7261860
+    quote: "the ADF device 10 is designed to use the cabin air for its primary cooling source."
+    kind: specified
+    note: "1995 design paper: refrigeration subsystem 'employs thermoelectric devices' and 'Phase Change Material'."
+
+searched: |
+  OSDR snapshot 2026-10-12: SPLASH _id 72 (empty), registry hardware 1001, payload CBTM, experiments OS-490, OS-58.
+  Vellinger et al. 1995 AIAA-95-1060 (NTRS 19970004930, full text); US 7,261,860 B1 (Google Patents, full text);
+  SAE 2001-01-2289 abstract page (no specs); Purdue news 2001; NASA ADF fact sheet mirror (unreachable).
+  Not found: external dimensions/mass, STS-108 incubation setpoint and logged T/RH/CO2, delivered airflow,
+  egg-holder geometry, quail embryo gas exchange values.

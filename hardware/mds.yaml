@@ -1,0 +1,212 @@
+entity_id: HW112
+name: Mice Drawer System (MDS, ASI / Thales Alenia Space Italia)
+splash_ids: [112]
+registry_ids: []
+
+location:
+  value: "ISS EXPRESS Rack (EXPRESS Rack 4 in JEM on the 2009 mission); Shuttle middeck during transport"
+  unit: "-"
+  source: "Cancedda R. et al. (2012) The Mice Drawer System (MDS) experiment and the space endurance record-breaking mice. PLoS ONE 7(5):e32243. doi:10.1371/journal.pone.0032243"
+  url: https://doi.org/10.1371/journal.pone.0032243
+  quote: "The payload, to be integrated inside the Space Shuttle middeck during transportation and inside the Express Rack in the ISS during experiment execution, was designed to function autonomously for more than 3 months"
+  kind: specified
+  note: "Full text via Europe PMC (PMC3362598). Flown once: STS-128 to STS-129, 91 days (Aug-Nov 2009)."
+
+geometry:
+  enclosure_internal_mm:
+    value: [116, 98, 85]
+    unit: mm
+    source: "Liu Y., Biticchi R., Cilli M., Piccardi F., Ruggiu A., Cancedda R. (2009) Mouse Drawer System (MDS): an automated payload for supporting rodent research on the international space station. Basic Applied Myology 19(2&3):87-95"
+    url: "https://www.bio.unipd.it/~bam/PDF/19-2&3/Cancedda.pdf"
+    quote: "Each Habitat is internally subdivided in 3 equal cages, each of a floor area of 116 x 98 mm and 85 mm height."
+    kind: specified
+    note: >-
+      Per single-mouse cage (CFD unit). OSDR OSD-33 gives 'MDS, 11.6 x 9.8 x 8.4 cm' (84 vs 85 mm height). Cancedda 2012
+      gives the same 116x98 mm floor. External container 516 x 421 x 480 mm (Cancedda 2012; SPLASH 112 '51.6x42.1x48.0 cm').
+  free_air_volume_L:
+    value: 0.966
+    unit: L
+    source: "Derived from Liu et al. (2009) Basic Applied Myology 19:87"
+    url: "https://www.bio.unipd.it/~bam/PDF/19-2&3/Cancedda.pdf"
+    quote: "Each Habitat is internally subdivided in 3 equal cages, each of a floor area of 116 x 98 mm and 85 mm height."
+    kind: derived
+    note: "116 x 98 x 85 mm = 0.966 L per cage; food-bar intrusion and the 6-cage Mice Chamber plenum volumes are not subtracted/known."
+  specimen_container:
+    value: "metallic cage with grids on all four walls (one mouse per cage)"
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "Cages have grids in all four walls, permitting olfactory but not physical contact between animals."
+    kind: specified
+  specimen_container_mm:
+    value: [116, 98]
+    unit: mm (floor)
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "three metallic cages each one with a 116×98 mm floor area (configuration flown in the first mission with one mouse/cage)"
+    kind: specified
+  n_specimen_units:
+    value: 6
+    unit: "cages / mice (individually housed)"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "Indeed, in the standard configuration, MDS can house 6 mice individually up to 100 days with possible extension to 180 days on board the ISS."
+    kind: specified
+    note: "SPLASH 112: '6 per mission'. Liu 2009 table: '6 mice individually or 8 mice in-pair'."
+  layout:
+    value: "Mice Chamber = 2 habitats x 3 cages (1 mouse each); alternatively 1 group cage ~364x98 mm or 2 cages ~178x98 mm per habitat"
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "each animal habitat can also be configured as a unique cage of about 364×98 mm floor area (to house a group of mice), or as two cages of about 178×98 mm floor area (to house two pairs of mice)"
+    kind: specified
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "The Air Conditioning Subsystem generates a continuous airflow through the cages."
+    kind: specified
+    note: "Mostly recirculating: CO2 removed and O2 injected by 'exchanging with the ISS cabin about 5% of the total air circulating inside MDS every 2 minutes' (absolute circulating flow not given)."
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Circulating volumetric flow not published; only the 5 %-per-2-min cabin exchange fraction."
+  air_velocity_m_s:
+    value: [0.2, 0.3]
+    unit: m/s
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "Air speed is programmable in the range from 0.2 to 0.3 m/s and is used to flow fresh air through the cages."
+    kind: specified
+    note: "Conflict: Liu et al. 2009 (engineering-model tests) state 'The ACS generates a continuous airflow of 0.1 m/s flowing through the cages'. The 2012 flight-model paper is used. Flow direction through the cage not stated (waste filters are below the cages, suggesting top-to-bottom)."
+  inlet:
+    value: "HEPA-filtered exchange with ISS cabin; recirculated air enters cages (position not given)"
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "Ejected and injected air flows are filtered by HEPA filters in order to prevent microbiological contamination from the ISS cabin to MDS and vice-versa."
+    kind: specified
+  outlet:
+    value: "waste filters located below each cage (exchanged every 30 days)"
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "Waste products removed by the airflow are collected within Waste filters located below each cage."
+    kind: specified
+    note: "Liu 2009: waste filters 'located below each Habitat'; desiccant integrated in the waste filters."
+
+environment:
+  temperature_C:
+    value: [25, 30]
+    unit: degC
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "The ACS controls the temperature of the air flowing through the cages in the range from 25 to 30°C (lower value depends on ISS environment conditions)."
+    kind: specified
+    note: "Control range. Liu 2009 (engineering model): 'Air temperature inside the habitat is actively controlled, ranging from 25 to 26 °C'. Flight telemetry values not found."
+  rh_percent:
+    value: [40, 70]
+    unit: "%"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "In standard ISS cabin conditions, the relative humidity is expected to stay in the range between 40% and 70%, the real value depending on the relative humidity of the air injected from the ISS cabin."
+    kind: specified
+    note: "Passive control by desiccant in the waste filters."
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: "Controlled ('Generated CO2 is removed and consumed O2 is injected'; CO2 and NH3 sensors in each habitat) but no concentration reported in sources opened."
+  o2_percent:
+    value: null
+    unit: "%"
+    note: "Not reported."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "ISS cabin; not reported."
+  light:
+    value: "diffuse white LED, programmable 0-40 lux in 10-lux steps, nominal 12:12 h; IR for dark-period observation"
+    unit: lux
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "Light intensity is programmable from 0 to 40 lux in steps of 10 lux."
+    kind: specified
+
+nutrients:
+  mode:
+    value: food_bar+lixit
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "The Liquid Handling Subsystem delivers drinkable water to each cage individually by means of commercial stem activated drinking valves (made by Edstrom, Waterfors, WI, USA) connected to a Main Water Tank of about 0.5 liters capacity."
+    kind: specified
+  detail:
+    value: "2 food bars per cage (~90 g total; bar 149 x 73 x 7.5 mm), programmed ration 5 g/mouse/day; 0.5 L water tank refilled ~every 10 days; expected max water 7 mL/day/mouse"
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "The water is delivered “ad libitum” (expected max. water consumption is 7 ml/day/mouse)."
+    kind: specified
+    note: "Food-bar dimensions from Liu 2009 ('a food bar of 149 x 73 x 7.5 mm and a mass of about 90 grams'); daily 5 g ration from Cancedda 2012."
+
+specimen_load:
+  o2_flux:
+    value: 3.63
+    unit: "mL O2 h-1 per g body mass (C57BL/6 mouse)"
+    source: "Niederwieser T. et al. (2014) AEM-E - A small life support system for the transport of rodents to the ISS. ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "O2 = 3.63 mL O2/(hr g) measured at 16 weeks vs. 5.06 mL O2/(hr g) design load"
+    kind: measured
+    note: "Strain mismatch: MDS flew C57BL/10J wild type and PTN-transgenic males (OSD-33; Cancedda 2012), ~2 months old at launch. Organism-level C57BL/6 value used as the closest available."
+  co2_flux:
+    value: 2.29
+    unit: "mL CO2 h-1 per g body mass (C57BL/6 mouse)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "for CO2 = 2.29 mL CO2/(hr g) measured at 16 weeks vs. 4.63 mL CO2/(hr g) design load"
+    kind: measured
+    note: "Implied RQ 0.63 (low); conservative design value 4.63 mL/(h g)."
+  h2o_flux:
+    value: 7.3
+    unit: "g H2O vapour h-1 per kg body mass (mouse cage, BALB/c)"
+    source: "Riskowski G.L., Harrison P.C., Memarzadeh F. (2006) ASHRAE Transactions 112(1), paper 4835"
+    url: https://orf.od.nih.gov/TechnicalResources/Bioenvironmental/Documents/MassGenerationRatesofAmmoniaMoistureandHeatProduct.pdf
+    quote: "When vapor production is converted to a body weight basis, the BALB/c mice are greater than the CD-1 (7.3 vs. 6.3 (g/h)/kg BW"
+    kind: measured
+    note: "Cage-level at 24 C with bedding; MDS has no bedding (waste filters with desiccant)."
+  heat_W:
+    value: 15.7
+    unit: "W per kg body mass (BALB/c mouse)"
+    source: "Riskowski G.L., Harrison P.C., Memarzadeh F. (2006) ASHRAE Transactions 112(1), paper 4835"
+    url: https://orf.od.nih.gov/TechnicalResources/Bioenvironmental/Documents/MassGenerationRatesofAmmoniaMoistureandHeatProduct.pdf
+    quote: "Heat production on a body mass basis was calculated to be 17.9 and 15.7 W/kg BW (27.7 and 24.3 Btu/h/lb BW) for CD-1 and BALB/c mice, respectively."
+    kind: measured
+    note: "At 24 C; MDS runs at 25-30 C."
+
+walls:
+  material:
+    value: "metallic cages with grid walls; cameras/LEDs per cage"
+    unit: "-"
+    source: "Cancedda R. et al. (2012) PLoS ONE 7(5):e32243"
+    url: https://doi.org/10.1371/journal.pone.0032243
+    quote: "three metallic cages each one with a 116×98 mm floor area (configuration flown in the first mission with one mouse/cage)"
+    kind: specified
+    note: "Specific metal not stated."
+  gas_permeability:
+    value: null
+    unit: "-"
+    note: "Grid walls; not applicable/not found."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Not found (SPLASH 112 power field empty)."
+
+searched: |
+  SPLASH 112 (dims only); Cancedda et al. 2012 PLoS ONE (PMC3362598); Liu et al. 2009 Basic Appl Myol (bio.unipd.it PDF,
+  incl. cross-facility comparison table); OSDR OSD-33 and OSD-61 protocol text; Ronca 2019 and Shiba 2017 background text.
+  Missing: circulating air flow rate, inlet/outlet geometry in each cage, flight CO2/temperature telemetry, power.

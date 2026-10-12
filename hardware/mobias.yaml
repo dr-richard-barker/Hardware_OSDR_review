@@ -1,0 +1,172 @@
+entity_id: HW121
+name: Multiple Orbital Bioreactor with Instrumentation and Automated Sampling (MOBIAS)
+vendor: BioServe Space Technologies, University of Colorado Boulder
+splash_ids: [121]
+registry_ids: ["1403"]
+curated: "2026-10-12"
+
+location:
+  value: "Inside a BioServe incubator: modified Isothermal Containment Module (ICM v.3) per registry; CGBA per SPLASH"
+  unit: "-"
+  source: "NASA OSDR hardware registry, record 1403 (MOBIAS), description"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1403
+  quote: "MOBIAS is housed within a modified ICM v.3 for computer and thermal control."
+  kind: specified
+  note: >-
+    SPLASH _id 121 background: "MOBIAS was never used outside of the CGBA incubator." (ICM is part of the CGBA
+    family per Hoehn et al. 2004 J Gravit Physiol 11(1):39-49, so the two statements may be consistent.)
+    FLIGHT-HISTORY CONFLICT: registry links MOBIAS to STS-115 'Microbe' (payload 12A: "12 flight Group
+    Activation Packs were flown in the MOBIAS hardware"), but the NASA Ames Microbe page and Wilson et al. 2007
+    PNAS (PMC2042201) describe hand-crank-activated GAPs in the Shuttle middeck with no mention of MOBIAS
+    ("the experiment was activated by use of a hand crank that was installed onto the top of the Group
+    Activation Pack hardware"). OSD-11/15/20 should therefore NOT be modelled as MOBIAS without further evidence.
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "No MOBIAS or ICM v.3 dimensions found."
+  free_air_volume_L:
+    value: null
+    unit: L
+  specimen_container:
+    value: "Long, thin gas-permeable culture bags (bioreactors) with automated fluid exchange"
+    unit: "-"
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 121, 'background' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/121
+    quote: "It uses long, thin gas-permeable bags and automated fluid exchange to support diffusion-based bioprocessing without agitation mechanisms."
+    kind: specified
+    note: "Bag material, dimensions and volume not found."
+  specimen_container_mm:
+    value: null
+    unit: mm
+  n_specimen_units:
+    value: null
+    note: "'Multiple' bioreactors per name; number not found."
+  layout:
+    value: "Primary reactor(s) at culture temperature; drawn samples stowed in a separate cold thermal zone"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 1403"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1403
+    quote: "periodic discrete samples can be drawn throughout the mission and stowed in a separate thermal environment (e.g. 4° C) while the primary reactor is maintained at a selected optimal temperature (e.g. 25° C)."
+    kind: specified
+  sample_storage_temperature_C:
+    value: 4
+    unit: degC
+    source: "NASA OSDR hardware registry, record 1403"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1403
+    quote: "stowed in a separate thermal environment (e.g. 4° C)"
+    kind: specified
+    note: "Example value given by the registry ('e.g.')."
+
+ventilation:
+  mode:
+    value: passive
+    unit: "-"
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 121 / registry 1403"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/121
+    quote: "It uses long, thin gas-permeable bags and automated fluid exchange to support diffusion-based bioprocessing without agitation mechanisms."
+    kind: specified
+    note: >-
+      Gas exchange is by diffusion through bag walls (registry 1403: "In addition to providing gas exchange,
+      fresh nutrient medium addition and waste removal"). Whether the surrounding incubator air is circulated
+      is not documented. BioServe ICM family (Hoehn et al. 2004 abstract): "passive gas exchange can be
+      provided through hydrophobic membranes" - generic to the hardware family, not MOBIAS-specific.
+  flow_rate_L_min:
+    value: "n/a (passive)"
+    unit: L/min
+    note: "Feed/withdrawal volumes and rates not found."
+  inlet:
+    value: null
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: 25
+    unit: degC
+    source: "NASA OSDR hardware registry, record 1403"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1403
+    quote: "while the primary reactor is maintained at a selected optimal temperature (e.g. 25° C)."
+    kind: specified
+    note: "Example set point ('e.g.'). SPLASH _id 121 operational_temperature: '0 °C to 37 °C'."
+  temperature_range_C:
+    value: [0, 37]
+    unit: degC
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 121, 'operational_temperature' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/121
+    quote: "0 °C to 37 °C"
+    kind: specified
+  rh_percent:
+    value: null
+    unit: "%"
+  co2_ppm:
+    value: null
+    unit: ppm
+  o2_percent:
+    value: null
+    unit: "%"
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "SPLASH pressure: 'N'."
+  light:
+    value: dark
+    unit: "-"
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 121, 'lighting' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/121
+    quote: "lighting: N"
+    kind: specified
+
+nutrients:
+  mode:
+    value: culture_medium
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 1403"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1403
+    quote: "MOBIAS, developed by BioServe Space Technologies, was designed to enable long-term cell culture growth aboard the International Space Station (ISS) through semi-continuous fed batch processing."
+    kind: specified
+  detail:
+    value: null
+    note: "Medium volumes, feed schedule not found."
+
+specimen:
+  type:
+    value: "Microbial / cell cultures (generic); no specific flown organism verified"
+    unit: "-"
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 121, 'background' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/121
+    quote: "MOBIAS is a modular bioreactor system developed by BioServe Space Technologies to enable automated microbial culture and sampling under microgravity conditions."
+    kind: specified
+    note: "OSDR links OSD-11 (Salmonella, STS-115) to MOBIAS via payload 12A, but see the flight-history conflict under location.note."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: null
+    note: "Bag material not found ('gas-permeable' only)."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+
+searched: |
+  OSDR snapshot 2026-10-12 (SPLASH _id 121; registry hardware 1403 and 1173 (GAP); experiment OS-526; payload
+  12A; biodata OSD-11/15/20). Wilson et al. 2007 PNAS (PMC2042201, Microbe/STS-115 methods). NASA Ames Microbe
+  (STS-115) page. Hoehn, Klaus & Stodieck 2004 J Gravit Physiol abstract (CGBA/ICM family). Web, NTRS
+  (0 hits for MOBIAS) and Europe PMC searches. DATA-QUALITY FLAG: SPLASH _id 121 specimen_size reads
+  "Workbench (WB): Fold-out 0.5 m² workspace", which does not describe a bioreactor - treated as misattributed
+  and not used. Not found: any MOBIAS engineering paper, bag geometry/volume, incubator dimensions, feed rates,
+  verified flight.

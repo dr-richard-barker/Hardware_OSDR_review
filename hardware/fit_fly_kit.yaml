@@ -1,0 +1,197 @@
+entity_id: HW228
+name: Fungal Immunity (FIT) Fly Kit (STS-121)
+vendor: NASA Ames Research Center; containers originally developed by ESA (Biorack Type I)
+splash_ids: []
+registry_ids: ["1332"]
+curated: "2026-10-12"
+
+location:
+  value: "Space Shuttle middeck locker, kits in vented stowage foam tray (STS-121, 4-17 July 2006)"
+  unit: "-"
+  source: "OSDR registry experiment OS-95 'HOBO Combo Data', approach field (snapshot 2026-10-12)"
+  url: https://osdr.nasa.gov/geode-py/ws/api/experiment/OS-95
+  quote: "The payload was carried in a vented foam tray and located in a middeck locker."
+  kind: specified
+  note: "Registry payload FIT: 'The FIT payload was a passive middeck locker experiment.'"
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: >-
+      ESA vented Type I container internal dimensions not found in a primary source. (A NanoRacks reprint of a
+      NASA announcement giving Type 1 size could not be opened - TLS certificate error - so not used.)
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "Not found."
+  specimen_container:
+    value: "polycarbonate fly cassette with a 2 ml food tray, inside a ventilated ESA Type I aluminium container (one cassette per kit)"
+    unit: "-"
+    source: "OSDR registry hardware 1332, version 'As Flown on STS-121' (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1332
+    quote: "Each of the ten fly kits consisted of a polycarbonate fly cassette, with a 2ml food tray, inside a TypeI aluminum container developed by the European Space Agency."
+    kind: specified
+    note: >-
+      Marcu et al. 2011 PLoS ONE 6:e15361 (PMC3019151): "Each fly kit, consisted of a polycarbonate fly cassette
+      with a 2 ml food tray held in a ventilated aluminum container." SOURCE CONFLICT: the later FFL description
+      of the same cassette family says "aluminum body" with polycarbonate lid (registry 1389; NTRS 20190001070
+      "Aluminum cassettes").
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Cassette dimensions not found."
+  food_volume_mL:
+    value: 2
+    unit: mL per food tray
+    source: "OSDR registry hardware 1332, version 'As Flown on STS-121'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1332
+    quote: "a polycarbonate fly cassette, with a 2ml food tray"
+    kind: specified
+    note: "SOURCE CONFLICT: NASA Researcher's Guide (2016) says Phase I cassette hardware 'only provides 3.4 ml of food'."
+  n_specimen_units:
+    value: 10
+    unit: fly kits (5 with flies, 5 empty for larval transfer) + 1 fungus kit + 1 RAM kit
+    source: "OSDR OSD-3 study protocol description (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "Ten kits (5 with flies and 5 empty) flew on the space shuttle and 10 remained on the ground."
+    kind: specified
+    note: "Registry 1332: also 'one FIT Fungus Kit (two fungus tubes (10 ml) that are housed in an ESA vented Type 1 Container' and five Food Tray Change Out Platform kits."
+  layout:
+    value: "kits packed in stowage foam (vented foam tray) inside one middeck locker"
+    unit: "-"
+    source: "OSDR OSD-3 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "The fly kits were placed in stowage foam on the shuttle middeck, at ambient temperature and in total darkness."
+    kind: specified
+
+ventilation:
+  mode:
+    value: passive
+    unit: "-"
+    source: "OSDR registry payload FIT, description (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/payload/FIT
+    quote: "The FIT payload was a passive middeck locker experiment."
+    kind: specified
+    note: >-
+      Ventilated (vented) Type I containers in a vented foam tray; no fans. Cassettes exchange gas through
+      mesh screens (NTRS 20190001070: "passive gas exchange through mesh screens on either side").
+  flow_rate_L_min:
+    value: "n/a (passive)"
+    unit: "-"
+    note: "No forced flow; middeck locker air exchange not reported."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+  inlet:
+    value: "vent openings of ESA vented Type I container; cassette side mesh screens"
+    unit: "-"
+    source: "OSDR registry hardware 1332, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1332
+    quote: "ten vented FIT Fly Kits (one fly cassette containing a food tray housed in a European Space Agency (ESA) vented Type 1 Container per kit"
+    kind: specified
+    note: "Vent size/count not found."
+  outlet:
+    value: null
+    note: "Not found."
+
+environment:
+  temperature_C:
+    value: 23.5
+    unit: degC (mean; range 21.71-25.56)
+    source: "OSDR OSD-3 study protocol description (HOBO logger data)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "The average temperature on the flight deck was 23.5 deg C, ranging between 21.71 deg C and 25.56 deg C."
+    kind: measured
+    note: "Ground control (KSC Orbital Environmental Simulator): mean 22.5 degC (19.42-25.56). Same values in Marcu et al. 2011."
+  rh_percent:
+    value: 27.2
+    unit: "%"
+    source: "OSDR OSD-3 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "The relative humidity was 27.2 percent on the shuttle deck and 25.4 percent on ground."
+    kind: measured
+  co2_ppm:
+    value: null
+    note: "Not reported (cabin CO2 not given)."
+  o2_percent:
+    value: null
+  pressure_kPa:
+    value: null
+  light:
+    value: dark
+    unit: "-"
+    source: "OSDR OSD-3 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "The fly kits were placed in stowage foam on the shuttle middeck, at ambient temperature and in total darkness."
+    kind: specified
+
+nutrients:
+  mode:
+    value: "food tray, semi-defined Drosophila medium (agar-based), one on-orbit changeout on flight day 6"
+    unit: "-"
+    source: "OSDR OSD-3 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "Flies were grown on semi-defined medium (1 percent agar, 4 percent brewer's yeast, 2 percent yeast extract, 2 percent peptone, 3 percent sucrose, 6 percent glucose, 0.05 percent MgSO4, 0.05 percent CaCl2 and tegosept)"
+    kind: specified
+  detail:
+    value: "day 6: trays with eggs/larvae moved to the 5 empty cassettes and fresh food given to original flies"
+    unit: "-"
+    source: "OSDR OSD-3 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "on day 6 the food trays containing eggs and larvae were transferred to the 5 empty cassettes and fresh food was given to the original flies."
+    kind: specified
+
+specimen:
+  type:
+    value: "Drosophila melanogaster (hemolectin-Gal4 UAS-GFP and other lines); 10 virgin females + 5 males per cassette; plus Beauveria bassiana fungus tubes"
+    unit: "-"
+    source: "OSDR OSD-3 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-3/
+    quote: "Ten virgin females and 5 males were housed in each fly cassette."
+    kind: specified
+    note: "Flight duration 12 days 18.5 h (OSD-3). Researcher's Guide: STS-121 'returned about 3000 flies'."
+
+specimen_load:
+  co2_flux:
+    value: [2, 4.68]
+    unit: uL CO2 per adult fly per hour (25 degC)
+    source: "Yatsenko AS et al. (2014) Measurement of metabolic rate in Drosophila using respirometry. J Vis Exp (88):51681, Table 1"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4205100/
+    quote: "4.68 ± 1.04 CO2 | CO2 respirometry system"
+    kind: measured
+    note: "Organism-level literature values at 25 degC (2-3 and 4.68 ± 1.04 ul/fly/h); larvae not covered."
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "polycarbonate cassette; aluminium (ESA Type I) outer container"
+    unit: "-"
+    source: "OSDR registry hardware 1332, version 'As Flown on STS-121'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1332
+    quote: "a polycarbonate fly cassette, with a 2ml food tray, inside a TypeI aluminum container developed by the European Space Agency."
+    kind: specified
+    note: "See specimen_container conflict note (aluminium vs polycarbonate cassette body)."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: "OSDR registry payload FIT, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/payload/FIT
+    quote: "The FIT payload was a passive middeck locker experiment."
+    kind: derived
+    note: "Passive (unpowered) kits; HOBO logger battery-powered. 0 W inferred from 'passive'."
+
+searched: |
+  OSDR snapshot 2026-10-12: registry hardware 1332, payload FIT, experiments OS-784, OS-95; biodata OSD-1, OSD-3.
+  Marcu et al. 2011 PLoS ONE (PMC3019151); Taylor et al. 2014 PLoS ONE (PMC3901686; refers to Marcu for hardware);
+  NASA Researcher's Guide to Fruit Fly Research; NASA Facts FS-2016-10-03-ARC; NTRS 20190001070.
+  Not found: Type I container and cassette dimensions, vent geometry, locker air exchange, CO2/O2.

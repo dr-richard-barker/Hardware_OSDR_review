@@ -1,0 +1,150 @@
+entity_id: HW220
+name: E150 Experiment Unique Equipment (EUE) - Animal Walking Apparatus suite (Neurolab)
+vendor: NASA Ames Research Center Neurolab payload (builder not stated); PI K. D. Walton, NYU School of Medicine
+splash_ids: []
+registry_ids: ["998"]
+curated: "2026-10-12"
+
+modelling_caveat: >-
+  E150 EUE is a behavioural TEST APPARATUS (walking platform + dowels + cameras), not a habitat. It was used for
+  short videotaped sessions inside the Spacelab General Purpose Work Station (GPWS). Animals lived in the RAHF
+  (PN8 group) or AEM (PN14 group) - those are separate hardware items. Any CFD model of E150 is really a model of
+  the GPWS work volume, which is not curated with numbers here.
+
+location:
+  value: "Spacelab General Purpose Work Station (GPWS), Neurolab STS-90 (1998)"
+  unit: "-"
+  source: "Maese AC, Ostrach LH, Dalton BP et al. (2002) Neurolab: Final Report for the Ames Research Center Payload. NASA, NTRS 20020073543, section 3.3.5"
+  url: https://ntrs.nasa.gov/citations/20020073543
+  quote: "During flight, the AWA was deployed in the GPWS to conduct the experiment sessions."
+  kind: specified
+  note: >-
+    Quotes from this report are from OCR of the scanned PDF (tesseract, this session). Sec 3.2.6: "Housed in a
+    Spacelab double rack, the GPWS was self-contained, apart from power, data, and cooling interfaces."
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "GPWS cabinet internal dimensions not found (Neurolab report defers to SLS-1 Final Report NASA TM-4706, not located)."
+  free_air_volume_L:
+    value: null
+    unit: L
+  specimen_container:
+    value: "Animal Walking Apparatus: rectangular platform on a backplate (wire mesh one side, foam the other) plus four metal dowels of different diameters"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 998, component 'Animal Walking Apparatus (AWA)'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/998
+    quote: "A rectangular platform attached on one side to a backplate makes up the core of the AWA. One side of the platform is covered in a wire mesh surface and one side is covered with foam."
+    kind: specified
+    note: "Open apparatus - no enclosure of its own. Registry experiment OS-544 approach: rats 'progressed along rods of varying diameters, along a 1/2-inch mesh surface, on a foam surface'."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Platform and dowel dimensions not found."
+  n_specimen_units:
+    value: null
+    note: "Number of animals per AWA session not found."
+  layout:
+    value: "AWA mounted in GPWS; two Sekai RSC-90 cameras on brackets; fluorescent dexterity light under the platform"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 998, components"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/998
+    quote: "The dexterity video light was a fluorescent light placed under the AWA to provide light for activities which took place under the AWA platform"
+    kind: specified
+
+ventilation:
+  mode:
+    value: null
+    unit: "-"
+    note: >-
+      Applies to the host GPWS. GPWS abstracts (NTRS 19960044603) state it "is designed to remove volatile
+      compounds from its internal airpath" via the Trace Contaminant Control System, and (NTRS 19930057555) that it
+      "interfaces to spacelab systems including water cooling, avionics and cabin air". These imply an internal
+      recirculating airpath but give no mode/flow figures; left null rather than inferred.
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+  inlet:
+    value: null
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: null
+    unit: degC
+    note: "Spacelab cabin / GPWS temperature during sessions not found."
+  rh_percent:
+    value: null
+    unit: "%"
+  co2_ppm:
+    value: null
+    unit: ppm
+  o2_percent:
+    value: null
+    unit: "%"
+  pressure_kPa:
+    value: null
+    unit: kPa
+  light:
+    value: "fluorescent dexterity light under AWA platform during sessions (intensity unknown)"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 998, component 'Dexterity Video Light'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/998
+    quote: "The dexterity video light was a fluorescent light placed under the AWA to provide light for activities which took place under the AWA platform"
+    kind: specified
+
+nutrients:
+  mode:
+    value: "n/a (test sessions only; animals fed in RAHF/AEM)"
+    unit: "-"
+    note: "No feeding in the E150 apparatus is described."
+  detail:
+    value: null
+
+specimen:
+  type:
+    value: "Neonatal rats (Rattus norvegicus): PN8 at launch (RAHF families) and PN14 at launch (2 families with dams, AEM); 16 days in microgravity"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), sec 2.3 Mammalian Development Team"
+    url: https://ntrs.nasa.gov/citations/20020073543
+    quote: "Walton was also assigned two families of PN 14 neonates with dams that flew in the AEM"
+    kind: specified
+    note: >-
+      Walton et al. 2003 (NTRS 20030068213) abstract: "We studied two groups of rats that had been raised for 16 days
+      in microgravity (eight or 14 days old at launch)". Behaviour sessions on FD6 (older) and FD15 (younger), in the
+      GPWS. Animals were marked in 16 places along the body for 2-D video analysis (registry 998).
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "platform surfaces: wire mesh and foam; dowels: metal"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 998, component 'Animal Walking Apparatus (AWA)'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/998
+    quote: "The AWA also contains four round metal dowels of varying diameters, surrounding the platform and also attached to the backplate."
+    kind: specified
+  gas_permeability:
+    value: "n/a (open apparatus)"
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Video power kit supplies cameras/strobe; no wattage found."
+
+searched: |
+  OSDR snapshot 2026-10-12 (registry hardware 998, experiment OS-544, payload Neurolab; no SPLASH record; biodata
+  hits for 'E150' were false positives). Neurolab Final Report NTRS 20020073543 (OCR; sections 2.3, 3.2.6, 3.3.5).
+  Walton et al. 2003 chapter NTRS 20030068213 (full text). NTRS GPWS records 19930057555, 19960044603, 19920039257
+  (abstracts only). Not found: AWA dimensions, GPWS internal volume/airflow/temperature during sessions.

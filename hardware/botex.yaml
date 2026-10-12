@@ -1,0 +1,165 @@
+entity_id: HW205
+name: BOTEX incubator (BOTany EXperiments; DLR/DARA)
+vendor: DARA/DLR (German Space Agency); OHB System listed among CRISP modification team
+splash_ids: []
+registry_ids: ["906"]
+curated: "2026-10-12"
+
+location:
+  value: "Spacelab module (Neurolab, STS-90, 1998); previously flown on Spacelab D-2 (1993)"
+  unit: "-"
+  source: "Maese AC, Ostrach LH, Dalton BP et al. (2002) Neurolab: Final Report for the Ames Research Center Payload. NASA, NTRS 20020073543, section 3.2.2"
+  url: https://ntrs.nasa.gov/citations/20020073543
+  quote: "One BOTEX Incubator was flown on Neurolab in the Spacelab."
+  kind: specified
+  note: >-
+    Quotes from this report are from OCR of the scanned PDF (tesseract, this session). Same report sec 1.3:
+    "the BOTEX (previously flown on the German Spacelab mission D-2, in 1993)". Launch/landing: experiment
+    equipment "stowed in a large middeck locker tray".
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "BOTEX incubator drawer / chamber dimensions not found. Only container dimensions are documented."
+  free_air_volume_L:
+    value: null
+    unit: L
+  specimen_container:
+    value: "CRIC containers (CRIC 1-4) holding minicages / Petriperm dishes; drawn from upper and lower drawers"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 906 (BOTEX), components; same text in Neurolab Final Report sec 3.2.2"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/906
+    quote: "The cylindrical CRIC 3 containers (80 mm high x 100 mm diameter) are located in the lower drawer of the BOTEX in front of the centrifuge during orbit."
+    kind: specified
+    note: "Registry container geometry is given in the next fields. Note the registry's 'wide x high x diameter' notation for CRIC 1/2 is ambiguous (a 3rd dimension labelled 'diameter' on a box)."
+  specimen_container_mm:
+    value:
+      CRIC1_wide_high_diameter: [325, 60, 160]
+      CRIC2_wide_high_diameter: [330, 60, 130]
+      CRIC3_high_diameter: [80, 100]
+      CRIC4_high_diameter: [125, 330]
+    unit: mm
+    source: "NASA OSDR hardware registry, record 906, components 'CRIC 1/2/3/4 Container'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/906
+    quote: "The CRIC 1 containers (325 mm wide x 60 mm high x 160 mm diameter) serve as holding assemblies for 40 minicages and are located in the upper drawer of the BOTEX during orbit."
+    kind: specified
+    note: >-
+      Other quotes (same record): "The CRIC 2 container  (330 mm wide x 60 mm high x 130 mm diameter) has 4 separate
+      compartments, each with a wire mesh top and a circular door in the front."; "The cylindrical CRIC 4 container
+      (125 mm high x 330 mm diameter) can hold up to 60 minicages for centrifugation."
+  petriperm_dish_volume_mL:
+    value: 25
+    unit: mL
+    source: "Horn E, Pfalzer S, Riewe P, Sebastian C, Kamper G, Friedrich U, Junk P (1997) A modified BOTEX incubator as a transport system for developing crickets into space. Poster abstract, 12th Man in Space Symposium: The Future of Humans in Space, Abstract Volume; NTRS 19980024373"
+    url: https://ntrs.nasa.gov/citations/19980024373
+    quote: "can be reared in tightly closed Petriperm dishes with an internal volume of 25 ml for at least 20 days."
+    kind: specified
+    note: "Ground EVT result for the CRISP configuration; Petriperm material permeability not stated."
+  n_specimen_units:
+    value: "80 Petriperm dishes for 0g/hg samples; in flight 30 (1g control), 20 (0.7g), 10 (0.3g); plus 8 containers of 415-625 ml"
+    unit: "-"
+    source: "Horn et al. (1997) poster abstract, NTRS 19980024373"
+    url: https://ntrs.nasa.gov/citations/19980024373
+    quote: "The modified BOTEX incubator allows the transport of 80 Petriperm dishes used for the lag- or hg- samples. Under space conditions, 30 dishes for the inflight lg-control, 20 for a 0.7g- and 10 for a 0.3g-condition are also available."
+    kind: specified
+    note: "'lag'/'lg'/'hg' are OCR/typesetting artefacts in the NTRS text for '0g'/'1g'/'hypergravity' (interpretation). The Neurolab flight itself used a 1-G reference centrifuge and a 3-G ground hypergravity control (registry OS-538)."
+  layout:
+    value: "Upper drawer (CRIC 1, CRIC 2), lower drawer (CRIC 3 stack in front of centrifuge; CRIC 4 = centrifuge rotor)"
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 906, component 'BOTEX Incubator Centrifuge'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/906
+    quote: "The centrifuge is a 1-G reference centrifuge located in the lower drawer of the BOTEX.  The speed range is from 60 to 90 rpm with nominal operation at 90 rpm. A CRIC 4 container serves as the centrifuge rotor."
+    kind: specified
+
+ventilation:
+  mode:
+    value: null
+    unit: "-"
+    note: >-
+      Incubator air handling not documented. Container-level: CRIC 3 stacks are "separated by a spacer ring to allow
+      for air exchange" and CRIC 2 compartments have "a wire mesh top" (registry 906) - i.e. containers exchange
+      with the incubator air, but whether that air is fan-circulated is unknown. Horn et al. 1997 describe "the
+      closed BOTEX incubator" and "tightly closed Petriperm dishes".
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+  inlet:
+    value: null
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: 27
+    unit: degC
+    source: "Horn et al. (1997) poster abstract, NTRS 19980024373"
+    url: https://ntrs.nasa.gov/citations/19980024373
+    quote: "Eggs, 1st, 4th and 6th instar larvae were brought into the closed BOTEX incubator for 20 days at a temperature of 27+1 °C."
+    kind: specified
+    note: "'27+1' is the NTRS text rendering of 27 +/- 1 C. This is the pre-flight Experiment Verification Test condition; the Neurolab flight set point was not found."
+  rh_percent:
+    value: null
+    unit: "%"
+  co2_ppm:
+    value: null
+    unit: ppm
+  o2_percent:
+    value: null
+    unit: "%"
+  pressure_kPa:
+    value: null
+    unit: kPa
+  light:
+    value: null
+
+nutrients:
+  mode:
+    value: "dry food pellets + water + filter paper in closed dishes (crickets)"
+    unit: "-"
+    source: "Horn et al. (1997) poster abstract, NTRS 19980024373"
+    url: https://ntrs.nasa.gov/citations/19980024373
+    quote: "cricket larvae up to the 5th instar which were supplied only with autoclavated rat food pallets, 2 ml water and a piece of filter paper can be reared in tightly closed Petriperm dishes"
+    kind: specified
+  detail:
+    value: null
+
+specimen:
+  type:
+    value: "House cricket Acheta domesticus: eggs, 1st, 4th and 6th instar larvae (CRISP, E089); 6-10 larvae per Petriperm dish optimal in EVT"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), Table 2.35 / sec 2.5.2; registry experiment OS-538"
+    url: https://osdr.nasa.gov/geode-py/ws/api/experiment/OS-538
+    quote: "Cricket eggs and 1st, 4th, and 6th stage larvae were flown on Neurolab in the BOTEX incubator."
+    kind: specified
+    note: "Horn et al. 1997: 'The highest survival rates were seen if the number of individuals were between 6 and 10 per Petriperm dish.'"
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: null
+    note: "Petriperm dishes (gas-permeable film dishes by name), CRIC container materials not stated."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Gravitational Biology Control Unit supplied power; no value."
+
+searched: |
+  OSDR snapshot 2026-10-12 (registry hardware 906, experiment OS-538, payload Neurolab; no SPLASH record; no
+  biodata dataset). Neurolab Final Report NTRS 20020073543 (OCR, sections 1.3, 2.5, 3.2.2). Horn et al. 1997
+  poster (NTRS 19980024373). NTRS search "BOTEX" (1 hit). Web search for D-2 BOTEX descriptions (none found).
+  Not found: incubator internal dimensions, air circulation, flight temperature, humidity, gas composition,
+  light regime, power. Horn et al. 2001 Acta Astronaut / 2002 Adv Space Res not open access.

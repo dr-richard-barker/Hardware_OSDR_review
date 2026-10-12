@@ -1,0 +1,213 @@
+# Advanced Biological Research System (ABRS) - curated 2026-10-12
+# Every non-null value carries a verbatim quote from a source opened in the curation session.
+entity_id: HW064
+name: Advanced Biological Research System (ABRS)
+splash_ids: [64]
+registry_ids: []
+
+location:
+  value: "ISS EXPRESS rack (EXPRESS Rack 2), single middeck-locker-equivalent sub-rack facility; also Shuttle-middeck compatible"
+  unit: '-'
+  source: "SPLASH instrument #64 (ABRS), background field"
+  url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/64
+  quote: "ABRS fits within either asingle rear-breathing Space Shuttle middeck locker or an ISS EXPRESS Rack"
+  kind: specified
+  note: "Cox D.R. (2010) ASGSB slides (NTRS 20110942664): 'Single Middeck Locker Equivalent' and photo caption 'ABRS Installed in EXPRESS Rack 2'. Status 'Legacy' in SPLASH; returned on SpX-5 (Dec 2014 ISS status reports, secondary)."
+
+geometry:
+  enclosure_internal_mm:
+    value: [202, 133, 192]
+    unit: mm
+    source: "SPLASH instrument #64 (ABRS), specimen_size field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/64
+    quote: "20.2L 13.3W 19.2H cm growth chamber"
+    kind: specified
+    note: >-
+      One Experiment Research Chamber (ERC); [L, W, H]. Corroborated by the ERC detail drawing in Cox (2010)
+      NTRS 20110942664, slide 4, whose labels (read from the figure) are 20.3 cm x 13.4 cm x 19.25 cm plus a
+      5.2 cm removable ERC base - agreement within 1 mm. Neither source says whether these are internal or
+      external dimensions. CONFLICT: the same slide deck's comparison table (slide 5) lists ABRS 'Growing Area
+      16.0 (W) x 21.1 (D) cm', 'Growing Area Height 27.0 cm', 'Total Growing Volume 675 cm3'; that table is
+      internally inconsistent (16 x 21.1 x 27 = 9115 cm3) and is not used.
+  free_air_volume_L:
+    value: 5.16
+    unit: L
+    source: "SPLASH instrument #64 (ABRS), specimen_size field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/64
+    quote: "20.2L 13.3W 19.2H cm growth chamber"
+    kind: derived
+    note: "0.202 x 0.133 x 0.192 m = 5.16 L gross ERC volume; the GFP Imaging System (GIS) insert and six plates occupy part of it (their volumes are not sourced)."
+  specimen_container:
+    value: "100 mm square Petri plate with phytagel medium, held in the GFP Imaging System (GIS) insert"
+    unit: '-'
+    source: "Paul A.-L., Amalfitano C.E., Ferl R.J. (2012) Plant growth strategies are remodeled by spaceflight. BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "The GIS holds six standard 100 mm square Petri plates (Fisher Scientific) in two tiers."
+    kind: specified
+    note: "APEX-01/TAGES and APEX-03 (OSD-16; registry payload APEX-03-2 description). Paul et al. 2013 call them '10 cm2 solid media plates'."
+  specimen_container_mm:
+    value: [100, 100]
+    unit: mm
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "The foundational growth medium for Arabidopsis plants on orbit was phytagel in standard 100mm square Petri plates."
+    kind: specified
+    note: "Nominal side lengths; plate depth and medium thickness not stated."
+  n_specimen_units:
+    value: 6
+    unit: plates per GIS (one ERC)
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "The GIS holds six standard 100 mm square Petri plates (Fisher Scientific) in two tiers."
+    kind: specified
+    note: "Two ERCs per ABRS, the GIS occupying one: 'ABRS is composed of two independently programmable Environmental Research Chambers (ERCs), one of which housed the Experiment Unique Equipment referred to as the Green Fluorescent Protein Imaging System' (same source). 12 to 18 seeds per plate (Paul et al. 2013)."
+  layout:
+    value: "GIS: two tiers of three plates; lower tier positions 1, 3, 5 (plate 1 faces the camera); upper tier 2, 4, 6; LED panel in the chamber top directly above"
+    unit: '-'
+    source: "Paul A.-L., Zupanska A.K., Schultz E.R., Ferl R.J. (2013) Organ-specific remodeling of the Arabidopsis transcriptome in response to spaceflight. BMC Plant Biol. 13:112"
+    url: https://doi.org/10.1186/1471-2229-13-112
+    quote: "Each slot is assigned a number (shown in red) to identify plate position: positions 1, 3, and 5 are on the bottom tier, and positions 2, 4, and 6 are in the top tier."
+    kind: specified
+    note: "Paul et al. 2012: the imaging plate level is 12 cm below the top of the upper-tier plates."
+
+specimen:
+  types:
+    value: ["Arabidopsis thaliana seedlings (GFP reporter lines; WS, Col-0)"]
+    unit: '-'
+    source: "Paul, Zupanska, Schultz, Ferl (2013) BMC Plant Biol. 13:112"
+    url: https://doi.org/10.1186/1471-2229-13-112
+    quote: "The work reported here is a biologically replicated molecular analysis of 12-day-old Arabidopsis plants grown on phytagel plates within the Advanced Biological Research System (ABRS)."
+    kind: specified
+    note: "ABRS also flew white spruce and willow (APEX-Cambium; Cox 2010 NTRS 20110942664) - different specimen geometry, not covered here."
+
+ventilation:
+  mode:
+    value: forced
+    unit: '-'
+    source: "Paul, Zupanska, Schultz, Ferl (2013) BMC Plant Biol. 13:112 (same text in OSD-16 protocol)"
+    url: https://doi.org/10.1186/1471-2229-13-112
+    quote: "The ABRS provided temperature control, light control, and circulation of air that was scrubbed to remove volatile organic compounds (VOCs)."
+    kind: specified
+    note: "Closed chamber with recirculation and scrubbing (ethylene/VOC); Cox 2010 lists 'ethylene scrubbing and water recycling'. Recirculation vs make-up air fraction not stated."
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Not found."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: "air enters the GIS from the plate-3 side"
+    unit: '-'
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "Air is circulated by entering into the GIS from the plate-3-side of the unit and exits under the plate 5 position"
+    kind: specified
+    note: "A deflector inside the GIS redirects slightly cooler air to the back of plate 1 to keep its face free of condensation (same source)."
+  outlet:
+    value: "air exits under the plate-5 position"
+    unit: '-'
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "Air is circulated by entering into the GIS from the plate-3-side of the unit and exits under the plate 5 position"
+    kind: specified
+
+environment:
+  temperature_C:
+    value: 23
+    unit: °C
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "temperature at 23°C and CO2 concentration at 3000ppm"
+    kind: specified
+    note: "Set point (APEX-TAGES Run 3A). Paul et al. 2013 Table 1 give the active growth period as 'ISS ABRS unit 22–24 C/12–14 days'. SPLASH #64 temperature_range '23-26°C'; operational_temperature '8°C below ambient' (cooling capability, as listed)."
+  rh_percent:
+    value: [60, 90]
+    unit: '%'
+    source: "SPLASH instrument #64 (ABRS), rh_range field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/64
+    quote: "60-90%"
+    kind: specified
+    note: "Facility capability as catalogued; RH actually experienced by TAGES plates not reported."
+  co2_ppm:
+    value: 3000
+    unit: ppm
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "temperature at 23°C and CO2 concentration at 3000ppm"
+    kind: specified
+  o2_percent:
+    value: null
+    unit: '%'
+    note: "Not found."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Not found; SPLASH pressure field 'N'."
+  light:
+    value: "LED panel in chamber top, 303 LEDs, PWM 50-300 umol m-2 s-1, peaks 470 and 660 nm plus minor green/white; set to 180 umol m-2 s-1 at top of upper-tier plates (~half at imaging plate 12 cm lower)"
+    unit: '-'
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "control of light intensity from 50 to 300 μmol m-2 s-1, and provided a spectrum of photosynthetically available light (peaks at 470 and 660nm) plus minor green and white light components."
+    kind: specified
+    note: "Same source: 'The upper tier plates received approximately 180 μmol m 2 s -1, while the lower tier plates received about half that.' Lower-tier plate 1 cited at 80 umol m-2 s-1."
+
+nutrients:
+  mode:
+    value: agar
+    unit: '-'
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "The foundational growth medium for Arabidopsis plants on orbit was phytagel in standard 100mm square Petri plates."
+    kind: specified
+  detail:
+    value: "phytagel (gellan) nutrient medium in sealed-lid Petri plates; seedlings grow along the gel surface; no active watering"
+    unit: '-'
+    source: "Paul, Amalfitano, Ferl (2012) BMC Plant Biol. 12:232"
+    url: https://doi.org/10.1186/1471-2229-12-232
+    quote: "Phytagel is a solid, non-friable, water and nutrient delivery system ideal for microgravity environments in that water and nutrient delivery are passive and consistent."
+    kind: specified
+    note: "Whether plate lids were taped/sealed and how gas exchanges with the plate interior is not stated in the sources opened."
+
+specimen_load:
+  co2_flux:
+    value: null
+    unit: umol s-1
+    note: "No seedling gas-exchange measurement in ABRS found; no organism-level value adopted."
+  o2_flux:
+    value: null
+    unit: umol s-1
+  h2o_flux:
+    value: null
+    unit: g d-1
+  heat_W:
+    value: null
+    unit: W
+
+walls:
+  material:
+    value: null
+    unit: '-'
+    note: "Cox 2010 slide 4 drawing labels a 'Bonded Insulated Housing' and 'Double Pane LED Window' but no materials."
+  gas_permeability:
+    value: null
+    unit: '-'
+
+thermal:
+  power_W:
+    value: 320
+    unit: W
+    source: "Cox D.R. (2010) Biological Imaging Capability in the ABRS Facility on ISS, ASGSB 2010 slides (NTRS 20110942664), slide 6 'ISS Resource Requirements'"
+    url: https://ntrs.nasa.gov/citations/20110942664
+    quote: "Power (kw) 0.320 (peak)"
+    kind: specified
+    note: "Peak facility power (whole ABRS, both ERCs). Heat rejection by rear air breathing and the EXPRESS Moderate Temperature Loop ('MTL Connectors' on the same drawing)."
+
+searched: |
+  Opened: SPLASH #64; OSDR OSD-16 protocol; registry payload APEX-03-2; Paul et al. 2012 BMC Plant Biol (PMC3556330)
+  and 2013 (PMC3750915) full texts; Cox 2010 ASGSB slides (NTRS 20110942664, incl. rendered drawings); NASA ABRS
+  web summary (nasa.gov/?p=785641 - two sentences, no numbers). NTRS search 'Advanced Biological Research System'
+  returned only 3 records (TAGES, Cambium, Cox). Not found: fan flow rate or air velocity, inlet/outlet sizes,
+  internal vs external status of ERC dimensions, wall material, RH/O2 actually experienced, seedling respiration.

@@ -1,0 +1,44 @@
+{
+ "cavity": [
+  {
+   "Ra": 100000.0,
+   "n": 64,
+   "Nu": 4.52925,
+   "Nu_time_sd": 0.0,
+   "Nu_hot": 4.52925,
+   "Nu_cold": 4.52925,
+   "n_outputs": 11,
+   "t_end": 300,
+   "ref_deVahlDavis": 4.519,
+   "ref_Hortmann": 4.522,
+   "err_vs_Hortmann_pct": 0.16
+  },
+  {
+   "Ra": 100000.0,
+   "n": 96,
+   "Nu": 4.52497,
+   "Nu_time_sd": 0.0,
+   "Nu_hot": 4.52497,
+   "Nu_cold": 4.52497,
+   "n_outputs": 11,
+   "t_end": 300,
+   "ref_deVahlDavis": 4.519,
+   "ref_Hortmann": 4.522,
+   "err_vs_Hortmann_pct": 0.066
+  },
+  {
+   "Ra": 100000.0,
+   "n": 128,
+   "Nu": 4.5235,
+   "Nu_time_sd": 0.0,
+   "Nu_hot": 4.5235,
+   "Nu_cold": 4.5235,
+   "n_outputs": 11,
+   "t_end": 300,
+   "ref_deVahlDavis": 4.519,
+   "ref_Hortmann": 4.522,
+   "err_vs_Hortmann_pct": 0.033
+  }
+ ],
+ "reference_source": "Gjesdal T., Wasberg C.E., Andreassen O. (2003) Spectral element simulations of buoyancy-driven flow. arXiv:physics/0305049, Table 1"
+}

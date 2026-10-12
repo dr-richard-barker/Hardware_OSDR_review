@@ -1,0 +1,212 @@
+entity_id: HW232
+name: Animal Enclosure Module Transporter (AEM-T) with AEM-E life-support companion
+splash_ids: []
+registry_ids: ["1380"]
+
+location:
+  value: "powered middeck-locker payload in SpaceX Dragon (ascent/return) or Cygnus; can run as a non-rack payload on ISS"
+  unit: "-"
+  source: "OSDR Hardware Registry 1380, Animal Enclosure Module Transporter (AEM-T) (snapshot 2026-10-12)"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+  quote: "Coupled with the AEM-E (ECLSS) Environmental Control and Life Support System to provide for air revitalization, the AEM-T is launched and returned mounted (powered) on Dragon."
+  kind: specified
+  note: "Niederwieser et al. (ICES-2014-101): AEM-T and AEM-E are each implemented in a single middeck locker, 'independent from each other and not connected'; AEM-E treats the shared capsule air (Cygnus free air ~9 m3, Dragon ~4 m3)."
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Chamber L x W x H not found. Envelope: single middeck locker; the AEM-E design requirement lists inside-locker dimensions 0.253 x 0.440 x 0.516 m (ICES-2014-101 Table 2) - an AEM-E requirement, given here only as envelope context."
+  free_air_volume_L:
+    value: 18.1
+    unit: L
+    source: "OSDR Hardware Registry 1380"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+    quote: "With a total chamber volume, equal or greater than .64 cubic feet, the AEM-T holds a maximum of 20 mice with a total mass up to 600g in two separate groups of 10 mice"
+    kind: derived
+    note: "0.64 ft3 x 28.317 L/ft3 = 18.1 L (minimum; total of both chambers, gross volume before food/water/animals)."
+  specimen_container:
+    value: "two group cages (one per side) with cage mesh or grid"
+    unit: "-"
+    source: "OSDR Hardware Registry 1380"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+    quote: "The AEM-T is equipped with a water refill box and dispensers (two per group of housed rodents), chamber lighting to maintain day and night cycles, cage mesh or grid"
+    kind: specified
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Not found."
+  n_specimen_units:
+    value: "20 mice (2 groups of 10, <=600 g total) or 2 groups of 3 rats (<=600 g per group)"
+    unit: animals
+    source: "OSDR Hardware Registry 1380"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+    quote: "With a total chamber volume, equal or greater than .64 cubic feet, the AEM-T holds a maximum of 20 mice with a total mass up to 600g in two separate groups of 10 mice"
+    kind: specified
+    note: "Choi et al. 2020: Transporter supports '20 mice (10 mice per side), which is twice the density compared to the Habitats, for up to 10 days'. Conflict: ICES-2014-101 introduction says the AEM-T provides for 'up to 10 mice' (early design), while its design tables use 20 mice or 6 rats; BioServe's AEM-E page cites 'up to 40 mice or 12 rats' (later configuration)."
+  layout:
+    value: "2 separate groups (left/right sides)"
+    unit: "-"
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "shown to successfully house and provide life support for 20 mice (10 mice per side), which is twice the density compared to the Habitats, for up to 10 days"
+    kind: specified
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "Niederwieser T., Gerren R., Koenig P., Tozer S., Stodieck L., Rieger S., Hoehn A. (2014) AEM-E - A small life support system for the transport of rodents to the ISS. ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "AEM-T ingests the cooled cabin air and ventilates the rodent habitat at the same approximate rate of 396 slpm (14 cfm)."
+    kind: specified
+    note: "Once-through ventilation with capsule cabin air; gas composition (O2 add, CO2 LiOH scrub, H2O silica-gel scrub) is handled for the whole capsule by the separate AEM-E (its fans also move ~396 slpm; scrubber flow 60-90 slpm)."
+  flow_rate_L_min:
+    value: 396
+    unit: "standard L/min (whole unit)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "AEM-T ingests the cooled cabin air and ventilates the rodent habitat at the same approximate rate of 396 slpm (14 cfm)."
+    kind: specified
+    note: "Approximate; split between the two animal groups not stated."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found (Choi 2020's '~0.3 m/s' refers to Habitat/ISS exchange; not assigned to AEM-T)."
+  inlet:
+    value: "front-breathing (cabin air drawn in at the locker front)"
+    unit: "-"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "whereas the AEM-T is currently still a front breather"
+    kind: specified
+    note: "Inlet geometry/area not found; the 2014 paper describes the then-current design."
+  outlet:
+    value: null
+    unit: "-"
+    note: "Exhaust location/filters of AEM-T not described in sources opened."
+
+environment:
+  temperature_C:
+    value: [18, 29]
+    unit: degC
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "Pressure and temperature are required to be maintained in a relative narrow range of 97,905 Pa to 102,731 Pa (14.2 to 14.9 psia), and typically 18 to 29 °C by the capsule itself."
+    kind: specified
+    note: "Capsule (inlet) air. Registry 1380: 'the AEM-T maintains rodent chamber temperature within +/- 3deg C of cabin temperatures aboard the ISS'; flight-unit temperature range 50-113 F. Choi 2020: Dragon held 65-85 F."
+  rh_percent:
+    value: [25, 75]
+    unit: "%"
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "The Dragon environmental control and life support system maintained the atmosphere within acceptable limits for pressure, temperature (65–85°F), relative humidity (25–75%), oxygen (19–23%), and carbon dioxide (≤6000 ppm)."
+    kind: specified
+    note: "Dragon cabin limits during RR-1 transport. With AEM-E (Cygnus) the design band is 40-60 % RH (ICES-2014-101 Table 1)."
+  co2_ppm:
+    value: [0, 6000]
+    unit: ppm
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "The Dragon environmental control and life support system maintained the atmosphere within acceptable limits for pressure, temperature (65–85°F), relative humidity (25–75%), oxygen (19–23%), and carbon dioxide (≤6000 ppm)."
+    kind: specified
+    note: "Upper limit only. AEM-E design band 0.04-0.6 % CO2; in the AEM-E ground integrated test with 32 mice CO2 peaked at 'about 600 ppm' (ICES-2014-101)."
+  o2_percent:
+    value: [19, 23]
+    unit: "%"
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "The Dragon environmental control and life support system maintained the atmosphere within acceptable limits for pressure, temperature (65–85°F), relative humidity (25–75%), oxygen (19–23%), and carbon dioxide (≤6000 ppm)."
+    kind: specified
+    note: "AEM-E O2 control band 19.6-20.9 % (ICES-2014-101)."
+  pressure_kPa:
+    value: [97.905, 102.731]
+    unit: kPa
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "Pressure and temperature are required to be maintained in a relative narrow range of 97,905 Pa to 102,731 Pa (14.2 to 14.9 psia), and typically 18 to 29 °C by the capsule itself."
+    kind: specified
+  light:
+    value: "chamber lighting for day/night cycles (intensity not found)"
+    unit: "-"
+    source: "OSDR Hardware Registry 1380"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+    quote: "The AEM-T is equipped with a water refill box and dispensers (two per group of housed rodents), chamber lighting to maintain day and night cycles, cage mesh or grid"
+    kind: specified
+
+nutrients:
+  mode:
+    value: food_bar+lixit
+    unit: "-"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "AEM-T houses the animals and provides food, water, waste and odor management, while the AEM-E controls the gas composition of the entire shared capsule volume."
+    kind: specified
+    note: "Food form is not stated in this source; registry 1380 lists 'a water refill box and dispensers (two per group of housed rodents)'. Mice are pre-adapted to NuRFB food bars and lixits before loading (Choi 2020)."
+  detail:
+    value: "water refill box + 2 dispensers per group; sized for >=10 days"
+    unit: "-"
+    source: "OSDR Hardware Registry 1380"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+    quote: "The AEM-T is equipped with a water refill box and dispensers (two per group of housed rodents), chamber lighting to maintain day and night cycles, cage mesh or grid"
+    kind: specified
+
+specimen_load:
+  o2_flux:
+    value: 3.63
+    unit: "mL O2 h-1 per g body mass (C57BL/6 mouse)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "O2 = 3.63 mL O2/(hr g) measured at 16 weeks vs. 5.06 mL O2/(hr g) design load"
+    kind: measured
+    note: "Organism-level C57BL/6 rate cited for AEM-T/AEM-E sizing. Integrated test (32 male C57BL/6, 13 d) averaged 2.330 mL/(hr g) (1.89 day, 2.77 night). Design worst case 5.06 (mice, 30 g) and 1.44 mL/(h g) (rats, 350 g)."
+  co2_flux:
+    value: 2.29
+    unit: "mL CO2 h-1 per g body mass (C57BL/6 mouse)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "for CO2 = 2.29 mL CO2/(hr g) measured at 16 weeks vs. 4.63 mL CO2/(hr g) design load"
+    kind: measured
+    note: "Implied RQ 0.63 is physiologically low; design value 4.63 mL/(h g) (RQ 0.92). Integrated test CO2 estimate 4.150 mL/(h g) was judged unreliable by the authors (RQ >1)."
+  h2o_flux:
+    value: 5.1
+    unit: "mL metabolic water per mouse per day (design)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "Mice: O2 = 5.06 mL/(hr g), CO2 = 4.63 mL/(hr g), H2O = 5.1 mL/(day each), RQ = 0.92, 30 g/mouse."
+    kind: specified
+    note: "Metabolic water only (worst-case design). Total water scrubbed in the AEM-E 13-day ground test with 32 mice: 1.795 kg on silica gel + 0.82 kg on LiOH (ICES-2014-101 Table 7). Cage-level vapour for mice: 7.3 g/h per kg BW (Riskowski 2006; rodent_habitat.yaml)."
+  heat_W:
+    value: 15.7
+    unit: "W per kg body mass (BALB/c mouse)"
+    source: "Riskowski G.L., Harrison P.C., Memarzadeh F. (2006) ASHRAE Transactions 112(1), paper 4835"
+    url: https://orf.od.nih.gov/TechnicalResources/Bioenvironmental/Documents/MassGenerationRatesofAmmoniaMoistureandHeatProduct.pdf
+    quote: "Heat production on a body mass basis was calculated to be 17.9 and 15.7 W/kg BW (27.7 and 24.3 Btu/h/lb BW) for CD-1 and BALB/c mice, respectively."
+    kind: measured
+    note: "At 24 C; 20 mice x 20 g x 15.7 W/kg = 6.3 W per AEM-T (derived)."
+
+walls:
+  material:
+    value: "cage mesh or grid (material not stated)"
+    unit: "-"
+    source: "OSDR Hardware Registry 1380"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1380
+    quote: "The AEM-T is equipped with a water refill box and dispensers (two per group of housed rodents), chamber lighting to maintain day and night cycles, cage mesh or grid"
+    kind: specified
+  gas_permeability:
+    value: null
+    unit: "-"
+    note: "Not applicable/not found."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Not found for AEM-T alone. ICES-2014-101: AEM-E and AEM-T 'share a single power outlet' and AEM-E must operate at a peak of 75 W."
+
+searched: |
+  OSDR registry 1380; Choi et al. 2020 Sci Rep (PMC7012842); ICES-2014-101 (Niederwieser et al., TTU repository,
+  text read in the browser); BioServe AEM-E web page (capacity 40 mice/12 rats, up to 10 days, middeck locker, rear
+  breathing); NTRS 20190000828 ('Transporter houses 20 mice or 5 rats'); ICES-2014 oxygen-resupply paper (Tozer et al.;
+  not opened); Holquist et al. ICES 2013 design-trades paper (cited, not opened); ISS National Lab facility pages (HTTP
+  403/404). No SPLASH record. Missing: chamber dimensions, per-side flow split, inlet/outlet geometry, light level, power.

@@ -1,0 +1,232 @@
+# Biomass Production System (BPS), as flown on STS-110 / ISS Increment 4 (PESTO) - curated 2026-10-12
+# Every non-null value carries a verbatim quote from a source opened in the curation session.
+entity_id: HW221
+name: Biomass Production System (BPS)
+splash_ids: []
+registry_ids: ["1042"]
+
+location:
+  value: "ISS Destiny lab (2002, ~73 days, STS-110 up / STS-111 down); double middeck-locker-equivalent payload"
+  unit: '-'
+  source: "Morrow R.C., Crabb T.M. (2000) Biomass Production System (BPS) plant growth unit. Adv. Space Res. 26:289-298 (abstract)"
+  url: https://doi.org/10.1016/S0273-1177(99)00573-6
+  quote: "The BPS is equivalent in size to a double middeck locker, but uses its own custom enclosure with a slide out structure to which internal components mount."
+  kind: specified
+  note: >-
+    Destiny: registry payload PESTO 'mission specialists will transfer PESTO to the Station's Destiny Lab'.
+    CONFLICT: NASA Spinoff 2005 (NTRS 20060022034) says 'The BPS is equivalent in size to a Space Shuttle
+    middeck locker'; developer paper, OSDR registry 1042 and SAE 1999-01-2180 all say double middeck locker.
+
+geometry:
+  enclosure_internal_mm:
+    value: [152, 152, 152]
+    unit: mm
+    source: "Cox D.R. (2010) Biological Imaging Capability in the ABRS Facility on ISS, ASGSB slides (NTRS 20110942664), slide 5 comparison table, BPS column"
+    url: https://ntrs.nasa.gov/citations/20110942664
+    quote: "15.2 (W) x 15.2 (D) cm"
+    kind: specified
+    note: >-
+      LOW CONFIDENCE - one Plant Growth Chamber (PGC), [W, D, H]; the height '15.2 cm' is from the same table
+      row. The table is internally inconsistent (its BPS 'Total Growing Volume' is 924 cm3, not 15.2^3 =
+      3512 cm3) and conflicts with: OSDR registry 1042 'four 260-square cm Plant Growth Chambers' (15.2^2 =
+      231 cm2); NASA Ames/Spaceflight Now 2002 'a growing area of about 42 square inches (260 square
+      centimeters) and a height of over 6 inches (15 centimeters)'; Morrow & Crabb 2000 'each with a growing
+      volume of more than 4 liters'. Use only as an approximate envelope; a primary dimensioned drawing was
+      not found.
+  free_air_volume_L:
+    value: "> 4"
+    unit: L
+    source: "Morrow R.C., Crabb T.M. (2000) Adv. Space Res. 26:289-298 (abstract)"
+    url: https://doi.org/10.1016/S0273-1177(99)00573-6
+    quote: "The BPS contains four internal growth chambers, each with a growing volume of more than 4 liters."
+    kind: specified
+    note: "Lower bound per chamber (growing volume, i.e. shoot space). 260 cm2 x 15 cm = 3.9 L is consistent within rounding."
+  growing_area_cm2:
+    value: 260
+    unit: cm2
+    source: "OSDR Hardware Registry 1042 (Biomass Production System)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1042
+    quote: "The BPS contains four 260-square cm Plant Growth Chambers (PGC)."
+    kind: specified
+    note: "Per PGC. PESTO: 32 plants at '1200 plants m2' implies 267 cm2 planted area (derived, consistent)."
+  specimen_container:
+    value: "root module (one per PGC, removable) packed with arcillite, under a sealed chamber cover"
+    unit: '-'
+    source: "OSDR Hardware Registry 1042 (Biomass Production System)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1042
+    quote: "Each PGC is composed of a single root module, which will carry either seedlings or seeds, and a chamber cover."
+    kind: specified
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Root module dimensions not found; holds 500 g of 1-2 mm Turface (OSD-622)."
+  n_specimen_units:
+    value: 4
+    unit: plant growth chambers
+    source: "OSDR Hardware Registry 1042 (Biomass Production System)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1042
+    quote: "The BPS contains four 260-square cm Plant Growth Chambers (PGC)."
+    kind: specified
+  layout:
+    value: "four independent PGCs; in PESTO each root module held 32 wheat plants in four rows"
+    unit: '-'
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "The root modules contained 32 wheat plants seeded in four rows at a planting density of 1200 plants m2."
+    kind: specified
+
+specimen:
+  types:
+    value: ["Triticum aestivum 'USU Apogee' (PESTO, TVT)", "Brassica rapa (TVT chamber 4)"]
+    unit: '-'
+    source: "OSDR OSD-622 study protocol / description (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "At launch, two chambers were dedicated to the PESTO study, which consisted of three growth cycles using Apogee wheat."
+    kind: specified
+    note: "Brassica rapa in the BPS on STS-110 is reported only in secondary ISS status summaries seen in search results (not opened as a primary source); treat as unverified."
+
+ventilation:
+  mode:
+    value: forced
+    unit: '-'
+    source: "Spaceflight Now (2 Apr 2002) 'Engineering test could help plant growth in space' (NASA Ames release)"
+    url: https://spaceflightnow.com/news/n0204/02plants/
+    quote: "The BPS is a powered hardware system that includes four independent plant growth chambers, a nutrient delivery system, a temperature/humidity control system, airflow and atmospheric control systems"
+    kind: specified
+    note: >-
+      Each PGC is sealed from the cabin and recirculates through its own thermoelectric/porous-interface heat
+      exchanger: Morrow & Crabb 2000 'The BPS chambers are sealed to allow CO2 and water vapor exchange
+      measurements'; registry payload PESTO refers to 'the closed atmosphere inside the chambers'. The internal
+      fan/airflow is inferred from 'airflow ... control systems' plus the heat-exchanger design; no flow value
+      found. Ethylene scrubbed photocatalytically (OSD-622).
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Not found (abstracts only accessible for SAE 1999-01-2180, SAE 2000-01-2292 and Adv Space Res 26:289; Monje et al. 2005 Planta doi:10.1007/s00425-005-1529-1 and Stutte et al. 2006 Planta doi:10.1007/s00425-006-0290-4 paywalled)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: null
+    unit: '-'
+    note: "Not found."
+  outlet:
+    value: null
+    unit: '-'
+    note: "Not found."
+
+environment:
+  temperature_C:
+    value: 24
+    unit: °C
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "During the each 21-day planting, the relative humidity and air temperature set points were 75% and 24C, respectively."
+    kind: specified
+    note: "Air set point. Control capability ±1.0 °C between 20 and 30 °C (Morrow & Crabb, SAE 1999-01-2180). OSD-622: ground-control average root temperature 27 °C."
+  rh_percent:
+    value: 75
+    unit: '%'
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "During the each 21-day planting, the relative humidity and air temperature set points were 75% and 24C, respectively."
+    kind: specified
+    note: "Capability: 'humidity control within ±5% (between 60% and 90% RH, depending on ambient temperature and plant load)' (SAE 1999-01-2180)."
+  co2_ppm:
+    value: 1500
+    unit: ppm
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "Daytime CO2 concentration was not allowed to fall below 1500±50 umolmol-1"
+    kind: specified
+    note: "Minimum daytime level; CO2 injected from pure CO2 under IRGA control, no scrubber (Morrow & Crabb 2000), so night values rose above this."
+  o2_percent:
+    value: null
+    unit: '%'
+    note: "Not found."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Not found."
+  light:
+    value: "cool white fluorescent lamps; PPF 280 umol m-2 s-1 at top of chamber; 20 h light / 4 h dark"
+    unit: '-'
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "The plants germinated and grew at a photosynthetic photon flux (PPF) of 280 micromole per square meter per second (measured at the top of the chamber), and a photoperiod of 20 h day/4 h night."
+    kind: specified
+    note: "Lamps: 'Light in each PGC was provided by a bank of cool white fluorescent lamps' (OSD-622); dimmable (Morrow & Crabb 2000)."
+
+nutrients:
+  mode:
+    value: arcillite
+    unit: '-'
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "Each PESTO root module was packed with 500 g of Turface (calcined montmorillonite clay sifted to 1–2 mm) mixed with Osmocote"
+    kind: specified
+  detail:
+    value: "active nutrient/water delivery; root modules imbibed by syringe (540 mL) and held at about -0.3 kPa matric potential"
+    unit: '-'
+    source: "OSDR OSD-622 study protocol (PESTO)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-622/
+    quote: "Pre-planted root modules were removed from stowage, imbibed until saturated using a syringe (540 ml), and placed in the BPS by the payload engineer."
+    kind: specified
+    note: "Matric potential '-0.30 kPa' (minus sign garbled in the OSDR text). Morrow & Crabb 2000: 'Each of the growth chambers has active nutrient delivery'."
+
+specimen_load:
+  co2_flux:
+    value: [6, 7]
+    unit: umol CO2 m-2 s-1
+    source: "Stutte G.W., Monje O., Goins G.D., Chapman D.K. (2000) Measurement of Gas Exchange Characteristics of Developing Wheat in the Biomass Production System. SAE 2000-01-2292 (abstract)"
+    url: https://saemobilus.sae.org/content/2000-01-2292
+    quote: "Wheat canopy CO 2 assimilation rate for 14-24 day-old plants grown in the BPS chambers was 6-7 μmol m -2 s -1 during this test."
+    kind: measured
+    note: "Ground 10-day functional test of PESTO protocols in BPS (not flight). Monje et al. 2020 (APH paper) also plot BPS-2002 flight canopy photosynthesis but give no numbers in text."
+  o2_flux:
+    value: null
+    unit: umol m-2 s-1
+  h2o_flux:
+    value: null
+    unit: L d-1
+    note: "Evapotranspiration was measured continuously from water addition (Monje et al. 2005 Planta abstract) but values are not in the abstract."
+  heat_W:
+    value: null
+    unit: W
+
+walls:
+  material:
+    value: null
+    unit: '-'
+    note: "Not found."
+  gas_permeability:
+    value: "chambers sealed (designed for gas-exchange measurement); leak rate not found"
+    unit: '-'
+    source: "Morrow R.C., Crabb T.M. (2000) Adv. Space Res. 26:289-298 (abstract)"
+    url: https://doi.org/10.1016/S0273-1177(99)00573-6
+    quote: "The BPS chambers are sealed to allow CO2 and water vapor exchange measurements."
+    kind: specified
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Not found."
+  heat_rejection:
+    value: "thermoelectric heat exchanger per chamber; humidity via porous-interface heat exchanger"
+    unit: '-'
+    source: "Morrow R.C., Crabb T.M. (2000) Adv. Space Res. 26:289-298 (abstract)"
+    url: https://doi.org/10.1016/S0273-1177(99)00573-6
+    quote: "Temperature control is achieved using a thermoelectric heat exchanger system."
+    kind: specified
+
+searched: |
+  Opened: OSDR registry 1042 and payload PESTO; OSD-622 protocol; Morrow & Crabb 2000 Adv Space Res abstract (Europe
+  PMC, PMID 11543164); SAE 1999-01-2180 and 2000-01-2292 abstract pages; Spaceflight Now 2002 NASA Ames release;
+  NASA Spinoff 2005 (NTRS 20060022034); Cox 2010 KSC slides (NTRS 20110942664); Monje et al. 2020 (APH) for BPS
+  comparisons; NTRS full-text search ('Biomass Production System', 'PESTO'). Paywalled/not retrievable: Monje et al.
+  2005 Planta (doi:10.1007/s00425-005-1529-1) and Stutte et al. 2006 Planta (doi:10.1007/s00425-006-0290-4) (methods
+  would hold chamber geometry and airflow);
+  SAE full papers. Not found: PGC L x W x H from a primary drawing, fan flow/velocity, inlet/outlet, root module
+  dimensions, wall material, power, O2, pressure.

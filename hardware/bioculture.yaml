@@ -1,0 +1,216 @@
+entity_id: HW017
+name: Bioculture System (Bioculture System Facility)
+vendor: NASA Ames Research Center (initially engineered by Tissue Genesis Inc.)
+splash_ids: [17]
+registry_ids: ["2003"]
+curated: "2026-10-12"
+
+location:
+  value: "ISS EXPRESS rack locker (docking station + gas supply + power/control module + 10 cassettes); powered in Dragon for ascent/descent"
+  unit: "-"
+  source: "NASA OSDR hardware registry 2003 / ISS National Lab facility page 'Bioculture System'"
+  url: https://issnationallab.org/facilities/bioculture-system
+  quote: "The Bioculture system is operated within an ISS EXPRESS Rack locker."
+  kind: specified
+  note: >-
+    Quote via WebFetch extraction (page returns HTTP 403 to scripts). NTRS 20170003921 (CS-V POIWG overview):
+    "150 W powered on Dragon (2 locker spaces)". SPLASH _id 17 dims: "Single Locker".
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Docking-station and cassette dimensions not found."
+  free_air_volume_L:
+    value: null
+    unit: L
+  specimen_container:
+    value: "Hollow-fibre bioreactor (~2 mL culture capacity) in a one-piece disposable flow path inside each cassette"
+    unit: "-"
+    source: "Ma KR, Juran CM, Almeida EAC (2019) Design, prototyping, and testing of a novel flowpath with an array of 3D matrix Vitvo bioreactors for the NASA Bioculture System. NTRS 20190034018 (poster)"
+    url: https://ntrs.nasa.gov/citations/20190034018
+    quote: "The Bioculture System, however, can only support 10 cassettes with disposable flowpaths, each containing a single hollow fiber bioreactor with a culture capacity of about 2ml."
+    kind: specified
+    note: "Brochure (NTRS 20210021796): 'Hollow fiber bioreactor or custom-design bioreactors'; flow path = bioreactor, pump, oxygenator, valves, preheat reservoir, media/sump/fixative bags."
+  specimen_container_volume_mL:
+    value: 2
+    unit: mL
+    source: "Ma, Juran & Almeida (2019) NTRS 20190034018"
+    url: https://ntrs.nasa.gov/citations/20190034018
+    quote: "each containing a single hollow fiber bioreactor with a culture capacity of about 2ml."
+    kind: specified
+  refrigerator_compartment_mL:
+    value: 200
+    unit: mL
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "Each cassette includes a 200ml refrigerator compartment meant to store heat-labile media, additives (growth factors, antibiotics, etc.) and sample collections."
+    kind: specified
+  specimen_container_mm:
+    value: null
+    unit: mm
+  n_specimen_units:
+    value: 10
+    unit: cassettes
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "The Bioculture System consists of a docking station housing the power/command module, gas supply assembly, and 10 experiment cassettes."
+    kind: specified
+  layout:
+    value: "10 independent cassettes, each with an incubation zone (bioreactor) and an insulated cold zone; shared gas supply"
+    unit: "-"
+    source: "NASA Ames Bioculture System fact sheet, NTRS 20160014676"
+    url: https://ntrs.nasa.gov/citations/20160014676
+    quote: "Temperature control is independent for each cassette and the gas supply is shared."
+    kind: specified
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796, Specifications page"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "Positive pressure airflow within the system"
+    kind: specified
+    note: >-
+      Specimens are liquid-perfused. Gas (typically 20% O2, 5-10% CO2, balance N2) is dosed through a sealed
+      membrane oxygenator: "Each flow path contains the oxygenator that employs a series of silicone flow loops
+      to provide gas exchange across the semipermeable tubing into the circulated culture medium." CS-04
+      overview (NTRS 20205008330) labels an "Air Shroud" and "Double Immersion Breathers" on the cassette.
+      Gas dosing rate is programmable; no numeric value found (Monhollon et al. NTRS 20160014798 measured valve
+      dose volumes for 80-300 ms actuations - values only in a chart).
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Gas supply rate not found. Liquid perfusion in medium_flow_rate_mL_min."
+  medium_flow_rate_mL_min:
+    value: [0, 8]
+    unit: mL/min
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796, Specifications page"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "Pump (0-8 mL/min flow rate)"
+    kind: specified
+    note: >-
+      CONFLICT: earlier presentations (NTRS 20140010811, ASGSR 2013; NTRS 20140010685) give "User selectable
+      fluid flow/pump rate - 0 to 15 ml/min". The 2021 brochure is the later, flight-heritage specification and
+      is used. Recirculating volume ~60 mL (brochure).
+  recirculating_medium_mL:
+    value: 60
+    unit: mL
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "In this fluidics route, approximately 60ml of media is continuously circulated through the bioreactor to exchange waste for nutrients."
+    kind: specified
+  inlet:
+    value: null
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: 37
+    unit: degC
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "In most cases, the Bioculture System is programmed to maintain a constant 37°C environment. However, set point of the incubator side of the cassette can be adjusted from ambient temperature to 42°C."
+    kind: specified
+    note: >-
+      Specification: "Module temperature: Ambient to +42°C±1.0°C"; "Cooling chamber temperature: Ambient to
+      +5°C±1.0°C". SPLASH _id 17: operational_temperature "15 - 37C", temperature_range "15-40C depending on
+      ambient" (minor conflict on upper limit).
+  rh_percent:
+    value: null
+    unit: "%"
+    note: "SPLASH rh_range field reads '1' (uninterpretable)."
+  co2_percent_supply_gas:
+    value: [5, 10]
+    unit: "%"
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "The Bioculture System can be outfitted with its own gas supply typically consisting of 20% O2, 5-10% CO2, and balanced with N2."
+    kind: specified
+    note: "Supply-gas composition, not measured headspace. Monhollon et al. (NTRS 20160014798) ground test used 10% CO2: 'Maintenance is done by addition of gas (10% CO2) to flow path.'"
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: "See co2_percent_supply_gas."
+  o2_percent:
+    value: 20
+    unit: "%"
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "typically consisting of 20% O2, 5-10% CO2, and balanced with N2."
+    kind: specified
+    note: "Supply gas; 'breathing air' option for organisms not requiring CO2."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Gas bottle regulated from 1800 psi to 4 psi working pressure (brochure); culture pressure not given. SPLASH pressure: 'Y, 1 atm'."
+  light:
+    value: null
+    note: "SPLASH lighting: 'N'."
+
+nutrients:
+  mode:
+    value: culture_medium
+    unit: "-"
+    source: "NASA OSDR hardware registry 2003"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2003
+    quote: "Medium passes through the hollow fiber and then diffuses through the pores."
+    kind: specified
+  detail:
+    value: "Recirculation through preheat reservoir, oxygenator, pump and bioreactor; intermittent feed to waste bag"
+    unit: "-"
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "The first path is nominal recirculation of media through the preheat reservoir bag, oxygenator, pump, and bioreactor."
+    kind: specified
+
+specimen:
+  type:
+    value: "Cell / tissue / microbial cultures: hiPSC-cardiomyocytes and MLO-Y4 (CS-V), mouse osteoblasts (CS-02), tardigrades Hypsibius exemplaris (CS-04)"
+    unit: "-"
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "In June 2021, tardigrades were cultured on the ISS in the Bioculture System in the SpaceX-22 Cell Science-04 (CS-04) experiment"
+    kind: specified
+    note: "No OSDR biodata dataset in the snapshot is linked to the Bioculture System (OSD-344/541 'Biocell' are BioServe BioCells, a different item)."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "flow path: Flexelene 75E, silicone, polypropylene, nylon (examples); oxygenator: silicone elastomer tubing"
+    unit: "-"
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796, Specifications page"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "Individual flow paths (biocompatible components such as Flexelene 75E, silicone, polypropylene, nylon, etc.)"
+    kind: specified
+  gas_permeability:
+    value: null
+    note: "Oxygenator 'semipermeable tubing' - no permeability value."
+
+thermal:
+  power_W:
+    value: 150
+    unit: W
+    source: "NASA Ames, Bioculture System brochure (2021), NTRS 20210021796, Specifications page"
+    url: https://ntrs.nasa.gov/citations/20210021796
+    quote: "Power: 150 Watts max"
+    kind: specified
+    note: "Each cassette: TEC-based heating/cooling ('Thermo-electric Cooler (TEC) heatsink' monitored)."
+
+searched: |
+  OSDR snapshot 2026-10-12 (SPLASH _id 17; registry hardware 2003, experiments OS-754/OS-809, payloads CS-02/CS-04).
+  NTRS: 20210021796 (2021 brochure, full), 20160014676 (fact sheet), 20150000190, 20140010685, 20140010811,
+  20170003921 (CS-V), 20180007351 (CS-03), 20205008330 (CS-04), 20160014798 (pH/CO2 poster), 20190034018.
+  ISS National Lab facility page. Not found: cassette/docking-station dimensions, gas dose rate, headspace
+  CO2/RH, specimen loads, any OSDR omics dataset from this hardware.

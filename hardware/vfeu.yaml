@@ -1,0 +1,217 @@
+entity_id: HW215
+name: Vestibular Function Experiment Unit (VFEU) - Neurolab/STS-95 marine-fish version
+vendor: NASDA (Japan); Mitsubishi Heavy Industries
+splash_ids: []
+registry_ids: ["924"]
+curated: "2026-10-12"
+transport_medium: water (artificial seawater)   # 'ventilation' block describes the WATER loop
+
+location:
+  value: "Spacelab rack-mounted (STS-90 Neurolab, 2 units); Spacehab (STS-95, 1 unit)"
+  unit: "-"
+  source: "Neurolab Final Report for the Ames Research Center Payload (NASA, 2002), section 3.2.11, p.67"
+  url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+  quote: "Two VFEUs flew on Neurolab in the Spacelab. Description — The VFEU was a rack-mounted piece of hardware built to provide life-support capability for the Oyster toadfish, Opsanus tau, in the Shuttle Spacelab."
+  kind: specified
+  note: >-
+    Sakimura et al. 1999: "STS-95 was Spacehab mission"; "Two VFEUs were flown with four toadfish in STS-90,
+    and one VFEU was flown with two toadfish in STS-95". Earlier freshwater versions: SL-J (STS-47, carp) and
+    the AAEU on IML-2 (STS-65) - different configurations, values below are for the Neurolab marine version
+    unless stated.
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Internal (fish tank) dimensions not found; see enclosure_external_mm."
+  enclosure_external_mm:
+    value: [483, 606, 444]
+    unit: mm (W x D x H)
+    source: "Sakimura T, Suzuki T, Matsubara S, Uchida S, Kato M, Tanemura R, Honda S (1999) NASDA Aquatic Animal Experiment Facilities for Space Shuttle. Biol Sci Space 13(4):314-320"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "(1) Dimensions: 483W x 606D x 444H (mm)"
+    kind: specified
+    note: "Whole VFEU (Main Unit/FPCU + 2 Fish Packages). Same value on JAXA STS-90 NASDA equipment page ('483WX606DX444H (mm)')."
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "Water-filled tank; a water accumulator compensates evaporation via the artificial lung. Air volume not found."
+  water_volume_L:
+    value: 3
+    unit: L (fish tank, per Fish Package)
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320, section 3 'Neurolab VFEU / NDAS'"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "(4) Fish tank volume: Approx. 3L"
+    kind: specified
+    note: >-
+      JAXA STS-90 equipment page gives the whole Fish Package water volume: "Fish Pakage Volume approximately
+      4l/unit" (tank + loop components). SL-J and IML-2 FP tanks were ~3.3 L (Sakimura 1999).
+  specimen_container:
+    value: "Fish Package (FP): one fish container with front window, water pump, air pump, water accumulator, artificial lung, water purification system"
+    unit: "-"
+    source: "OSDR registry hardware 924, component 'Fish Package (FP)' (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/924
+    quote: "The Fish Package holds one toadfish within a fish container, which contains a front window, water pump, air pump, water accumulator, artificial lung, and water purification system."
+    kind: specified
+    note: "Neurolab report Fig. 3.11 shows a cylindrical Fish Container with Artificial Lung, Lamp Window, Telemeter Receiver and TDPU on the FP front plate."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Fish container dimensions not found."
+  n_specimen_units:
+    value: 2
+    unit: Fish Packages per VFEU (1 fish each)
+    source: "OSDR registry hardware 924, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/924
+    quote: "Each Fish Package includes 1 fish container that houses 1 fish (implanted with multichannel electrodes or microwire electrode) in artificial seawater. Two fish total can be housed in each VFEU."
+    kind: specified
+  layout:
+    value: "Main Unit (FPCU, with heat exchanger) holding 2 Fish Packages side by side; each FP has its own independent water loop connected to the Main Unit via quick disconnects"
+    unit: "-"
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "Heat exchanger for fish water temperature control was also equipped with the Main Unit, so fish water loop was separated into FP side and Main Unit side."
+    kind: specified
+    note: "Sentence from the SL-J section; the paper states the Neurolab flow schematic 'is same as SL-J VFEU'."
+
+ventilation:   # MEDIUM = WATER (artificial seawater)
+  mode:
+    value: forced
+    unit: "-"
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320, Neurolab VFEU specification"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "(3) Fish water loop: 2 independent sea water loop 1loop/Package (0.5L/min, 14 degree C)"
+    kind: specified
+    note: "Pumped closed seawater loop per FP; O2 supply/CO2 removal by artificial lung fed by an air pump (air pumps failed in FP2/FP3 on STS-90; in-flight maintenance bypassed air from FP1/FP4)."
+  flow_rate_L_min:
+    value: 0.5
+    unit: L/min (seawater, per Fish Package)
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "1loop/Package (0.5L/min, 14 degree C)"
+    kind: specified
+    note: "SL-J (carp) version: 1.5 L/min at 23 degC; IML-2 AAEU: 1.0 L/min (not this configuration)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: null
+    note: "Tank inlet/outlet geometry not found."
+  outlet:
+    value: null
+    note: "Not found."
+
+environment:
+  temperature_C:
+    value: 14
+    unit: degC (water)
+    source: "JAXA, STS-90 NASDA equipment page (Neurolab VFEU)"
+    url: https://iss.jaxa.jp/shuttle/flight/sts90/sts90eqp_nasda_e.html
+    quote: "Temp. Control: 10 - 25 (14 1 for the experiment)"
+    kind: specified
+    note: >-
+      Page text has lost the degree and plus-minus glyphs (encoding); reads 10-25 degC range, 14 ± 1 degC
+      for the experiment. Sakimura 1999: "The required water measurement temperature for fish maintenance was
+      14 degree C." MEASURED (STS-90): NASDA water-analysis attachment in Neurolab Final Report (p.131) notes
+      a period "when the water temperature was fluctuated between 13-to 15 deg. C".
+  rh_percent:
+    value: null
+    note: "Not applicable (water medium). Spacelab dew point 16 degC drove insulation of FP/water loop (Sakimura 1999)."
+  co2_ppm:
+    value: null
+    note: "Not found."
+  o2_percent:
+    value: null
+    note: "Dissolved O2 maintained by artificial lung + air pump; no values found."
+  pressure_kPa:
+    value: null
+    note: "Water pressure recorded by the Data Recorder (registry 924) but no values found."
+  light:
+    value: "day/night light cycle (lamp window on FP); schedule not found"
+    unit: "-"
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320, Neurolab VFEU specification"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "(5) FP experiment function: Neural data measurement Fish/tank acceleration measurement Day/night light cycle"
+    kind: specified
+
+nutrients:
+  mode:
+    value: water_loop
+    unit: "-"
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320, Neurolab VFEU specification"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "Water quality control by nitrification bacterial filter, activated carbon as adsorbent, and crashed coral as pH stabilizer"
+    kind: specified
+  detail:
+    value: "artificial seawater; nitrifying-bacteria filter (glass beads), activated carbon, crushed coral; in-flight water sampling/refill kits"
+    unit: "-"
+    source: "JAXA, STS-90 NASDA equipment page"
+    url: https://iss.jaxa.jp/shuttle/flight/sts90/sts90eqp_nasda_e.html
+    quote: "Water Control: Crushed Coral, Activated Carbon, Glass Beads with Nitrifying Bacteria"
+    kind: specified
+    note: "Life support duration 'More than 26days' (JAXA page) vs 'No less than 19 days' (Sakimura 1999)."
+
+specimen:
+  type:
+    value: "oyster toadfish (Opsanus tau), 1 per Fish Package, surgically implanted electrodes + telemetry transmitter; 4 fish on STS-90, 2 on STS-95"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), Table 2.23, p.33"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "Toadfish (Opsanus tau): 4 animals (housed in the Vestibular Function Experiment Unit)"
+    kind: specified
+    note: "Table text OCR'd from a scan ('Opsanus tax' in OCR). Fish in FP1 and FP4 died in flight on STS-90."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+    note: "No toadfish respiration value from an opened source."
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+  nitrogen_excretion:
+    value: [0.012, 0.023]
+    unit: g-N per L filter matrix per day (as reported)
+    source: "Neurolab Final Report (NTRS 20020073543), Attachment: NASDA VFEU water quality analysis, p.150"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "The estimated rates over the mission period are 0.023g-N/Ld for FP2 and 0.012g-N/Ld for FP3, indicating very low metabolic rate of the fishes during the flight period."
+    kind: measured
+    note: "Ammonia production estimated from nitrate accumulation in the two surviving fish's packages; units as printed (g-N/Ld)."
+
+walls:
+  material:
+    value: null
+    note: "Seawater-contact parts were 'specially surface-treated, or ... changed to corrosion resistive materials' and FP/loop heat-insulated (Sakimura 1999); materials not named."
+  gas_permeability:
+    value: null
+    note: "Artificial lung of hollow fibres (JAXA page); area/permeability not found."
+
+thermal:
+  power_W:
+    value: null
+    note: "Not found."
+  mass_kg:
+    value: 80
+    unit: kg
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320, Neurolab VFEU specification"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "(2) Total mass: Approx. 80Kg"
+    kind: specified
+    note: "SOURCE CONFLICT: JAXA STS-90 equipment page: 'Weight: approximately 77kg'."
+  temperature_control:
+    value: "Peltier element in Main Unit heat exchanger; FP and water loop heat-insulated"
+    unit: "-"
+    source: "Sakimura T et al. (1999) Biol Sci Space 13(4):314-320"
+    url: https://www.jstage.jst.go.jp/article/bss/13/4/13_4_314/_pdf/-char/en
+    quote: "Water temperature control by peltier element"
+    kind: specified
+
+searched: |
+  OSDR snapshot 2026-10-12: registry hardware 924, payload VFEU, experiments OS-497, OS-536 (no SPLASH record).
+  Neurolab Final Report (NTRS 20020073543; scanned, OCR'd locally) incl. NASDA water-quality attachment;
+  Sakimura et al. 1999 Biol Sci Space (J-STAGE full PDF); JAXA STS-90 NASDA equipment page.
+  Boyle et al. 2001 J Neurophysiol (publisher page 403 - not opened). Not found: fish-tank geometry,
+  inlet/outlet, power, light schedule/intensity, dissolved O2, toadfish O2 uptake.

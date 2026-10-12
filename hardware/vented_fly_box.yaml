@@ -1,0 +1,206 @@
+entity_id: HW234
+name: Vented Fly Box (VFB)
+vendor: NASA Ames Research Center (upgrade of the 2014 HEART Flies NanoRacks-compatible box)
+splash_ids: []
+registry_ids: ["2002"]
+curated: "2026-10-12"
+
+location:
+  value: "ISS cabin, unpowered, inside a Cargo Transfer Bag (FFL-03: Columbus endcone, CTB lid open; 2014 HEART Flies: docked Dragon sharing ISS atmosphere)"
+  unit: "-"
+  source: "OSDR OSD-588 study protocol description (FFL-03, SpaceX-14) (snapshot 2026-10-12)"
+  url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-588/
+  quote: "The ISS crew installed the samples into the Columbus Module endcone with the CTB lid open to promote air exchange between the VFBs and cabin air"
+  kind: specified
+  note: >-
+    OSD-347 (HEART Flies data): "Flies were kept in the VFB throughout the 30-day mission and were stored aboard
+    the docked Dragon capsule that shared atmosphere with the ISS." Researcher's Guide (2016) planned for FFL-02
+    that four of six VFBs go into the BioServe SABL incubator "held at 18 deg C" - plan, not confirmed as flown.
+    DATA-QUALITY FLAG: OSD-207 and OSD-347 mission metadata say SpaceX-11 (2017) but their protocols describe
+    the SpaceX-3 launch of 18 April 2014.
+
+geometry:
+  enclosure_internal_mm:
+    value: [94, 94, 130]
+    unit: mm
+    source: "Mains R, Reynolds S, Lera M, Ellingson L (2016, rev. 2018) A Researcher's Guide to: Fruit Fly Research. NASA ISS Program Science Office, 'HEART Flies'"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "The container box (Fig. 12) had internal dimensions of 94 x 94 x 130mm."
+    kind: specified
+    note: >-
+      CAVEAT: these are the internal dimensions of the 2014 HEART Flies (SpaceX-3) NanoRacks-compatible box,
+      which OSDR OSD-207/OSD-347 and Walls et al. 2020 call the "vented fly box (VFB), a modified version of a
+      Nanoracks box". The same Guide describes the FFL-02/FFL-03 VFB as "a NASA-developed upgrade to the HEART
+      FLIES payload", so the later VFB's dimensions may differ - not independently confirmed.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "Not reported; box volume 94x94x130 mm = 1.15 L gross (derivable) minus 15 vials, food and tray - not computed because vial packing/tray volume unknown."
+  specimen_container:
+    value: "standard polystyrene fly vial, 75 x 24 mm, with cellulose-acetate (2014) or open foam plug; 15 vials in a Plexiglas tray"
+    unit: "-"
+    source: "OSDR OSD-347 study protocol description (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-347/
+    quote: "housed in polystyrene vials (75 x24 mm) with 10 ml of standard cornmeal-based fly food containing double the usual amount of 10% Tegosept and cellulose acetate plugs."
+    kind: specified
+    note: >-
+      OSD-347: "Loaded vials were placed in a Plexiglas tray and inserted into a vented fly box (VFB)".
+      Researcher's Guide (HEART Flies): "The fruit fly vials had open foam plugs so air could passively circulate".
+  specimen_container_mm:
+    value: [24, 75]
+    unit: mm (vial outer diameter, height)
+    source: "OSDR OSD-347 study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-347/
+    quote: "housed in polystyrene vials (75 x24 mm)"
+    kind: specified
+    note: "Same dimension in OSD-207 and Walls et al. 2020 Cell Rep (PMC7787258). Wall thickness/inner diameter not given."
+  n_specimen_units:
+    value: 15
+    unit: vials per VFB
+    source: "OSDR registry hardware 2002, description (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2002
+    quote: "Each Vented Fly Box (VFB) will house 15 standard fly vials that contain flies and fly food."
+    kind: specified
+    note: "FFL-03 flew six VFBs (90 vials) in one CTB (OSD-588; Chou et al. 2023 iScience: 'Vented fly box (VFB) with 15 holding slots for fly vials')."
+  layout:
+    value: "15 vials upright in a Plexiglas tray sliding into a ventilated metal shell; g-load directed into food at vial bottoms"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, Fig. 14a caption"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "The vial assembly slides into the ventilated metal shell that allows for even temperature distribution within the SABL unit."
+    kind: specified
+    note: "OSD-347: 'The VFB was oriented such that the g-load was directed down into the food supply located at the bottom of the vials.' Vial arrangement (e.g. 3x5) not stated."
+
+ventilation:
+  mode:
+    value: passive
+    unit: "-"
+    source: "NASA Facts FS-2016-10-03-ARC, Fruit Fly Research Aboard the International Space Station"
+    url: https://www.nasa.gov/wp-content/uploads/2017/05/fruitflyfs_26oct16.pdf
+    quote: "Mesh-covered vent holes facilitate airflow to the samples while maintaining biospecimen containment. The system is a simple hardware option that requires minimal crew time and no power or data connectivity."
+    kind: specified
+    note: "Unpowered; exchange with cabin air by diffusion/cabin convection through vent holes, vial plugs, and the open CTB (FFL-03). FFL-02 CTB was 'designed to maximize air diffusion' (Researcher's Guide)."
+  flow_rate_L_min:
+    value: "n/a (passive)"
+    unit: "-"
+    note: "No forced flow; cabin air velocity at the CTB/VFB not reported."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: "mesh-covered vent holes in box walls; clear side windows"
+    unit: "-"
+    source: "OSDR registry hardware 2002, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2002
+    quote: "The VFB have mesh-covered vent holes that allow airflow to the samples and have clear windows on the sides to allow for evaluation."
+    kind: specified
+    note: "Hole number/size/position and mesh opening not found."
+  outlet:
+    value: null
+    note: "Same vent holes (no distinct outlet)."
+
+environment:
+  temperature_C:
+    value: 22
+    unit: degC (approx., ISS ambient)
+    source: "OSDR OSD-588 study protocol description (FFL-03)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-588/
+    quote: "Samples remained at ambient temperature (~22C) and humidity data in each VFB was collected throughout the 33-day flight mission."
+    kind: measured
+    note: "2014 HEART Flies (OSD-207): 'Ambiant temperature (~21˚C) for rearing.' No active control in the box."
+  rh_percent:
+    value: null
+    note: >-
+      Only relative statement found: Chou et al. 2023 iScience (PMC10797188): "the relative humidity of space
+      samples was higher by 20–25% than that of ground samples." Absolute RH not reported.
+  co2_ppm:
+    value: null
+    note: "Not measured/reported; OSD-588: food volume chosen 'while keeping carbon dioxide production to a minimum'."
+  o2_percent:
+    value: null
+  pressure_kPa:
+    value: null
+    note: "ISS cabin ambient (no box-specific value)."
+  light:
+    value: "no lighting system (ISS ambient light through side windows)"
+    unit: "-"
+    source: "NASA Facts FS-2016-10-03-ARC"
+    url: https://www.nasa.gov/wp-content/uploads/2017/05/fruitflyfs_26oct16.pdf
+    quote: "Although no observational hardware is included, windows on the sides of the box allow qualitative evaluation of fly health by station crew."
+    kind: specified
+    note: "Same fact sheet capability table lists 'Lighting control' = NO for the VFB."
+
+nutrients:
+  mode:
+    value: "fly food in vial bottom (cornmeal-based), no on-orbit changeout"
+    unit: "-"
+    source: "OSDR OSD-588 study protocol description (FFL-03)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-588/
+    quote: "The fly-only cultures were reared in polystyrene vials containing 12 ml +/- 1 ml fly food, while the co-culture vials contained 10 ml +/- 1 ml fly food."
+    kind: specified
+    note: "2014 HEART Flies: 10 ml per vial (OSD-347); Researcher's Guide: 'approximately 9ml of standard yeast/molasses fruit fly culture medium'."
+  detail:
+    value: "4 iButton T/RH data loggers internal to each VFB (FFL-02 design)"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, 'Vented Fly Box (VFB)'"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "four iButton (Maxim Integrated) data loggers internal to each VFB capture temperature and relative humidity levels incrementally throughout the mission for postflight data retrieval."
+    kind: specified
+
+specimen:
+  type:
+    value: "Drosophila melanogaster (FFL-02/HEART Flies: 8-10 virgin females + 5 males per vial; FFL-03: flies co-cultured with Leptopilina boulardi / L. heterotoma wasps)"
+    unit: "-"
+    source: "OSDR registry hardware 2002, version 'Version used on International Space Station'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2002
+    quote: "For the FFL-03 experiment six VFBs will be sent to the ISS, each housing 15 vials. 60 vials will hold flies co-cultured with wasps, and 30 vials will hold flies only."
+    kind: specified
+    note: >-
+      Per-vial loading: OSD-347 '8 virgin females and 5 male adult virgin flies'; Walls et al. 2020 '10 virgin
+      females and 5 males'; Researcher's Guide (HEART Flies) '15 females and 5 males per vial' - three different
+      numbers for the 2014 flight. FFL-03 loading per OSD-588 (e.g. 8F+5M y w; 20F+10M hopTum-l).
+
+specimen_load:
+  co2_flux:
+    value: [2, 4.68]
+    unit: uL CO2 per adult fly per hour (25 degC)
+    source: "Yatsenko AS et al. (2014) Measurement of metabolic rate in Drosophila using respirometry. J Vis Exp (88):51681, Table 1"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4205100/
+    quote: "4.68 ± 1.04 CO2 | CO2 respirometry system"
+    kind: measured
+    note: "Organism-level literature values at 25 degC (2-3 and 4.68 ± 1.04 ul/fly/h). Population per vial grows over the mission (Guide: ~20-60 adult progeny per vial on return)."
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "ventilated metal shell; Plexiglas vial tray; clear side windows"
+    unit: "-"
+    source: "Mains R et al. (2016) A Researcher's Guide to: Fruit Fly Research, Fig. 14a caption"
+    url: https://www.nasa.gov/wp-content/uploads/2016/06/fruit_fly-iss-mini-book-tagged.pdf
+    quote: "The vial assembly slides into the ventilated metal shell that allows for even temperature distribution within the SABL unit."
+    kind: specified
+    note: "Metal type not stated. Vials: polystyrene (OSD-347)."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: "NASA Facts FS-2016-10-03-ARC"
+    url: https://www.nasa.gov/wp-content/uploads/2017/05/fruitflyfs_26oct16.pdf
+    quote: "The unpowered VFB holds and safely transports up to 15 standard fly vials containing flies and fly food."
+    kind: specified
+
+searched: |
+  OSDR snapshot 2026-10-12: registry hardware 2002, payloads FFL-02, FFL03, experiments OS-801, OS-761;
+  biodata OSD-207, OSD-347, OSD-588, OSD-609, OSD-610. NASA Researcher's Guide to Fruit Fly Research;
+  NASA Facts FS-2016-10-03-ARC / FS-2017-10-08-ARC; Walls et al. 2020 Cell Rep (PMC7787258);
+  Chou et al. 2023 iScience (PMC10797188); NTRS 20190025356 slides.
+  Not found: FFL-02/03 VFB dimensions, vent-hole geometry, absolute RH, CO2/O2 inside the box, cabin air speed.

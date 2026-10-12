@@ -1,0 +1,253 @@
+# Advanced Plant Habitat (APH) - curated 2026-10-12
+# Every non-null value carries a verbatim quote from a source opened in the curation session.
+entity_id: HW034
+name: Advanced Plant Habitat (APH)
+splash_ids: [34]
+registry_ids: ["2017"]
+
+location:
+  value: "ISS EXPRESS rack in the Japanese Experiment Module Kibo; quad middeck-locker class"
+  unit: '-'
+  source: "OSDR Hardware Registry 2017 (Advanced Plant Habitat)"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/2017
+  quote: "APH is installed in a standard EXpedite the PRocessing of Experiments to Space Station (EXPRESS) rack in the Japanese Experiment Module Kibo."
+  kind: specified
+  note: "SPLASH #34 dims field: 'Quad Mid-Deck Locker'. Interfaces to EXPRESS rack GN2, Avionics Air Assembly and Moderate Temperature Loop (Monje et al. 2020)."
+
+geometry:
+  enclosure_internal_mm:
+    value: [454, 408, 450]
+    unit: mm
+    source: "Massa G.D., Wheeler R.M., Morrow R.C., Levine H.G. Growth Chambers on the International Space Station for Large Plants (Acta Hortic. 1134; NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "The science carrier base root tray (45.4 cm x 40.8 cm x 5.1 cm) consists of a porous tube water delivery system"
+    kind: derived
+    note: >-
+      Footprint assumed equal to the Science Carrier root-tray footprint (454 x 408 mm), which sits in the
+      base of the growth chamber; 0.454 x 0.408 = 0.185 m2, consistent with 'growth area of 0.19 m2' (same
+      source). Height 450 mm is the growth-chamber floor-to-light distance from Monje et al. 2020: 'The grid
+      measures the height from the bottom of the GC to the GLA (45 cm), and the SC occupies 5 cm inside the
+      GC, which leaves 40 cm between the top of the SC to the GLA.' Monje 2020 also describes the chamber as
+      '0.2 m2 by 0.4 m tall'. Massa slides (NTRS 20160006561): 'Height: 50 cm total max. shoot height 45 cm'.
+      Exact internal wall-to-wall dimensions and the ECS duct volumes are not published.
+  free_air_volume_L:
+    value: 100
+    unit: L
+    source: "Monje O. et al. (2020) Hardware Validation of the Advanced Plant Habitat on ISS: Canopy Photosynthesis in Reduced Gravity. Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "assuming a 0.1 m2 planted area and a 100 L volume for the APH chamber"
+    kind: specified
+    note: >-
+      This is the chamber gas volume the authors assumed for converting CO2 drawdown rates to photosynthesis,
+      not an engineering specification. Geometric shoot-zone volume above the Science Carrier from the
+      dimensions above: 0.454 x 0.408 x 0.40 = 74 L (derived); the difference presumably includes ECS
+      loops/ducts (not sourced).
+  growing_area_m2:
+    value: 0.19
+    unit: m2
+    source: "Massa et al. (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "The maximum shoot height is 45 cm with a growth area of 0.19 m2."
+    kind: specified
+    note: "Monje et al. 2020: Science Carrier baseline is 'a single-use 0.2 m2 module'."
+  specimen_container:
+    value: "Science Carrier (SC): removable root tray divided into four independently controlled quadrants of fertilized arcillite with embedded porous watering tubes"
+    unit: '-'
+    source: "OSDR OSD-772 study protocol (PH-04)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+    quote: "The APH Science Carrier is a root module that is divided into four quadrants, each independently controlled."
+    kind: specified
+  specimen_container_mm:
+    value: [454, 408, 51]
+    unit: mm
+    source: "Massa et al. (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "The science carrier base root tray (45.4 cm x 40.8 cm x 5.1 cm) consists of a porous tube water delivery system"
+    kind: specified
+    note: "Each quadrant holds ~990 g / 1.6 L of 1-2 mm arcillite (Monje et al. 2020; OSD-772)."
+  n_specimen_units:
+    value: 4
+    unit: quadrants
+    source: "OSDR OSD-772 study protocol (PH-04)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-772/
+    quote: "The APH Science Carrier is a root module that is divided into four quadrants, each independently controlled."
+    kind: specified
+    note: "PH-04 planted 12 pepper seeds per quadrant in 3 rows (240 plants m-2); the validation test planted 3 rows per quadrant (Arabidopsis 12 positions x 2 seeds; wheat 10 seeds per row)."
+  layout:
+    value: "2 x 2 quadrants on the chamber floor; three planting rows per quadrant"
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "The foam, medical gauze, and arcillite were secured in place by a polycarbonate cover that contained three centered rows for planting and holes for aeration of the entire quadrant."
+    kind: specified
+    note: "The 2 x 2 arrangement of the four quadrants is inferred from 'four-quadrant' tray descriptions and figures; row orientation relative to the airflow is not stated."
+
+specimen:
+  types:
+    value: ["Arabidopsis thaliana Col-0", "Triticum aestivum 'Apogee'", "Capsicum annuum 'NuMex Espanola Improved' (PH-04)"]
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "was pre-planted with two quadrants of Arabidopsis (WT) cv Col-0 and two quadrants of wheat cv Apogee."
+    kind: specified
+    note: "Pepper per OSD-772 / registry payload PH-04. PH-01 grew Arabidopsis lignin lines (registry payload PH-01)."
+
+ventilation:
+  mode:
+    value: forced
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "The ECS modules mix the air in the growth chamber by forced convection using fans"
+    kind: specified
+    note: >-
+      Closed, recirculating chamber: two ECS modules, 'mounted on each side of the growth chamber', recirculate,
+      HEPA/MERV-13 filter, condition temperature/humidity; KMnO4 (Purafil) ethylene scrubber; CO2 injected to
+      setpoint. Measured leak 5% per hour (see walls.gas_permeability).
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "No volumetric flow published; only air speed (below)."
+  air_velocity_m_s:
+    value: [0.3, 1.5]
+    unit: m/s
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "Fan speeds are controllable from 0.3 to 1.5 m s–1 at 0.1 m s–1 increments."
+    kind: specified
+    note: >-
+      Range of the settable 'wind speed'; measurement location of the speed is not stated. PH-04 setpoint:
+      'a wind speed of 0.3 m/s' (OSD-772), increased periodically after flowering for pollination. Massa et al.
+      (NTRS 20160006558) give the same 0.3-1.5 m s-1 range.
+  inlet:
+    value: "conditioned air returned into the chamber at plant level from opposing sides (two ECS modules, one per side)"
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "return it into the chamber at plant level from opposing sides of the chamber"
+    kind: specified
+    note: "Slides (NTRS 20160006561) label 'Air Output Vents' and 'Air Intake Particulate Filters' on the growth chamber photo. Vent sizes not published."
+  outlet:
+    value: "air withdrawn from the top of the growth chamber above the plants into the ECS intakes (screen + HEPA filter)"
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "fans that remove air from the top of the growth chamber above the plants"
+    kind: specified
+    note: "Monje 2020: 'These modules recirculate chamber air through an inlet protected by a screen and a HEPA filter.'"
+
+environment:
+  temperature_C:
+    value: [18, 30]
+    unit: °C
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "has the capability to independently control temperature in the growth chamber from 18 to 30°C (±1°C), and relative humidity from 50 to 90% (±5%)."
+    kind: specified
+    note: >-
+      Controllable range. Setpoints actually used: validation test Arabidopsis 22:18 °C light:dark, wheat
+      23 °C (Monje 2020 Table 3); PH-04 'average air temperature setting of 23 degrees C' (OSD-772). SPLASH
+      #34 temperature_range '18-30 C'.
+  rh_percent:
+    value: [50, 90]
+    unit: '%'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "has the capability to independently control temperature in the growth chamber from 18 to 30°C (±1°C), and relative humidity from 50 to 90% (±5%)."
+    kind: specified
+    note: "CONFLICT: Massa et al. (NTRS 20160006558) and SPLASH #34 give 50-86%. Setpoints used: 65% (Arabidopsis), 75% (wheat) in validation; 80% then 50% in PH-04."
+  co2_ppm:
+    value: [400, 5000]
+    unit: ppm
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "CO2 concentration (400–5,000 μmol mol–1), wind speed (0.3–1.5 m s–1)"
+    kind: specified
+    note: "CONFLICT: Massa et al. (NTRS 20160006558) give 500-5000 umol mol-1 (±50). Setpoints used: 400 (Arabidopsis), 1500 (wheat), 550 ppm (PH-04, OSD-772)."
+  o2_percent:
+    value: null
+    unit: '%'
+    note: "O2 is monitored in shoot and root zones but not controlled (Massa et al. NTRS 20160006558); no value reported."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Slides (NTRS 20160006561): 'Air pressure monitored and maintained' - no value given."
+  light:
+    value: "Growth Light Assembly: red 630, blue 450, green 525, far-red 730/735 nm and white 4100 K LEDs; 0-1000 umol m-2 s-1 PPF in 50-unit steps"
+    unit: '-'
+    source: "Massa et al. (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "The lighting system in the APH allows 0-1000 µmol m-2 s -1 PPF settable in increments of 50 µmol m-2 s -1 (measured at 15 cm below the light bank)"
+    kind: specified
+    note: >-
+      Monje 2020 states GLA setpoints correspond to 10 cm below the LED panel and that intensity attenuates
+      linearly with distance. Setpoints used: 150 (Arabidopsis, 16:8) and 600 umol m-2 s-1 (wheat, 20:4) in
+      validation; 300 umol m-2 s-1 in PH-04 (OSD-772).
+
+nutrients:
+  mode:
+    value: arcillite
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "Dried and sterile 1–2 mm arcillite was weighed (∼990 g per quadrant; equivalent to 1.6 L) into clean ziplock bags, and mixed gently with 7.5 g/L of Type 180, 18-6-8 Nutricote"
+    kind: specified
+  detail:
+    value: "active root-zone moisture control: WRADS supplies water through four porous ceramic tubes per quadrant under suction; condensate recovered and recycled"
+    unit: '-'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "The media is watered using a manifold of porous ceramic tubes, and moisture content is actively controlled with negative pressure (i.e., suction) to provide optimum root zone water and O2 in microgravity"
+    kind: specified
+    note: "Reservoirs: 2 L Distribution + 1 L Recovery (Monje 2020)."
+
+specimen_load:
+  co2_flux:
+    value: [7, 25]
+    unit: umol CO2 m-2 s-1
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "Wheeler (1996) reported photosynthetic rates of 7, 12, 20, and 25 μmol m–2 s–1 at 15, 20, 25, and 30 DAP, respectively."
+    kind: measured
+    note: >-
+      Net canopy photosynthesis of wheat (ground, 500 umol m-2 s-1 HPS) at 15-30 days after planting; Monje
+      2020 report that APH wheat on ISS matched these: 'From 15 to 29 DAP, the daily P net matches the
+      photosynthetic rates of wheat grown at 500 μmol m–2 s–1'. APH's own values are only plotted (Fig. 5).
+      For Arabidopsis at 150 umol m-2 s-1 the paper cites Donahue et al. (1997): 10-12 umol m-2 s-1.
+  o2_flux:
+    value: null
+    unit: umol m-2 s-1
+  h2o_flux:
+    value: null
+    unit: L d-1
+    note: "Transpiration was measured via WRADS/condensate but no number is given in the text of Monje 2020."
+  heat_W:
+    value: null
+    unit: W
+
+walls:
+  material:
+    value: null
+    unit: '-'
+    note: "Chamber wall material not found. Has a door with external viewing window and manual light blocking (Massa et al. NTRS 20160006558)."
+  gas_permeability:
+    value: "chamber leak rate 5 % per hour (measured on ISS)"
+    unit: '% h-1'
+    source: "Monje et al. (2020) Front. Plant Sci. 11:673"
+    url: https://doi.org/10.3389/fpls.2020.00673
+    quote: "The leak rate of APH on ISS was 5% h–1, which is consistent with leak rates measured during ground studies."
+    kind: measured
+    note: "CONFLICT: design slide (NTRS 20160006561) lists 'Leak Rate: ≤10% by volume a day' (~0.4% h-1). The peer-reviewed on-orbit measurement is used."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "No power or heat-load figure found; heat is rejected to the EXPRESS rack Moderate Temperature Loop and Avionics Air Assembly (Monje 2020 Fig. 1B description)."
+
+searched: |
+  Opened: Monje et al. 2020 Front Plant Sci full text (PMC7314936 via Europe PMC); Massa et al. ISHS manuscript (NTRS
+  20160006558) and slides (NTRS 20160006561, 20160001325); ASHS 2014 abstract; OSDR registry 2017 and payloads
+  PH-01/PH-04; SPLASH #34; OSD-772 protocol. Not found: volumetric fan flow, internal chamber wall-to-wall
+  dimensions (footprint taken from the root tray), vent sizes/positions beyond the verbal description, wall
+  material, electrical power / heat load, O2 and pressure values.

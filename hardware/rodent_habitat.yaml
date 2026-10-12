@@ -1,0 +1,226 @@
+entity_id: HW142
+name: Rodent Habitat (AEM-X) / Rodent Research Facility (ISS)
+splash_ids: [142]
+registry_ids: ["1379"]
+
+location:
+  value: "ISS EXPRESS rack (locker door removed)"
+  unit: "-"
+  source: "OSDR Hardware Registry 1379, Rodent Habitat (AEM-X) (snapshot 2026-10-12)"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+  quote: "The unit fits inside the International Space Station (ISS) EXPRESS racks (EXpedite the PRocessing of Experiments to the Space Station) with the locker door removed."
+  kind: specified
+  note: "Launched unpowered; mice arrive in the separate Transporter (AEM-T, see aem_t.yaml) and are moved into the Habitat on orbit."
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: >-
+      Not sourced. Choi et al. (2020) state the Habitat 'was modified from heritage flight hardware (AEM)';
+      the AEM cage is 363 x 220 x 243 mm (aem.yaml), but no source opened states that the Habitat cage keeps
+      those dimensions, so they are NOT copied here. Orr et al. (NTRS 20190004914, draft preprint) give
+      '710 cm2 floor space and 14750 cm3 habitable space' for 'the current design' but cite Borkowski et al. 1995
+      (pre-ISS), so the figures probably describe the AEM; not used.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "See enclosure_internal_mm. Candidate 14.75 L (Orr et al., NTRS 20190004914) rejected as ambiguous between AEM and Habitat."
+  specimen_container:
+    value: "stainless-steel mesh/grid cage, bisected by a grate into left and right compartments"
+    unit: "-"
+    source: "Ronca A.E. et al. (2019) Behavior of mice aboard the International Space Station. Sci Rep 9:4717. doi:10.1038/s41598-019-40789-y"
+    url: https://doi.org/10.1038/s41598-019-40789-y
+    quote: "Each RH is bisected by a grate (depicted by the black vertical line) yielding left and right caging compartments housing five mice per side."
+    kind: specified
+    note: "Full text read via Europe PMC (PMC6459880). Choi et al. 2020 Table 1 lists the Habitat as having 'metal grid walls'."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Compartment dimensions not found (see enclosure_internal_mm)."
+  n_specimen_units:
+    value: 10
+    unit: mice
+    source: "OSDR Hardware Registry 1379, Rodent Habitat (AEM-X)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+    quote: "The Rodent Habitat (AEM-X) is a rodent housing facility that supports up to ten, 20 gram mice."
+    kind: specified
+    note: "Choi et al. 2020 Table 1 also lists '5–6 rats'. SPLASH record 142 (specimen fields) is in the scrambled range 125-147 and its specimen_size/specimen_types fields are flagged misattributed (BRIC-Opti), so SPLASH is not used."
+  layout:
+    value: "2 compartments (left/right of a central grate), 5 mice per compartment; food-bar plates on the sides of the central water box"
+    unit: "-"
+    source: "Shirazi-Fard Y., Choi S. et al. (2017) New developments in NASA's Rodent Research hardware ... (poster). NTRS 20170010402"
+    url: https://ntrs.nasa.gov/citations/20170010402
+    quote: "accommodates up to 5 adult mice in each of the 2 compartments"
+    kind: specified
+    note: >-
+      Cage fittings varied by mission (OSDR registry 1379 version notes): RR1-RR4 full food plate and cage divider;
+      RR5-RR6 short food plate + enrichment hut each side + divider; RR7 hut and blank plate on one side, no divider;
+      RR9 short food plate and hut each side, no divider.
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "OSDR Hardware Registry 1379, Rodent Habitat (AEM-X), Air Quality subsystem"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+    quote: "Four fans create a slight negative pressure inside the habitat ensuring an inward flow of air and particulate entrapment by the treated outlet filter."
+    kind: specified
+    note: "Open (once-through) exchange with ISS cabin air; no internal gas control. Filters: electrostatic and phosphoric-acid-treated fiberglass pads with treated charcoal, rated for 91 days of odor control (same registry record)."
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "No volumetric fan flow found for the Rodent Habitat. Exhaust-filter pressure drop of the ground AEM (0.33-0.35 in H2O, Moyer et al. 2016) is in aem.yaml."
+  air_velocity_m_s:
+    value: 0.3
+    unit: m/s
+    source: "Choi S.Y. et al. (2020) Validation of a New Rodent Experimental System to Investigate Consequences of Long Duration Space Habitation. Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "Temperature, humidity and gas levels varied within the compartments of the Transporter and Habitat along with the ISS cabin environment due to active air exchanges between the ISS cabin and inside the Habitat (~ 0.3 m/s)."
+    kind: specified
+    note: "Approximate value ('~'); location of the velocity (filter face vs cage interior) not stated. Full text read via Europe PMC (PMC7012842)."
+  inlet:
+    value: "front-panel inlet slots -> inlet filter at the front of the habitat -> cage"
+    unit: "-"
+    source: "OSDR Hardware Registry 1379, Air Filter System component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+    quote: "Cabin air is drawn through front panel inlet slots directly though the inlet filter located at the front of the habitat, into the animal habitat."
+    kind: specified
+    note: "Two of the four cameras are mounted in the inlet filter (registry Cameras component). Slot/filter dimensions not found."
+  outlet:
+    value: "exhaust filter at the back of the cage -> four fans -> left-side plenum -> cabin (air deflector)"
+    unit: "-"
+    source: "OSDR Hardware Registry 1379, Air Filter System component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+    quote: "After exiting the habitat through the exhaust filter, located at the back of the unit between the rodent cage and fans, the filtered air is drawn through the fans and directed out the left side plenum into the cabin."
+    kind: specified
+    note: "Registry main description instead says the air 'exits the front of the habitat by way of a plenum on the left side of the unit' (i.e. the plenum discharges at the front); both are consistent with a rear exhaust filter and a left-side return plenum. 'An air deflector diverts the exhaust air away from the habitat inlet airflow.'"
+
+environment:
+  temperature_C:
+    value: [26, 28]
+    unit: degC
+    source: "NASA OSDR dataset OSD-682 (Rodent Research-18, SpaceX-24), study protocol description"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-682/
+    quote: "All mice were maintained at an ambient temperature of 26–28 degrees Celsius with a 12-h light/dark cycle during the flight."
+    kind: measured
+    note: >-
+      Same statement in OSD-536 (RR-9). Choi et al. 2020 (RR-1) habitat sensors: '26.3–28 C for Experimental Flight Habitats
+      and 27.0–27.9 C for Experimental GC Habitats' with reported averages 26.0/26.4 C (the averages fall outside the stated
+      flight range - internal inconsistency in the paper); the Validation Habitat ran 0.6-2.3 C warmer than the Experimental one.
+  rh_percent:
+    value: [32, 58]
+    unit: "%"
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "In the U.S. Lab portion of the ISS where habitats were located, CO2 ranged from 788–4690 ppm, temperature from 21.3–24.1 °C, and humidity from 32–58% during the in-flight phase of the experiment (Sept 25 – Oct 31, 2014)."
+    kind: measured
+    note: "ISS cabin (= habitat inlet air) during RR-1, not the in-cage value. Habitat has an RH sensor but in-cage RH values were not published in the sources opened."
+  co2_ppm:
+    value: [788, 4690]
+    unit: ppm
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "In the U.S. Lab portion of the ISS where habitats were located, CO2 ranged from 788–4690 ppm, temperature from 21.3–24.1 °C, and humidity from 32–58% during the in-flight phase of the experiment (Sept 25 – Oct 31, 2014)."
+    kind: measured
+    note: "ISS cabin (inlet) CO2 during RR-1. In-cage CO2 will be higher by the animal source term; Habitat CO2 telemetry exists (Choi 2020 lists 'telemetry (temperature, CO2, %RH)') but values not published in sources opened. Ground controls were matched to ISS CO2 via the ISS Environmental Simulator."
+  o2_percent:
+    value: null
+    unit: "%"
+    note: "Not reported; habitat is open to ISS cabin air."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Ambient ISS cabin; no numeric value in the sources opened (SPLASH 142 'Ambient ISS' not used - record in scrambled range)."
+  light:
+    value: "LED panel, average 40 lux, 12:12 h light/dark (software programmable); infrared LEDs for dark-cycle video"
+    unit: lux
+    source: "OSDR Hardware Registry 1379, Lighting component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+    quote: "The LED panel provides an average of 40 lux illumination and is controlled by software to provide a 12-hour lighting cycle."
+    kind: specified
+    note: "Choi et al. 2020: RR-1 lights on 06:00-18:00 GMT."
+
+nutrients:
+  mode:
+    value: food_bar+lixit
+    unit: "-"
+    source: "OSDR Hardware Registry 1379, Water Refill Box"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1379
+    quote: "The habitat accommodates an internal water supply containing four lixit drinking valves and two flexible plastic bladders for water storage."
+    kind: specified
+  detail:
+    value: "NASA Type 12 NuRFB food bars (~850 g) on two slide-in plates (one per side, replaced ~every 7 days); ~2 L iodinated water in 2000 cc water box, refillable on orbit"
+    unit: "-"
+    source: "Choi S.Y. et al. (2020) Sci Rep 10:2336. doi:10.1038/s41598-020-58898-4"
+    url: https://doi.org/10.1038/s41598-020-58898-4
+    quote: "Foodbars (~850 g) developed specifically for the flight hardware54 were mounted onto a metal plate (two plates per Habitat, one plate per side) and approximately 2 liters of deionized autoclaved water supplemented with 4 ppm iodine"
+    kind: specified
+    note: "Registry 1379: '2000-cc capacity' water box; food bar plates 'replaced approximately every 7 days'."
+
+specimen_load:
+  o2_flux:
+    value: 3.63
+    unit: "mL O2 h-1 per g body mass (C57BL/6 mouse)"
+    source: "Niederwieser T. et al. (2014) AEM-E - A small life support system for the transport of rodents to the ISS. ICES-2014-101, 44th Int. Conf. Environmental Systems, Tucson"
+    url: http://hdl.handle.net/2346/59702
+    quote: "O2 = 3.63 mL O2/(hr g) measured at 16 weeks vs. 5.06 mL O2/(hr g) design load"
+    kind: measured
+    note: >-
+      Organism-level rate for C57BL/6 mice (Jackson Labs data cited by the authors; 16-week-old, the age of RR-1 Validation mice).
+      For a 20 g mouse: 3.63 x 20 = 72.6 mL O2/h (derived). Same paper: integrated 13-day chamber test with 32 C57BL/6 males
+      averaged 2.330 mL/(hr g); NASA worst-case design load 5.06 mL/(hr g) (peak, for life-support sizing).
+      Riskowski et al. 2006 (ASHRAE Trans 112(1)) measured 2.8 L O2/h per kg BW (BALB/c) and 3.2 (CD-1) at 24 C.
+  co2_flux:
+    value: 2.29
+    unit: "mL CO2 h-1 per g body mass (C57BL/6 mouse)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "for CO2 = 2.29 mL CO2/(hr g) measured at 16 weeks vs. 4.63 mL CO2/(hr g) design load"
+    kind: measured
+    note: "Caution: 2.29/3.63 implies RQ = 0.63, below the physiological 0.7-1.0 range; the design rates use RQ 0.92 (5.06/4.63). For a 20 g mouse 45.8 mL CO2/h (derived). Use the design value 4.63 mL/(h g) for a conservative CO2 case."
+  h2o_flux:
+    value: 7.3
+    unit: "g H2O vapour h-1 per kg body mass (mouse cage, BALB/c)"
+    source: "Riskowski G.L., Harrison P.C., Memarzadeh F. (2006) Mass generation rates of ammonia, moisture, and heat production in mouse cages with two bedding types, two mouse strains, and two room relative humidities. ASHRAE Transactions 112(1), paper 4835"
+    url: https://orf.od.nih.gov/TechnicalResources/Bioenvironmental/Documents/MassGenerationRatesofAmmoniaMoistureandHeatProduct.pdf
+    quote: "When vapor production is converted to a body weight basis, the BALB/c mice are greater than the CD-1 (7.3 vs. 6.3 (g/h)/kg BW"
+    kind: measured
+    note: "Cage-level vapour production (respiration + evaporation from urine/bedding/water) at 24 C, shoebox cages with bedding; for a 20 g mouse 0.146 g/h (derived). Drinking-water use in the (ground) AEM was 4.2 mL/mouse/day (Moyer et al. 2016)."
+  heat_W:
+    value: 15.7
+    unit: "W per kg body mass (BALB/c mouse; total heat from O2 consumption)"
+    source: "Riskowski G.L., Harrison P.C., Memarzadeh F. (2006) ASHRAE Transactions 112(1), paper 4835"
+    url: https://orf.od.nih.gov/TechnicalResources/Bioenvironmental/Documents/MassGenerationRatesofAmmoniaMoistureandHeatProduct.pdf
+    quote: "Heat production on a body mass basis was calculated to be 17.9 and 15.7 W/kg BW (27.7 and 24.3 Btu/h/lb BW) for CD-1 and BALB/c mice, respectively."
+    kind: measured
+    note: "Computed by the authors from measured O2 x 4.86 kcal/L at 24 C (below mouse thermoneutrality; the Habitat runs at 26-28 C, so true load is likely somewhat lower). For a 20 g mouse 0.31 W (derived). BALB/c (19.6 g) chosen as closest in mass to RR mice; C57BL/6-specific heat not found."
+
+walls:
+  material:
+    value: "stainless-steel mesh (cage interior); Lexan window over water box"
+    unit: "-"
+    source: "Shirazi-Fard Y., Choi S. et al. (2017) NTRS 20170010402"
+    url: https://ntrs.nasa.gov/citations/20170010402
+    quote: "The Hut is made out of the same stainless steel mesh as the cage interior"
+    kind: specified
+    note: "Poster also lists 'Grating on all sides'. Lexan window: registry 1379 Water Refill Box."
+  gas_permeability:
+    value: null
+    unit: "-"
+    note: "Mesh/grid walls are open to flow; solid outer housing material not found."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "SPLASH 142 lists power '>35.5 W' and mass '~27 kg', but record 142 is in the scrambled range 125-147 and 35.5 W equals the Shuttle AEM minimum power (aem.yaml), so it is not used."
+
+searched: |
+  OSDR registry 1379 (all components/versions); SPLASH 142 (rejected, scrambled range); OSDR biodata protocol text for
+  RR missions (OSD-536, OSD-682, OSD-898 etc.); Choi et al. 2020 Sci Rep (PMC7012842, full text incl. Table 1);
+  Ronca et al. 2019 Sci Rep (PMC6459880); NTRS 20150023125, 20170010402, 20160010579, 20140010687, 20190001971,
+  20190002082, 20190004914 (Orr et al. enrichment preprint), 20180001902 (Deep Space Gateway habitat concept: 21-30 C,
+  CO2 <=0.7 %, 30-70 % RH - a concept, not the ISS Habitat, so not used); NASA fact sheet FS-2015-06-12-ARC
+  (no specs); ISS National Lab facility pages (blocked, HTTP 403/404). Missing: internal cage L x W x H, fan
+  flow rate, in-cage RH/CO2 telemetry values, inlet/outlet open areas, power.

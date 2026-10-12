@@ -4,7 +4,7 @@ V1  Differentially heated square cavity (air, Pr = 0.71), Ra = 1e4, 1e5, 1e6.
     Reference mean hot-wall Nusselt numbers, as tabulated in Table 1 of
     Gjesdal, Wasberg & Andreassen (2003) arXiv:physics/0305049:
       de Vahl Davis (1983) Int. J. Numer. Meth. Fluids 3:249-264 : 2.243, 4.519, 8.800
-      Hortmann, Peric & Scheurer (1990)                           : 2.245, 4.522, 8.825
+      Hortmann, Peric & Scheuerer (1990) Int. J. Numer. Meth. Fluids 11:189-207                           : 2.245, 4.522, 8.825
     Solved with the same solver, schemes and Boussinesq settings used for the
     hardware cases (buoyantBoussinesqPimpleFoam, OpenFOAM v2606), run to steady state.
 

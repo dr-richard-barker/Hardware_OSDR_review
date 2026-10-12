@@ -1,0 +1,257 @@
+# Vegetable Production System (Veggie) - curated 2026-10-12
+# Every non-null value carries a verbatim quote from a source opened in the curation session.
+entity_id: HW033
+name: Vegetable Production System (Veggie)
+splash_ids: [33]
+registry_ids: ["1397"]
+
+location:
+  value: "ISS EXPRESS rack (first unit installed in Columbus module, 7 May 2014)"
+  unit: '-'
+  source: "NASA Facts: Veggie, FS-2020-01-007-KSC (NASA Kennedy Space Center, 2020)"
+  url: https://www.nasa.gov/wp-content/uploads/2019/04/veggie_fact_sheet_508.pdf
+  quote: "Astronauts Rick Mastracchio and Steve Swanson installed Veggie in the Columbus Laboratory Module on May 7, 2014."
+  kind: specified
+  note: >-
+    EXPRESS-rack insertion stated in Massa et al. (NTRS 20160006558): 'insertion into the ISS
+    Expedite-the-Processing-of-Experiments-to-the-Space-Station (ExPRESS) racks'. SPLASH #33 dims field:
+    'Double Mid-Deck Locker'. Two Veggie units are on ISS (fact sheet).
+
+geometry:
+  enclosure_internal_mm:
+    value: [368, 292, 470]
+    unit: mm
+    source: "NASA KSC Veggie specification sheet SP-2015-11-435-KSC (NTRS 20160005059)"
+    url: https://ntrs.nasa.gov/citations/20160005059
+    quote: "Baseplate Footprint: 29.2 cm x 36.8 cm Maximum Height: 47.0 cm empty; 41.9 cm with root mat"
+    kind: specified
+    note: >-
+      Order [L (depth), W (width), H (max height)]; OSDR registry 1397 gives the baseplate as '29.2 cm wide
+      by 36.8 cm deep'. H is the empty-chamber maximum; 419 mm with root mat installed. The enclosure is a
+      flexible transparent bellows whose height is adjustable: usable 5-45 cm below the light cap (Massa et
+      al., NTRS 20160006558); VEG-01 validation ran the bellows at 32.5 cm; VEG-01/03 baseplate was
+      30.5-31.75 cm below the LED array (OSD-745). Side walls are not rigid - geometry changes with height.
+  free_air_volume_L:
+    value: 50.5
+    unit: L
+    source: "NASA KSC Veggie specification sheet SP-2015-11-435-KSC (NTRS 20160005059)"
+    url: https://ntrs.nasa.gov/citations/20160005059
+    quote: "Baseplate Footprint: 29.2 cm x 36.8 cm Maximum Height: 47.0 cm empty; 41.9 cm with root mat"
+    kind: derived
+    note: >-
+      0.292 m x 0.368 m x 0.470 m = 0.0505 m3 = 50.5 L at maximum empty height, before subtracting root mat
+      and pillows (their volumes are not sourced). At the VEG-01 bellows height of 32.5 cm: 0.292 x 0.368 x
+      0.325 = 34.9 L. CONFLICT: Massa et al. (NTRS 20160006558) write 'a total usable volume of up to 0.48
+      m3', ten times the product of their own stated dimensions; treated here as a typo for 0.048 m3.
+  growing_area_m2:
+    value: 0.11
+    unit: m2
+    source: "Massa G.D., Wheeler R.M., Morrow R.C., Levine H.G. Growth Chambers on the International Space Station for Large Plants (Acta Hortic. 1134; NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "The unit baseplate measures 29.2 cm by 36.8 cm providing 0.11 m2 growing area"
+    kind: specified
+    note: "CONFLICT: Massa et al. 2015 slides (NTRS 20150021302) say '0.15 m2 growing area'; 0.292 x 0.368 = 0.107 m2, so 0.11 m2 is used."
+  specimen_container:
+    value: "plant pillow (rooting packet: Teflon-coated Kevlar bag with Nomex bottom, arcillite + controlled-release fertilizer, seeds glued to wicks)"
+    unit: '-'
+    source: "NASA Facts: Veggie, FS-2020-01-007-KSC (2020)"
+    url: https://www.nasa.gov/wp-content/uploads/2019/04/veggie_fact_sheet_508.pdf
+    quote: "Plant pillows are Teflon-coated black Kevlar with a Nomex bottom, which contains the growth media (calcined clay – often used to condition baseball infields), controlled release fertilizer and water"
+    kind: specified
+    note: >-
+      Other inserts flown in Veggie (APEX Petri-plate holder, Magenta-jar APEX Growth Chamber, TicToc
+      container, XROOTS, PONDS, FEP culture bags) are listed as components of OSDR registry 1397; each needs
+      its own geometry and is not covered by this record.
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: >-
+      Pillow outer dimensions not found. Substrate volume per pillow is 250 mL for VEG-04 (see
+      nutrients.detail). Stutte et al. NTRS 20110011606 describe pre-flight concept pillows (7.6 x 12.7 cm
+      bags) - not used because they are a 2011 ground concept, not the flight pillow.
+  n_specimen_units:
+    value: 6
+    unit: pillows
+    source: "NASA Facts: Veggie, FS-2020-01-007-KSC (2020)"
+    url: https://www.nasa.gov/wp-content/uploads/2019/04/veggie_fact_sheet_508.pdf
+    quote: "VEG-01 A included one set of six plant pillows planted with red romaine lettuce seeds."
+    kind: specified
+    note: "SPLASH #33 specimen_size: '2 or 6 plant pillows'; Massa et al. slides (NTRS 20160006561): '1, 2, 3 or 6 per Veggie'. VEG-05 used 6 pillows per unit (OSD-767)."
+  layout:
+    value: "pillows bungeed on a root-mat reservoir (21.6 x 35.6 cm) lying on the baseplate; LED light cap overhead"
+    unit: '-'
+    source: "Massa G.D. et al. (2016) Growth Chambers on the ISS for Large Plants, slides, 8th Int. Symp. Light in Horticulture (NTRS 20160006561)"
+    url: https://ntrs.nasa.gov/citations/20160006561
+    quote: "Footprint: Baseplate: 29.2 cm x 36.8 cm Root mat: 21.6 cm x 35.6 cm"
+    kind: specified
+    note: "The in-plane arrangement of the six pillows (e.g. 2 x 3) is not stated in any source opened."
+
+specimen:
+  types:
+    value: ["Lactuca sativa 'Outredgeous'", "Zinnia (VEG-01C)", "Brassica rapa (mizuna)", "Solanum lycopersicum 'Red Robin'", "Arabidopsis thaliana (APEX plates)"]
+    unit: '-'
+    source: "NASA Facts: Veggie, FS-2020-01-007-KSC (2020)"
+    url: https://www.nasa.gov/wp-content/uploads/2019/04/veggie_fact_sheet_508.pdf
+    quote: "VEG-01 A: ‘Outredgeous’ red romaine lettuce – May 8, 2014 - June 10, 2014 (proof-of-concept experiment)."
+    kind: specified
+    note: "Same fact sheet: 'Overall, 15 different types of plants have grown in space in Veggie.' Crop list from the same fact sheet's experiment list and OSDR datasets OSD-745 (lettuce), OSD-655 (mizuna), OSD-767 (tomato), OSD-218/416 (Arabidopsis plates). Microalgae (OSD-265) also grown in bags."
+
+ventilation:
+  mode:
+    value: forced
+    unit: '-'
+    source: "Massa G.D., Morrow R.C., Levine H.G. (2014) Large Plant Growth Chambers: Flying Soon on a Space Station Near You! ASHS Annual Conference abstract"
+    url: https://ashs.confex.com/ashs/2014/webprogram/Paper19068.html
+    quote: "The baseplate contains vents allowing air from the ISS cabin to be pulled through the plant growth area by a fan in the light cap."
+    kind: specified
+    note: >-
+      Open, single-pass system exchanging with the cabin (not sealed, not recirculating). Khodadad et al.
+      2020 (doi:10.3389/fpls.2020.00199): the bellows 'directs air flow from the bottom of the canopy to the
+      top of the growth volume'. Known anomaly: after a power cycle the fan can read 'low' but actually be
+      off (Khodadad 2020); a fan anomaly in VEG-03D raised humidity to 100% for ~25 days (OSD-412).
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Only discrete fan settings are published: 'Cabin Air Fan Settings: Low / High / Off' (NTRS 20160005059). No volumetric flow found."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "No measured or specified air velocity found for Veggie in any source opened."
+  inlet:
+    value: "vents in the baseplate admitting ISS cabin air below the canopy"
+    unit: '-'
+    source: "Massa, Morrow, Levine (2014) ASHS abstract"
+    url: https://ashs.confex.com/ashs/2014/webprogram/Paper19068.html
+    quote: "The baseplate contains vents allowing air from the ISS cabin to be pulled through the plant growth area by a fan in the light cap."
+    kind: specified
+    note: "Vent count, size and open area not sourced. Screens remove large particles from incoming cabin air (secondary reports; not opened as primary)."
+  outlet:
+    value: "fan in the LED light cap exhausting back to the ISS cabin through fan outlet vent ports"
+    unit: '-'
+    source: "OSDR Hardware Registry 1397 (Veggie), component 'Lighting Array'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1397
+    quote: "a fan which draws ISS cabin air through the hardware and  expels  it  back  to  the  cabin"
+    kind: specified
+    note: "OSD-412 sampling locations include 'the internal fan screen' and 'the fan outlet vent ports'. Fan type/diameter not sourced."
+
+environment:
+  temperature_C:
+    value: [21.7, 24.8]
+    unit: °C
+    source: "Massa G.D., Wheeler R.M., Morrow R.C., Levine H.G. Growth Chambers on the International Space Station for Large Plants, Table 1 (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "Data Logger-Day 792 24.8 ± 0.1 38.2 ± 0.5 - Data Logger-Night 792 21.7 ± 0.1 44.3 ±0.7"
+    kind: measured
+    note: >-
+      [night mean, day mean] from a HOBO logger inside Veggie, VEG-01A, May-June 2014, lights on high,
+      bellows at 32.5 cm. Veggie has no temperature control: 'atmospheric conditions (temperature, relative
+      humidity, and CO2 levels) are maintained by the cabin air of the ISS' (same source). ISS cabin over the
+      same period 22.2 ± 0.2 °C. VEG-03 datasets report ISS conditions of 'temperature 23 C' (OSD-413/414).
+  rh_percent:
+    value: [38.2, 44.3]
+    unit: '%'
+    source: "Massa et al., Table 1 (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "Data Logger-Day 792 24.8 ± 0.1 38.2 ± 0.5 - Data Logger-Night 792 21.7 ± 0.1 44.3 ±0.7"
+    kind: measured
+    note: "[day mean, night mean] inside Veggie, VEG-01A. ISS cabin 43.9 ± 3.7 %. VEG-03 datasets: 50% RH (OSD-413/414). RH reached 100% during a fan failure (OSD-412)."
+  co2_ppm:
+    value: 2798.9
+    unit: ppm
+    source: "Massa et al., Table 1 (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "ISS environment 49301 22.2 ± 0.2 43.9 ± 3.7 2798.9 ± 677.7"
+    kind: measured
+    note: "ISS cabin CO2 (station sensors 'not immediately adjacent to the hardware'), mean ± SD 677.7 ppm over VEG-01A; Veggie has no CO2 control. VEG-03 datasets: '3000-ppm CO2' (OSD-413/414)."
+  o2_percent:
+    value: null
+    unit: '%'
+    note: "Cabin air; no Veggie-specific O2 value found."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Cabin pressure; no Veggie-specific value found."
+  light:
+    value: "red 630 nm, blue 455 nm, green 530 nm LEDs; 100-500 umol m-2 s-1 PPFD; 16 h light / 8 h dark in VEG-01/03"
+    unit: '-'
+    source: "NASA KSC Veggie specification sheet SP-2015-11-435-KSC (NTRS 20160005059)"
+    url: https://ntrs.nasa.gov/citations/20160005059
+    quote: "100-500 μmol m-2 s-1 photosynthetic photon flux density (PPFD) • Red (630 nm), Blue (455 nm) and Green (530 nm)"
+    kind: specified
+    note: >-
+      Preset levels at 10 cm below the light cap: red 120/240/360, blue 30/60/90, green 30 umol m-2 s-1;
+      custom maxima 550/150/100 (Massa et al. NTRS 20160006558, Table 2). Bellows reflection adds ~5.7 umol
+      m-2 s-1. VEG-01/03: ~200 umol m-2 s-1 at pillow surface, 12R:3B:1G, 'A photoperiod was set to 16 h
+      light/8 h dark' (OSD-745).
+
+nutrients:
+  mode:
+    value: arcillite
+    unit: '-'
+    source: "OSDR OSD-745 study protocol (VEG-01A/01B/03A lettuce)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-745/
+    quote: "Plants were grown in Veggie pillows containing solid, porous, arcillite (calcined clay) substrate in two different blends"
+    kind: specified
+  detail:
+    value: "arcillite (Turface) + controlled-release fertilizer in pillows; passive capillary wicking from the root-mat reservoir (Nomex top over a water bag) into the pillow Nomex bottom; 250 mL substrate per pillow (VEG-04)"
+    unit: '-'
+    source: "OSDR OSD-655 study protocol (VEG-04A/B mizuna)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-655/
+    quote: "Each pillow contained 250 mL autoclaved, porous ceramic substrate (Turface Proleague Profile Porous Ceramics, LLC) sifted to 600 µm–1 mm and 1–2 mm, and mixed in proportions of 1:1."
+    kind: specified
+    note: >-
+      Root-mat wicking per fact sheet: 'The root mat Nomex, when in contact with the Nomex plant pillow
+      bottom, allows water transfer to the pillows.' In VEG-01 the reservoir under-supplied the pillows and the
+      crew watered them directly (Massa, Dufour, Smith, NTRS 20150001374).
+
+specimen_load:
+  co2_flux:
+    value: null
+    unit: umol m-2 s-1
+    note: "No canopy gas-exchange measurement in Veggie found; Veggie has no CO2 control or measurement."
+  o2_flux:
+    value: null
+    unit: umol m-2 s-1
+  h2o_flux:
+    value: null
+    unit: L d-1
+    note: "Water-use per pillow over 56 days is tabulated for ground Veggie units in Bunchek et al. ICES-2021-229 (NTRS 20210014997) but only in a table not transcribed here."
+  heat_W:
+    value: null
+    unit: W
+
+walls:
+  material:
+    value: "transparent fluorinated-polymer (Teflon) bellows; light cap above; white EXPRESS-rack walls behind/left"
+    unit: '-'
+    source: "Massa et al. (NTRS 20160006558)"
+    url: https://ntrs.nasa.gov/citations/20160006558
+    quote: "Veggie bellows are made from a fluorinated polymer."
+    kind: specified
+    note: "Massa et al. 2015 slides (NTRS 20150021302) label it 'Teflon Bellows'. Opaque bellows exist for dark-period experiments (same source)."
+  gas_permeability:
+    value: null
+    unit: '-'
+    note: "Not relevant as primary exchange path is the fan-driven open flow; bellows permeability not found."
+
+thermal:
+  power_W:
+    value: 70
+    unit: W
+    source: "NASA Facts: Veggie, FS-2020-01-007-KSC (2020)"
+    url: https://www.nasa.gov/wp-content/uploads/2019/04/veggie_fact_sheet_508.pdf
+    quote: "Veggie runs on about 70 watts for the lights, fans and control electronics."
+    kind: specified
+    note: >-
+      Total electrical power (approximate). The LED light cap has 'a separate air cooling loop' from the
+      EXPRESS rack (Massa et al. NTRS 20160006558), so not all 70 W is released into the growth volume.
+      OSD-655: the black pillows absorb light and the blue-rich recipe added ~15% more energy than red-rich at
+      the same PPF; white Beta-cloth shades blocked 62% of light on the pillow surface.
+
+searched: |
+  Opened: NASA Veggie fact sheet FS-2020-01-007-KSC; NTRS 20160005059 (spec sheet), 20160006558 (Massa et al.
+  ISHS manuscript), 20160006561 and 20160001325 (slides), 20150021302, 20150001374, 20140002382, 20110011606,
+  20120015545, 20210014997 (ICES-2021-229); ASHS 2014 abstract; Khodadad et al. 2020 Front Plant Sci (PMC7067979);
+  OSDR registry 1397, SPLASH #33, OSD-265/412/413/414/655/745/767 protocols. Massa et al. 2017 Open Agriculture
+  (doi:10.1515/opag-2017-0003) could not be retrieved (publisher returned 405/empty). Not found anywhere: fan
+  volumetric flow rate or air velocity, fan type/diameter, vent geometry, pillow outer dimensions, pillow layout.

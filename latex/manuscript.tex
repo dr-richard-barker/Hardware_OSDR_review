@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\onehalfspacing
+\input{../results/macros}
+
+\title{Which spaceflight biology hardware can be modelled? A metadata audit of NASA's hardware catalogues and three-dimensional transient CFD of specimen environments}
+\author{Richard Barker\thanks{ORCID 0000-0001-5681-9857. Correspondence: richard@cosecloud.com.}\\
+\small\textbf{[Affiliation and co-authors to be confirmed by the corresponding author]}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Spaceflight biology results are interpreted against the hardware the specimens lived in, yet the
+physical environment inside that hardware -- airflow, gas composition, temperature, humidity, light
+and nutrient delivery -- is rarely documented well enough to be modelled. We assembled the three
+public NASA hardware sources (the SPLASH instrument catalogue, the OSDR hardware registry and the
+experiment-platform field of every OSDR study) into \hwNEntities{} hardware entities, of which
+\hwNBioCapable{} can carry space-biology payloads and \hwNHabitats{} house live specimens in flight.
+We defined a 15-item minimum-information checklist for computational fluid dynamics (CFD) of a
+specimen environment, scored every specimen-housing item automatically (validated against two blind
+raters; weighted $\kappa=\hwValRaterKappa$ between raters, scorer precision \hwValPrecision{} and
+recall \hwValRecall{}) and found that public metadata support a CFD-ready description for
+\hwTierPublicTierA{} of \hwNHabitats{} items; SPLASH alone supports none. Airflow rate, specimen
+metabolic load and heat load are the least documented inputs. Documentation is better for hardware
+that has been used in OSDR studies (Spearman $\rho=\hwRhoUse$) and for ISS-era hardware, and worst for
+cell and microbe culture hardware. Curation also exposed catalogue defects, including a block of
+\hwNSplashBlock{} SPLASH records whose descriptive fields are displaced from neighbouring rows.
+Targeted literature curation, with every value tied to a verbatim source quotation, raised a subset of
+heavily used hardware to CFD readiness; for these we built three-dimensional transient OpenFOAM models
+in flight (0\,$g$) and ground-control (1\,$g$) conditions, with engineering drawings and four-dimensional
+field records. All code, data snapshots and curated specifications are released for reuse.
+\end{abstract}
+
+\section{Introduction}
+Every spaceflight biology experiment is also an experiment on its hardware. Sealed canisters,
+fan-ventilated growth chambers, rodent habitats and culture cassettes impose their own gas,
+temperature and humidity fields on the specimens, and in microgravity the buoyant convection that
+mixes those fields on Earth is absent. When flight and ground-control specimens differ, part of the
+difference can therefore arise from the hardware environment rather than from gravity itself. NASA's
+Open Science Data Repository (OSDR) now holds hundreds of spaceflight studies \citep{gebre2025,berrios2021},
+and the OSDR also publishes two hardware resources: the SPLASH instrument catalogue \citep{splash} and a
+hardware registry linked to payloads and studies \citep{osdrapi}. Whether these resources describe the
+hardware well enough to reconstruct the specimen environment has not been assessed.
+
+Here we (i) build a crosswalk across the three public hardware sources and count the hardware able to
+carry space-biology payloads, where it flies and how it feeds its specimens; (ii) define a minimum
+information checklist for CFD of a specimen environment and measure, item by item, how much of it the
+public record supplies, validating the automated scoring against blind human-style rating; (iii) run a
+meta-analysis of which hardware is under-documented; and (iv) for hardware whose parameters can be
+sourced, build verified three-dimensional transient CFD models in 0\,$g$ and 1\,$g$, with orthographic
+drawings and time-resolved field records. Throughout, every number either comes from a cited source,
+is computed from cited values, or is declared as a modelling assumption.
+
+\section{Methods}
+\subsection{Data sources and snapshot}
+On 2026-10-12 we downloaded, without authentication, the full SPLASH catalogue
+(\texttt{splash-api/public/instruments}, \hwNSplash{} records, 62 fields), the OSDR hardware registry
+(\texttt{geode-py/ws/api/hardware}, \hwNRegistry{} records, with every linked payload and experiment
+record), and the \texttt{experiment platform}, project identifier and organism of every OSDR dataset
+(\hwNDatasets{} datasets) together with each dataset's metadata, including protocol descriptions.
+Raw responses are archived with SHA-256 checksums; every downstream stage reads only this snapshot.
+
+\subsection{Catalogue integrity}
+Because SPLASH has no structured links, we tested each record's internal consistency before using it.
+For each descriptive field we computed TF--IDF cosine similarity between the field and the identity text
+(name, alternate names and background) of every record; a field that shared almost nothing with its own
+record but matched a record within three rows was flagged as displaced, the signature of a row-offset
+error. Organism classes named in the specimen field were also compared with those named in the
+record's own background. Every flag was reviewed by hand and given a verdict with a reason and, where
+possible, independent evidence from the OSDR registry (Supplementary Table S1).
+
+\subsection{Crosswalk}
+SPLASH and registry records were joined into hardware entities by exact match of normalised aliases and
+by acronyms unambiguous across both sources; joins that would merge two SPLASH records were refused.
+Study platform strings were split into components and mapped many-to-many onto entities (exact alias,
+unambiguous acronym or containment of a specific alias), so that a string naming two devices links to
+both without merging them. Fuzzy matches were never applied automatically: they were written out as
+proposals and accepted or rejected in a curated decision file, each with a reason.
+
+\subsection{Classification}
+Each entity was assigned a role (specimen habitat, hosting facility, processing/fixation, analysis
+instrument, sensor, exposure facility, ground facility or non-biological) from the SPLASH category
+where present, otherwise from keywords in its name and registry description, with curated corrections.
+Organism classes were taken from hardware-specific text and from the organisms of linked OSDR studies.
+Flight platform was taken from the missions of the hardware's registry payloads. Nutrient and water
+delivery modes were assigned only when a verbatim quotation supported them and the mode was compatible
+with an organism the hardware carries.
+
+\subsection{Minimum information for CFD (MI-CFD-HW) and its validation}
+We defined 15 items needed to model a specimen environment (Supplementary Table S2), six of them
+critical: enclosure dimensions, specimen-container dimensions, ventilation mode, airflow rate, specimen
+temperature and specimen type. Each item scores 0 (absent), 0.5 (qualitative only) or 1 (quantitative or
+explicit), with the quotation that earned the score; laboratory preparation, storage and analysis
+sentences are excluded. A hardware item is Tier~A (CFD-ready) when every critical item scores 1, Tier~B
+when every critical item scores at least 0.5, and Tier~C otherwise. Two blind raters scored a seeded
+random sample of 12 specimen-housing entities (180 cells) from the raw text; disagreements were
+adjudicated with written reasons, and the automated scorer was evaluated against the adjudicated gold
+standard without further tuning.
+
+\subsection{Meta-analysis}
+Completeness (mean item score) was compared across hardware class, flight platform, era, SPLASH status
+and catalogue coverage with Kruskal--Wallis tests and pairwise Mann--Whitney tests with
+Benjamini--Hochberg correction, and related to the number of OSDR studies using the hardware by
+Spearman correlation.
+
+\subsection{Literature curation}
+For specimen-housing hardware with OSDR studies, parameters were sought in peer-reviewed papers, NASA
+technical reports, mission documentation and the snapshot itself. Each parameter record carries its value,
+unit, source, URL and a verbatim quotation of at most 40 words; values were never transferred between
+hardware items or filled with typical values, and unresolved parameters are left empty with a note of
+where they were sought. Conflicting sources are recorded.
+
+\subsection{CFD models}
+For Tier~A hardware we generated geometry from parametric primitives in which every dimension is either
+a reference to a sourced parameter or a declared assumption, and produced orthographic drawings from the
+same primitives. Meshes were built with \texttt{snappyHexMesh} and solved with
+\texttt{buoyantBoussinesqPimpleFoam} in OpenFOAM v2606 \citep{weller1998,openfoam2606} (laminar,
+second-order backward time integration). Air properties were computed with CoolProp
+\citep{bell2014,lemmon2000,lemmon2004}; CO$_2$ and water-vapour diffusivities are those tabulated by
+\citet{monteith2008}. CO$_2$ (ppm) and water vapour (mmol\,mol$^{-1}$) were transported as passive scalars
+with specimen sources in cell zones; heat sources enter the energy equation. Each case was run with
+gravity off (flight) and on (ground control).
+
+\paragraph{Verification.} The solver configuration was verified on the differentially heated square
+cavity against the reference Nusselt numbers of \citet{devahldavis1983} and \citet{hortmann1990} (as
+tabulated by \citet{gjesdal2003}) at three Rayleigh numbers on three meshes (mean Nu
+\hwNuRaFiveNSixFour{}, \hwNuRaFiveNNineSix{} and \hwNuRaFiveNOneTwoEight{} at
+$Ra=10^5$ versus 4.522), on one-dimensional diffusion against the analytic solution, and by closing the
+transient CO$_2$ balance (source = outflow + accumulation) in every hardware run. Discretisation
+uncertainty was estimated with the grid convergence index \citep{celik2008}.
+
+\section{Results}
+\subsection{The hardware catalogue}
+The crosswalk produced \hwNEntities{} entities (\hwNSplash{} in SPLASH, \hwNRegistry{} in the registry);
+\hwNPlatformNotHardware{} study platform components named a vehicle, location, ground analogue or
+generic item rather than hardware. \hwNBioCapable{} entities can carry space-biology payloads and
+\hwNHabitats{} house live specimens during flight (Fig.~\ref{fig:funnel}). Only \hwNHabUsed{} of these are
+linked to at least one OSDR study. Mission records place bio-capable hardware on the Space Shuttle
+(\hwNPlatShuttle{}), on free-flying biosatellites (\hwNPlatFreeFlyerBionCosmosBiosatellite{}) and on the ISS
+(\hwNPlatIss{}). Nutrient delivery was evidenced for fewer than half of the habitats
+(\hwNNutNoneEvidenced{} with no evidence); where evidenced, animal food and water
+(\hwNNutAnimalFoodWater{}), culture medium (\hwNNutLiquidCultureMedium{}) and agar
+(\hwNNutAgarGel{}) were the commonest modes.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.85\linewidth]{../results/figures/F1_catalogue_funnel.pdf}
+\caption{Space-biology hardware in the three NASA sources, from all entities to those whose public
+metadata support a CFD model.}\label{fig:funnel}
+\end{figure}
+
+\subsection{Catalogue defects}
+\hwNSplashBlock{} SPLASH records (\#121--\#147) carry descriptive fields displaced from neighbouring rows:
+\hwNSplashMisattributed{} fields were confirmed as misattributed on review, for example a Plant Growth Unit
+record whose specimen field describes an RNA thermal cycler, and a BRIC-Opti canister record carrying
+the crop list and CO$_2$, humidity and temperature control ranges of the Advanced Plant Habitat. The
+\texttt{sources}, \texttt{schematics} and \texttt{study\_links} fields are empty in every record.
+\hwNDatasetsNoPlatform{} of \hwNDatasets{} OSDR datasets have no experiment-platform entry; the remainder
+use \hwNPlatformStrings{} free-text strings, with \hwNVeggieSpellings{} spellings of Veggie alone.
+
+\subsection{How much of a CFD model the public record supplies}
+Specimen type is almost always stated (\hwItemBOneQuant\% quantitative), but airflow rate
+(\hwItemFTwoQuant\%), specimen metabolic load (\hwItemBThreeQuant\%) and heat load (\hwItemTOneQuant\%)
+are almost never given (Fig.~\ref{fig:items}). Median completeness was \hwComplMedianPublic{} using all
+public sources and \hwComplMedianSplash{} using SPLASH alone. \hwTierPublicTierA{} of \hwNHabitats{}
+specimen-housing items reached Tier~A from public metadata and \hwTierSplashTierA{} from SPLASH alone;
+waiving the airflow requirement for sealed or passive hardware raised this to \hwTierTierWaivefA{}.
+Blind raters agreed on \hwValRaterExact\% of 180 cells (weighted $\kappa=\hwValRaterKappa$). Against the
+adjudicated gold standard the automated scorer never credited absent information (precision
+\hwValPrecision) but missed some (recall \hwValRecall; mean completeness \hwValAutoMean{} versus
+\hwValGoldMean{} gold), so automated completeness is a conservative lower bound; no sampled entity was
+Tier~A on the gold scores either.
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.9\linewidth]{../results/figures/F2_item_coverage.pdf}
+\caption{Coverage of each MI-CFD-HW item across specimen-housing hardware. Dark: quantitative; light:
+qualitative only; grey: absent. Ticks: quantitative in SPLASH alone.}\label{fig:items}
+\end{figure}
+
+\subsection{Which hardware is under-documented}
+Completeness differed by hardware class (Kruskal--Wallis $p=\hwKWHwClassP$), flight platform
+($p=\hwKWPlatformP$) and catalogue coverage ($p=\hwKWCoverageP$), but not by era ($p=\hwKWEraP$) or SPLASH
+status ($p=\hwKWStatusP$) (Fig.~\ref{fig:groups}). Cell and microbe culture hardware was least documented
+and ISS hardware best. Hardware used in OSDR studies was better documented than unused hardware
+($p=\hwKWUsedP$; $\rho=\hwRhoUse$ with the number of studies, Fig.~\ref{fig:usage}), but several used
+items remain below the median.
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{../results/figures/F3_completeness_groups.pdf}
+\caption{MI-CFD-HW completeness by hardware class, flight platform and catalogue coverage (bars:
+medians).}\label{fig:groups}
+\end{figure}
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.75\linewidth]{../results/figures/F4_usage_vs_completeness.pdf}
+\caption{Documentation versus scientific use. Points: specimen-housing hardware.}\label{fig:usage}
+\end{figure}
+
+\subsection{CFD of curated hardware}
+% Results of the curated-tier CFD runs are inserted here once all runs pass verification.
+TODO: curated tiers, verification table, per-hardware environment cards and 0\,$g$/1\,$g$ contrasts.
+
+\section{Discussion}
+TODO: discussion after CFD results.
+
+\section*{Data and code availability}
+Code, the 2026-10-12 source snapshot, curated hardware specifications, model definitions, reduced CFD
+outputs and this manuscript's sources are archived on Zenodo (DOI to be assigned on deposit) under the
+MIT licence (code) and CC-BY-4.0 (data and figures). SPLASH data were obtained from NASA's Space Life
+Sciences Archive of Scientific Hardware \citep{splash}.
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

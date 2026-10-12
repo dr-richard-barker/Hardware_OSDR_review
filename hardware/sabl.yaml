@@ -61,7 +61,8 @@ geometry:
     unit: "-"
     source: "Niederwieser et al. (2015) ICES-2015-081"
     url: http://hdl.handle.net/2346/64364
-    quote: "the SABL SRM contains a standardized mounting system allowing users to mount hardware to any of the 5 walls for better heat transfer. This is accomplished using an evenly spaced and uniform grid of threaded holes on a 1” standard spacing."
+    quote: "This is accomplished using an evenly spaced and uniform grid of threaded holes on a 1” standard spacing."
+    note: "Preceding sentence: the SRM 'contains a standardized mounting system allowing users to mount hardware to any of the 5 walls for better heat transfer'."
     kind: specified
 
 ventilation:

@@ -1,0 +1,215 @@
+entity_id: HW069
+name: Aquatic Habitat (AQH)
+vendor: JAXA; built by Mitsubishi Heavy Industries (MHI)
+splash_ids: [69]
+registry_ids: []
+curated: "2026-10-12"
+transport_medium: water   # aquatic habitat: 'ventilation' block describes the WATER loop, not air
+
+location:
+  value: "ISS Japanese Experiment Module (Kibo), work volume of the Multi-Purpose Small Payload Rack (MSPR)"
+  unit: "-"
+  source: "Sato T, Shoji K (MHI) (2012) Aquatic Habitat (AQH), the aquatic animal experiment facility in space environment. 63rd IAC, IAC-12-A2.5.14 (abstract)"
+  url: https://iafastro.directory/iac/paper/id/14703/abstract-pdf/IAC-12,A2,5,14.p1,x14703.brief.pdf
+  quote: "installed in the work volume of Multi-Purpose Standard Payload Rack (MSPR) in Japanese Experiment Module (JEM) of International Space Station (ISS)."
+  kind: specified
+  note: >-
+    OSD-83 protocol: AQH "is installed in a small powered multipurpose payload rack and housed in the
+    Japanese Experiment Module (Kibo)". Launched on HTV-3 (July 2012). First medaka run 26 Oct - 24/25 Dec 2012.
+
+geometry:
+  enclosure_internal_mm:
+    value: [150, 70, 70]
+    unit: mm
+    source: "JAXA Kibo Experiment - Aquatic Habitat (AQH) archive page (last updated 13 May 2009)"
+    url: https://iss.jaxa.jp/en/kiboexp/pm/aqh/
+    quote: "Inner dimensions: 150 X 70 X 70mm"
+    kind: specified
+    note: >-
+      Per-aquarium inner dimensions (the CFD water domain); confirmed by Sato & Shoji IAC-12 abstract
+      ("inner dimensions15x7x7cm"). Axis order (L x W x H) not stated. SOURCE CONFLICT: SPLASH _id 69
+      'dims' = "90.0x70.0x60.0 cm"; this equals the MSPR Work Volume envelope (JAXA MSPR page:
+      "600mm(H) x 900mm(W) x 700mm(D)", https://humans-in-space.jaxa.jp/en/biz-lab/experiment/facility/pm/mspr/),
+      not the AQH itself. External AQH dimensions not found.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: >-
+      Aquaria are water-filled with an 'air stabilizer' for air/water interface control (JAXA page:
+      "Air Stabilizer is equipped for air/water interface control and Access Port is equipped for fish
+      sampling"); the air-pocket volume was not found.
+  water_volume_L:
+    value: 0.7
+    unit: L
+    source: "Chatani M et al. (2015) Microgravity promotes osteoclast activity in medaka fish reared at the international space station. Sci Rep 5:14172. doi:10.1038/srep14172"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4585676/
+    quote: "The total water volume of the water circulation system was 3.2 L, and the water volume of each aquarium was 0.7 L."
+    kind: specified
+    note: >-
+      0.7 L per aquarium; 3.2 L total closed loop (aquaria + plumbing/filters; split of remaining 1.8 L
+      not reported). Same values on the JAXA AQH page and in OSD-83 ("each holding about 700 ml of water").
+      SOURCE CONFLICT: Sato & Shoji IAC-12 abstract states "600 cc water" per aquarium.
+  water_volume_total_loop_L:
+    value: 3.2
+    unit: L
+    source: "Chatani M et al. (2015) Sci Rep 5:14172"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4585676/
+    quote: "The total water volume of the water circulation system was 3.2 L"
+    kind: specified
+  specimen_container:
+    value: "aquarium (closed water loop, air stabilizer for air/water interface, access port for sampling, automatic feeder, 2 LEDs + 2 CCD cameras per aquarium)"
+    unit: "-"
+    source: "JAXA Kibo Experiment - Aquatic Habitat (AQH) archive page"
+    url: https://iss.jaxa.jp/en/kiboexp/pm/aqh/
+    quote: "The aquarium has automatic feeding system, LED light for day/night cycle and CCD camera for observation."
+    kind: specified
+  specimen_container_mm:
+    value: [150, 70, 70]
+    unit: mm
+    source: "JAXA Kibo Experiment - Aquatic Habitat (AQH) archive page"
+    url: https://iss.jaxa.jp/en/kiboexp/pm/aqh/
+    quote: "Inner dimensions: 150 X 70 X 70mm"
+    kind: specified
+  n_specimen_units:
+    value: 2
+    unit: aquaria
+    source: "Sato T, Shoji K (2012) IAC-12-A2.5.14 abstract"
+    url: https://iafastro.directory/iac/paper/id/14703/abstract-pdf/IAC-12,A2,5,14.p1,x14703.brief.pdf
+    quote: "(3) Aquarium: 2 aquariums can be operated simultaneously, inner dimensions15x7x7cm, 600 cc water"
+    kind: specified
+  layout:
+    value: "one closed water loop serving two aquaria in parallel"
+    unit: "-"
+    source: "JAXA Kibo Experiment - Aquatic Habitat (AQH) archive page"
+    url: https://iss.jaxa.jp/en/kiboexp/pm/aqh/
+    quote: "One closed water loop with two aquariums"
+    kind: specified
+    note: "Flow is set per aquarium (see ventilation.flow_rate_L_min), implying parallel branches; branch geometry not published."
+
+ventilation:   # MEDIUM = WATER
+  mode:
+    value: forced
+    unit: "-"
+    source: "Sato T, Shoji K (2012) IAC-12-A2.5.14 abstract"
+    url: https://iafastro.directory/iac/paper/id/14703/abstract-pdf/IAC-12,A2,5,14.p1,x14703.brief.pdf
+    quote: "(c) O2 supply/CO2 removal: gas exchange by artificial lung"
+    kind: specified
+    note: >-
+      Pumped closed WATER loop ("(2) Breeding Water Loop: Closed loop"; "(b) Water flow rate : 0 to 0.5 L/min",
+      same abstract); gas exchange with cabin air via an artificial lung (JAXA page: "Gas exchange with air by
+      artificial lung (gas permeable membrane)"). Not an air-ventilated habitat.
+  flow_rate_L_min:
+    value: 0.1
+    unit: L/min (water, per aquarium)
+    source: "Chatani M et al. (2015) Sci Rep 5:14172"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4585676/
+    quote: "the water flow rate was controlled at 0.1 L per a minute for each aquarium"
+    kind: measured
+    note: >-
+      Operating value for the 2012 medaka run (Methods, 'Rearing system'). Design range: JAXA page
+      "Water flow rate range: 0-0.5 L/min" with "Water flow rate accuracy: ±10 % of set point".
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Water inlet/outlet positions and port sizes not published, so no mean velocity derived."
+  inlet:
+    value: null
+    note: "Aquarium water inlet geometry/position not found."
+  outlet:
+    value: null
+    note: "Not found."
+
+environment:
+  temperature_C:
+    value: [25.5, 26]
+    unit: degC (water)
+    source: "Chatani M et al. (2015) Sci Rep 5:14172"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4585676/
+    quote: "the water temperature was kept at 25.5–26 °C"
+    kind: measured
+    note: "Design range 25-30 degC, accuracy ±1 degC of set point (JAXA page; IAC-12 abstract)."
+  rh_percent:
+    value: null
+    note: "Not applicable (water medium). SPLASH rh_range = 'N/A'."
+  co2_ppm:
+    value: null
+    note: "Dissolved CO2 removed by artificial lung; no value found."
+  o2_percent:
+    value: ">90 % air saturation (dissolved O2)"
+    unit: "% saturation (dissolved O2 in water)"
+    source: "Chatani M et al. (2015) Sci Rep 5:14172"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4585676/
+    quote: "The dissolved oxygen was maintained at over 90% saturation by gas exchange with the cabin"
+    kind: measured
+    note: "Dissolved oxygen in the breeding water, not gas-phase O2 %."
+  pressure_kPa:
+    value: null
+    note: "Water pressure is a monitored housekeeping parameter (IAC-12 abstract) but no value was found."
+  light:
+    value: "LED, 14 h light (380 lux) / 10 h dim (10 lux)"
+    unit: "-"
+    source: "Chatani M et al. (2015) Sci Rep 5:14172"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4585676/
+    quote: "controlled to be 14 hrs as light (380 lux) and 10 hrs as dim light (10 lux"
+    kind: measured
+    note: "Design: 'Light intensity: selectable in the range of 0-1000 Lux'; 'Two LED lights for each aquarium' (JAXA page). OSD-83: LEDs 'simulate 14-h day and 10-h night cycles'."
+
+nutrients:
+  mode:
+    value: water_loop
+    unit: "-"
+    source: "JAXA Kibo Experiment - Aquatic Habitat (AQH) archive page"
+    url: https://iss.jaxa.jp/en/kiboexp/pm/aqh/
+    quote: "Biological filter with nitrifying bacteria for NH4/NO2 removal"
+    kind: specified
+    note: "Water quality: biological filter (NH4/NO2), water exchange for NO3 removal, activated-carbon physical filter (JAXA page)."
+  detail:
+    value: "automatic feeder, powdered food; programmable up to 300 feedings of max 20 mg per feeding cassette"
+    unit: "-"
+    source: "Sato T, Shoji K (2012) IAC-12-A2.5.14 abstract"
+    url: https://iafastro.directory/iac/paper/id/14703/abstract-pdf/IAC-12,A2,5,14.p1,x14703.brief.pdf
+    quote: "(7) Automatic Feeding: Programmable feeding according to specimen stages up to 300 times of max 20 mg powder foods /1 feeding cassette"
+    kind: specified
+    note: "Chatani 2015: food 'supplied to the fish by an automatic feeder in the aquarium twice or 3 times a day'."
+
+specimen:
+  type:
+    value: "Japanese medaka (Oryzias latipes), 8 fish per aquarium at start (2012 run); F1 fish 16 mm, 6 weeks old at launch"
+    unit: "-"
+    source: "OSDR OSD-83 study protocol description (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-83/
+    quote: "The F1 fish (16 mm in length, six-weeks old at launch, and n = 8 in each of two aquaria) were transferred from the Fish Carrier to the two aquaria of the AQH"
+    kind: specified
+    note: "SPLASH specimen_types_supported: 'Small fish (medaka, zebrafish)'. Murata et al. 2015 PLoS ONE (PMC4591011) is the source article."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+    note: "No adult medaka O2-consumption rate at 25-26 degC was found in an opened source."
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: null
+    note: "Aquarium wall material not found."
+  gas_permeability:
+    value: null
+    note: "Gas exchange is through the artificial lung (gas-permeable membrane); membrane area/permeability not published."
+
+thermal:
+  power_W:
+    value: null
+    note: "AQH power not found. JAXA MSPR page gives a 500 W total shared by Work Volume and Small Experiment Area (rack resource, not AQH draw)."
+
+searched: |
+  OSDR snapshot 2026-10-12: SPLASH _id 69; biodata OSD-83, OSD-133 (no registry hardware record).
+  JAXA iss.jaxa.jp AQH archive page; JAXA humans-in-space MSPR page; IAC-12 (Sato & Shoji, MHI) and
+  IAC-13 (Fujimoto, JAXA) abstracts; Murata et al. 2015 PLoS ONE (PMC4591011); Chatani et al. 2015
+  Sci Rep (PMC4585676); Universe Today 2012 article (secondary, not used).
+  Not found: AQH external dimensions/mass/power, aquarium inlet/outlet geometry, wall material,
+  air-stabilizer volume, artificial-lung area, adult medaka O2 uptake.

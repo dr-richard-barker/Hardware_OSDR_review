@@ -1,0 +1,224 @@
+entity_id: HW147
+name: Closed Equilibrated Biological Aquatic System (C.E.B.A.S.) Minimodule
+vendor: OHB-System, Bremen (for DLR/DARA); science prototypes from C.E.B.A.S. Center of Excellence, Ruhr-University Bochum
+splash_ids: [147]
+registry_ids: ["907"]
+curated: "2026-10-12"
+transport_medium: water   # aquatic habitat: 'ventilation' block describes the WATER loop unless stated
+
+location:
+  value: "Space Shuttle middeck, single standard middeck locker (STS-89 Jan 1998; STS-90 Neurolab Apr-May 1998)"
+  unit: "-"
+  source: "NASA STS-89 Press Kit (Jan 1998), section 'Closed Equilibrated Biological Aquatic System (CEBAS)'"
+  url: https://www.nasa.gov/wp-content/uploads/2023/05/sts-089-press-kit.pdf
+  quote: "The Closed Equilibrated Biological Aquatic System is a secondary middeck payload which fits inside a standard middeck locker."
+  kind: specified
+  note: >-
+    Neurolab Final Report (NTRS 20020073543, p.48): "One CEBAS was flown on Neurolab in the Space Shuttle
+    middeck." On Neurolab it sat next to the galley oven, which the failure review linked to over-temperature.
+    DATA-QUALITY FLAG: SPLASH _id 147 is in the scrambled range 125-147; its specimen_types_supported field is
+    misattributed (AAEU species) per data/curated/splash_field_review.csv and is not used. Its 'volume'
+    field ("~100 L animal + two 15 L plant tanks") matches the ~100 L ground C.E.B.A.S. system (Blum et al.
+    1994, SAE 941344), not the flown 8.6 L Minimodule, and is not used.
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: >-
+      Only "fits inside a standard middeck locker" is stated (press kit); no CEBAS-specific internal or
+      external dimensions found. Locker envelope not imported (different hardware).
+  water_volume_L:
+    value: 8.6
+    unit: L
+    source: "OSDR registry hardware 907, component 'Experiment Module' (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "The experiment module offers in a modular way up to four separate compartments for adult and larval stages of fish and snails, plants, and the microbiological filter system in a total water volume of 8.6 liters."
+    kind: specified
+    note: >-
+      Identical sentence in Neurolab Final Report (NTRS 20020073543, p.50). SOURCE CONFLICT: registry
+      experiment OS-545 says CEBAS "contained seven liters of water and 50 grams of the hornweed" (possibly
+      excluding filter volume; not reconciled). Ground prototype mini-module: ~11 L (Blum et al. 1994 SAE 941344).
+  specimen_container:
+    value: "experiment module (housing unit) with up to 4 compartments in series: filter, plant chamber, small animal tank, animal tank; front window; feeder"
+    unit: "-"
+    source: "Neurolab Final Report for the Ames Research Center Payload (NASA, 2002), Figure 3.3 'Closed Equilibrated Biological Aquatic System' (top view labels)"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "Filter ... Plant Chamber ... Small Animal Tank ... Animal Tank ... Gas exchanger ... Water pump ... Gore membrane ... Peltier pump"
+    kind: specified
+    note: >-
+      Quote is the sequence of figure labels (PDF p.61, scanned; figure rotated). Drawing also shows Sensory
+      module, Fan, Air Inlet / Air Outlet on front panel, Camera, V8 Recorder, Base-Plate. Compartment
+      dimensions not given.
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "No compartment dimensions found (SAE 1999-01-1988 and Adv Space Res 31:1683 full texts not accessible)."
+  n_specimen_units:
+    value: 4
+    unit: compartments
+    source: "OSDR registry hardware 907, component 'Experiment Module'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "up to four separate compartments for adult and larval stages of fish and snails, plants, and the microbiological filter system"
+    kind: specified
+  layout:
+    value: "single closed water loop: water pump -> sensory module -> gas exchanger -> tanks (animal, small animal, plant chamber, filter) -> pump"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), Figure 3.3"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "Tank System ... Water pump ... Sensory module ... Gas exchanger ... Filter ... Plant Chamber ... Small Animal Tank ... Animal Tank"
+    kind: specified
+    note: "Loop order inferred from the drawing's piping (figure labels quoted); flow direction within the tank stack is not explicit."
+
+ventilation:   # MEDIUM = WATER
+  mode:
+    value: forced
+    unit: "-"
+    source: "OSDR registry hardware 907, component 'CEBAS Components'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "Water loop:  Water pump is adjusted to a flow stream of ~24l/hr.  Contains a heat exchanger which exceeds acceptance test performance standards."
+    kind: specified
+    note: >-
+      Pumped closed water loop. Air side: a fan draws cabin air through front-panel Air Inlet/Air Outlet for
+      the Peltier heat sink and lamp cooling (Neurolab report Fig. 3.3 and anomaly text: "air inlet filter for
+      the vegetation lamp cooling loop and controller heat sink"). Water is sealed ("Safety Box: A watertight
+      compartment seals all water containing components").
+  flow_rate_L_min:
+    value: 0.4
+    unit: L/min (water)
+    source: "OSDR registry hardware 907, component 'CEBAS Components'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "Water pump is adjusted to a flow stream of ~24l/hr."
+    kind: derived
+    note: "Unit conversion: ~24 L/h / 60 = 0.4 L/min (approximate, set-point not measured value)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found (water or cooling air)."
+  inlet:
+    value: "water inlet on experiment module side ('Water In', 'Water in/out'); cooling-air inlet on front panel"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), Figure 3.3"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "Water In ... Water in/out ... Air in/out ... Air Inlet ... Air Outlet ... Front panel"
+    kind: specified
+    note: "Figure labels only; no port sizes."
+  outlet:
+    value: null
+    note: "See inlet; no sizes found."
+
+environment:
+  temperature_C:
+    value: [23, 27]
+    unit: degC (water)
+    source: "Neurolab Final Report for the Ames Research Center Payload (NTRS 20020073543), section 3.2.3, p.50"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "During Neurolab, on FD 13 through FD 16, the CEBAS cooling system failed to maintain the water temperature within the specified 25 ± 2 °C. The temperature reached its maximum of 29.5 °C on FD 16."
+    kind: specified
+    note: >-
+      Specification 25 ± 2 degC (value given as range). Measured excursion to 29.5 degC on STS-90 FD16.
+      STS-89: "higher-than-expected temperatures were recorded, but they remained within acceptable levels".
+      SPLASH temperature_range "Controlled: 18 - 30 °C" (scrambled-range record) not used.
+  rh_percent:
+    value: null
+    note: "Not applicable (water medium)."
+  co2_ppm:
+    value: null
+    note: "Not found."
+  o2_percent:
+    value: null
+    note: >-
+      Dissolved O2 was monitored (registry 907: support module monitors "temperature, pH, and oxygen
+      concentration") and low O2 automatically switched on vegetation lamps (Neurolab report p.50); no
+      values found.
+  pressure_kPa:
+    value: "cabin-equalised via Gore membrane"
+    unit: "-"
+    source: "OSDR registry hardware 907, component 'CEBAS Components'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "Pressure Balancing:  Air pressure adaptation is achieved via the Gore membrane, a water barrier."
+    kind: specified
+  light:
+    value: "16 h day / 8 h night (animal compartments); vegetation lamps for plant chamber"
+    unit: "-"
+    source: "OSDR registry hardware 907, component 'CEBAS Components'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "Programmable experiment control electronics:  1.5h battery backup for experiment timeline program.  Day/night illumination. (16h/8h)"
+    kind: specified
+    note: "Lamp type/intensity for the flight unit not found (1994 ground prototype used 4 W fluorescent lamps, SAE 941344)."
+
+nutrients:
+  mode:
+    value: water_loop
+    unit: "-"
+    source: "OSDR registry hardware 907, description"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "the water quality is maintained and regulated within the equilibrated biological aquatic system, where every organism serves as an experimental object as well as an integral part of the life support"
+    kind: specified
+  detail:
+    value: "fish fed once per day (automatic feeder) 5 min before daily video period; microbial filter for nitrification"
+    unit: "-"
+    source: "OSDR registry hardware 907, component 'CEBAS Components'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/907
+    quote: "Feeding Sequence: Once per day 5 minutes before daily video observation period."
+    kind: specified
+
+specimen:
+  type:
+    value: "swordtail fish Xiphophorus helleri (4 adult + 200 juvenile), 35 adult snails Biomphalaria glabrata, hornweed Ceratophyllum demersum (~50 g) - STS-90 load"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), Table 2.23 'Aquatic Team Animal Groups and Controls', p.33"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "4 adult and 200 juvenile swordtail fish (Xiphophorus helleri); 35 adult snails (Biomphalaria glabrata); hornweed (Ceratophylum demersum) (maintained together in the CEBAS hardware)"
+    kind: specified
+    note: >-
+      Hornweed preflight weight 49.97 g (flight) per Table 2.27. Registry payload CEBAS (STS-89) subject
+      groups: Biomphalaria glabrata, Ceratophyllum demersum, Xiphophorus helleri. Table text OCR'd from a scan.
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+    note: "Not found for the CEBAS assemblage."
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: null
+    note: "Not found."
+  gas_permeability:
+    value: null
+    note: "Gas exchanger (artificial-lung type) and Gore membrane present; area/permeability not found."
+
+thermal:
+  power_W:
+    value: null
+    note: "Not found."
+  mass_kg:
+    value: 35.8
+    unit: kg
+    source: "NASA STS-89 Press Kit, 'Payload and Vehicle Weights' table (pounds)"
+    url: https://www.nasa.gov/wp-content/uploads/2023/05/sts-089-press-kit.pdf
+    quote: "CEBAS 79"
+    kind: derived
+    note: "Table header 'Pounds'; 79 lb x 0.4536 = 35.8 kg."
+  cooling:
+    value: "Peltier element with fan-cooled heat sink drawing cabin air through front-panel air inlet filter"
+    unit: "-"
+    source: "Neurolab Final Report (NTRS 20020073543), section 3.2.3, p.51"
+    url: https://ntrs.nasa.gov/api/citations/20020073543/downloads/20020073543.pdf
+    quote: "the air inlet filter for the vegetation lamp cooling loop and controller heat sink was found to be almost completely blocked with lint and hair."
+    kind: specified
+    note: "'Peltier pump' and 'Fan' labelled in Fig. 3.3."
+
+searched: |
+  OSDR snapshot 2026-10-12: SPLASH _id 147 (scrambled range - used only for flags); registry hardware 907,
+  payload CEBAS, experiments OS-438, OS-495, OS-545; splash_field_review.csv.
+  Neurolab Final Report for the ARC payload (NTRS 20020073543, scanned, OCR'd locally); STS-89 press kit;
+  STS-89 mission report (no specs); SAE 941344 and 1999-01-1988 abstract pages (full texts paywalled);
+  Blum et al. 2003 Adv Space Res 31(7):1683 (abstract only via search; not used); OHB C.E.B.A.S. page (404).
+  Not found: CEBAS dimensions, compartment geometry, power, lamp intensity, dissolved O2 values, organism respiration.

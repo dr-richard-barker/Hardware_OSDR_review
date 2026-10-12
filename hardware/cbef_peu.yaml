@@ -1,0 +1,221 @@
+# Cell Biology Experiment Facility (CBEF) / Plant Experiment Unit (PEU), JAXA Kibo - curated 2026-10-12
+# Every non-null value carries a verbatim quote from a source opened in the curation session.
+# Scope: the PEU plant chamber (the specimen enclosure) inside a medium canister inside the CBEF incubator.
+entity_id: HW037
+name: Cell Biology Experiment Facility / Plant Experiment Unit (CBEF/PEU)
+splash_ids: [37]
+registry_ids: ["2048"]
+
+location:
+  value: "CBEF incubator in the Kibo Pressurized Module; PEU canisters in the microgravity compartment (6 slots) or the 1 g centrifuge compartment (4 slots)"
+  unit: '-'
+  source: "JAXA Humans in Space: Cell Biology Experiment Facility (CBEF) web page"
+  url: https://humans-in-space.jaxa.jp/en/biz-lab/experiment/facility/pm/cbef/
+  quote: "The µG compartment and the 1G compartment can accommodate six and four of medium sized canisters respectively."
+  kind: specified
+  note: "CBEF incubator volume: 'Incubator unit: 130 l' (JAXA Handbook for Use of Laboratory in Kibo, Table 2.2-1). Medium canister internal 120 x 195 x 71 mm (see geometry.layout note)."
+
+geometry:
+  enclosure_internal_mm:
+    value: [56, 46, 58]
+    unit: mm
+    source: "JAXA Handbook for Use of Laboratory in Kibo, E-version revised Feb. 2014, Table 2.1.2-1 Specifications of PEU"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Size: (External) 60 × 50 × 60 (mm) (Internal) 56 × 46 × 58 (mm) Capacity: 149 mL"
+    kind: specified
+    note: >-
+      PEU plant chamber (two-part container: rock-wool bed below, temperature/humidity sensor and ventilation
+      port in the top part). The chamber sits inside the PEU (W210 x H80 x D130 mm) inside a medium canister
+      inside the CBEF; growth height is limited 'because of restrictions on the rotor radius of the artificial
+      gravity compartment' (same handbook). Axis assignment of 56/46/58 to W/D/H not stated.
+  free_air_volume_L:
+    value: 0.149
+    unit: L
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Size: (External) 60 × 50 × 60 (mm) (Internal) 56 × 46 × 58 (mm) Capacity: 149 mL"
+    kind: specified
+    note: >-
+      Total chamber capacity including the rock-wool bed (56 x 46 x 58 mm = 149.4 mL, consistent). CONFLICT:
+      JAXA BEU web page 'Capacity of the plant growth container: 120 ml (Shoot Height: 50 mm)' and Yano 2020
+      BSJ-Review ('地上部高さ50 mm，容積120 ml' = shoot-zone height 50 mm, volume 120 mL) - plausibly the volume
+      above the 10 mm bed (149 - 42x52x10/1000 = 127 mL, derived), but not stated.
+  specimen_container:
+    value: "rock-wool support bed (seed bed) in the bottom part of the PEU plant chamber"
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "(Bottom) Rock wool bed and bed moisture sensor port (Top) Temperature and humidity sensor and ventilation port"
+    kind: specified
+    note: "PEU has also hosted 6-cm Petri dishes with Gelrite MS medium (doi:10.3390/plants11070956, abstract/full-text excerpt seen, not curated here)."
+  specimen_container_mm:
+    value: [42, 52, 10]
+    unit: mm
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Support bed sowing area: Approx. 20 cm2 Support bed size: 42 × 52 × 10 (mm)"
+    kind: specified
+  n_specimen_units:
+    value: 8
+    unit: PEUs (Space Seed flight)
+    source: "Suto T. et al. Space Seed - Reproductive growth of Arabidopsis under Microgravity (JAXA repository record 13115)"
+    url: https://jaxa.repo.nii.ac.jp/record/13115/files/65129055.pdf
+    quote: "Arabidopsis seeds sown on dry rockwool in 8 PEUs were transported from Kennedy Space Center to the ISS by Space Shuttle Discovery in STS-128 (17A) mission."
+    kind: specified
+    note: "Capacity 6 (µG) + 4 (1G) canisters per CBEF. One chamber per PEU. Kato et al. 2022 (Resist Tubule long-term run): one PEU in µG and one on the 1 g rotor."
+  layout:
+    value: "1 plant chamber per PEU; PEU in a medium canister (internal 120 x 195 x 71 mm); 1 g compartment centrifuge reference radius 112.5 mm"
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.2-1 Specifications for CBEF"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Internal dimensions: 120 × 195 × 71 (mm) [However, the minimum internal dimension is 106 × 175 × 57 (mm) because there is a dead space at each corner.]"
+    kind: specified
+    note: "Gravity setting '0.1 to 2.0g (value at a point 112.5 mm from the rotation center)' (same table); rotation 20-140 rpm (JAXA CBEF web page)."
+
+specimen:
+  types:
+    value: ["Arabidopsis thaliana (Space Seed seed-to-seed; Resist Tubule tua4 mutant)"]
+    unit: '-'
+    source: "Suto T. et al. Space Seed (JAXA repository record 13115)"
+    url: https://jaxa.repo.nii.ac.jp/record/13115/files/65129055.pdf
+    quote: "Arabidopsis seeds successfully germinated, and the plants passed through both vegetative and reproductive processes, such as formation of rosette leaves, bolting of inflorescence stems, flowering, formation of siliques and seeds."
+    kind: specified
+    note: "CBEF itself also hosts C. elegans, cells and mice in other units; OSDR CBEF datasets (OSD-75/112/113/425/956) are all C. elegans, not PEU, and are out of scope for this record."
+
+ventilation:
+  mode:
+    value: forced
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Gas phase components: Forced ventilation of container by operation of ventilation pump (air in CBEF is taken in)"
+    kind: specified
+    note: >-
+      Ventilation pump is switched for humidity control ('Humidity detection with sensor for active control
+      with ventilation pump', same table); JAXA BEU web page also lists an 'Air circulation fan'. Handbook text:
+      'The humidity is controlled passively; toxic or undesirable gases are ejected and the humidity is reduced
+      by taking in cabin air for ventilation' - 'cabin air' there conflicts with the table's 'air in CBEF';
+      the table is used. Ventilation is intermittent (humidity-driven), not continuous.
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Not found (Yano et al. 2013 Adv Space Res 51:780-788 not accessible)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: "ventilation port in the top part of the plant chamber, fed by the ventilation pump with CBEF incubator air"
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "(Bottom) Rock wool bed and bed moisture sensor port (Top) Temperature and humidity sensor and ventilation port"
+    kind: specified
+    note: "Port size and position within the top part not given; whether a separate exhaust port exists is not stated."
+  outlet:
+    value: null
+    unit: '-'
+    note: "Not found."
+
+environment:
+  temperature_C:
+    value: 23.5
+    unit: °C
+    source: "Kato S. et al. (2022) Suppression of Cortical Microtubule Reorientation and Stimulation of Cell Elongation in Arabidopsis Hypocotyls under Microgravity Conditions in Space. Plants 11:465"
+    url: https://doi.org/10.3390/plants11030465
+    quote: "germinated plants were grown at 23.5 ± 0.2 °C under continuous blue/red LED light at 110 μmol m−2 s−1. The relative humidity was maintained between 70% and 80%."
+    kind: measured
+    note: "PEU in CBEF on Kibo, 39-day long-term run (Resist Tubule). JAXA BEU page model setting 'Growth container temperature: 22 deg. C ± 1'. CBEF range 15-40 °C ±1 °C without canister heat (handbook / web)."
+  rh_percent:
+    value: [70, 80]
+    unit: '%'
+    source: "Kato et al. (2022) Plants 11:465"
+    url: https://doi.org/10.3390/plants11030465
+    quote: "germinated plants were grown at 23.5 ± 0.2 °C under continuous blue/red LED light at 110 μmol m−2 s−1. The relative humidity was maintained between 70% and 80%."
+    kind: measured
+    note: "Matches JAXA BEU page 'Growth container humidity: 70 - 80 %RH'. CBEF incubator humidity control 30-80% RH ±5% (handbook) vs '20 % RH to 80 % RH' (JAXA CBEF web page) - CONFLICT on lower bound."
+  co2_ppm:
+    value: null
+    unit: ppm
+    note: "CBEF can control CO2 at 0-10 vol% (handbook; web page), but the CO2 level used for PEU plant runs was not found."
+  o2_percent:
+    value: null
+    unit: '%'
+    note: "Not found."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Not found (Kibo cabin)."
+  light:
+    value: "red 660 nm + blue 470 nm LEDs from the side of the container (white LED for imaging); 110-190 umol m-2 s-1 reported"
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "LED illumination provided from the side of the container - Red (660 nm) and blue (470 nm) LEDs are combined for use."
+    kind: specified
+    note: >-
+      CONFLICT on intensity: handbook text 'approximately 110 μmol/m2s'; handbook table 'Brightness of 26
+      μmol/m2s at center of plant area'; JAXA BEU page 'Illumination: 190 micro-mol/m2 sec' (model setting);
+      Yano 2020 BSJ-Review '110～190 μmolm-2sec-1'; Kato 2022 110 umol m-2 s-1 continuous. Yano 2020: a light
+      diffuser above the sample and metal reflectors on sides/bottom were added for uniformity.
+
+nutrients:
+  mode:
+    value: water_loop
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Water delivery: Water content in bed is measured by near-infrared absorption to conduct active automatic water delivery with liquid feeding pump or regular water delivery operation."
+    kind: specified
+    note: "Rock-wool bed watered by pump from an on-board water bag; nutrient composition of the water not found in sources opened."
+  detail:
+    value: "water bag ~100 mL (85 x 75 x 25 mm) kept at experiment temperature; NIR bed-moisture sensing; rock-wool bed 42 x 52 x 10 mm"
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.1.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Water bag Size: 85 × 75 × 25 (mm) Capacity: Approx. 100 mL"
+    kind: specified
+
+specimen_load:
+  co2_flux:
+    value: null
+    unit: umol s-1
+    note: "Not found; no organism-level value adopted."
+  o2_flux:
+    value: null
+    unit: umol s-1
+  h2o_flux:
+    value: null
+    unit: g d-1
+  heat_W:
+    value: null
+    unit: W
+
+walls:
+  material:
+    value: null
+    unit: '-'
+    note: "Plant-chamber material not found."
+  gas_permeability:
+    value: "medium canister: closed or gas-permeation type (window of gas-permeable membrane)"
+    unit: '-'
+    source: "JAXA Handbook for Use of Laboratory in Kibo (2014), Table 2.2-1"
+    url: https://iss.jaxa.jp/kibo/library/fact/data/pmhandbook_en.pdf
+    quote: "Gas permeation type: Has a window of gas-permeable membrane and delivers gas permeation function under normal environment."
+    kind: specified
+    note: "Which canister style was used for PEU flights is not stated; handbook says PEU uses a 'Special-order canister (dimensions equivalent to those of a medium canister)'."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Only supply rails per canister connector (+5, +12, -15, +15 V DC) are published (handbook, web, SPLASH #37); no wattage."
+
+searched: |
+  Opened: SPLASH #37; OSDR registry 2048; JAXA Handbook for Use of Laboratory in Kibo (E-version Feb 2014, PEU and
+  CBEF sections); JAXA BEU and CBEF web pages; Yano 2020 BSJ-Review 11:106-119 (Japanese); Space Seed report (JAXA
+  repository 13115; Japanese body garbled in text layer, English abstract used); Kato et al. 2022 Plants (PMC8837939);
+  Plants 2022 11:956 (PMC9003378, Petri-dish PEU use); Europe PMC abstracts of JAXA hardware papers. Not accessible:
+  Yano et al. 2013 Adv Space Res 51:780-788 (PEU improvements) and Yano et al. 2012 Biol Sci Space 26:12-20 (CBEF
+  thermal; J-STAGE returned an HTML stub). Not found: ventilation-pump flow rate, exhaust path, CO2 used in plant
+  runs, chamber wall material, power.

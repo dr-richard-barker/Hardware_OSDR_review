@@ -1,0 +1,220 @@
+# European Modular Cultivation System (EMCS, ESA) with NASA Ames TROPI-type seed cassettes - curated 2026-10-12
+# Every non-null value carries a verbatim quote from a source opened in the curation session.
+entity_id: HW042
+name: European Modular Cultivation System (EMCS)
+splash_ids: [42]
+registry_ids: ["1057"]
+
+location:
+  value: "ISS EXPRESS rack (Columbus module during the Seedling Growth series); operated from N-USOC, Trondheim"
+  unit: '-'
+  source: "OSDR Hardware Registry 1057 (EMCS), hardware_version 'Version used on International Space Station'"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1057
+  quote: "The European Modular Cultivation System (EMCS) was installed in a EXPRESS rack aboard the International Space Station (ISS)."
+  kind: specified
+  note: "OSD-346: 'Spaceflight experiments were conducted utilizing the European Modular Cultivation System (EMCS) in the Columbus Module of the ISS.' Villacampa et al. 2021: on ISS 2008-2018."
+
+geometry:
+  enclosure_internal_mm:
+    value: [60, 60, 160]
+    unit: mm
+    source: "Kamada M., Omori K., Nishitani K., Hoson T., Shimazu T., Ishioka N. (2007) JAXA Space Plant Research on the ISS with European Modular Cultivation System. Biol. Sci. Space 21(3):62-66"
+    url: https://www.jstage.jst.go.jp/article/bss/21/3/21_3_62/_article
+    quote: "The internal volume (0.58l; 60 × 60 × 160 mm) is available for experimental hardware."
+    kind: specified
+    note: >-
+      One Experiment Container (EC) - the closed specimen enclosure; 160 mm is along the rotor's artificial
+      gravity vector ('Plant specimens up to 60 × 60 × 160 mm with their long axis in the direction of the
+      gravity vector are supported', same source). Same numbers in OSDR registry 1057 ('internal volume of 60 x
+      60 x 160 mm') and NASA Ames EUE page ('6-by-6-by-16 centimeters'). SPLASH #42 dims field '19 x 10 x 9
+      cm per sample box' is unexplained (possibly external EC size) and not used.
+  free_air_volume_L:
+    value: 0.58
+    unit: L
+    source: "Kamada et al. (2007) Biol. Sci. Space 21:62-66"
+    url: https://www.jstage.jst.go.jp/article/bss/21/3/21_3_62/_article
+    quote: "The internal volume (0.58l; 60 × 60 × 160 mm) is available for experimental hardware."
+    kind: specified
+    note: "Gross EC volume (60 x 60 x 160 mm = 0.576 L). Free air after installing five seed cassettes plus Ames lighting/hydration hardware is not sourced."
+  specimen_container:
+    value: "NASA Ames TROPI-type seed cassette: seeds glued (guar gum) to gridded membrane over MS-soaked blotter paper, covered and foil-tape sealed"
+    unit: '-'
+    source: "NASA Ames Space Biosciences: Experiment Unique Equipment for the European Modular Cultivation System (web page)"
+    url: https://www.nasa.gov/ames/space-biosciences/experiment-unique-equipment-for-the-european-modular-cultivation-system
+    quote: "Each experiment container has a transparent cover and accommodates five seed cassettes along with associated hardware."
+    kind: specified
+    note: "Assembly per OSD-437 / Land et al. 2023: blotter + black gridded PES membrane fixed to cassette base plate; 'Cassette covers were installed and sealed with foil tape (3M)'. Other EMCS EUEs (JAXA/ESA Plant Cultivation Chamber, MULTIGEN, GRAVI) are not covered."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Seed-cassette dimensions not found (Kiss et al. 2007 Adv Space Res biocompatibility paper and Vandenbrink & Kiss 2019 Methods Mol Biol were not accessible)."
+  n_specimen_units:
+    value: 5
+    unit: cassettes per EC (4 ECs per rotor, 8 ECs max)
+    source: "OSDR OSD-437 study protocol (EMCS-01 / Plant RNA Regulation)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-437/
+    quote: "Each rotor holds 4 Experimental Containers (EC)s, and each EC holds 5 separate seed cassettes with 27 seeds each."
+    kind: specified
+    note: "Ames page: 'Up to eight experiment containers can be integrated into the EMCS during a single experimental run.' CONFLICT: SPLASH #42 specimen_size says '6 cassetts per experiment container'; five per EC is stated by Ames, OSD-437, OSD-314 and Land et al. 2023."
+  layout:
+    value: "two centrifuge rotors, 600 mm diameter, each carrying 4 ECs; within an EC the 5 cassettes sit at different radii (e.g. 174 and 206 mm from rotor centre)"
+    unit: '-'
+    source: "OSDR Hardware Registry 1057 (EMCS)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1057
+    quote: "The EMCS consists of an incubator (Holding Structure) with two centrifuges (600 mm diameter), both equipped with interfaces to four Experiment Containers (ECs) each"
+    kind: specified
+    note: "Radii from Herranz et al. 2019 (doi:10.3389/fpls.2019.01529): 'cassettes at 174 and 206 mm from EMCS center'; other cassette radii only in their Fig. 1B. 1 g at 59.5 rpm (registry 1057); 1 g controls taken at cassette position 3 = 0.76 g in Plant Signaling (OSD-223)."
+
+specimen:
+  types:
+    value: ["Arabidopsis thaliana seedlings (Col-0, Ler, mutant/transgenic lines)"]
+    unit: '-'
+    source: "OSDR OSD-346 study protocol (Seedling Growth-1)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-346/
+    quote: "Seeds of Arabidopsis thaliana ecotype Landsberg erecta (Ler) were flown to the ISS via the SpaceX Dragon."
+    kind: specified
+    note: "OSDR EMCS datasets OSD-223/251/313/314/346/437/480 are all Arabidopsis thaliana (datasets_platform.json). EMCS also hosted lentil (GRAVI) and seed-to-seed Arabidopsis (MULTIGEN-1, Resist Wall) in other EUEs."
+
+ventilation:
+  mode:
+    value: forced
+    unit: '-'
+    source: "Kamada et al. (2007) Biol. Sci. Space 21:62-66"
+    url: https://www.jstage.jst.go.jp/article/bss/21/3/21_3_62/_article
+    quote: "The environment inside the ECs is conditioned for a specific relative humidity level by individual humidifier/dehumidifier units connected in a closed loop to each EC."
+    kind: specified
+    note: >-
+      Closed gas loop per EC from rotor-mounted life-support modules; incubator atmosphere supplied from O2/CO2
+      bottles plus ethylene removal (Kamada 2007; registry 1057: 'The gas atmosphere is common to all 8 ECs').
+      Land et al. 2023: EMCS provided 'regulated air circulation, and ethylene scrubbing'. The Ames EUE adds its
+      own 'air circulation systems' inside the EC (Ames page).
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Not found (ESA EMCS user documentation, Brinckmann 2005 Adv Space Res and Kittang et al. 2014 Plant Biol not accessible)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: "gas connector on the EC base plate with membrane filter at the EC inlet"
+    unit: '-'
+    source: "OSDR Hardware Registry 1057 (EMCS)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/1057
+    quote: "Particulates in the air and water loops are prevented from entering the EC air volume by membrane filters at the EC inlet."
+    kind: specified
+    note: "Kamada 2007: 'The EC base-plate provides power and data lines as well as inlet/outlet water supply connectors and gas connectors.' Position/size of the port not sourced."
+  outlet:
+    value: null
+    unit: '-'
+    note: "Return connector exists on the base plate (closed loop) but its position/size is not sourced."
+
+environment:
+  temperature_C:
+    value: 24
+    unit: °C
+    source: "Land E.S. et al. (2023) Conserved plant transcriptional responses to microgravity from two consecutive spaceflight experiments. Front. Plant Sci. 14:1308713"
+    url: https://doi.org/10.3389/fpls.2023.1308713
+    quote: "EMCS environmental parameters for PS were set at 21% O2 and a constant seedling temperature of 24°C."
+    kind: specified
+    note: >-
+      Seedling-level set point (Plant Signaling). Incubator range: 'thermally controlled (+18°C to +40°C)'
+      (registry 1057; Kamada 2007). Other runs: PRR 24 °C day / 21 °C night (Land 2023); OSD-223 'The
+      temperature in seed cassettes was ~ 24C'; Seedling Growth-3 '(22.5 °C ± 2 °C)' (Villacampa et al. 2021);
+      ground reference 22 °C (OSD-313/314).
+  rh_percent:
+    value: "> 80"
+    unit: '%'
+    source: "Villacampa A. et al. (2021) From Spaceflight to Mars g-Levels. Int. J. Mol. Sci. 22:899"
+    url: https://doi.org/10.3390/ijms22020899
+    quote: "environmental humidity (>80%), gas exchange (O2 levels kept at 10%; CO2 at 0.45%) and temperature (22.5 °C ± 2 °C), were monitored and controlled remotely"
+    kind: specified
+    note: "Seedling Growth-3. SPLASH #42 rh_range: '100% once hydrated'."
+  co2_ppm:
+    value: [370, 760]
+    unit: ppm
+    source: "Land et al. (2023) Front. Plant Sci. 14:1308713"
+    url: https://doi.org/10.3389/fpls.2023.1308713
+    quote: "the ambient cabin air was purged from the EMCS chamber prior to each experimental run so that CO2 levels gradually increased to equilibrate with the cabin (beginning ~370 ppm and equilibrating to ~760 ppm)."
+    kind: measured
+    note: "Experiment-dependent. PRR (not purged): similar to cabin (~3000 ppm) (Land 2023); OSD-223: 'CO2 levels ramped up from ~ 200- 800 ppm'; SG3: 'CO2 at 0.45%' (4500 ppm; Villacampa 2021)."
+  o2_percent:
+    value: 21
+    unit: '%'
+    source: "Land et al. (2023) Front. Plant Sci. 14:1308713"
+    url: https://doi.org/10.3389/fpls.2023.1308713
+    quote: "EMCS environmental parameters for PS were set at 21% O2 and a constant seedling temperature of 24°C."
+    kind: specified
+    note: "CONFLICT/experiment-dependent: Villacampa et al. 2021 report 'O2 levels kept at 10%' for Seedling Growth-3. OSD-223: 'O2 levels ~ 21%'."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "ECs carry pressure sensors (registry 1057) but no value was found."
+  light:
+    value: "white LEDs 30-40 umol m-2 s-1 along the shoot side of the cassettes (16:8 or continuous), plus unidirectional lateral blue or red LED photostimulation in some runs"
+    unit: '-'
+    source: "OSDR OSD-346 study protocol (Seedling Growth-1)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-346/
+    quote: "Seedlings were illuminated under white light (30-40 micromoles per meter squared per second) for 96 h, followed by 48 hours of unidirectional photostimulation with blue light."
+    kind: specified
+    note: "Land 2023: 'Both experiments were illuminated by white LEDs along the shoot side of the cassettes'. Red photostimulation 19 umol m-2 s-1 in a ground reference run (OSD-313). EMCS also offers IR illumination for imaging."
+
+nutrients:
+  mode:
+    value: culture_medium
+    unit: '-'
+    source: "OSDR OSD-437 study protocol (EMCS-01)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-437/
+    quote: "Whatman grade 17 CHR chromatography paper and black gridded polyethersulfone (PES) membrane (PALL Life Sciences, 65561) were cut to fit the seed cassettes. The blotter paper was pre-soaked in 0.5 x Murashige and Skoog (MS) media"
+    kind: specified
+  detail:
+    value: "dried MS-soaked blotter paper rehydrated on orbit (remote-commanded) by the EMCS rotor water supply"
+    unit: '-'
+    source: "OSDR OSD-223 study protocol (Plant Signaling)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-223/
+    quote: "The experiment was initiated by remotely controlled hydration."
+    kind: specified
+    note: "Kamada 2007: 'A water supply system is available on each rotor platter'. OSD-480: filters 'rehydrated on orbit with sterile, reagent-grade water'."
+
+specimen_load:
+  co2_flux:
+    value: null
+    unit: umol s-1
+    note: "No seedling gas-exchange value found; no organism-level value adopted."
+  o2_flux:
+    value: null
+    unit: umol s-1
+  h2o_flux:
+    value: null
+    unit: g d-1
+  heat_W:
+    value: null
+    unit: W
+
+walls:
+  material:
+    value: "EC with transparent cover; single level of containment"
+    unit: '-'
+    source: "NASA Ames EUE for EMCS web page"
+    url: https://www.nasa.gov/ames/space-biosciences/experiment-unique-equipment-for-the-european-modular-cultivation-system
+    quote: "Each experiment container has a transparent cover and accommodates five seed cassettes along with associated hardware."
+    kind: specified
+    note: "Registry 1057: 'The EC provides a single level of containment'. Cover material not stated."
+  gas_permeability:
+    value: null
+    unit: '-'
+    note: "Incubator described as 'gas tight' (registry 1057); EC/cassette permeability not found."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Only supply voltages in SPLASH #42 ('±12V, 5V'). Ames EUE: 'A heating system eliminates condensation on the surface of the seed cassettes' - heater power not stated."
+
+searched: |
+  Opened: OSDR registry 1057 and payloads TROPI/TROPI-2/EMCS-01/Seedling Growth-1..3/Plant Signaling; SPLASH #42;
+  OSD-223/251/313/314/346/437/480 protocols; Kamada et al. 2007 Biol Sci Space (J-STAGE PDF); Land et al. 2023
+  (PMC10800490); Herranz et al. 2019 (PMC6889863); Villacampa et al. 2021 (PMC7830483); Jost, Hoson, Iversen 2015
+  Plants (PMC4844336, no numbers); NASA Ames EUE page; PIMS EMCS vibration note (no airflow). Not accessible: Kittang
+  et al. 2014 Plant Biol 16:528; Brinckmann 2005 Adv Space Res 36:1162; Kiss et al. 2007 Adv Space Res 39:1154; ESA
+  EMCS user manual. Not found: EC gas-loop flow rate or velocity, cassette dimensions, outlet geometry, pressure.

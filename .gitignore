@@ -11,3 +11,4 @@ latex/build/
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+latex/build/

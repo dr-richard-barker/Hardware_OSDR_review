@@ -1,0 +1,228 @@
+entity_id: HW191
+name: Research Animal Holding Facility (RAHF, Spacelab) - rodent configuration
+splash_ids: []
+registry_ids: ["589"]
+
+location:
+  value: "Spacelab module rack (port side only); rodent cage module of 12 cages"
+  unit: "-"
+  source: "OSDR Hardware Registry 589, Research Animal Holding Facility (RAHF) (snapshot 2026-10-12)"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+  quote: "The Research Animal Holding Facility (RAHF) is a general use animal habitat that is built to fit within a Spacelab rack."
+  kind: specified
+  note: "NASA TM-89289 (LSLE catalog, p. 25): 'Occupies 1.5 ESA racks'; 'The RAHFs can be installed only on the port side of the Spacelab'. Flown SL-3 (1985), SLS-1 (1991), SLS-2 (1993), Neurolab (1998)."
+
+geometry:
+  enclosure_internal_mm:
+    value: [254.0, 107.95, 101.6]
+    unit: mm
+    source: "NASA TM-89289 (1987) Life Sciences Laboratory Equipment Catalog, p. 25 'RAHF Rodent Cage', NTRS 19870012958"
+    url: https://ntrs.nasa.gov/citations/19870012958
+    quote: "Two Compartments—One 400-gm rodent maximum each; Compartment size 4 by 4¼ by 10 in."
+    kind: specified
+    note: >-
+      Per-animal compartment (CFD unit); 10 x 4.25 x 4 in converted to mm (axis assignment length x width x height is an
+      assumption - the source does not label the axes). Each cage = 2 compartments in tandem (registry 589). Fraction read
+      from the page image (the text layer OCRs '4¼' as '4%'). Conflict: Liu et al. 2009 comparison table lists RAHF cage
+      '10.5 x 11 x 28 cm'; a search snippet of an unopened document gave '10.5 x 11.5 x 28 cm (compartment)'. NASA catalogue used.
+  free_air_volume_L:
+    value: 2.79
+    unit: L
+    source: "Derived from NASA TM-89289 p. 25"
+    url: https://ntrs.nasa.gov/citations/19870012958
+    quote: "Two Compartments—One 400-gm rodent maximum each; Compartment size 4 by 4¼ by 10 in."
+    kind: derived
+    note: "101.6 x 107.95 x 254 mm = 2.79 L per compartment (feeder alcove, lixit and waste tray not subtracted/added)."
+  specimen_container:
+    value: "rodent cage drawer: 2 tandem compartments, anodized-aluminium side/rear walls, perforated metal floor and top, Lexan top panel with flow-equalising hole pattern, polycarbonate window between compartments"
+    unit: "-"
+    source: "OSDR Hardware Registry 589, Rodent Cage component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+    quote: "The side and rear walls of rodent cages are made from anodized aluminum. The cages have perforated metal floors and top doors to permit air circulation."
+    kind: specified
+    note: "For SLS-1/SLS-2 the partition became a mesh screen; Neurolab added neonate/nursing and biotelemetry cage variants."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Whole-cage external dimensions not found."
+  n_specimen_units:
+    value: 24
+    unit: "rodents (12 cages x 2), up to 350-400 g each"
+    source: "OSDR Hardware Registry 589, Cage Module component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+    quote: "the rodent module is designed to house 12 rodent cages containing 2 rodents each."
+    kind: specified
+    note: "TM-89289: 'twenty-four 350-g rodents'; compartment limit 400 g."
+  layout:
+    value: "12 removable cage drawers in one cage module (lighting in 6 tiers on SL-3, 4 quadrants on SLS-1/2); ECS mounted on back of module"
+    unit: "-"
+    source: "NASA TM-89289 p. 24, NTRS 19870012958"
+    url: https://ntrs.nasa.gov/citations/19870012958
+    quote: "The cages are an integral of 12 drawers for the rodents which are removable for easy access to the animals."
+    kind: specified
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "Savage P.D. Jr., Jahns G.C., Dalton B.P., Hogan R.P., Wray A.E. (1989) The rodent Research Animal Holding Facility as a barrier to environmental contamination. NASA TM-102237, NTRS 19900002835"
+    url: https://ntrs.nasa.gov/citations/19900002835
+    quote: "Air circulation through the cage module is approximately 80 cfm and is provided by a cluster of four fans."
+    kind: specified
+    note: >-
+      Recirculating with conditioning: 35 cfm drawn through a thermoelectric cooler/dehumidifier and remixed; two in-line heaters;
+      CO2/O2 exchange by bleed fans moving 'a minimum of 2 cfm of Spacelab cabin air' through a 0.3-um HEPA filter and charcoal bed.
+      Cage module held at about 0.5 in H2O (~125 Pa) below cabin (5.0 in H2O with the Single Pass Auxiliary Fan during servicing).
+  flow_rate_L_min:
+    value: 2265
+    unit: "L/min (whole 12-cage module)"
+    source: "NASA TM-102237 (1989), NTRS 19900002835"
+    url: https://ntrs.nasa.gov/citations/19900002835
+    quote: "Air circulation through the cage module is approximately 80 cfm and is provided by a cluster of four fans."
+    kind: derived
+    note: "80 cfm x 28.317 L/ft3 = 2265 L/min. If split equally over 12 cages (lexan top panels with hole patterns 'equalize air flow within the various cages', registry 589) ~189 L/min per cage (derived; equal split is an assumption)."
+  air_velocity_m_s:
+    value: 0.153
+    unit: m/s
+    source: "OSDR Hardware Registry 589, Waste Management System component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+    quote: "In microgravity, air at a velocity of 9.2 m/min flows from the top of the cage to the bottom and through the waste collection system."
+    kind: specified
+    note: "9.2 m/min / 60 = 0.153 m/s, top-to-bottom through the cage."
+  inlet:
+    value: "top of cage: multilayer screens (smallest opening 150 um) / Lexan top panel with hole pattern; lamps and lixits in the air plenum above"
+    unit: "-"
+    source: "NASA TM-89289 p. 25, NTRS 19870012958"
+    url: https://ntrs.nasa.gov/citations/19870012958
+    quote: "Airflow through-top multilayer screens Smallest 150-µm opening"
+    kind: specified
+  outlet:
+    value: "cage floor -> removable waste tray (1/4 in charcoal + 1/2 in phosphoric-acid absorbent wick) -> ECS"
+    unit: "-"
+    source: "NASA TM-89289 p. 25, NTRS 19870012958"
+    url: https://ntrs.nasa.gov/citations/19870012958
+    quote: "Removable waste tray contains ¼ in. thick charcoal and ½ in. thick absorbent wick, both used for odor and bacteria control."
+    kind: specified
+
+environment:
+  temperature_C:
+    value: null
+    unit: degC
+    note: >-
+      Not found. RAHF has active temperature control (thermoelectric unit + heaters; 'Cage temperature monitor and control',
+      TM-102237) but no setpoint or flight value was found in TM-89289, TM-102237, NASA TM-88212 (SL-3 animal studies),
+      the Neurolab circadian report (NTRS 20030068223) or OSDR OSD-422/423. The 1988 ground test room was held at 68-72 F
+      (room, not cage).
+  rh_percent:
+    value: null
+    unit: "%"
+    note: "Controlled (TEU dehumidification, humidity sensors) but no value found. Ground-test room 50-60 % RH."
+  co2_ppm:
+    value: 2800
+    unit: ppm
+    source: "NASA TM-102237 (1989), Table 1 (12-day ground biocompatibility test, 24 rodents), NTRS 19900002835"
+    url: https://ntrs.nasa.gov/citations/19900002835
+    quote: "MAXIMUM 0.39 20.61 20.78 MINIMUM 0,18 20,36 20.23 AVERAGE 0.28 20.49 20.58"
+    kind: measured
+    note: "Table columns: cage-module CO2 %, cage-module O2 %, bleed-air-out O2 %. Average 0.28 % CO2 (range 0.18-0.39 %). Design requirement: cage CO2 partial pressure not to exceed 7.6 mm Hg. Ground test, not flight."
+  o2_percent:
+    value: 20.49
+    unit: "%"
+    source: "NASA TM-102237 (1989), Table 1, NTRS 19900002835"
+    url: https://ntrs.nasa.gov/citations/19900002835
+    quote: "MAXIMUM 0.39 20.61 20.78 MINIMUM 0,18 20,36 20.23 AVERAGE 0.28 20.49 20.58"
+    kind: measured
+    note: "Cage-module average (range 20.36-20.61 %). Requirement: within 1 % of Spacelab ambient (~160 mm Hg)."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Spacelab cabin; module at ~0.5 in H2O (~0.12 kPa) below cabin (TM-102237)."
+  light:
+    value: "2 incandescent lamps per cage in the plenum above, each 2.1 lm (~5 foot-candles at cage floor); timed day/night cycles"
+    unit: "foot-candles"
+    source: "OSDR Hardware Registry 589, Lighting System component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+    quote: "Every cage has 2 lamps, each one providing 2.1 lumens or 5 foot candles of light at the cage's floor level."
+    kind: specified
+    note: "5 fc = 54 lux (derived). Neurolab circadian study: 'LD 12:12; 100:0 lux' and constant dim red light 30 lux (NTRS 20030068223)."
+
+nutrients:
+  mode:
+    value: food_bar+lixit
+    unit: "-"
+    source: "OSDR Hardware Registry 589, Rodent Feeder component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+    quote: "Rodent food is supplied ad libitum in the form of a compressed diet bar."
+    kind: specified
+    note: "Water by lixit 'water ball' from a pressurised bladder tank (registry 589 Water System)."
+  detail:
+    value: "food bars 0.9 x 1.187 x 16 in in spring-loaded feeder cassette (2 per cage); lixits fed from 9.5 L nitrogen-pressurised bladder tank"
+    unit: "-"
+    source: "NASA TM-102237 (1989), NTRS 19900002835"
+    url: https://ntrs.nasa.gov/citations/19900002835
+    quote: "The RAHF water delivery system stores 9.5 liters of water in a butyl rubber bladder within a water tank."
+    kind: specified
+    note: "Food-bar size from TM-89289: 'Compact food bars, each 0.9 by 1.187 by 16 in. long'."
+
+specimen_load:
+  o2_flux:
+    value: 1.44
+    unit: "mL O2 h-1 per g body mass (rat, worst-case design)"
+    source: "Niederwieser T. et al. (2014) AEM-E - A small life support system for the transport of rodents to the ISS. ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "Rats: O2 = 1.44 mL/(hr g), CO2 = 1.34 mL/(hr g), H2O = 20.0 mL/(day each), RQ = 0.92"
+    kind: specified
+    note: "Peak design rate (350 g rats) from published data; averages may be <50 % of this. 350 g rat -> 504 mL O2/h (derived)."
+  co2_flux:
+    value: 1.34
+    unit: "mL CO2 h-1 per g body mass (rat, worst-case design)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "Rats: O2 = 1.44 mL/(hr g), CO2 = 1.34 mL/(hr g), H2O = 20.0 mL/(day each), RQ = 0.92"
+    kind: specified
+  h2o_flux:
+    value: 20.0
+    unit: "mL metabolic water per rat per day (design)"
+    source: "Niederwieser T. et al. (2014) ICES-2014-101"
+    url: http://hdl.handle.net/2346/59702
+    quote: "Rats: O2 = 1.44 mL/(hr g), CO2 = 1.34 mL/(hr g), H2O = 20.0 mL/(day each), RQ = 0.92"
+    kind: specified
+    note: "Metabolic water only, not total evaporative loss. TM-102237: ~3 L condensate removed from the module over the 12-day ground test (24 rodents, humid room)."
+  heat_W:
+    value: 3.16
+    unit: "W per rat (sensible/convective)"
+    source: "Riskowski G.L. et al. (1993) Effect of double density caging during Space Shuttle transport of laboratory rats. NTRS 19940006708"
+    url: https://ntrs.nasa.gov/citations/19940006708
+    quote: "Convective heat losses for MAEM-SD and MAEM-DD varied from 2.87 to 3.86 W/rat and from 2.05 to 2.87 W/rat, respectively; overall mean convective heat losses were 3.16 and 2.41 W/rat."
+    kind: measured
+    note: "Organism-level measurement on ~286 g Sprague-Dawley rats in a ventilated (0.13 m/s) mock AEM at 22 C room; the same report states rat sensible heat is about twice latent heat. RAHF thermal budget: max 850 BTU/hr per RAHF (thermal section)."
+
+walls:
+  material:
+    value: "anodized aluminium side/rear walls; perforated metal floor and top; Lexan top panel; polycarbonate window"
+    unit: "-"
+    source: "OSDR Hardware Registry 589, Rodent Cage component"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/589
+    quote: "The side and rear walls of rodent cages are made from anodized aluminum. The cages have perforated metal floors and top doors to permit air circulation."
+    kind: specified
+  gas_permeability:
+    value: null
+    unit: "-"
+    note: "Not applicable/not found."
+
+thermal:
+  power_W:
+    value: 324
+    unit: W
+    source: "NASA TM-89289 (1987) p. 25, NTRS 19870012958"
+    url: https://ntrs.nasa.gov/citations/19870012958
+    quote: "324 W continuous operation; maximum thermal load is 850 BTU/hr for each RAHF"
+    kind: specified
+    note: "850 BTU/hr = 249 W (derived). RAHF total weight 280 kg (same page)."
+
+searched: |
+  OSDR registry 589 (all components/versions); NASA TM-89289 LSLE catalog (NTRS 19870012958, page image checked);
+  NASA TM-102237 (NTRS 19900002835); NASA TM-88212 Spacelab-3 animal studies (NTRS 19860007419, no env values);
+  Fuller et al. Neurolab circadian report (NTRS 20030068223); OSDR OSD-422/423 protocol text; Liu et al. 2009 comparison
+  table; NTRS 19920039257 (SLS-1 RAHF performance; abstract only, no full text); SAE 951478 (paywalled, not opened).
+  No SPLASH record. Missing: cage temperature/RH setpoints and flight values, whole-cage dimensions, per-cage flow split.

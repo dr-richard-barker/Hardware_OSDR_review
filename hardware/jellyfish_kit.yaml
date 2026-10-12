@@ -1,0 +1,176 @@
+entity_id: HW150
+name: Jellyfish Kit (SLS-1)
+vendor: NASA Ames Research Center (PI D.B. Spangenberg, Eastern Virginia Medical School)
+splash_ids: []
+registry_ids: ["6"]
+curated: "2026-10-12"
+transport_medium: water (artificial sea water) in sealed bags/flasks
+
+location:
+  value: "Spacelab (SLS-1, STS-40, June 1991), inside the Refrigerator/Incubator Module (R/IM) in the SMIDEX rack"
+  unit: "-"
+  source: "Spacelab Life Sciences-1 final report (Dalton BP et al., NASA TM-4706, 1995; NTRS 19960001911), section 3.1.7"
+  url: https://ntrs.nasa.gov/api/citations/19960001911/downloads/19960001911.pdf
+  quote: "For SLS- 1,the mid-deck configured unit was flown in Spacelab in the Spacelab mid-deck experiment (SMIDEX) rack configu- ration. The unit was maintained at 28 ° C and supported the jellyfish flasks and bags."
+  kind: specified
+  note: "Quote copied from the PDF text layer (two-column layout, hyphenation as printed)."
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Bag dimensions and R/IM cavity dimensions not found (R/IM is separate host hardware, registry hardware 9)."
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "Bags filled at 1:3 air:solution (see specimen_container); absolute volumes not found."
+  specimen_container:
+    value: "heat-sealed polyester bags with polyethylene lining, artificial sea water at 1:3 air:solution (Kits 1-3); 40 cc optically clear flasks for filming (Kit 4)"
+    unit: "-"
+    source: "OSDR registry hardware 6, component 'Jellyfish Bags/Kits' (snapshot 2026-10-12)"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "Jellyfish are maintained in polyester bags with polyethylene lining filled with artificial sea water, at a ratio of 1:3 air:solution."
+    kind: specified
+    note: >-
+      Same record: Kit #1 = 18 single-compartment bags ("heat-sealed"); Kit #2 = 8 multi-compartment
+      syringe/bag assemblies with 1-3 fixative syringes, two outer containment bags each; Kit #4 flasks "hold
+      40 ccs, are made of optically clear polyethylene". SOURCE CONFLICT: the record's main description calls
+      the filming flasks "commercially obtained polystyrene flasks".
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Not found."
+  flask_volume_mL:
+    value: 40
+    unit: mL
+    source: "OSDR registry hardware 6, component 'Jellyfish Bags/Kits'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "The flasks hold 40 ccs, are made of optically clear polyethylene, and are used for videotaping jellyfish swimming patterns in microgravity."
+    kind: specified
+  n_specimen_units:
+    value: 26
+    unit: bags (18 single-compartment Kit #1 + 8 syringe/bag assemblies Kit #2), plus Kit #4 flasks (number not stated)
+    source: "OSDR registry hardware 6, component 'Jellyfish Bags/Kits'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "Kit #1 contains 18 non-operative, single-compartment bags that do not require crew manipulation during orbit."
+    kind: derived
+    note: "18 (Kit #1) + 8 (Kit #2: 'Kit #2 contains 8 multi-compartment syringe/bag assemblies') = 26 bags."
+  layout:
+    value: null
+    note: "Arrangement of bags/flasks on R/IM shelves not found."
+
+ventilation:
+  mode:
+    value: sealed
+    unit: "-"
+    source: "OSDR registry hardware 6, component 'Jellyfish Bags/Kits'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "Lithium fluoride radiation rod dosimeters are added to 6 of the bags before they are heat-sealed."
+    kind: specified
+    note: >-
+      Heat-sealed bags with a 1:3 air headspace; Kit #2 has triple containment. Host R/IM: "Air is not
+      circulated within the internal cavity" (registry hardware 9).
+  flow_rate_L_min:
+    value: "n/a (sealed)"
+    unit: "-"
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+  inlet:
+    value: null
+    note: "Sealed; Kit #2 syringes inject inducer/fixative through the Chemical Delivery System."
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: 28
+    unit: degC
+    source: "Spacelab Life Sciences-1 final report (NASA TM-4706; NTRS 19960001911), Chapter 6 'ARC Space Life Sciences Payloads Office Overview', PDF p.22"
+    url: https://ntrs.nasa.gov/api/citations/19960001911/downloads/19960001911.pdf
+    quote: "The R/IM maintained its preset 28 °temperature throughout the flight. Figures 6a, 6b, and 6c profile the temperature maintained within the Jellyfish Kits, placed within the R/IM."
+    kind: measured
+    note: >-
+      Quote as in the PDF text layer. Section 3.2.3 of the same report repeats the 28°C statement. The
+      in-kit temperature profiles (Figs 6a-c) were not digitised. Registry hardware 6: kits stored in the R/IM "to provide
+      a constant 28 degrees Celsius environment". Spangenberg et al. 1994 Adv Space Res 14(8):239: "Polyps
+      were induced to strobilate at 28 degrees C".
+  rh_percent:
+    value: null
+    note: "Not applicable (aqueous, sealed)."
+  co2_ppm:
+    value: null
+  o2_percent:
+    value: null
+    note: "Headspace air at 1:3 air:solution; no dissolved O2 data found."
+  pressure_kPa:
+    value: null
+  light:
+    value: null
+    note: "Light regime inside R/IM not found; flasks filmed with Olympus 802 camcorder (registry OS-9)."
+
+nutrients:
+  mode:
+    value: culture_medium
+    unit: "-"
+    source: "Spangenberg DB, Jernigan T, Philput C, Lowe B (1994) Graviceptor development in jellyfish ephyrae in space and on Earth. Adv Space Res 14(8):317-325 (PubMed abstract, PMID 11537934)"
+    url: https://pubmed.ncbi.nlm.nih.gov/11537934/
+    quote: "Statolith loss from rhopalia was significantly enhanced in the space-maintained ephyrae in ASW as compared to their controls."
+    kind: specified
+    note: "Artificial sea water (ASW); inducers iodine or thyroxine delivered by syringe (Chemical Delivery System) 8 h after launch."
+  detail:
+    value: "Chemical Delivery System: syringes mounted via plastic housing to polyethylene-lined Kapak bags; glutaraldehyde (3%) + cacodylate fixation on FD 8"
+    unit: "-"
+    source: "OSDR registry hardware 6, component 'Chemical Delivery System (CDS)'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "The CDS consists of syringes mounted via plastic housing to polyethelene-lined Kapak bags."
+    kind: specified
+
+specimen:
+  type:
+    value: "moon jellyfish Aurelia (aurita) polyps (scyphistomae) and ephyrae (1-2 mm), 9-day SLS-1 exposure"
+    unit: "-"
+    source: "Spangenberg DB et al. (1994) Development studies of Aurelia (jellyfish) ephyrae which developed during the SLS-1 mission. Adv Space Res 14(8):239-247 (PubMed abstract, PMID 11537923)"
+    url: https://pubmed.ncbi.nlm.nih.gov/11537923/
+    quote: "Aurelia polyps (scyphistomae) and ephyrae were exposed to microgravity for nine days aboard the space shuttle during the SLS-1 mission."
+    kind: specified
+    note: "Ephyra size '(1-2 mm)' from Spangenberg final report NAG10-0178 (NTRS 19990062734)."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+    note: "No Aurelia polyp/ephyra respiration value from an opened source."
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "polyester bag with polyethylene lining; polyethylene (or polystyrene - conflict) flasks"
+    unit: "-"
+    source: "OSDR registry hardware 6, component 'Jellyfish Bags/Kits'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "Jellyfish are maintained in polyester bags with polyethylene lining filled with artificial sea water"
+    kind: specified
+  gas_permeability:
+    value: null
+    note: "Bag film O2/CO2 permeability not found."
+
+thermal:
+  power_W:
+    value: 0
+    unit: W
+    source: "OSDR registry hardware 6, component 'Jellyfish Bags/Kits'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/6
+    quote: "Kit #1 contains 18 non-operative, single-compartment bags that do not require crew manipulation during orbit."
+    kind: derived
+    note: "Kits are passive/unpowered; thermal control provided by the host R/IM (solid-state heat pump)."
+
+searched: |
+  OSDR snapshot 2026-10-12: registry hardware 6 (and host R/IM hardware 9 via experiment OS-9), payload SLS-1,
+  experiment OS-9. SLS-1 final report NASA TM-4706 (NTRS 19960001911, text layer); Spangenberg final report
+  NAG10-0178 (NTRS 19990062734); PubMed abstracts 11537923, 11537934 (E-utilities).
+  Not found: bag/flask dimensions and fill volumes, number of polyps per bag, R/IM cavity dimensions, light, O2.
