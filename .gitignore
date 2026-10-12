@@ -14,4 +14,3 @@ latex/build/
 latex/build/
 dist/
 results/fields/vtk_*.tar.gz
-results/figures/anim_*.mp4

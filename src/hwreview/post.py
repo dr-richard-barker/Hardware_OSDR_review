@@ -53,7 +53,49 @@ def timeseries(case: Path) -> pd.DataFrame:
         df = df.rename(columns={c: f"{d.name}:{_strip_op(c)}" for c in df.columns if c != "time"})
         out = df if out is None else pd.merge_asof(out.sort_values("time"), df.sort_values("time"), on="time",
                                                   direction="nearest")
+    # repeated specimen zones (zone_<name>_ijk) -> equal-volume copies; add their mean as zone_<name>
+    if out is not None:
+        groups = {}
+        for c in out.columns:
+            m_ = re.match(r"^(zone_.+)_(\d{3}):(\w+)$", c)
+            if m_:
+                groups.setdefault((m_.group(1), m_.group(3)), []).append(c)
+        for (z, f), cols in groups.items():
+            out[f"{z}:{f}"] = out[cols].mean(axis=1)
     return out
+
+
+def diffusive_patch_flux(case: Path, field: str, D: float, patch_prefix: str = "domain_vent") -> float:
+    """Diffusive outflow of `field` through Dirichlet patches at the latest time:
+    sum_f D (c_P - c_f) / d_n * A_f  (units field * m3 s-1), with c_P the owner-cell value and
+    d_n the owner-centre-to-face distance along the face normal."""
+    import pyvista as pv
+    from scipy.spatial import cKDTree
+    (case / "case.foam").touch()
+    r = pv.POpenFOAMReader(str(case / "case.foam"))
+    r.set_active_time_value(r.time_values[-1])
+    r.enable_all_patch_arrays()
+    r.cell_to_point_creation = False
+    data = r.read()
+    internal = data["internalMesh"]
+    cc = internal.cell_centers().points
+    tree = cKDTree(cc)
+    total = 0.0
+    bnd = data["boundary"]
+    for name in bnd.keys():
+        if not name.startswith(patch_prefix):
+            continue
+        patch = bnd[name].compute_cell_sizes(length=False, volume=False)
+        pn = patch.compute_normals(cell_normals=True, point_normals=False, auto_orient_normals=False)
+        fc = patch.cell_centers().points
+        area = np.asarray(patch.cell_data["Area"])
+        cf = np.asarray(patch.cell_data[field])
+        nrm = np.asarray(pn.cell_data["Normals"])
+        _, idx = tree.query(fc)
+        d = np.abs(np.einsum("ij,ij->i", fc - cc[idx], nrm))
+        cp = np.asarray(internal.cell_data[field])[idx]
+        total += float(np.sum(D * (cp - cf) / np.maximum(d, 1e-9) * area))
+    return total
 
 
 def metrics(case: Path, ts: pd.DataFrame) -> dict:
@@ -68,8 +110,12 @@ def metrics(case: Path, ts: pd.DataFrame) -> dict:
         if base is None:
             continue
         y = ts[col].values - base
-        final = float(np.mean(y[ts.time >= 0.9 * ts.time.max()]))
+        # plateau mean over the last quarter of the run (same window as the fluctuation estimate)
+        final = float(np.mean(y[ts.time >= 0.75 * ts.time.max()]))
         res[f"{col}:final_excess"] = final
+        # temporal fluctuation over the last quarter: a 0 g / 1 g difference smaller than this is not resolved
+        late = y[ts.time >= 0.75 * ts.time.max()]
+        res[f"{col}:late_sd"] = float(np.std(late, ddof=1)) if len(late) > 2 else 0.0
         if abs(final) > 1e-12:
             k = np.argmax(np.abs(y) >= 0.9 * abs(final))
             res[f"{col}:t90_s"] = float(ts.time.values[k])
@@ -114,6 +160,8 @@ def metrics(case: Path, ts: pd.DataFrame) -> dict:
         t, cavg = late.time.values, late["domainAvg:CO2"].values
         acc = V * np.polyfit(t, cavg, 1)[0] if len(t) > 3 else 0.0
         outflow = 0.0
+        if any((case / "constant" / "triSurface").exists() for _ in [0]) and "vent" in (case / "0" / "CO2").read_text():
+            outflow += diffusive_patch_flux(case, "CO2", meta["physics"]["D_CO2_m2_s"])
         for f in [c for c in ts.columns if c.startswith("flow_") and c.endswith(":phi")]:
             nm = f.split(":")[0].replace("flow_", "")
             q = late[f].values
@@ -150,8 +198,14 @@ def _slice_png(cases: dict[str, Path], slug: str, mesh: str):
     meta = json.loads((next(iter(cases.values())) / "case_meta.json").read_text())
     sl = {g: _read_slice(c, meta.get("slice_y_m")) for g, c in cases.items()}
     avail = set.intersection(*[set(v[1]) for v in sl.values()])
+
+    def varies(f):
+        lo = min(np.min(sl[g][1][f]) for g in sl)
+        hi = max(np.max(sl[g][1][f]) for g in sl)
+        return hi - lo > 1e-9 * max(1.0, abs(hi))
     fields = [f for f in [("CO2", "CO$_2$ (ppm)", "viridis"), ("T", "T (K)", "inferno"),
-                          ("AoA", "age of air (s)", "magma"), ("U", "|U| (m s$^{-1}$)", "cividis")] if f[0] in avail]
+                          ("AoA", "age of air (s)", "magma"), ("U", "|U| (m s$^{-1}$)", "cividis")]
+              if f[0] in avail and varies(f[0])]
     import matplotlib.tri as mtri
     from . import geometry
     model = geometry.load(slug)
@@ -176,8 +230,6 @@ def _slice_png(cases: dict[str, Path], slug: str, mesh: str):
     for ri, (f, lab, cmap) in enumerate(fields):
         vmin = min(np.min(sl[g][1][f]) for g in gs)
         vmax = max(np.max(sl[g][1][f]) for g in gs)
-        if vmax - vmin < 1e-12:
-            vmax = vmin + 1e-12
         for ci, g in enumerate(gs):
             cc, d, t = sl[g]
             ax = axes[ri, ci]
@@ -261,8 +313,8 @@ def animate(slug: str, mesh: str = "medium", field: str = "CO2", fps: int = 4):
             fr[g] = (sl.cell_centers().points, v)
             vmin, vmax = min(vmin, v.min()), max(vmax, v.max())
         frames.append((t, fr))
-    if vmax - vmin < 1e-12:
-        vmax = vmin + 1e-12
+    if vmax - vmin <= 1e-9 * max(1.0, abs(vmax)):
+        return None                      # uniform field: nothing to animate
     tmp = Path(tempfile.mkdtemp())
     meta = json.loads((next(iter(cases.values())) / "case_meta.json").read_text())
     for k, (t, fr) in enumerate(frames):

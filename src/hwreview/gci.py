@@ -65,8 +65,9 @@ def run():
     for slug in ("mds", "aph", "vented_fly_box_vent20"):
         for g in ("0g", "1g"):
             cs = [RUNS / f"{slug}_{g}_{m}" for m in ("fine", "medium", "coarse")]
-            if not all((c / "postProcessing").exists() for c in cs):
-                continue
+            from .campaign import done
+            if not all(c.exists() and done(c) for c in cs):
+                continue                      # only complete runs enter the GCI
             mets = [post.metrics(c, post.timeseries(c)) for c in cs]
             hs = [h_of(c) for c in cs]
             zone = json.loads((cs[0] / "case_meta.json").read_text())["sources_total"]
@@ -74,6 +75,9 @@ def run():
             for qt in QUANTITIES:
                 key = qt.format(z=zname) if zname else qt
                 if not all(key in m and m[key] is not None for m in mets):
+                    continue
+                # quantities that are zero up to round-off (e.g. T excess with no heat source) have no GCI
+                if max(abs(m[key]) for m in mets) < (1e-3 if ":T:" in key else 1e-9):
                     continue
                 r = gci3([m[key] for m in mets], [h[0] for h in hs])
                 rows.append({"model": slug, "gravity": g, "quantity": key,

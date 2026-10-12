@@ -61,6 +61,14 @@ make zenodo     # dist/ archive for deposit
 `SNAPSHOT` (default `2026-10-12`). No credentials are needed and no personal data is sent
 to any service.
 
+## What is in git and what is only in the Zenodo deposit
+
+Everything browsable lives in git: code, the raw snapshot, curated files, models, tables,
+figures, animations, the manuscript sources and their PDF/DOCX/HTML builds. The VTK field
+time series of the medium-mesh runs (`results/fields/vtk_*.tar.gz`, tens of MB each) are
+too large for git and are included only in the Zenodo archive built by `make zenodo`.
+The raw OpenFOAM run directories (`runs/`) are archived nowhere; `make cfd` regenerates them.
+
 ## Key conventions
 
 * **Provenance.** `hardware/*.yaml` records are `{value, unit, source, url, quote, kind}`;

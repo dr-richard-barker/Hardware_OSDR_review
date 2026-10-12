@@ -36,8 +36,11 @@ def done(case) -> bool:
     return bool(times) and max(times) >= end - 1e-6
 
 
+TAG = ""
+
+
 def log(msg: str):
-    line = f"{dt.datetime.now().isoformat(timespec='seconds')} {msg}"
+    line = f"{dt.datetime.now().isoformat(timespec='seconds')} {TAG}{msg}"
     print(line, flush=True)
     with open(RUNS / "campaign.log", "a") as f:
         f.write(line + "\n")
@@ -48,6 +51,8 @@ def main(argv=None):
     ap.add_argument("--np", type=int, default=12)
     ap.add_argument("--only")
     a = ap.parse_args(argv)
+    global TAG
+    TAG = f"[np{a.np}] " if a.only else ""
     only = set(a.only.split(",")) if a.only else None
     for slug, meshes in CAMPAIGN:
         if only and slug not in only:

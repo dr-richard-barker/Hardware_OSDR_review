@@ -160,7 +160,12 @@ def run():
         for _, x in r.iterrows():
             k = short.get(x.model, x.model) + ("Zero" if x.gravity == "0g" else "One")
             for col, nm in (("CO2_excess_ppm", "Co"), ("T_excess_K", "Dt"), ("age_of_air_s", "Age"),
-                            ("H2O_excess_mmol_mol", "Ht"), ("U_max_m_s", "Umax"), ("Re", "Re"), ("Ri_1g", "Ri")):
+                            ("H2O_excess_mmol_mol", "Ht"), ("U_max_m_s", "Umax"), ("Re", "Re"), ("Ri_1g", "Ri"),
+                            ("CO2_late_sd_ppm", "CoSd"), ("age_late_sd_s", "AgeSd"), ("Re_inlet", "ReIn"),
+                            ("Ra_solutal_CO2_1g", "RaSol"), ("Ra_thermal_1g", "RaTh"),
+                            ("domain_CO2_excess_ppm", "CoDom")):
+                if col not in x:
+                    continue
                 if pd.notna(x[col]):
                     M[f"Cfd{k}{nm}"] = float(x[col])
     words = dict(zip("0123456789", ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",

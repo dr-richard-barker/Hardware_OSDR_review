@@ -110,8 +110,9 @@ def table(mesh: str) -> pd.DataFrame:
             continue
         for g in ("0g", "1g"):
             c = RUNS / f"{slug}_{g}_{mesh}"
-            if not (c / "postProcessing").exists():
-                continue
+            from .campaign import done
+            if not (c.exists() and done(c)):
+                continue                      # only complete runs enter the results table
             meta = json.loads((c / "case_meta.json").read_text())
             ts = post.timeseries(c)
             m = post.metrics(c, ts)
@@ -122,9 +123,12 @@ def table(mesh: str) -> pd.DataFrame:
                 "t_end_s": m["t_end_s"],
                 "zone": z or "domain",
                 "CO2_excess_ppm": m.get(f"{pre}:CO2:final_excess"),
+                "CO2_late_sd_ppm": m.get(f"{pre}:CO2:late_sd"),
                 "H2O_excess_mmol_mol": m.get(f"{pre}:H2O:final_excess"),
                 "T_excess_K": m.get(f"{pre}:T:final_excess"),
+                "T_late_sd_K": m.get(f"{pre}:T:late_sd"),
                 "age_of_air_s": m.get(f"{pre}:AoA:final_excess"),
+                "age_late_sd_s": m.get(f"{pre}:AoA:late_sd"),
                 "domain_CO2_excess_ppm": m.get("domainAvg:CO2:final_excess"),
                 "U_max_m_s": m.get("U_max_late_m_s"), "Re": m.get("Re"), "Re_inlet": inlet_reynolds(c, slug, meta),
                 "Ri_1g": m.get("Ri_1g"),
