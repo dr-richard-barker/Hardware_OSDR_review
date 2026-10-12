@@ -1,0 +1,184 @@
+entity_id: HW046
+name: ADvanced Space Experiment Processor (ADSEP)
+vendor: Space Hardware Optimization Technology (SHOT) -> Techshot Inc. -> Redwire Space
+splash_ids: [46]
+registry_ids: []
+curated: "2026-10-12"
+
+location:
+  value: "Single middeck-locker-equivalent facility; Shuttle middeck (1996-2003 era) and ISS / Dragon (ADSEP2, 2021 UMAMI ran in Cargo Dragon)"
+  unit: "-"
+  source: "Redwire/Techshot press release 'Squid launching aboard next SpaceX Cargo Dragon in new Techshot device' (28 May 2021)"
+  url: https://rdw.com/newsroom/squid-launching-aboard-next-spacex-cargo-dragon-in-new-techshot-device
+  quote: "In a first for Techshot, the in-space portion of the research will be completed autonomously by ADSEP2 aboard the uncrewed SpaceX Cargo Dragon capsule, rather than inside the ISS."
+  kind: specified
+  note: >-
+    Astrobiology.com (2024, Redwire image caption): "fully automated, multi-use single middeck locker processing
+    facility". VERSION CAVEAT: OSDR's single entity covers first-generation ADSEP (SHOT, Shuttle), ADSEP2
+    and ADSEP-4; specs below are tagged by version where the source allows.
+
+geometry:
+  enclosure_external_in:
+    value: [18, 11, 21]
+    unit: in
+    source: "SpaceNews (28 Oct 2002) 'This space for rent - SHOT seeks additional customers for space shuttle mission'"
+    url: https://spacenews.com/this-space-for-rent-shot-seeks-additional-customers-for-space-shuttle-mission/
+    quote: "The facility, into which up to three cassettes at a time may be inserted, is the size of a single shuttle middeck locker (approximately 18″ x 11″x 21″)."
+    kind: specified
+    note: "Approximate EXTERNAL envelope of the first-generation (Shuttle-era) ADSEP = ~457 x 279 x 533 mm (unit conversion). Redwire describes ADSEP2 as 'microwave oven size'. Internal dimensions not found."
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Not found."
+  specimen_container:
+    value: "Experiment cassette ('lunchbox size'); UMAMI Fluid Processing Cassette with 8 loops x 3 FEP 25-mL culture bags"
+    unit: "-"
+    source: "OSDR OSD-961 study protocol (UMAMI, SpaceX-22)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "Each cassette housed eight experimental loops, consisting of three fluorinated ethylene propylene (FEP) 25-mL cell culture bags (Saint-Gobain, Gaithersburg, MD), which are permeable to O2 and CO2 but impermeable to water."
+    kind: specified
+    note: "Bags connected by 1/16 in ID platinum-cured silicone tubing with a peristaltic pump at each end (same protocol). Redwire 2021: 'The squid are housed inside bags in two lunchbox size cassettes'."
+  cassette_volume_L:
+    value: 3
+    unit: L
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 46, 'specimen_types_supported' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/46
+    quote: "Empty cassette volume is approximately three liters."
+    kind: specified
+    note: "SPLASH specimen_size: 'within 3L cassette'. Not confirmed in a Redwire engineering document."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Cassette and bag dimensions not found."
+  n_specimen_units:
+    value: 3
+    unit: cassettes
+    source: "Astrobiology.com (25 Jun 2024) caption of Redwire image sc2024e043200"
+    url: https://astrobiology.com/2024/07/offworld-life-science-hardware-space-advanced-space-experiment-processor.html
+    quote: "The ADSEP facility contains three independent thermal zones, each accommodates one “mini-laboratory” cassette and an internal computer that controls the processing of all three cassettes."
+    kind: specified
+    note: "CONFLICT: ISS National Lab facility page says experiments run 'simultaneously in up to four cassettes' (possibly ADSEP-4). SPLASH and SpaceNews 2002 agree on three."
+  layout:
+    value: "3 independent thermal zones, 1 cassette each"
+    unit: "-"
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 46, 'background' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/46
+    quote: "The ADSEP facility contains three independent thermal zones, each accommodating one cassette, and an internal computer that controls the processing of all three cassettes."
+    kind: specified
+
+ventilation:
+  mode:
+    value: null
+    unit: "-"
+    note: >-
+      Facility/cassette air handling not documented. Gas exchange to specimens in UMAMI was by diffusion through
+      FEP bag walls ("permeable to O2 and CO2 but impermeable to water", OSD-961); the gas environment of the
+      cassette around the bags is not described. SPLASH gas_control field reads "CO2" with no detail.
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Not found."
+  inlet:
+    value: null
+  outlet:
+    value: null
+  liquid_transfer:
+    value: "peristaltic pumping between bags; 5 mL inoculum, ~24 mL seawater out, 24 mL RNAlater in (UMAMI)"
+    unit: "-"
+    source: "OSDR OSD-961 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "After colonization, approximately 24 mL of FSW was pumped out of the Aquarium bag back into the Inoculation bags, which were then renamed the Waste bags after which 24 mL of RNALater was added to the Aquarium bags"
+    kind: specified
+    note: "Pump flow rate not given."
+
+environment:
+  temperature_C:
+    value: 23
+    unit: degC
+    source: "OSDR OSD-961 study protocol (UMAMI, ADSEP2, SpaceX-22, 2021)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "The temperature was maintained at 23 C +/- 0.5 for the duration of the UMAMI experiment."
+    kind: specified
+    note: >-
+      Experiment set point. Facility range CONFLICT: ISS National Lab page "Temperature control is available
+      (4-40C)."; SPLASH _id 46 temperature_range "14-40C". After the run the cassettes were "cooled to 10 C for
+      48 h" (OSD-961), so the facility reached at least 10 C - consistent with the ISS National Lab range.
+  rh_percent:
+    value: null
+    unit: "%"
+    note: "SPLASH rh_range: 'no active control - only measured'."
+  co2_ppm:
+    value: null
+    unit: ppm
+  o2_percent:
+    value: null
+    unit: "%"
+  pressure_kPa:
+    value: null
+    unit: kPa
+  light:
+    value: null
+    note: "SPLASH lighting 'Y' and imaging 'Y, in new version 2020' - no specification."
+
+nutrients:
+  mode:
+    value: "culture_medium / filtered seawater in FEP bags (cassette-specific)"
+    unit: "-"
+    source: "OSDR OSD-961 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "Each of the Aquarium bags was prepared by loading eight squid hatchlings into the FEP bags containing 25 mL of FSW."
+    kind: specified
+  detail:
+    value: null
+
+specimen:
+  type:
+    value: "Euprymna scolopes hatchlings (8 per 25-mL FEP bag) +/- Vibrio fischeri ES114 (UMAMI); SPLASH lists cell culture, bacteria, C. elegans, crystal growth"
+    unit: "-"
+    source: "OSDR OSD-961 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "Each of the Aquarium bags was prepared by loading eight squid hatchlings into the FEP bags containing 25 mL of FSW."
+    kind: specified
+    note: "Redwire 2021: ADSEP2 'will carry 128 live squid'."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "FEP culture bags (specimen level)"
+    unit: "-"
+    source: "OSDR OSD-961 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "three fluorinated ethylene propylene (FEP) 25-mL cell culture bags (Saint-Gobain, Gaithersburg, MD), which are permeable to O2 and CO2 but impermeable to water."
+    kind: specified
+    note: "Cassette/facility materials not found."
+  gas_permeability:
+    value: "FEP: permeable to O2 and CO2, impermeable to water (qualitative)"
+    unit: "-"
+    source: "OSDR OSD-961 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-961/
+    quote: "which are permeable to O2 and CO2 but impermeable to water."
+    kind: specified
+    note: "No permeability coefficient or film thickness given."
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "SPLASH: 'Conforms to ISS ExPRESS limitations'. Redwire 2021: ADSEP2 'provides power and thermal control to the experiment cassettes'."
+
+searched: |
+  OSDR snapshot 2026-10-12 (SPLASH _id 46; biodata OSD-961; no registry hardware record). ISS National Lab facility
+  page (HTTP 403 to scripts; read via WebFetch). Astrobiology.com 2024 Redwire caption. Redwire 2021 UMAMI press
+  release. SpaceNews 2002. Europe PMC / NTRS searches for ADSEP and Vellinger 2004 "Overview of SHOT hardware
+  capabilities" (Gravit Space Biol Bull; full text not located). AIAA 2001-5012 (Todd et al.) not open access.
+  Not found: internal dimensions, cassette dimensions, air handling, power, light spec, UMAMI peer-reviewed
+  paper.

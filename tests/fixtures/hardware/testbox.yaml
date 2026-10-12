@@ -1,0 +1,15 @@
+# SYNTHETIC TEST FIXTURE - not a real hardware item. Exercises the case pipeline only.
+entity_id: TEST
+name: synthetic test box
+geometry:
+  enclosure_internal_mm: {value: [120, 80, 60], unit: mm, source: test fixture, kind: specified}
+  dish_mm: {value: [50, 12], unit: mm, source: test fixture, kind: specified}
+ventilation:
+  flow_rate_L_min: {value: 1.0, unit: L/min, source: test fixture, kind: specified}
+environment:
+  temperature_C: {value: 22, unit: C, source: test fixture, kind: specified}
+  co2_ppm: {value: 400, unit: ppm, source: test fixture, kind: specified}
+  rh_percent: {value: 50, unit: '%', source: test fixture, kind: specified}
+specimen_load:
+  co2_flux: {value: 2.0, unit: umol/s, source: test fixture, kind: specified}
+  heat_W: {value: 0.5, unit: W, source: test fixture, kind: specified}

@@ -1,0 +1,179 @@
+entity_id: HW219
+name: Cell Culture Module (CCM) / Space Tissue Loss (STL) modules
+vendor: Walter Reed Army Institute of Research / DoD Space Test Program; built by Tissue Genesis Inc. (later units)
+splash_ids: []
+registry_ids: ["997"]
+curated: "2026-10-12"
+
+location:
+  value: "Space Shuttle middeck, single middeck locker"
+  unit: "-"
+  source: "NASA OSDR hardware registry, record 997 'Cell Culture Module (CCM)', description"
+  url: https://osdr.nasa.gov/geode-py/ws/api/hardware/997
+  quote: "The entire hardware unit fits inside a Shuttle middeck locker."
+  kind: specified
+  note: "NTRS 20160014676 (Bioculture System fact sheet) states the CCM 'flew on 21 space shuttle missions'; NTRS 20210021796 brochure says 'eighteen Space Shuttle missions from 1992 to 2011' (count conflict, not CFD-relevant)."
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "Only 'fits inside a Shuttle middeck locker' is stated; no internal dimensions found. Middeck-locker dimensions were NOT borrowed."
+  free_air_volume_L:
+    value: null
+    unit: L
+  specimen_container:
+    value: "Hollow-fibre bioreactor cartridge (2.2 mL), media perfused through the intracapillary space; cells in the extracapillary space"
+    unit: "-"
+    source: "Barrila J, Sarker SF, Hansmeier N, et al. (2021) Evaluating the effect of spaceflight on the host-pathogen interaction between human intestinal epithelial cells and Salmonella Typhimurium. NPJ Microgravity 7:9. doi:10.1038/s41526-021-00136-w"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7943786/
+    quote: "Approximately 1 × 10 6 HT-29 cells were loaded into twelve 2.2 mL hollow fiber bioreactors (Spectrum) through the ECS ports"
+    kind: specified
+    note: >-
+      STL-IMMUNE (STS-131). Fibre pore size 0.3 um (Fig. 1 legend). Registry 997: "Bioreactor cartridges are
+      inlaid with hollow fibers for media, gas, and the removal of waste products." Fiberless cartridges also
+      available for tissue pieces. "1 × 10 6" is the PMC rendering of 1x10^6.
+  specimen_container_volume_mL:
+    value: 2.2
+    unit: mL
+    source: "Barrila et al. (2021) NPJ Microgravity 7:9"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7943786/
+    quote: "twelve 2.2 mL hollow fiber bioreactors (Spectrum)"
+    kind: specified
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Cartridge dimensions and fibre count not given."
+  n_specimen_units:
+    value: [4, 6]
+    unit: bioreactors per experiment zone
+    source: "NASA OSDR hardware registry, record 997, component 'Bioreactor Cartridge'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/997
+    quote: "Generally 4-6 cartridges are flown per experiment zone."
+    kind: specified
+    note: "STL-IMMUNE flew 6 flight bioreactors; Chakraborty et al. 2014 (STS-135): 'each of the two CCMs were loaded with six bioreactors'."
+  layout:
+    value: "Bioreactors on 'rails' (organisational subunits for gas and media delivery); configurations CCM-A and CCM-C"
+    unit: "-"
+    source: "Barrila et al. (2021) NPJ Microgravity 7:9"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7943786/
+    quote: "CCM rails are organizational subunits within the CCM that facilitate gas and media delivery."
+    kind: specified
+
+ventilation:
+  mode:
+    value: sealed
+    unit: "-"
+    source: "Barrila et al. (2021) NPJ Microgravity 7:9"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7943786/
+    quote: "the fully loaded rails containing the HT-29 cells, media, fixatives and bacteria (maintained in stasis in DPBS) were integrated into the CCM, which was then sealed, powered and the temperature set to 37 °C."
+    kind: specified
+    note: >-
+      Specimens are liquid-perfused, not air-ventilated. Gas reaches cells via an oxygenator in each closed
+      flowpath (Chakraborty et al. 2014: "Each flowpath consisted of one bioreactor, one pump, one oxygen chamber
+      (O2), one 70 ml media bag and one sump bag"). OSDR OSD-323 protocol: CCM "sealed, powered and set to 37C
+      and 5% CO2".
+  flow_rate_L_min:
+    value: "n/a (sealed)"
+    unit: L/min
+    note: "No air exchange documented. Liquid perfusion rate in medium_flow_rate_mL_min."
+  medium_flow_rate_mL_min:
+    value: 6
+    unit: mL/min
+    source: "Barrila et al. (2021) NPJ Microgravity 7:9"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7943786/
+    quote: "Media was circulated within the ICS of the fibers during the experiment at a flow rate of 6 mL/min."
+    kind: specified
+    note: "STL-IMMUNE (STS-131) setting; experiment-specific."
+  inlet:
+    value: null
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: 37
+    unit: degC
+    source: "NASA OSDR hardware registry, record 997, component 'Incubation'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/997
+    quote: "In most cases the CCM will be programmed to maintain a constant 37°C environment, but it is possible to hold all samples within an experiment zone at one temperature between 32-39°C, and adjust the temperature on-orbit."
+    kind: specified
+    note: "Range 32-39 C per zone; CCM-C has limited 4 C refrigerated space. STL-IMMUNE rails were turned off after fixation to hold 29-30 C until landing (Barrila 2021)."
+  rh_percent:
+    value: null
+    unit: "%"
+  co2_ppm:
+    value: 50000
+    unit: ppm
+    source: "OSDR OSD-323 study protocol (STL-IMMUNE, STS-131)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-323/
+    quote: "All bioreactors, bacteria bags and fixative bags were integrated into the Cell Culture Module (CCM) flight hardware, which was then sealed, powered and set to 37C and 5% CO2."
+    kind: specified
+    note: "5% = 50,000 ppm (unit conversion). Single-mission value; delivery mechanism (gas supply vs. sealed-in gas) not described."
+  o2_percent:
+    value: null
+    unit: "%"
+  pressure_kPa:
+    value: null
+    unit: kPa
+  light:
+    value: null
+    unit: "-"
+    note: "Not stated in any opened source; registry 997 describes no lighting subsystem (likely dark, but unsourced)."
+
+nutrients:
+  mode:
+    value: culture_medium
+    unit: "-"
+    source: "NASA OSDR hardware registry, record 997, component 'Media Delivery'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/hardware/997
+    quote: "The recirculating flow path option directs media flow through the media bag, oxygenator, pump, biochamber, and back to the media bag, allowing growth factors and other products to accumulate."
+    kind: specified
+    note: "Alternative intermittent-feed option diverts spent media to a sump."
+  detail:
+    value: "60 mL media bags (STL-IMMUNE); 70 mL media bags (STS-135 LPS study)"
+    unit: "-"
+    source: "Barrila et al. (2021) NPJ Microgravity 7:9"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC7943786/
+    quote: "Flight and ground control bags contained either 60 mL of flight culture media or 40 mL RNAlater II fixative (Ambion) for transcriptomic and proteomic analyses."
+    kind: specified
+    note: "Chakraborty N et al. (2014) BMC Genomics 15:659 (doi:10.1186/1471-2164-15-659): 'one 70 ml media bag and one sump bag' per flowpath."
+
+specimen:
+  type:
+    value: "Human cell cultures: HT-29 colonic epithelial cells +/- Salmonella Typhimurium (STL-IMMUNE, OSD-323); HMVEC-dBL endothelial cells + LPS (STS-135, OSD-54)"
+    unit: "-"
+    source: "OSDR OSD-323 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-323/
+    quote: "HT-29 cells were seeded into collagen-coated hollow fiber bioreactors at Kennedy Space Center at a concentration of 1x10^6 CFU."
+    kind: specified
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: null
+    note: "Bioreactor shell / fibre material not stated (commercial Spectrum hollow-fibre cartridges)."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "Not found."
+
+searched: |
+  OSDR snapshot 2026-10-12 (registry hardware 997 incl. BIONA-C component; biodata OSD-323, OSD-54; no SPLASH
+  record). Barrila et al. 2021 NPJ Microgravity (PMC full text); Chakraborty et al. 2014 BMC Genomics (PMC);
+  Chakraborty et al. 2018 NPJ Microgravity (PMC5788863). NTRS search "Space Tissue Loss cell culture module"
+  (abstract-only records). Not found: CCM internal dimensions, air handling inside the module, power,
+  bioreactor geometry, oxygenator gas composition/flow.

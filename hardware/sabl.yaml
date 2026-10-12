@@ -1,0 +1,224 @@
+entity_id: HW043
+name: Space Automated Bioproduct Laboratory (SABL)
+vendor: BioServe Space Technologies, University of Colorado Boulder
+splash_ids: [43]
+registry_ids: ["2006"]
+curated: "2026-10-12"
+
+location:
+  value: "ISS EXPRESS rack, single locker; heat rejection to the EXPRESS Moderate Temperature Loop"
+  unit: "-"
+  source: "Niederwieser T, Anthony J, Darnell A, King G, Koenig P, Stodieck L, Wright J, Gahbler P, Hoehn A (2015) SABL - An EXPRESS locker-sized incubator for performing biological experiments onboard the ISS. 45th ICES, Bellevue WA, ICES-2015-081"
+  url: http://hdl.handle.net/2346/64364
+  quote: "The entire system was required to fit into a single EXPRESS locker with its mass limit of less than 32 kg and a total power consumption of less than 280 W."
+  kind: specified
+
+geometry:
+  enclosure_internal_mm:
+    value: [420, 282, 197]
+    unit: mm
+    source: "Tozer S, Anthony J, Stodieck L, Hoehn A (2016) A CO2 controller enabling cell culture research inside an automated incubator onboard the ISS. 46th ICES, Vienna, ICES-2016-418"
+    url: http://hdl.handle.net/2346/67724
+    quote: "The Science Research Module (SRM) is the actual incubator volume of SABL and has dimensions of (L x W x H) 42.0 x 28.2 x 19.7 cm (16.55” x 11.10” x 7.75”) for a total volume of 23.32 L"
+    kind: specified
+    note: >-
+      CONFLICT: Niederwieser et al. 2015 (ICES-2015-081, abstract) give "41.9 x 27.9 x 19.4 cm (16.6” x 11.1”
+      x 7.8”, DxWxH)" and a requirement of "at least 41.91 x 27.94 x 19.56 cm". The 2016 paper is chosen
+      because it is later (post-flight-build) and its 23.32 L agrees with the ISS National Lab "Over 23 liters
+      of temperature controlled experiment volume". The SPLASH 'volume' field (22.30 x 18.13 x 10.76 in) is
+      larger than the SRM and is probably the external locker envelope - not used. Front side is a door;
+      other five walls are aluminium.
+  free_air_volume_L:
+    value: 23.32
+    unit: L
+    source: "Tozer et al. (2016) ICES-2016-418"
+    url: http://hdl.handle.net/2346/67724
+    quote: "for a total volume of 23.32 L (1,423 cu. inches)."
+    kind: specified
+    note: >-
+      This is the EMPTY SRM volume. Free air depends on the insert; the ACM CO2 controller occupies the back
+      wall, and Tozer et al. Table 1 assumes 50-75% free volume for baseline/planned experiments.
+  specimen_container:
+    value: "Insert-dependent: BioCell 6-well plates, Group Activation Packs (8 FPAs each), Plate Habitats (6 Nunc OmniTrays)"
+    unit: "-"
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "this can be accomplished by inserting a tray of Biocells sample containers or Group Activation Packs (GAP) containing the biological samples."
+    kind: specified
+    note: >-
+      OSDR examples: OSD-258 BioCells (hiPSC-cardiomyocytes); OSD-627 GAP/FPA biofilms ("Eight FPAs with the
+      three-chamber configuration were assembled into each GAP"); OSD-233 PHABs ("with six OmniTray plates in
+      each PHAB").
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "BioCell / GAP / PHAB external dimensions not curated here (separate hardware items)."
+  n_specimen_units:
+    value: null
+    note: "Insert-dependent."
+  layout:
+    value: "Inserts mounted to any of 5 walls on a 1-inch threaded-hole grid; ACM (if fitted) on back wall"
+    unit: "-"
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "the SABL SRM contains a standardized mounting system allowing users to mount hardware to any of the 5 walls for better heat transfer. This is accomplished using an evenly spaced and uniform grid of threaded holes on a 1” standard spacing."
+    kind: specified
+
+ventilation:
+  mode:
+    value: sealed
+    unit: "-"
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "Isolation from the ISS air is required for condensation prevention and independent partial pressure control inside the SRM volume."
+    kind: specified
+    note: >-
+      SRM is closed to cabin air (door seal: aerogel core + Armaflex). The SABL fan cools only the electronics
+      ("The SABL fan pulls clean and cool AAA air from the EXPRESS rack through the electronics assembly, and out
+      the back of SABL"). Without the ACM insert there is no forced convection in the SRM: "Convective air
+      mixing would further reduce the thermal gradients ... but is not always possible". Registry 2006:
+      "Internally powered experiments can use a small fan for additional convective cooling, if necessary."
+  flow_rate_L_min:
+    value: "n/a (sealed)"
+    unit: L/min
+    note: "No cabin-air exchange. See internal_recirculation_L_min and leak_rate for the ACM configuration."
+  internal_recirculation_L_min:
+    value: 140
+    unit: L/min
+    source: "Tozer et al. (2016) ICES-2016-418"
+    url: http://hdl.handle.net/2346/67724
+    quote: "it was determined that a fan with a flow rate of 140 L/min (5.0 CFM) is sufficient for re-circulating the free volume inside of the SRM."
+    kind: specified
+    note: "Only when the Atmosphere Control Module (ACM) insert is installed; fan and CO2 release are disabled when the door is opened."
+  leak_rate:
+    value: "0.13 g/h CO2 (1.3 mL/min at 37 C, 1 atm), door closed"
+    unit: "-"
+    source: "Tozer et al. (2016) ICES-2016-418"
+    url: http://hdl.handle.net/2346/67724
+    quote: "The leakage of CO2 out of SABL with the incubator door closed is minimal (0.13 g/hr, or 1.3 mL/min at 37°C and 1 atm)."
+    kind: measured
+  inlet:
+    value: null
+    note: "ACM fan location: ACM mounted on SRM back wall; fan position inside ACM not specified."
+  outlet:
+    value: null
+
+environment:
+  temperature_C:
+    value: [-5, 43]
+    unit: degC
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "SABL provides a 41.9 x 27.9 x 19.4 cm (16.6” x 11.1” x 7.8”, DxWxH) sized science research module (SRM) volume, which can be temperature-controlled from -5 to +43 °C."
+    kind: specified
+    note: >-
+      Registry 2006 states -5 to +40 C (conflict; ICES papers, ISS National Lab and SPLASH all give +43 C).
+      Required SRM gradients (Table 1): 1 C at 20-30 C, 1.5 C at 37 C, 2.5 C at 4 C, 3.5 C at -5 C.
+      Typical cell-culture use 37 C (OSD-258, OSD-627).
+  temperature_C_typical_cell_culture:
+    value: 37
+    unit: degC
+    source: "OSDR OSD-258 study protocol (Wnorowski et al. 2019 Stem Cell Rep 13:960)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-258/
+    quote: "BioCells were maintained aboard the ISS in an on-station incubator (Space Automated Bioproduct Laboratory [SABL]) at 37C and 5% CO2"
+    kind: specified
+  rh_percent:
+    value: "uncontrolled; near saturation during cell-culture incubation"
+    unit: "%"
+    source: "Tozer et al. (2016) ICES-2016-418"
+    url: http://hdl.handle.net/2346/67724
+    quote: "ACM does not control humidity. In fact, during incubation, the incubator volume will reach close to saturation humidity due to diffusion of water vapor from the cell cultures."
+    kind: specified
+  co2_ppm:
+    value: 50000
+    unit: ppm
+    source: "Tozer et al. (2016) ICES-2016-418"
+    url: http://hdl.handle.net/2346/67724
+    quote: "The typical use case for mammalian cell culture is a temperature of +37°C and a CO2 concentration of 5%."
+    kind: specified
+    note: "5% = 50,000 ppm (unit conversion). Only with ACM fitted; set-point accuracy +/-0.5%. Without ACM, SRM gas is whatever was sealed in at door closure."
+  o2_percent:
+    value: null
+    unit: "%"
+    note: "ACM balance is ambient air ('with the remaining balance just an ambient air mixture'); no O2 value given."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Cabin-coupled; not specified."
+  light:
+    value: "dark by default; integral LED lighting available"
+    unit: "-"
+    source: "ISS National Laboratory facility page 'Space Automated Bioproduct Laboratory'"
+    url: https://issnationallab.org/?p=42241
+    quote: "integral LED lighting available for scientific hardware and experiments"
+    kind: specified
+    note: "Niederwieser 2015: 'there is no temperature or illumination pollution into the closed SRM during experiment execution'. Page blocks scripted download (HTTP 403); quote via WebFetch extraction."
+
+nutrients:
+  mode:
+    value: culture_medium
+    unit: "-"
+    source: "OSDR OSD-258 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-258/
+    quote: "The hiPSC-CMs within the BioCells were cultured in a high-nutrient CM maintenance medium that was changed weekly."
+    kind: specified
+    note: "Insert-dependent; OSD-233 used agar (GMM) in OmniTrays inside PHABs."
+  detail:
+    value: null
+
+specimen:
+  type:
+    value: "Insert-dependent: hiPSC-cardiomyocytes in BioCells (OSD-258), Pseudomonas aeruginosa biofilms in FPA/GAP (OSD-554/627), Aspergillus nidulans on agar in PHABs (OSD-233)"
+    unit: "-"
+    source: "OSDR OSD-627 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-627/
+    quote: "Samples were incubated at 37°C inside BioServe’s Space Automated Bioproduct Lab (SABL) for the designated incubation times (1, 2, or 3 days) in anaerobic conditions."
+    kind: specified
+    note: "SPLASH _id 43 specimen_types_supported: 'microorganisms (bacteria, yeast, algae, fungi, virus, etc), small organisms, animal cells, tissue cultures, small plants'."
+
+specimen_load:
+  co2_flux:
+    value: null
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+    note: "Design requirement Table 1 assumed 0 W internal continuous heat load for the gradient specification."
+
+walls:
+  material:
+    value: "aluminium, 0.635 cm (0.25 in) thick, five walls; front door insulated with encapsulated aerogel + Armaflex; other sides 2-part polyurethane foam (0.023 g/cm3)"
+    unit: "-"
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "The SRM is constructed of five aluminum walls, covering all sides except the front."
+    kind: specified
+    note: "Same paper: 'The SABL team settled on a wall thickness of 0.635 cm (0.25”)'. Temperature control by four TECs (2 on top, 2 on bottom wall)."
+  gas_permeability:
+    value: null
+    note: "Door seal leak characterised only as CO2 leak rate (ventilation.leak_rate)."
+
+thermal:
+  power_W:
+    value: [33.9, 160.3]
+    unit: W
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "the total power consumption can be calculated to range between 33.9 W in idle mode, and 160.3 W in full cool state."
+    kind: measured
+    note: "Engineering unit, 20 C water loop. Requirement < 280 W. SPLASH: '45W/280W max'."
+  heat_rejection:
+    value: "4 thermoelectric coolers (top/bottom SRM walls) to EXPRESS MTL water loop"
+    unit: "-"
+    source: "Niederwieser et al. (2015) ICES-2015-081"
+    url: http://hdl.handle.net/2346/64364
+    quote: "Temperature control of the SRM is accomplished using a total of four thermoelectric coolers (TECs) mounted to the top and bottom surfaces of the SRM."
+    kind: specified
+
+searched: |
+  OSDR snapshot 2026-10-12 (SPLASH _id 43; registry hardware 2006; biodata OSD-233/258/554/627/781/867).
+  ICES-2015-081 (full PDF, TTU repository) and ICES-2016-418 (full PDF). ISS National Lab facility page.
+  Not found: O2, explicit pressure, insert-specific geometry (BioCell/GAP/PHAB curated elsewhere),
+  ACM fan position/outlet geometry, specimen metabolic loads.

@@ -1,0 +1,250 @@
+entity_id: HW036
+name: Multi-use Variable-g Platform (MVP)
+vendor: Techshot Inc. (now Redwire Space)
+splash_ids: [36]
+registry_ids: ["2004"]
+curated: "2026-10-12"
+
+location:
+  value: "ISS; locker-format payload on an EXPRESS-rack interface (28 V power, Moderate Temperature Loop water cooling)"
+  unit: "-"
+  source: "NASA OSDR SPLASH instrument catalogue, record _id 36 (snapshot 2026-10-12)"
+  url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/36
+  quote: "dims: Single Locker; interface_definitions: 28V Power, Data optional, MTL; power: conforms to ISS EXPRESS limitations with water cooling"
+  kind: specified
+  note: >-
+    Quote strings are SPLASH field values. Redwire describes MVP as "Approximately the size of a
+    microwave oven" (see geometry.enclosure_overall); the locker-equivalent count was not verified
+    in an engineering document. DATA-QUALITY FLAG: SPLASH _id 36 lists alternate_names ["MOBIAS"],
+    which is a different BioServe bioreactor (HW121) - treat as a catalogue error.
+
+geometry:
+  enclosure_internal_mm:
+    value: null
+    unit: mm
+    note: "No internal habitat (carousel housing) dimensions found in any opened source."
+  enclosure_overall:
+    value: "approximately the size of a microwave oven"
+    unit: "-"
+    source: "Redwire/Techshot press release 'Techshot Artificial Gravity Machine to Launch Aboard SpaceX CRS-14' (2018)"
+    url: https://rdw.com/newsroom/techshot-artificial-gravity-machine-to-launch-aboard-spacex-crs-14
+    quote: "Approximately the size of a microwave oven, MVP hosts six separate experiment modules on each of two 390 mm internal carousels."
+    kind: specified
+    note: "Qualitative only - not usable as a CFD dimension."
+  centrifuge_rotor_diameter_mm:
+    value: 390
+    unit: mm
+    source: "NASA OSDR experiment registry OS-808 (MVP-Fly-01 validation), 'approach' field; same sentence on NASA Ames page 'Multi-use Variable-gravity Platform Validation'"
+    url: https://osdr.nasa.gov/geode-py/ws/api/experiment/OS-808
+    quote: "two 390mm diameter, identical and independently-controlled centrifuges that can generate artificial gravity from .1 to 2g."
+    kind: specified
+    note: >-
+      NASA Ames page (https://www.nasa.gov/ames/space-biosciences/multi-use-variable-gravity-platform-validation)
+      adds: "Six DEMs will be placed in each of the two centrifuges that are stacked, one above the other,
+      inside the MVP." Registry hardware 2004 states the g-range as 0 to 2g; Redwire states 0.1 g increments
+      up to 2.0 g.
+  free_air_volume_L:
+    value: null
+    unit: L
+    note: "Not found."
+  specimen_container:
+    value: "Experiment module, customised per campaign (e.g. Drosophila Experiment Module with 2 adult fly chambers + 3 food cylinders; cell-culture module with culture chambers)"
+    unit: "-"
+    source: "Mhatre SD, Iyer J, et al. (2022) Artificial gravity partially protects space-induced neurological deficits in Drosophila melanogaster. Cell Rep 40(10):111279. doi:10.1016/j.celrep.2022.111279 (PMC10503492)"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10503492/
+    quote: "Each MVP module has two adult fly chambers and three food cylinders"
+    kind: specified
+    note: >-
+      Same paper (Fig. S1 legend): "the outer plastic vessel that contains the aluminum food cylinder had a
+      single opening that rotated back and forth". Redwire: modules are "customized to accommodate the sample
+      type and experiment protocol of a given research campaign".
+  module_volume_cc:
+    value: 800
+    unit: cm3
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 36, 'background' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/36
+    quote: "Each of the 12 experiment modules runs in parallel with a volume of 800 cc."
+    kind: specified
+    note: "Not independently confirmed in a Techshot/Redwire engineering document."
+  specimen_container_mm:
+    value: null
+    unit: mm
+    note: "Module external/internal dimensions not found."
+  food_cylinder_fill_mL:
+    value: 9.2
+    unit: mL
+    source: "Mhatre SD, Iyer J, et al. (2022) Cell Rep 40(10):111279. doi:10.1016/j.celrep.2022.111279"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10503492/
+    quote: "Each food cylinder holds approximately 9.2 mL of standard fly food"
+    kind: specified
+  cell_culture_chamber_volume_mL:
+    value: 10
+    unit: mL
+    source: "Hwang H, Rampoldi A, et al. (2023) Space microgravity increases expression of genes associated with proliferation and differentiation in human cardiac spheres. NPJ Microgravity 9:88. doi:10.1038/s41526-023-00336-6"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10710480/
+    quote: "started with a medium flush cycle to replace the medium with a new culture medium (20 mL per chamber; ~2× chamber volume)"
+    kind: derived
+    note: "20 mL flush = ~2x chamber volume -> chamber ~10 mL (approximate). Applies to the MVP cell-culture module used on SpaceX-20 (MVP2-Cell-03), not to the fly module."
+  n_specimen_units:
+    value: 12
+    unit: modules
+    source: "ISS National Laboratory facility page 'Multi-use Variable-g Platform'"
+    url: https://issnationallab.org/?p=42233
+    quote: "Each MVP unit accommodates up to 12 experiment modules, which provide 2-levels of containment"
+    kind: specified
+    note: "Page blocks scripted download (HTTP 403); quote obtained via WebFetch extraction in this session."
+  layout:
+    value: "2 independently controlled carousels (stacked), 6 modules per carousel"
+    unit: "-"
+    source: "Redwire/Techshot press release (2018)"
+    url: https://rdw.com/newsroom/techshot-artificial-gravity-machine-to-launch-aboard-spacex-crs-14
+    quote: "MVP hosts six separate experiment modules on each of two 390 mm internal carousels."
+    kind: specified
+    note: "Both carousels can be removed on orbit and replaced with fixed platforms (same press release)."
+
+ventilation:
+  mode:
+    value: forced
+    unit: "-"
+    source: "Mhatre SD, Iyer J, et al. (2022) Cell Rep 40(10):111279; identical text in OSDR OSD-595 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-595/
+    quote: "Fresh cabin air was continuously circulated through the habitat to maintain steady CO2 and O2 levels."
+    kind: specified
+    note: >-
+      Registry hardware 2004: "The platform is also equipped with LED lighting, a CO2 sensor, a camera, a
+      circulation fan, and a blower fan". ISS National Lab lists "CO2 scrub, ethylene scrub". Air path,
+      fan locations and whether cabin air reaches the interior of each module are not documented.
+  flow_rate_L_min:
+    value: null
+    unit: L/min
+    note: "Not found (habitat air-exchange rate and fan flow unpublished)."
+  air_velocity_m_s:
+    value: null
+    unit: m/s
+    note: "Not found."
+  inlet:
+    value: null
+    note: "Not found."
+  outlet:
+    value: null
+    note: "Not found."
+
+environment:
+  temperature_C:
+    value: [14, 40]
+    unit: degC
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 36, 'temperature_range' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/36
+    quote: "14-40C"
+    kind: specified
+    note: "Facility capability. Cell-culture run (MVP2-Cell-03): 37 C (see temperature_C_cell_culture_run). Fly-mission set point not stated in the opened sources."
+  temperature_C_cell_culture_run:
+    value: 37
+    unit: degC
+    source: "Hwang H, Rampoldi A, et al. (2023) NPJ Microgravity 9:88. doi:10.1038/s41526-023-00336-6"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10710480/
+    quote: "The cells were cultured at 37 °C in the MVP system for 22 days on the ISS with medium exchange every other day."
+    kind: specified
+  rh_percent:
+    value: [50, 85]
+    unit: "%"
+    source: "NASA OSDR SPLASH instrument catalogue, record _id 36, 'rh_range' field"
+    url: https://visualization.osdr.nasa.gov/splash-api/public/instruments/36
+    quote: "50% - 85%"
+    kind: specified
+  co2_ppm:
+    value: [3500, 5443]
+    unit: ppm
+    source: "Mhatre SD, Iyer J, et al. (2022) Cell Rep 40(10):111279. doi:10.1016/j.celrep.2022.111279"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10503492/
+    quote: "The average CO2 level in the MVP hardware during this experiment ranged between 3500-5443 ppm during the mission"
+    kind: measured
+    note: "MVP-Fly-01 telemetry (SpaceX-14, 2018). PMC HTML renders the subscript as 'CO 2'."
+  o2_percent:
+    value: null
+    unit: "%"
+    note: "Telemetered per Mhatre 2022 but values not published in the opened text."
+  pressure_kPa:
+    value: null
+    unit: kPa
+    note: "Cabin-coupled; no MVP-specific value found."
+  light:
+    value: "uniform white LED, 12 h:12 h light:dark (MVP-Fly-01)"
+    unit: "-"
+    source: "OSDR OSD-595 study protocol (text identical to Mhatre et al. 2022 Methods)"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-595/
+    quote: "The hardware consists of uniform white LED illumination which was programmed for a 12-h:12-h (light: dark) cycle for each habitat."
+    kind: specified
+    note: "Intensity / PPFD not found."
+  gravity:
+    value: "SF1g carousel 68 rpm (1 g); SFug carousel 2.2 rpm (~0.00095 g at outer edge)"
+    unit: "-"
+    source: "OSDR OSD-595 study protocol"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-595/
+    quote: "one centrifuge was rotated at 68 rpm to artificially simulate Earth’s gravity (SF1g) in space. The other centrifuge was rotated at 2.2 rpm, making the g-level at the outer edge of the carousel at approximately 0.00095g (SFμg)."
+    kind: specified
+    note: "Rotation-induced air motion inside the housing is a CFD-relevant consequence; no measurement found."
+
+nutrients:
+  mode:
+    value: "fly food (Drosophila module) / culture_medium (cell-culture module)"
+    unit: "-"
+    source: "Mhatre et al. 2022 (fly food); Hwang et al. 2023 (medium)"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10503492/
+    quote: "Each food cylinder holds approximately 9.2 mL of standard fly food"
+    kind: specified
+  detail:
+    value: "Cell module: CO2-independent medium, 20 mL flush per chamber, exchange every other day (MVP2-Cell-03)"
+    unit: "-"
+    source: "Hwang H, Rampoldi A, et al. (2023) NPJ Microgravity 9:88"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10710480/
+    quote: "The cells were then injected into cell culture chambers of the MVP modules containing a CO2-independent medium with 10 μM ROCK inhibitor."
+    kind: specified
+    note: "PMC HTML renders the subscript as 'CO 2 -independent'."
+
+specimen:
+  type:
+    value: "Drosophila melanogaster w1118 (MVP-Fly-01: 10 male + 25 female F0 per module, multigeneration); also hiPSC-derived cardiac spheres (MVP2-Cell-03), Bacillus subtilis (MVP-Cell-02)"
+    unit: "-"
+    source: "OSDR OSD-595 study protocol; registry payloads MVP2-Cell-03 and MVP-Cell-02"
+    url: https://visualization.osdr.nasa.gov/biodata/api/v2/dataset/OSD-595/
+    quote: "Thirty hours prior to launch, one-day-old virgin male (10) and female (25) fruit flies were loaded into the adult food cylinder 3 in each of the six MVP modules (F0 generation)."
+    kind: specified
+    note: "Fly numbers grow over the mission; registry OS-808 results field: 'We estimate that greater than 14,000 eggs, larvae and adults were returned live from spaceflight.'"
+
+specimen_load:
+  co2_flux:
+    value: null
+    note: "Not curated (would need Drosophila respiration literature x population time course)."
+  o2_flux:
+    value: null
+  h2o_flux:
+    value: null
+  heat_W:
+    value: null
+
+walls:
+  material:
+    value: "food cylinder: aluminium, inside an outer plastic vessel (fly module)"
+    unit: "-"
+    source: "Mhatre SD, Iyer J, et al. (2022) Cell Rep 40(10):111279, Figure S1 legend"
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC10503492/
+    quote: "the outer plastic vessel that contains the aluminum food cylinder had a single opening that rotated back and forth to give flies access to one side of the cylinder at a time."
+    kind: specified
+    note: "Module and habitat housing materials not found."
+  gas_permeability:
+    value: null
+
+thermal:
+  power_W:
+    value: null
+    unit: W
+    note: "SPLASH: 'conforms to ISS EXPRESS limitations with water cooling' - no number."
+
+searched: |
+  OSDR snapshot 2026-10-12 (SPLASH _id 36; registry hardware 2004, experiments OS-751/OS-808, payloads
+  MVP-Fly-01/MVP-Cell-02/MVP2-Cell-03; biodata OSD-514/592/595/596/811). Mhatre et al. 2022 Cell Rep (PMC
+  full text). Hwang et al. 2023 NPJ Microgravity (PMC full text). NASA Ames MVP validation page. Redwire
+  press releases (CRS-14). ISS National Lab facility page. NTRS search "Multi-use Variable-g Platform"
+  (20190001070 is the earlier Fruit Fly Lab, not MVP). Not found: habitat internal dimensions, module
+  dimensions, fan/air-exchange flow rates, light intensity, O2 values, module wall materials.

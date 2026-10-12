@@ -30,6 +30,7 @@ REF_NU = {1e4: (2.243, 2.245), 1e5: (4.519, 4.522), 1e6: (8.800, 8.825)}
 REF_SOURCE = ("Gjesdal T., Wasberg C.E., Andreassen O. (2003) Spectral element simulations of "
               "buoyancy-driven flow. arXiv:physics/0305049, Table 1")
 PR = 0.71
+END = {1e4: 300, 1e5: 300, 1e6: 600}
 
 
 def _common(case, nu, kappa_over_nu_Pr, end_time, write_interval, max_co=0.7, dt=1e-3):
@@ -41,7 +42,7 @@ def _common(case, nu, kappa_over_nu_Pr, end_time, write_interval, max_co=0.7, dt
         "adjustTimeStep": "yes", "maxCo": max_co, "maxDeltaT": 1.0,
     })
     write(case / "system" / "fvSchemes", "dictionary", "fvSchemes", {
-        "ddtSchemes": {"default": "Euler"},
+        "ddtSchemes": {"default": "backward"},
         "gradSchemes": {"default": "Gauss linear"},
         "divSchemes": {"default": "none", "div(phi,U)": "Gauss linear", "div(phi,T)": "Gauss linear",
                        "div((nuEff*dev2(T(grad(U)))))": "Gauss linear"},
@@ -67,7 +68,7 @@ def _common(case, nu, kappa_over_nu_Pr, end_time, write_interval, max_co=0.7, dt
 
 def cavity_case(ra: float, n: int, grading: float = 4.0):
     """Unit square, hot left wall T=1, cold right wall T=0, adiabatic top/bottom, g=(0,-1,0)."""
-    case = RUNS / f"verify_dvd_Ra{ra:.0e}_n{n}"
+    case = RUNS / f"verify_dvd2_Ra{ra:.0e}_n{n}"
     nu = math.sqrt(PR / ra)          # g = beta = dT = L = 1  ->  Ra = 1/(nu*kappa), Pr = nu/kappa
     # symmetric wall grading: first/last cell 1/grading of the centre cell
     write(case / "system" / "blockMeshDict", "dictionary", "blockMeshDict", f"""
@@ -85,7 +86,7 @@ boundary
 """)
     write(case / "constant" / "g", "uniformDimensionedVectorField", "g",
           "dimensions [0 1 -2 0 0 0 0];\nvalue (0 -1 0);\n")
-    _common(case, nu, None, end_time=600 if ra >= 1e6 else 300, write_interval=50)
+    _common(case, nu, None, end_time=END[ra], write_interval=10)
     walls = {"hot": None, "cold": None, "adiabatic": None, "frontAndBack": {"type": "empty"}}
     write_field(case, "U", "[0 1 -1 0 0 0 0]", "uniform (0 0 0)",
                 {k: (v or {"type": "noSlip"}) for k, v in walls.items()}, cls="volVectorField")
@@ -103,43 +104,51 @@ boundary
     return case
 
 
-def nusselt_hot(case, n):
-    """Mean Nusselt number on the hot wall from the latest steady field.
+def nusselt(case, n, t):
+    """Mean wall Nusselt numbers (hot, cold) of the field at time t.
 
-    dT/dx at the wall from a second-order one-sided fit through the wall value and the
-    two nearest cell centres in each row; integrated over the wall with the cell heights.
+    dT/dx at each wall from a second-order one-sided fit through the wall value and
+    the two nearest cell centres in each row, integrated over the wall height.
     """
-    t = foam.time_dirs(case)[-1]
-    T = foam.read_internal(case / t / "T")
-    C = foam.read_internal(case / t / "C")
-    T = T.reshape(n, n)                     # blockMesh order: x fastest, then y
+    T = foam.read_internal(case / t / "T").reshape(n, n)       # blockMesh order: x fastest
+    C = foam.read_internal(case / foam.time_dirs(case)[-1] / "C")
     x = C[:, 0].reshape(n, n)
     y = C[:, 1].reshape(n, n)[:, 0]
-    x1, x2, t1, t2 = x[:, 0], x[:, 1], T[:, 0], T[:, 1]
-    # quadratic through (0, 1), (x1, t1), (x2, t2): dT/dx|0
-    a = ((t1 - 1) / x1 - (t2 - 1) / x2) / (x1 - x2)
-    b = (t1 - 1) / x1 - a * x1
-    nu_local = -b
-    ycent = np.asarray(y)
-    edges = np.concatenate([[0], 0.5 * (ycent[1:] + ycent[:-1]), [1]])
-    return float(np.sum(nu_local * np.diff(edges))), t
+    edges = np.diff(np.concatenate([[0], 0.5 * (y[1:] + y[:-1]), [1]]))
+
+    def grad(d1, d2, t1, t2, tw):
+        a = ((t1 - tw) / d1 - (t2 - tw) / d2) / (d1 - d2)
+        return (t1 - tw) / d1 - a * d1
+    hot = -grad(x[:, 0], x[:, 1], T[:, 0], T[:, 1], 1.0)
+    cold = grad(1 - x[:, -1], 1 - x[:, -2], T[:, -1], T[:, -2], 0.0)
+    return float(np.sum(hot * edges)), float(np.sum(cold * edges))
 
 
-def run_cavity(ns=(64, 96, 128)):
+def nusselt_window(case, n, end):
+    """Hot/cold mean Nu averaged over all outputs in the last third of the run."""
+    ts = [t for t in foam.time_dirs(case) if float(t) >= 2 * end / 3 - 1e-9]
+    vals = np.array([nusselt(case, n, t) for t in ts])
+    both = vals.mean(axis=1)
+    return {"Nu": float(both.mean()), "Nu_time_sd": float(both.std(ddof=1)) if len(both) > 1 else 0.0,
+            "Nu_hot": float(vals[:, 0].mean()), "Nu_cold": float(vals[:, 1].mean()), "n_outputs": len(ts)}
+
+
+def run_cavity(ns=(64, 96, 128), ras=None):
     rows = []
-    for ra in REF_NU:
+    for ra in (ras or REF_NU):
         for n in ns:
             case = cavity_case(ra, n)
             if not (case / "constant" / "polyMesh" / "points").exists():
                 foam.run(case, ["blockMesh"])
             last = foam.time_dirs(case)
-            if not last or float(last[-1]) < (600 if ra >= 1e6 else 300) - 1e-9:
+            if not last or float(last[-1]) < END[ra] - 1e-9:
                 foam.run(case, ["buoyantBoussinesqPimpleFoam"])
             foam.run(case, ["postProcess -func writeCellCentres -latestTime"])
-            nu, t = nusselt_hot(case, n)
+            r = nusselt_window(case, n, END[ra])
             dvd, hort = REF_NU[ra]
-            rows.append({"Ra": ra, "n": n, "Nu": round(nu, 4), "t_end": float(t), "ref_deVahlDavis": dvd,
-                         "ref_Hortmann": hort, "err_vs_Hortmann_pct": round(100 * (nu - hort) / hort, 3)})
+            rows.append({"Ra": ra, "n": n, **{k: round(v, 5) for k, v in r.items()}, "t_end": END[ra],
+                         "ref_deVahlDavis": dvd, "ref_Hortmann": hort,
+                         "err_vs_Hortmann_pct": round(100 * (r["Nu"] - hort) / hort, 3)})
             print(rows[-1], flush=True)
     return rows
 
@@ -211,12 +220,14 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, nargs="+", default=[64, 96, 128])
     ap.add_argument("--only", choices=["cavity", "diffusion"])
+    ap.add_argument("--ra", type=float, nargs="+")
     a = ap.parse_args()
     out = {}
     if a.only in (None, "diffusion"):
         out["diffusion"] = run_diffusion()
     if a.only in (None, "cavity"):
-        out["cavity"] = run_cavity(tuple(a.n))
+        out["cavity"] = run_cavity(tuple(a.n), a.ra)
         out["reference_source"] = REF_SOURCE
     TABLES.mkdir(parents=True, exist_ok=True)
-    (TABLES / f"V_verification{'_' + a.only if a.only else ''}.json").write_text(json.dumps(out, indent=1))
+    tag = ("_" + a.only if a.only else "") + ("_Ra" + "_".join(f"{r:.0e}" for r in a.ra) if a.ra else "")
+    (TABLES / f"V_verification{tag}.json").write_text(json.dumps(out, indent=1))
