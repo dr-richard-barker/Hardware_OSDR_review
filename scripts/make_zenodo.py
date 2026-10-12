@@ -19,7 +19,7 @@ version = next((ln.split(":", 1)[1].strip() for ln in (root / "CITATION.cff").re
 name = f"Hardware_OSDR_review-v{version}"
 INCLUDE = ["README.md", "LICENSE", "LICENSE-DATA.md", "CITATION.cff", ".zenodo.json", "MANIFEST.tsv", "Makefile",
            "requirements.txt", ".gitignore", "src", "scripts", "tests", "data", "hardware", "models", "results",
-           "openfoam", "latex"]
+           "openfoam", "latex", "site"]
 EXCLUDE_PARTS = {"__pycache__", "build", ".DS_Store", ".pytest_cache"}
 dist = root / "dist"
 dist.mkdir(exist_ok=True)

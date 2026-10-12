@@ -8,6 +8,7 @@
 #   make paper      macros + manuscript PDF / DOCX / HTML
 #   make check      tests, reference check, manuscript pre-flight, manifest
 #   make zenodo     archive for deposit (dist/)
+#   make site       GitHub Pages site in docs/ from the results
 #   make fetch      re-download the NASA sources into a NEW dated snapshot (network)
 #
 # The analysis reads data/raw/$(SNAPSHOT); change it only to re-run on a new snapshot.
@@ -17,7 +18,7 @@ PY       := .venv/bin/python
 RUN      := HWREVIEW_SNAPSHOT=$(SNAPSHOT) PYTHONPATH=src $(PY)
 MODELS   := aph aph_fanmax mds vented_fly_box_vent20 vented_fly_box_vent60 aqh
 
-.PHONY: setup fetch analysis verify cfd post paper check zenodo all
+.PHONY: setup fetch analysis verify cfd post paper check zenodo site all
 
 all: analysis post paper check
 
@@ -67,3 +68,6 @@ check:
 
 zenodo: check
 	$(PY) scripts/make_zenodo.py
+
+site:
+	$(PY) scripts/build_site.py

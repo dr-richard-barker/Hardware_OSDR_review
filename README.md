@@ -10,6 +10,9 @@ Every number in the manuscript is generated from the files in this repository
 (`results/macros.tex`); every hardware value carries its source and a verbatim quotation;
 every CFD dimension is either a reference to a sourced value or a declared assumption.
 
+Project page: <https://dr-richard-barker.github.io/Hardware_OSDR_review/> (generated from the
+results by `scripts/build_site.py`).
+
 ## What is here
 
 | Path | Contents |
@@ -24,6 +27,7 @@ every CFD dimension is either a reference to a sourced value or a declared assum
 | `latex/` | Manuscript and supplement sources; `make -C latex` builds PDF, DOCX and HTML into `latex/output/` |
 | `tests/` | `pytest` suite, including a synthetic CFD fixture |
 | `openfoam/docker/IMAGE.md` | The pinned OpenFOAM v2606 image |
+| `site/`, `docs/` | Project page template and the GitHub Pages site generated from it (`make site`) |
 | `MANIFEST.tsv` | Every output file and the script that produces it (`scripts/check_manifest.py` fails on undescribed files) |
 
 ## Pipeline
@@ -55,6 +59,7 @@ make post       # drawings, results, GCI
 make paper      # macros + PDF / DOCX / HTML
 make check      # tests, Crossref reference check, manuscript pre-flight, manifest
 make zenodo     # dist/ archive for deposit
+make site       # GitHub Pages site in docs/
 ```
 
 `make fetch` downloads a new dated snapshot; the analysis reads the snapshot named by

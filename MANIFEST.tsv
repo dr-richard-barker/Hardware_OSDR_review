@@ -53,3 +53,4 @@ results/macros.tex	hwreview.macros	every number quoted in the manuscript
 latex/output/*	latex/Makefile	manuscript and supplement in PDF, DOCX and HTML
 openfoam/docker/IMAGE.md	manual	pinned OpenFOAM runtime image and how it is invoked
 results/tex/*.tex	hwreview.tables_tex	LaTeX tables rendered from the result CSVs
+docs/*	scripts/build_site.py	GitHub Pages site generated from site/ templates and the results (do not edit by hand)
