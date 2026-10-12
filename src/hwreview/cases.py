@@ -62,7 +62,8 @@ def to_W(rate: float, unit: str, count: float = 1.0) -> float:
     return rate * f * count
 
 
-MOLAR_MASS = {"CO2": 44.0095, "H2O": 18.01528}   # g mol-1, IUPAC standard atomic weights
+# g/mol, standard molar masses; CoolProp's reference EOS give 44.0098 and 18.0153 (relative difference < 1e-5)
+MOLAR_MASS = {"CO2": 44.0095, "H2O": 18.01528}
 
 
 # ----------------------------------------------------------------------------- helpers

@@ -141,3 +141,31 @@ def test_hardware_yaml_values_are_sourced():
                     walk(v, f"{path}.{k}" if path else k)
         walk(d, "")
     assert not bad, "\n".join(bad[:40])
+
+
+def test_gci_recovers_known_order():
+    from hwreview.gci import gci3
+    h = [1.0, 1.41421356, 2.0]
+    phi = [3.0 + 0.5 * x ** 2 for x in h]          # exact second-order behaviour, limit 3.0
+    r = gci3(phi, h)
+    assert r["p"] == pytest.approx(2.0, abs=1e-6)
+    assert r["phi_ext"] == pytest.approx(3.0, abs=1e-9)
+    assert r["convergence"] == "monotonic"
+
+
+def test_passive_vent_is_dirichlet(fixture_env, tmp_path, monkeypatch):
+    """A passive vent must impose the exterior state (fixedValue), not inletOutlet (zeroGradient at phi=0)."""
+    import yaml
+    from hwreview import cases, paths
+    spec = yaml.safe_load((FIX / "models" / "testbox.yaml").read_text())
+    spec["openings"] = [{"name": "vent", "role": "vent", "face": "xmax", "size": [20, 20], "center": [40, 30],
+                         "outside": {"CO2": 1000}}]
+    spec["assumptions"] += [{"param": "openings[0].size", "why": "t"}, {"param": "openings[0].center", "why": "t"},
+                            {"param": "openings.vent.outside.CO2", "why": "t"}]
+    (tmp_path / "ventbox.yaml").write_text(yaml.safe_dump(spec))
+    monkeypatch.setenv("HWREVIEW_MODELS", str(tmp_path))
+    monkeypatch.setattr(cases, "RUNS", tmp_path / "runs")
+    case = cases.build("ventbox", "0g", "coarse", 2)
+    co2 = (case / "0" / "CO2").read_text()
+    block = co2[co2.index("domain_vent"):]
+    assert "fixedValue" in block.split("}")[0] and "1000" in block.split("}")[0]

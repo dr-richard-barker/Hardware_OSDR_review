@@ -24,6 +24,11 @@ _D_CO2 = np.array([12.4, 12.9, 13.3, 13.8, 14.2, 14.7, 15.1, 15.6, 16.0, 16.5, 1
 R_GAS = 8.314462618  # J mol-1 K-1, CODATA 2018 exact (SI 2019 definition)
 
 
+def molar_mass_g_mol(fluid: str) -> float:
+    """Molar mass from CoolProp's reference equations of state (Air, CO2, Water)."""
+    return CP.PropsSI("M", fluid) * 1000.0
+
+
 def D_CO2(t_c: float) -> float:
     return float(np.interp(t_c, _T, _D_CO2))
 

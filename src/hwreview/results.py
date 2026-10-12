@@ -91,6 +91,18 @@ def inlet_reynolds(case, slug: str, meta: dict) -> float | None:
     return best
 
 
+def solutal_ra(m: dict, meta: dict, pre: str):
+    dco2 = m.get(f"{pre}:CO2:final_excess")
+    if dco2 is None or meta.get("medium") == "water":
+        return None
+    air = meta["physics"]["air"]
+    from . import physics
+    m_co2, m_air = physics.molar_mass_g_mol("CO2"), physics.molar_mass_g_mol("Air")
+    drho = abs(dco2) * 1e-6 * (m_co2 - m_air) / m_air
+    L = m["L_char_m"]
+    return 9.80665 * drho * L ** 3 / (air["nu"] * meta["physics"]["D_CO2_m2_s"])
+
+
 def table(mesh: str) -> pd.DataFrame:
     rows = []
     for slug, meshes in CAMPAIGN:
@@ -119,6 +131,10 @@ def table(mesh: str) -> pd.DataFrame:
                 "Ra_1g": m.get("Ra_1g"),
                 "CO2_balance_rel_imbalance": (m.get("conservation_CO2") or {}).get("rel_imbalance"),
                 "t90_CO2_s": m.get(f"{pre}:CO2:t90_s"),
+                # solutal buoyancy omitted by the Boussinesq-T solver: its Rayleigh number from the simulated
+                # CO2 excess (drho/rho = dx (M_CO2 - M_air)/M_air; molar masses from CoolProp)
+                "Ra_solutal_CO2_1g": solutal_ra(m, meta, pre),
+                "Ra_thermal_1g": m.get("Ra_1g"),
             })
     df = pd.DataFrame(rows)
     df.to_csv(TABLES / f"T9_cfd_results_{mesh}.csv", index=False)

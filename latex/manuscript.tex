@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{longtable}
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage[numbers,sort&compress]{natbib}
@@ -134,7 +135,7 @@ passive hardware.
 \subsection{CFD models}
 For Tier~A hardware we generated geometry from parametric primitives (boxes, cylinders, repeated arrays)
 in which every number is either a reference to a sourced parameter or a declared modelling assumption
-(Supplementary Table~\ref{tab:assumptions}); the model loader refuses any other literal. Orthographic
+(Supplementary Note~S4); the model loader refuses any other literal. Orthographic
 drawings are produced from the same primitives. Meshes were built with \texttt{snappyHexMesh} from a
 cubic background mesh whose margin is a non-integer number of cells (so that no background face coincides
 with a geometry surface) and solved with \texttt{buoyantBoussinesqPimpleFoam} in OpenFOAM v2606
@@ -172,7 +173,14 @@ linked to at least one OSDR study. Mission records place bio-capable hardware on
 (\hwNPlatIss{}). Nutrient delivery was evidenced for fewer than half of the habitats
 (\hwNNutNoneEvidenced{} with no evidence); where evidenced, animal food and water
 (\hwNNutAnimalFoodWater{}), culture medium (\hwNNutLiquidCultureMedium{}) and agar
-(\hwNNutAgarGel{}) were the commonest modes.
+(\hwNNutAgarGel{}) were the commonest modes (Fig.~\ref{fig:where}). Every assigned mode is backed by a
+verbatim quotation (Supplementary Data, \texttt{T2b\_nutrient\_evidence.csv}).
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{../results/figures/F8_where_and_feed.pdf}
+\caption{Where space-biology hardware flew, from the missions of its registry payloads, and how specimens
+in specimen habitats are fed and watered, from quotation-backed evidence.}\label{fig:where}
+\end{figure}
 
 \begin{figure}[t]\centering
 \includegraphics[width=0.85\linewidth]{../results/figures/F1_catalogue_funnel.pdf}
@@ -227,12 +235,77 @@ medians).}\label{fig:groups}
 \caption{Documentation versus scientific use. Points: specimen-housing hardware.}\label{fig:usage}
 \end{figure}
 
-\subsection{CFD of curated hardware}
-% Results of the curated-tier CFD runs are inserted here once all runs pass verification.
-TODO: curated tiers, verification table, per-hardware environment cards and 0\,$g$/1\,$g$ contrasts.
+\subsection{Literature curation}
+Curation of \hwNCurated{} hardware items yielded \hwNCuratedSourced{} sourced parameters out of
+\hwNCuratedParams{} sought (\hwPctCuratedSourced\%). \hwNCuratedA{} items reached Tier~A (the Advanced Plant
+Habitat, the JAXA Aquatic Habitat, the Mice Drawer System and the Vented Fly Box), \hwNCuratedB{} remained
+Tier~B and \hwNCuratedC{} Tier~C (Fig.~\ref{fig:curated}; Supplementary Note~S3).
+
+\begin{figure}[t]\centering
+\includegraphics[width=0.78\linewidth]{../results/figures/F7_curated_gaps.pdf}
+\caption{Critical CFD inputs for the \hwNCurated{} curated hardware items after literature curation.}
+\label{fig:curated}
+\end{figure}
+
+\subsection{Verification}
+The solver reproduced the reference heated-cavity Nusselt numbers with second-order convergence
+(observed order \hwVerPRaFive{} and \hwVerPRaSix{} at $Ra=10^5$ and $10^6$); Richardson-extrapolated values
+were within \hwVerMaxExtErr\% of \citet{hortmann1990} (Table~\ref{tab:verify}). One-dimensional diffusion
+matched the analytic solution to $\hwVerDiffMaxErr$ (concentration scale 0--1), and the transient CO$_2$
+balance closed to within \hwCfdMaxImbalance\% in every hardware run.
+
+\input{../results/tex/verification}
+
+\subsection{Specimen environments in flight and ground control}
+CFDRESULTS
+
+\input{../results/tex/cfd}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{../results/figures/F6_cfd_comparison_medium.pdf}
+\caption{Specimen-zone CO$_2$ and temperature excess and age of air in each modelled hardware item, flight
+(0\,$g$) versus ground control (1\,$g$), medium meshes.}\label{fig:cfdcomp}
+\end{figure}
 
 \section{Discussion}
-TODO: discussion after CFD results.
+\subsection{The specimen environment is mostly undocumented}
+Of \hwNHabitats{} hardware items that house live specimens in flight, the public record supports a CFD
+description of \hwTierPublicTierA{}, and SPLASH alone supports none. Targeted curation of \hwNCurated{} items,
+reading papers, technical reports and mission documentation, raised only \hwNCuratedA{} to CFD readiness.
+The single most common gap is the airflow that ventilates the specimens: it is missing for
+\hwNMissingFTwo{} curated items, including Veggie (whose fan is described only by its Low/High/Off
+settings), EMCS, ABRS and the Biomass Production System. The second is the geometry of the specimen
+container and of the enclosure itself. The ISS Rodent Habitat, linked to \hwNStudiesRodentHabitat{} OSDR
+studies, has no published internal cage dimensions in any source we could open, and the dimensions of its
+predecessor, the Animal Enclosure Module, cannot be assumed to carry over. None of the nine canister and culture items of the BRIC family,
+GAP-FPA, BioCell, Kubik and CGBA has published internal dimensions, although BRIC-PDFU alone is linked to
+\hwNStudiesBricPdfu{} OSDR studies. Specimen metabolic and heat loads are almost
+never reported for the flight itself and had to be taken from organism-level physiology. These are not
+obscure parameters: they set the gas, temperature and humidity fields that flight and ground-control
+specimens experience, and they are exactly what is needed to judge whether a flight--ground difference is
+a gravity effect or a hardware effect.
+
+\subsection{Catalogue integrity}
+The defects we found are of a kind that propagates silently: displaced fields in a contiguous block of
+SPLASH records (a plant growth unit described by an RNA thermal cycler's specimen list, a sealed canister
+carrying a growth chamber's CO$_2$ control range), an alias that merges two different bioreactors, and
+registry links that attach unrelated studies to hardware. Automated reuse of these catalogues -- including
+by language models -- would inherit the errors. We therefore recommend that SPLASH and the OSDR registry
+(i)~adopt the MI-CFD-HW items as structured fields with units and provenance, (ii)~populate the existing but
+empty \texttt{sources}, \texttt{schematics} and \texttt{study\_links} fields, (iii)~replace the free-text
+experiment-platform field of OSDR studies with a controlled reference to a hardware identifier, and
+(iv)~record, per flight, the logged temperature, humidity and CO$_2$ of the hardware interior.
+
+\subsection{Limitations}
+The automated scorer is conservative (recall \hwValRecall{}) and its tiers are a lower bound; the blind gold
+standard, however, also contained no Tier~A item. Curation was bounded by access: several sources likely to
+hold the missing airflow and geometry data were paywalled or unavailable and are listed in the curation notes.
+The CFD models are laminar and Boussinesq in temperature only; solutal buoyancy from CO$_2$ and water vapour
+is not simulated, and we report its Rayleigh number for each run instead. Where heat loads were not sourced
+(plant canopies, LED arrays, flies) they were not invented, so buoyancy in the 1\,$g$ cases is driven only by
+the sourced loads and gravity contrasts are lower bounds. Unpublished details -- vent sizes and positions,
+canopy height, the location at which a fan's ``wind speed'' is measured -- are declared assumptions
+(Supplementary Note~S4) and, where they matter, were varied.
 
 \section*{Data and code availability}
 Code, the 2026-10-12 source snapshot, curated hardware specifications, model definitions, reduced CFD

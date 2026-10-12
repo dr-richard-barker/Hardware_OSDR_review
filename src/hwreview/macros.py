@@ -75,6 +75,9 @@ def run():
     cls = pd.read_json(ROOT / "data" / "derived" / "classification.json")
     sgc = cls[cls.registry_ids.map(lambda v: "2052" in [str(x) for x in v])]
     M["NCatchallStudies"] = int(sgc.n_osd_studies.iloc[0]) if len(sgc) else 0
+    for rid, nm in (("2020", "BricPdfu"), ("1397", "Veggie"), ("1379", "RodentHabitat")):
+        e = cls[cls.registry_ids.map(lambda v, r=rid: r in [str(x) for x in v])]
+        M[f"NStudies{nm}"] = int(e.n_osd_studies.iloc[0]) if len(e) else 0
     rev = pd.read_csv(CURATED / "splash_field_review.csv")
     M["NSplashMisattributed"] = int((rev.verdict == "misattributed").sum())
     M["NSplashUncertain"] = int((rev.verdict == "uncertain").sum())

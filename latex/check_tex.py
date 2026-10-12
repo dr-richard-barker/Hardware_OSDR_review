@@ -17,7 +17,13 @@ macros = set(re.findall(r"\\newcommand\{\\(hw\w+)\}", (here / "../results/macros
 errs = []
 for name in sys.argv[1:] or ["manuscript.tex"]:
     t = (here / name).read_text()
-    body = re.sub(r"(?<!\\)%.*", "", t)
+
+    def expand(text, depth=0):
+        def sub(m):
+            f = here / (m.group(1) if m.group(1).endswith(".tex") else m.group(1) + ".tex")
+            return expand(f.read_text(), depth + 1) if f.exists() and depth < 5 and "macros" not in f.name else ""
+        return re.sub(r"\\input\{([^}]*)\}", sub, text)
+    body = re.sub(r"(?<!\\)%.*", "", expand(t))
     for group in re.findall(r"\\cite[pt]?\*?(?:\[[^\]]*\])?\{([^}]*)\}", body):
         for k in group.split(","):
             if k.strip() not in keys:
@@ -32,7 +38,7 @@ for name in sys.argv[1:] or ["manuscript.tex"]:
     for mname in set(re.findall(r"\\(hw[A-Za-z]+)", body)):
         if mname not in macros:
             errs.append(f"{name}: result macro \\{mname} undefined")
-    for marker in ("TODO", "TBD", "XXX", "??"):
+    for marker in ("TODO", "TBD", "XXX", "??", "CFDRESULTS"):
         if marker in body:
             errs.append(f"{name}: unresolved marker '{marker}'")
 for e in errs:

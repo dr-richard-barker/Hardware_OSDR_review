@@ -13,3 +13,5 @@ latex/build/
 *.synctex.gz
 latex/build/
 dist/
+results/fields/vtk_*.tar.gz
+results/figures/anim_*.mp4

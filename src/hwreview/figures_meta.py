@@ -184,6 +184,7 @@ def run():
     fig4_usage()
     fig5_validation()
     fig7_curated_gaps()
+    fig8_where_and_feed()
 
 
 if __name__ == "__main__":
@@ -239,3 +240,40 @@ def fig7_curated_gaps():
               handlelength=1.2)
     ax.set_title("Critical CFD inputs after literature curation (tier at right)", fontsize=8.5, x=0.2, pad=26)
     style.save(fig, "F7_curated_gaps")
+
+
+def fig8_where_and_feed():
+    """Where bio-capable hardware flew (mission records) and how specimens are fed (evidenced modes)."""
+    n = pd.read_csv(TABLES / "T2_counts.csv")
+    plat = n[n.group == "platform (missions, bio-capable)"].sort_values("n")
+    from .paths import DERIVED
+    cls = pd.read_json(DERIVED / "classification.json")
+    bio = cls[cls.bio_payload_capable]
+    none = int((bio.platforms_from_missions.map(len) == 0).sum())
+    plat = pd.concat([plat, pd.DataFrame([{"group": "", "key": "No mission record", "n": none}])])
+    nut = n[n.group == "nutrient mode (habitats)"].copy()
+    nice = {"agar_gel": "Agar / gel medium", "animal_food_water": "Animal food + drinking water",
+            "aquatic_water_loop": "Aquatic water loop", "arcillite_substrate": "Arcillite / solid substrate",
+            "hydroponic_aeroponic": "Hydroponic / aeroponic", "liquid_culture_medium": "Liquid culture medium",
+            "water_only_wick": "Water / wick only", "none evidenced": "No evidence found"}
+    nut["label"] = nut.key.map(nice)
+    nut = pd.concat([nut[nut.key != "none evidenced"].sort_values("n"), nut[nut.key == "none evidenced"]])
+    fig, axes = plt.subplots(1, 2, figsize=(7.4, 2.9), gridspec_kw={"wspace": 0.9})
+    ax = axes[0]
+    ax.barh(plat.key.str.replace("Free-flyer (Bion/Cosmos/Biosatellite)", "Free-flyer (Bion/Cosmos)"), plat.n,
+            color=[MUTED if k == "No mission record" else style.BLUE for k in plat.key], height=0.6)
+    for y, v in enumerate(plat.n):
+        ax.text(v + 0.6, y, str(v), va="center", fontsize=7)
+    ax.set_xlabel(f"Bio-capable hardware (n = {len(bio)}) with a\nregistry mission on this platform")
+    ax.set_title("Where it flew", fontsize=8.5)
+    ax.grid(axis="y", visible=False)
+    ax = axes[1]
+    cols = [MUTED if k == "none evidenced" else style.GREEN for k in nut.key]
+    ax.barh(nut.label, nut.n, color=cols, height=0.6)
+    for y, v in enumerate(nut.n):
+        ax.text(v + 0.6, y, str(v), va="center", fontsize=7)
+    hab = int(n[(n.group == "bio") & (n.key.str.startswith("specimen habitats"))].n.iloc[0])
+    ax.set_xlabel(f"Specimen habitats (n = {hab}); a habitat\ncan use more than one mode")
+    ax.set_title("How specimens are fed and watered", fontsize=8.5)
+    ax.grid(axis="y", visible=False)
+    style.save(fig, "F8_where_and_feed")
