@@ -23,8 +23,8 @@
   "zone_mouse:H2O:final_excess": 0.06140185883966964,
   "zone_mouse:H2O:late_sd": 0.0,
   "zone_mouse:H2O:t90_s": 0.094037207,
-  "zone_mouse:AoA:final_excess": 0.27012654289830507,
-  "zone_mouse:AoA:late_sd": 8.029023897233892e-10,
+  "zone_mouse:AoA:final_excess": 0.270126543,
+  "zone_mouse:AoA:late_sd": 0.0,
   "zone_mouse:AoA:t90_s": 0.34987114,
   "U_max_m_s": 0.304033125,
   "U_max_late_m_s": 0.304033083,
@@ -37,9 +37,9 @@
   "conservation_CO2": {
    "source_ppm_m3_s": 0.021004562953953466,
    "outflow_ppm_m3_s": 0.02100456715747674,
-   "accumulation_ppm_m3_s": -8.524298479574939e-17,
+   "accumulation_ppm_m3_s": -2.841432826524979e-17,
    "mesh_volume_m3": 0.00096627996,
-   "rel_imbalance": -2.0012428711270378e-07
+   "rel_imbalance": -2.001242898182424e-07
   }
  },
  "1g": {
@@ -66,8 +66,8 @@
   "zone_mouse:H2O:final_excess": 0.06151535883967085,
   "zone_mouse:H2O:late_sd": 0.0,
   "zone_mouse:H2O:t90_s": 0.093983494,
-  "zone_mouse:AoA:final_excess": 0.2702152365932204,
-  "zone_mouse:AoA:late_sd": 4.954497665875702e-10,
+  "zone_mouse:AoA:final_excess": 0.27021523659322033,
+  "zone_mouse:AoA:late_sd": 4.954497665875688e-10,
   "zone_mouse:AoA:t90_s": 0.34984334,
   "U_max_m_s": 0.30409496,
   "U_max_late_m_s": 0.304094919,
@@ -80,9 +80,9 @@
   "conservation_CO2": {
    "source_ppm_m3_s": 0.021004562953953466,
    "outflow_ppm_m3_s": 0.02100456715747674,
-   "accumulation_ppm_m3_s": -4.7357213775416325e-17,
+   "accumulation_ppm_m3_s": -2.841432826524979e-17,
    "mesh_volume_m3": 0.00096627996,
-   "rel_imbalance": -2.001242889163962e-07
+   "rel_imbalance": -2.001242898182424e-07
   }
  }
 }

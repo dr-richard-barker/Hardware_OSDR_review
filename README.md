@@ -18,6 +18,7 @@ results by `scripts/build_site.py`).
 | Path | Contents |
 |---|---|
 | `data/raw/2026-10-12/` | Frozen snapshot of the three public NASA sources with SHA-256 sums: SPLASH instrument catalogue, OSDR hardware registry (with payload and experiment records), OSDR study platform field and per-dataset metadata |
+| `data/raw/2026-10-12/eda/` | OSDR Environmental Data App: ISS-cabin and ground-control temperature, RH, CO2 and daily dose for all missions (verbatim, gzip, own `SHA256SUMS`) |
 | `data/curated/` | Reviewed decisions: SPLASH field verdicts and the displaced-row rule, crosswalk and role overrides, the blind-rater validation set, the quote-audit sample and results |
 | `data/derived/` | Hardware entities (crosswalk), classification |
 | `hardware/` | Curated specification per hardware item (`SCHEMA.md`, `CURATION_NOTES.md`, `QUOTE_AUDIT.md`); `_iss_cabin.yaml` holds sourced ISS cabin conditions |
@@ -28,6 +29,7 @@ results by `scripts/build_site.py`).
 | `tests/` | `pytest` suite, including a synthetic CFD fixture |
 | `openfoam/docker/IMAGE.md` | The pinned OpenFOAM v2606 image |
 | `site/`, `docs/` | Project page template and the GitHub Pages site generated from it (`make site`) |
+| `requests/` | Drafts (not sent) of a request for the APH PH-04 chamber telemetry and of a report of EDA data issues |
 | `MANIFEST.tsv` | Every output file and the script that produces it (`scripts/check_manifest.py` fails on undescribed files) |
 
 ## Pipeline
@@ -42,6 +44,7 @@ results by `scripts/build_site.py`).
 | Meta-analysis | `meta` | `T4*` |
 | Scorer validation against two blind raters | `gold` | `T5*` |
 | Tiers after literature curation | `curated` | `T6_curated_tiers.csv` |
+| ISS cabin telemetry: snapshot, quality control, cabin values for the models, flight - ground offsets | `eda`, `telemetry` | `data/raw/<date>/eda/`, `T11*`, `F9` |
 | CFD verification (heated cavity, diffusion) | `verify_cfd` | `T8*`, `V_*` |
 | Geometry, drawings | `geometry`, `ortho` | `ortho_<model>` sheets |
 | OpenFOAM cases and campaign | `cases`, `campaign`, `foam` | `runs/` (not archived); `campaign --anim` adds medium-mesh reruns with dense field output used only for the animations (checked against the production runs in `T10`) |

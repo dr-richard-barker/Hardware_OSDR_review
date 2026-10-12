@@ -15,7 +15,7 @@ def _build_site():
 
 def test_template_placeholders_resolve():
     mod = _build_site()
-    known = set(mod.macros()) | {"TABLE_ITEMS", "TABLE_VERIFY", "TABLE_CFD", "TABLE_CURATED", "MODEL_VIEWER",
+    known = set(mod.macros()) | {"TABLE_ITEMS", "TABLE_VERIFY", "TABLE_CFD", "TABLE_CURATED", "TABLE_TELEMETRY", "MODEL_VIEWER",
                                  "REPO", "N_EXPLORER"}
     used = set(re.findall(r"\{\{(\w+)\}\}", (ROOT / "site/index.template.html").read_text()))
     assert used <= known, sorted(used - known)

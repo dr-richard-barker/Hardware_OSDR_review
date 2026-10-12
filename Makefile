@@ -27,6 +27,7 @@ setup:
 
 fetch:
 	PYTHONPATH=src $(PY) -m hwreview.fetch
+	PYTHONPATH=src $(PY) -m hwreview.eda
 
 analysis:
 	$(RUN) -m hwreview.consistency
@@ -37,6 +38,7 @@ analysis:
 	$(RUN) -m hwreview.gold
 	$(RUN) -m hwreview.curated
 	$(RUN) -m hwreview.figures_meta
+	$(RUN) -m hwreview.telemetry
 
 verify:
 	$(RUN) -m hwreview.verify_cfd --only diffusion

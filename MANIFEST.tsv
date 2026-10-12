@@ -5,10 +5,12 @@ data/raw/*/biodata/*.json	hwreview.fetch	OSDR study platform query and per-datas
 data/raw/*/SHA256SUMS	hwreview.fetch	checksums of the snapshot files
 data/raw/*/FETCH_INFO.json	hwreview.fetch	retrieval times, user agent and endpoints
 data/raw/fetch.log	hwreview.fetch	fetch progress log
+data/raw/*/eda/*	hwreview.eda	OSDR Environmental Data App telemetry and dose, verbatim (gzip) with SHA256SUMS and FETCH_INFO.json
 data/curated/splash_field_review.csv	manual (reviewed hwreview.consistency flags)	verdict and reason for every flagged SPLASH field
 data/curated/splash_block_rule.yaml	manual	SPLASH displaced-row block (#121-147) excluded from use
 data/curated/crosswalk_overrides.csv	manual	curated crosswalk links, no-links and platform kinds, each with a reason
 data/curated/role_overrides.csv	manual	curated role corrections, each with a reason
+data/curated/eda_mission_windows.csv	manual (from EDA milestones)	habitation window of each EDA mission, with the milestones used
 data/curated/gold/sample.csv	hwreview (seeded draw, seed 20261012)	random sample of 12 habitats for the scorer validation
 data/curated/gold/CHECKLIST.md	manual	rater instructions for MI-CFD-HW
 data/curated/gold/texts/*.txt	hwreview.evidence	frozen text units shown to the raters
@@ -42,8 +44,9 @@ results/tables/T8*_verification_*.csv	hwreview.verify_cfd	heated-cavity ladders 
 results/tables/V_verification_*.json	hwreview.verify_cfd	raw verification outputs
 results/tables/M_*.json	hwreview.post	per-model metrics (0 g and 1 g)
 results/tables/T9_cfd_results_*.csv	hwreview.results	cross-hardware CFD metrics
+results/tables/T11*_*.csv	hwreview.telemetry	RR-1 cabin statistics (source of hardware/_iss_cabin.yaml) and flight - ground offsets per mission
 results/tables/T10_animation_consistency.csv	hwreview.post.animation_consistency	animation run vs production run at the animation end time
-results/figures/F*.p*	hwreview.figures_meta / hwreview.results	manuscript figures (PDF + PNG)
+results/figures/F*.p*	hwreview.figures_meta / hwreview.results / hwreview.telemetry	manuscript figures (PDF + PNG)
 results/figures/ortho_*.p*	hwreview.ortho	orthographic engineering sheets of each CFD geometry
 results/figures/fields_*.p*	hwreview.post	0 g / 1 g mid-plane field slices
 results/figures/card_*.p*	hwreview.results	environment cards (specimen-zone time series)

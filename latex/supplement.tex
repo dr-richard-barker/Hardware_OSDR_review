@@ -117,6 +117,45 @@ Time series of specimen-zone excess over the supply or initial state, 0\,$g$ (bl
 \caption{AQH aquarium (water).}
 \end{figure}
 
+\FloatBarrier
+\section*{Supplementary Note S9. ISS cabin telemetry}
+\textbf{Source and processing.} The telemetry and daily absorbed dose of all \hwNEdaMissions{} missions in the
+OSDR Environmental Data App \citep{eda} were archived verbatim with checksums
+(\nolinkurl{data/raw/2026-10-12/eda/}). The app describes them as measurements ``recorded in the ISS cabin
+and ground control''. Quality control (\nolinkurl{src/hwreview/eda.py}) merges duplicated timestamps, removes
+values outside physical bounds (temperature 5--40\,$^\circ$C, relative humidity 1--100\%, CO$_2$
+100--20\,000\,ppm) and removes CO$_2$ values held unchanged for two hours or more, which are fills: in RR-1 the
+flight series holds \hwEdaRrOneFillValue{}\,ppm for \hwEdaRrOneFillHours{}\,h from the day of launch. Each mission was
+restricted to its habitation period on the ISS, chosen from the app's milestones
+(\nolinkurl{data/curated/eda_mission_windows.csv}). Flight$-$ground differences use hourly means, after shifting
+the ground series by the lag (within $\pm$7 days) that minimises the median absolute difference in CO$_2$, or
+in temperature where CO$_2$ is absent.
+
+\textbf{Cabin conditions for the models.} The exterior of the cabin-ventilated hardware (mouse-cage supply air,
+fly-box vents) is the median of the quality-controlled RR-1 flight series over the habitation period:
+\hwEdaCabinCo{}\,ppm CO$_2$, \hwEdaCabinT{}\,$^\circ$C and \hwEdaCabinRh\% relative humidity
+(\nolinkurl{hardware/_iss_cabin.yaml}, \nolinkurl{results/tables/T11a_cabin_rr1.csv}). The ranges that
+\citet{choi2020} report for the U.S. Lab cabin during RR-1 equal, to the last digit, the extremes of the app's
+\emph{ground-control} series over the same dates (CO$_2$ \hwEdaChoiGroundCoMin--\hwEdaChoiGroundCoMax\,ppm); the
+flight series spans \hwEdaChoiIssCoMin--\hwEdaChoiIssCoMax\,ppm. We use the flight series, because its minimum
+is consistent with cabin CO$_2$ whereas the ground series reads room-air values before launch; which label is
+correct awaits confirmation by the data provider. Because CO$_2$ and water vapour are passive scalars in the
+models, this choice shifts absolute concentrations but not the specimen-zone excesses.
+
+\textbf{Data issues.} RR-9 telemetry is dated a year after its own dose record and milestones; its
+flight$-$ground differences share one clock and are kept. RR-18 has flight series only, with relative
+humidity up to \hwEdaRrEighteenRhMax\% (removed). The plant missions (VEG-01, APEX-03, APEX-04) return no values
+through the API, and some rodent missions return no rows.
+
+\input{../results/tex/telemetry}
+
+\begin{figure}[htbp]\centering
+\includegraphics[width=\linewidth]{../results/figures/F9_flight_ground_offsets.pdf}
+\caption{Flight (ISS cabin) minus ground-control environment for each Rodent Research mission with both series,
+from the OSDR Environmental Data App: median and interquartile range of hourly differences during habitation.
+Missions without relative humidity or CO$_2$ series show temperature only.}\label{fig:telemetry}
+\end{figure}
+
 \bibliographystyle{unsrtnat}
 \bibliography{references}
 \end{document}

@@ -1,9 +1,47 @@
 # ISS cabin conditions used as the exterior of passive / cabin-ventilated hardware.
-# Values copied (with their quotes) from hardware/rodent_habitat.yaml, where they were
-# curated from Choi et al. (2020); they describe the U.S. Lab cabin during RR-1
-# (Sept 25 - Oct 31, 2014), not any hardware interior.
-name: ISS cabin (U.S. Lab, RR-1 in-flight phase)
+# Source: the OSDR Environmental Data App (EDA) RR-1 telemetry, FLIGHT column ("*_iss"), snapshot
+# data/raw/2026-10-12/eda/telemetry/RR-1.json.gz. Statistics are computed by hwreview.telemetry
+# (results/tables/T11a_cabin_rr1.csv, window "RR-1 habitation (QC)": animal transfer 2014-09-25 to
+# return 2014-10-25, after quality control: a CO2 value held for 153 h from 2014-09-21 is a fill and is
+# excluded). tests/test_core.py checks these values against that table.
+# They describe the U.S. Lab cabin air during RR-1, not any hardware interior.
+name: ISS cabin (U.S. Lab, RR-1 habitation, EDA flight column)
 environment:
+  co2_ppm:
+    value: 3371
+    unit: ppm
+    range_p01_p99: [1894, 4449]
+    source: "NASA OSDR Environmental Data App (EDA), mission RR-1, telemetry column co2_iss (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/eda/api/missions/RR-1/telemetry_data/
+    quote: "On the Mission Dashboard the users can visualize temperature, carbon dioxide (CO2), and relative humidity measurements and radiation doses recorded in the ISS cabin and ground control for the duration of the mission."
+    kind: derived
+    derivation: "median of the quality-controlled co2_iss series over the RR-1 habitation window (T11a_cabin_rr1.csv)"
+  temperature_C:
+    value: 22.6
+    unit: °C
+    range_p01_p99: [21.9, 23.4]
+    source: "NASA OSDR Environmental Data App (EDA), mission RR-1, telemetry column temperature_iss (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/eda/api/missions/RR-1/telemetry_data/
+    quote: "On the Mission Dashboard the users can visualize temperature, carbon dioxide (CO2), and relative humidity measurements and radiation doses recorded in the ISS cabin and ground control for the duration of the mission."
+    kind: derived
+    derivation: "median of the quality-controlled temperature_iss series over the RR-1 habitation window (T11a_cabin_rr1.csv)"
+  rh_percent:
+    value: 43
+    unit: '%'
+    range_p01_p99: [31, 52.3]
+    source: "NASA OSDR Environmental Data App (EDA), mission RR-1, telemetry column humidity_iss (snapshot 2026-10-12)"
+    url: https://visualization.osdr.nasa.gov/eda/api/missions/RR-1/telemetry_data/
+    quote: "On the Mission Dashboard the users can visualize temperature, carbon dioxide (CO2), and relative humidity measurements and radiation doses recorded in the ISS cabin and ground control for the duration of the mission."
+    kind: derived
+    derivation: "median of the quality-controlled humidity_iss series over the RR-1 habitation window (T11a_cabin_rr1.csv)"
+
+# Superseded 2026-10-12: the ranges quoted by Choi et al. (2020) as the in-flight U.S. Lab cabin equal,
+# to the last digit, the minimum and maximum of EDA's GROUND column over the same window
+# (788-4690 ppm, 21.3-24.1 C, 32-58 %); EDA's flight column spans 1862-4667 ppm, 21.8-24.0 C, 31-56 %
+# (T11a_cabin_rr1.csv, window "Choi 2020 (raw)"). Which label is correct is not established; the flight
+# column is used because a 788 ppm minimum is far below the cabin CO2 of the flight column, and the ground
+# column reads 484 ppm (room air) before launch. Kept for provenance; no model reads this block.
+superseded_choi_2020:
   co2_ppm:
     value: [788, 4690]
     unit: ppm

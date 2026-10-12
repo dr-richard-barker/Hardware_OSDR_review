@@ -187,10 +187,41 @@ def t_items():
                    "tab:items")
 
 
+def t_telemetry():
+    t = pd.read_csv(TABLES / "T11_flight_ground.csv")
+    w = pd.read_csv(CURATED / "eda_mission_windows.csv").set_index("mission")
+    order = w.assign(s=pd.to_datetime(w.start_utc)).sort_values("s").index
+    def fx(x, nd):
+        v = f"{x:.{nd}f}"
+        return v[1:] if v.startswith("-") and float(v) == 0 else v           # no "-0.00"
+
+    def cell(r, nd):
+        if r is None or pd.isna(r.offset_median):
+            return "--"
+        return f"{fx(r.offset_median, nd)} [{fx(r.offset_p25, nd)}, {fx(r.offset_p75, nd)}]"
+    rows = []
+    for m in [m for m in order if m in set(t.mission)]:
+        s = t[t.mission == m].set_index("variable")
+        get = lambda v: s.loc[v] if v in s.index else None
+        r0 = s.iloc[0]
+        rows.append({"m": m, "w": f"{r0.window_start} -- {r0.window_end}",
+                     "lag": "--" if pd.isna(r0.ground_lag_h) else f"{int(r0.ground_lag_h)}",
+                     "dt": cell(get("temperature"), 2), "drh": cell(get("humidity"), 1), "dco": cell(get("co2"), 0),
+                     "dose": num(r0.mean_daily_dose_mGy)})
+    return tabular(pd.DataFrame(rows), "llrllll",
+                   ["Mission", "Habitation window", "Lag (h)", r"$\Delta T$ ($^\circ$C)", r"$\Delta$RH (\%)",
+                    r"$\Delta$CO$_2$ (ppm)", r"Dose (mGy\,d$^{-1}$)"],
+                   "ISS cabin minus ground-control environment in the OSDR Environmental Data App: median and "
+                   "interquartile range of hourly flight $-$ ground differences after aligning the ground series by "
+                   "its best lag, and the mean daily absorbed dose over the window. -- : not available (RR-9: EDA dates its "
+                   "telemetry a year after its dose record, so the two do not overlap).", "tab:telemetry")
+
+
 def run():
     OUT.mkdir(parents=True, exist_ok=True)
     for name, fn in (("curated", t_curated), ("verification", t_verification), ("gci", t_gci), ("cfd", t_cfd),
-                     ("assumptions", t_assumptions), ("splash_review", t_splash_review), ("items", t_items)):
+                     ("assumptions", t_assumptions), ("splash_review", t_splash_review), ("items", t_items),
+                     ("telemetry", t_telemetry)):
         (OUT / f"{name}.tex").write_text(fn())
 
 

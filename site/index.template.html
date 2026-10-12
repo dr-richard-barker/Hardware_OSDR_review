@@ -289,9 +289,42 @@
   </div>
 </section>
 
+<section id="telemetry">
+  <div class="wrap">
+    <h2><span class="n">10</span>Cabin telemetry: what it can and cannot test</h2>
+    <p class="sub">ISS-cabin and ground-control temperature, humidity and CO₂ from the OSDR Environmental Data App.</p>
+    <p>Of the {{hwNEdaMissions}} missions in the OSDR Environmental Data App, {{hwNEdaPaired}} Rodent Research
+      missions have flight and ground-control series of the same variables during habitation ({{hwNEdaPairedCo}}
+      with CO₂). All of them describe cabin or ground-chamber air; none measures the interior of the hardware.
+      The ground-control series tracked the cabin with a lag of at most {{hwEdaMaxLag}}&nbsp;h, and median
+      flight − ground differences were within {{hwEdaMaxDtOther}}&nbsp;°C, {{hwEdaMaxDrh}}% relative humidity
+      and {{hwEdaMaxDco}}&nbsp;ppm CO₂, except in RR-3, whose ground controls were {{hwEdaRrThreeDt}}&nbsp;°C
+      warmer than the cabin ({{hwEdaRrThreeTGround}} versus {{hwEdaRrThreeTFlight}}&nbsp;°C).</p>
+    <figure>
+      <img src="assets/fig/F9_flight_ground_offsets.png" alt="Flight minus ground-control temperature, humidity and CO2 for each Rodent Research mission">
+      <figcaption>Flight (ISS cabin) minus ground-control environment for each Rodent Research mission with both
+        series: median and interquartile range of hourly differences during habitation. Missions without humidity
+        or CO₂ series show temperature only.</figcaption>
+    </figure>
+    {{TABLE_TELEMETRY}}
+    <p class="note">Median [interquartile range] of hourly flight − ground differences. Source:
+      <code>results/tables/T11_flight_ground.csv</code>; habitation windows in
+      <code>data/curated/eda_mission_windows.csv</code>.</p>
+    <div class="disc">What this data can and cannot do. It sets the exterior of the cabin-ventilated models: the
+      cabin values used here are the RR-1 flight medians, {{hwEdaCabinCo}}&nbsp;ppm CO₂ and {{hwEdaCabinRh}}%
+      relative humidity. Because CO₂ and water vapour are passive scalars, the specimen-zone excesses reported
+      above do not depend on these values. It also documents flight − ground environment differences. It cannot
+      validate a specimen-zone prediction, because no series is from inside any hardware. The plant missions in the
+      app return no values, and PH-04, the Advanced Plant Habitat run modelled here, has no telemetry in OSDR.
+      Note also that the RR-1 cabin ranges reported by Choi et al. (2020) (CO₂ {{hwEdaChoiGroundCoMin}}–{{hwEdaChoiGroundCoMax}}&nbsp;ppm)
+      equal the extremes of the app's ground-control series; its flight series spans
+      {{hwEdaChoiIssCoMin}}–{{hwEdaChoiIssCoMax}}&nbsp;ppm.</div>
+  </div>
+</section>
+
 <section id="meaning">
   <div class="wrap">
-    <h2><span class="n">10</span>What the models can and cannot say</h2>
+    <h2><span class="n">11</span>What the models can and cannot say</h2>
     <p class="sub">Undocumented inputs can matter more than gravity.</p>
     <p>In the four hardware items that could be modelled, the gravity contrast was small: forced ventilation
       dominated the mouse-cage environment, and in the plant growth chamber the flight–ground difference was
@@ -326,6 +359,7 @@
       <thead><tr><th>Component</th><th>Location</th></tr></thead>
       <tbody>
       <tr><td>Frozen snapshot of SPLASH, the OSDR registry and OSDR study metadata, with SHA-256 sums</td><td><a href="{{REPO}}/tree/main/data/raw"><code>data/raw/2026-10-12/</code></a></td></tr>
+      <tr><td>OSDR Environmental Data App telemetry and daily dose, all missions (verbatim, with checksums)</td><td><a href="{{REPO}}/tree/main/data/raw/2026-10-12/eda"><code>data/raw/2026-10-12/eda/</code></a></td></tr>
       <tr><td>Reviewed decisions: SPLASH field verdicts, crosswalk and role overrides, blind-rater set, quote audit</td><td><a href="{{REPO}}/tree/main/data/curated"><code>data/curated/</code></a></td></tr>
       <tr><td>Curated hardware specifications (value, unit, source, URL, quotation)</td><td><a href="{{REPO}}/tree/main/hardware"><code>hardware/</code></a></td></tr>
       <tr><td>CFD model definitions for the Tier-A hardware</td><td><a href="{{REPO}}/tree/main/models"><code>models/</code></a></td></tr>

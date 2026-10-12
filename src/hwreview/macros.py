@@ -194,6 +194,40 @@ def run():
                 if len(q):
                     M[f"Gci{gname}{qn}"] = float(q.gci_fine_pct.iloc[0])
                     M[f"GciP{gname}{qn}"] = float(q.p.iloc[0])
+    # --- ISS cabin telemetry (OSDR Environmental Data App)
+    t11, t11a = TABLES / "T11_flight_ground.csv", TABLES / "T11a_cabin_rr1.csv"
+    if t11.exists() and t11a.exists():
+        from . import eda
+        M["NEdaMissions"] = len(eda.missions())
+        t = pd.read_csv(t11)
+        p = t[t.offset_median.notna()]
+        M["NEdaPaired"] = p.mission.nunique()
+        M["NEdaPairedCo"] = p[p.variable == "co2"].mission.nunique()
+        M["EdaMaxLag"] = int(p.ground_lag_h.abs().max())
+        r3 = p[(p.mission == "RR-3") & (p.variable == "temperature")]
+        M["EdaRrThreeDt"] = abs(float(r3.offset_median.iloc[0]))       # ground warmer than flight
+        M["EdaRrThreeTFlight"] = float(r3.flight_median.iloc[0])
+        M["EdaRrThreeTGround"] = float(r3.ground_median.iloc[0])
+        oth = p[(p.variable == "temperature") & (p.mission != "RR-3")]
+        M["EdaMaxDtOther"] = float(oth.offset_median.abs().max())
+        M["EdaMaxDrh"] = float(p[p.variable == "humidity"].offset_median.abs().max())
+        M["EdaMaxDco"] = float(p[p.variable == "co2"].offset_median.abs().max())
+        a = pd.read_csv(t11a)
+        q = a[(a.column == "iss") & (a.window == "RR-1 habitation (QC)")].set_index("variable")
+        M["EdaCabinCo"] = float(round(q.loc["co2", "median"]))
+        M["EdaCabinT"] = float(q.loc["temperature", "median"])
+        M["EdaCabinRh"] = float(q.loc["humidity", "median"])
+        c = a[a.window == "Choi 2020 (raw)"].set_index(["variable", "column"])
+        M["EdaChoiIssCoMin"] = float(c.loc[("co2", "iss"), "min"])
+        M["EdaChoiIssCoMax"] = float(c.loc[("co2", "iss"), "max"])
+        M["EdaChoiGroundCoMin"] = float(c.loc[("co2", "ground"), "min"])
+        M["EdaChoiGroundCoMax"] = float(c.loc[("co2", "ground"), "max"])
+        raw, _ = eda.telemetry("RR-1", qc=False)
+        held = eda._held_mask(raw.time, raw.co2_iss)
+        M["EdaRrOneFillValue"] = float(raw.loc[held, "co2_iss"].mode().iloc[0])
+        M["EdaRrOneFillHours"] = int(round((raw.loc[held, "time"].max() - raw.loc[held, "time"].min()).total_seconds() / 3600))
+        r18, _ = eda.telemetry("RR-18", qc=False)
+        M["EdaRrEighteenRhMax"] = float(r18.humidity_iss.max())
     words = dict(zip("0123456789", ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
                                     "Nine"]))
     seen = {}

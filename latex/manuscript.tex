@@ -78,6 +78,8 @@ On 2026-10-12 we downloaded, without authentication, the full SPLASH catalogue
 (\nolinkurl{geode-py/ws/api/hardware}, \hwNRegistry{} records, with every linked payload and experiment
 record), and the \texttt{experiment platform}, project identifier and organism of every OSDR dataset
 (\hwNDatasets{} datasets) together with each dataset's metadata, including protocol descriptions.
+We also archived the ISS-cabin and ground-control telemetry (temperature, relative humidity, CO$_2$) and
+daily absorbed dose of all \hwNEdaMissions{} missions in the OSDR Environmental Data App \citep{eda}.
 Raw responses are archived with SHA-256 checksums; every downstream stage reads only this snapshot.
 
 \subsection{Catalogue integrity}
@@ -153,7 +155,9 @@ modelled with water properties (IAPWS-95 via CoolProp). CO$_2$ (ppm) and water v
 zones (gas volumes at 0\,$^\circ$C and 1\,atm, 22.414\,L\,mol$^{-1}$), and specimen heat enters the energy
 equation. Inlets impose the sourced volumetric flow or face velocity and the supply composition; outlets
 fix the pressure; passive vents impose the exterior (ISS cabin) state; gas-permeable membranes use a Robin
-condition. The mean age of air was computed with a passive scalar (unit source, zero at inflow). Flow was
+condition. The ISS cabin state is the median of the quality-controlled flight telemetry of the Environmental Data App
+during the RR-1 habitation period (\hwEdaCabinCo{}\,ppm CO$_2$, \hwEdaCabinRh\% relative humidity;
+Supplementary Note~S9); CO$_2$ and water vapour are passive scalars, so specimen-zone excesses do not depend on it. The mean age of air was computed with a passive scalar (unit source, zero at inflow). Flow was
 treated as laminar: inlet Reynolds numbers (hydraulic diameter) were at most \hwCfdMaxReInletLaminar{} in
 all cases except the APH fan-maximum sensitivity case (\hwCfdReInletFanmax{}), which is above transition and
 Cases start from the supply state at rest and run until the specimen-zone quantities reach a plateau.
@@ -310,6 +314,18 @@ above the nominal residence time indicates poorly flushed regions for the assume
 (0\,$g$) versus ground control (1\,$g$), medium meshes.}\label{fig:cfdcomp}
 \end{figure}
 
+\subsection{Cabin telemetry}
+Of the \hwNEdaMissions{} missions in the Environmental Data App, \hwNEdaPaired{} Rodent Research missions have
+flight and ground-control series of the same variables during habitation (\hwNEdaPairedCo{} with CO$_2$); all
+describe cabin or ground-chamber air, and none the interior of the hardware. The ground-control series tracked
+the cabin with a lag of at most \hwEdaMaxLag{}\,h, and median flight$-$ground differences were within
+\hwEdaMaxDtOther{}\,$^\circ$C, \hwEdaMaxDrh\% relative humidity and \hwEdaMaxDco{}\,ppm CO$_2$, except in RR-3,
+whose ground controls were \hwEdaRrThreeDt{}\,$^\circ$C warmer than the cabin (\hwEdaRrThreeTGround{} versus
+\hwEdaRrThreeTFlight{}\,$^\circ$C; Supplementary Note~S9). The plant missions in the app return no values, and
+PH-04, the Advanced Plant Habitat run modelled here (OSD-772), has no telemetry in OSDR. The RR-1 cabin ranges
+reported by \citet{choi2020} (CO$_2$ \hwEdaChoiGroundCoMin--\hwEdaChoiGroundCoMax\,ppm) equal the extremes of
+the app's ground-control series; its flight series spans \hwEdaChoiIssCoMin--\hwEdaChoiIssCoMax\,ppm.
+
 \section{Discussion}
 \subsection{The specimen environment is mostly undocumented}
 Of \hwNHabitats{} hardware items that house live specimens in flight, the public record supports a CFD
@@ -337,7 +353,10 @@ solutal buoyancy of exhaled CO$_2$ -- are exactly the inputs the public record d
 models do show is that the undocumented inputs can matter more than gravity: the fly-box vent size, which
 no source states, changed the predicted CO$_2$ around the specimens \hwCfdVfbCoRatio-fold. For hardware of
 this kind, interpreting a flight--ground difference as a gravity effect requires the hardware environment
-to be measured or modelled, and modelling requires metadata that do not yet exist publicly.
+to be measured or modelled, and modelling requires metadata that do not yet exist publicly. Cabin telemetry,
+now public for \hwNEdaPaired{} rodent missions, can set the exterior of such models and shows that ground
+controls usually reproduced the cabin closely, with exceptions such as RR-3; it cannot test a specimen-zone
+prediction, which needs telemetry from inside the hardware, and none is public for PH-04.
 
 \subsection{Catalogue integrity}
 The defects we found are of a kind that propagates silently: displaced fields in a contiguous block of
@@ -363,7 +382,7 @@ canopy height, the location at which a fan's ``wind speed'' is measured -- are d
 
 \section*{Data and code availability}
 Code, the 2026-10-12 source snapshot, curated hardware specifications, model definitions, reduced CFD
-outputs and this manuscript's sources are archived on Zenodo (DOI to be assigned on deposit) under the
+outputs, the Environmental Data App telemetry snapshot and this manuscript's sources are archived on Zenodo (DOI to be assigned on deposit) under the
 MIT licence (code) and CC-BY-4.0 (data and figures). SPLASH data were obtained from NASA's Space Life
 Sciences Archive of Scientific Hardware \citep{splash}.
 

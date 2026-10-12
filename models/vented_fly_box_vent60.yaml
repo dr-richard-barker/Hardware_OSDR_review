@@ -57,4 +57,4 @@ assumptions:
   - param: openings[1].center
     why: "As openings[0]."
   - param: openings.exterior
-    why: "The exterior at each vent is taken as well mixed ISS cabin air (CO2 mid-point of the RR-1 U.S. Lab range, Choi et al. 2020) at the box temperature."
+    why: "The exterior at each vent is taken as well mixed ISS cabin air (CO2 and RH: medians of the EDA RR-1 flight telemetry, hardware/_iss_cabin.yaml) at the box temperature."

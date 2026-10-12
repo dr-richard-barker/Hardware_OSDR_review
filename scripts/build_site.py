@@ -31,7 +31,8 @@ RUNS = [("mds", "mds"), ("aph", "aph"), ("aph_fanmax", "aph_fanmax"),
         ("aqh", "aqh")]
 ANIM_FIELD = {"aqh": "AoA"}           # animated scalar per model (default CO2)
 FIGURES = ["F1_catalogue_funnel", "F2_item_coverage", "F3_completeness_groups", "F4_usage_vs_completeness",
-           "F5_scorer_validation", "F6_cfd_comparison_medium", "F7_curated_gaps", "F8_where_and_feed"]
+           "F5_scorer_validation", "F6_cfd_comparison_medium", "F7_curated_gaps", "F8_where_and_feed",
+           "F9_flight_ground_offsets"]
 
 LOCATION = {"Free_flyer_Bion_Cosmos": "Free-flyer / Bion / Cosmos", "Ground_facility": "Ground facility",
             "ISS_Columbus": "ISS Columbus", "ISS_EXPRESS_rack": "ISS EXPRESS rack", "ISS_JEM_Kibo": "ISS Kibo",
@@ -110,6 +111,29 @@ def table_cfd() -> str:
             '<th class="num">CO₂ excess (ppm)</th><th class="num">ΔT (K)</th><th class="num">Age (s)</th>'
             '<th class="num">Re inlet</th><th class="num">CO₂ balance error</th></tr></thead><tbody>'
             + "".join(rows).replace("&amp;nbsp;", "&nbsp;") + "</tbody></table></div>")
+
+
+def table_telemetry() -> str:
+    t = pd.read_csv(TABLES / "T11_flight_ground.csv")
+    w = pd.read_csv(root / "data/curated/eda_mission_windows.csv")
+    order = w.assign(s=pd.to_datetime(w.start_utc)).sort_values("s").mission
+
+    def cell(r, nd):
+        if r is None or pd.isna(r.offset_median):
+            return "–"
+        f = lambda x: (lambda v: v[1:] if v.startswith("-") and float(v) == 0 else v)(f"{x:.{nd}f}").replace("-", "−")
+        return f"{f(r.offset_median)} <small>[{f(r.offset_p25)}, {f(r.offset_p75)}]</small>"
+    rows = []
+    for m in [m for m in order if m in set(t.mission)]:
+        s_ = t[t.mission == m].set_index("variable")
+        get = lambda v: s_.loc[v] if v in s_.index else None
+        r0 = s_.iloc[0]
+        rows.append(f"<tr><td>{esc(m)}</td><td>{r0.window_start} – {r0.window_end}</td>"
+                    f"<td class='num'>{cell(get('temperature'), 2)}</td><td class='num'>{cell(get('humidity'), 1)}</td>"
+                    f"<td class='num'>{cell(get('co2'), 0)}</td></tr>")
+    return ('<div class="tbl"><table><thead><tr><th>Mission</th><th>Habitation on ISS</th>'
+            '<th class="num">ΔT (°C)</th><th class="num">ΔRH (%)</th><th class="num">ΔCO₂ (ppm)</th></tr></thead><tbody>'
+            + "".join(rows) + "</tbody></table></div>")
 
 
 def table_curated() -> str:
@@ -226,7 +250,8 @@ def main():
 
     m = macros()
     m.update({"TABLE_ITEMS": table_items(), "TABLE_VERIFY": table_verify(), "TABLE_CFD": table_cfd(),
-              "TABLE_CURATED": table_curated(), "MODEL_VIEWER": model_viewer(), "REPO": REPO,
+              "TABLE_CURATED": table_curated(), "TABLE_TELEMETRY": table_telemetry(),
+              "MODEL_VIEWER": model_viewer(), "REPO": REPO,
               "N_EXPLORER": str(len(hab))})
     page = (SITE / "index.template.html").read_text()
     unknown = sorted(set(re.findall(r"\{\{(\w+)\}\}", page)) - set(m))

@@ -1,0 +1,15 @@
+mission,start_utc,end_utc,start_milestone,end_milestone,note
+RR-1,2014-09-25T16:05:00Z,2014-10-25T19:36:00Z,Animal_transfer (telemetry),Return (telemetry),habitation on ISS; Sac3 (2014-10-28) follows the return
+RR-3,2016-04-12T12:15:00Z,2016-05-20T00:04:00Z,Animal_transfer (telemetry),Sac4 (telemetry),
+RR-5,2017-06-07T10:20:00Z,2017-08-02T00:02:00Z,Animal_transfer (telemetry),Sac4 (telemetry),
+RR-6,2017-12-19T10:05:00Z,2018-02-06T00:09:00Z,Animal transfer to ISS (telemetry),Sac1 (telemetry),radiation series also lists LAR 2018-01-13 (partial live return); habitation continued to Sac1
+RR-7,2018-07-04T00:00:00Z,2018-09-13T04:01:00Z,animal_transfer_to_ISS (radiation),last Sac2 (telemetry),telemetry rows are duplicated per timestamp
+RR-9,2018-08-18T15:43:00Z,2018-09-16T08:43:00Z,animal_transfer_ to_ISS (telemetry),undock (telemetry),EDA telemetry clock is 2018 but EDA's RR-9 radiation milestones are 2017-08-18 transfer and 2017-09-17 LAR: telemetry likely dated one year late; flight-ground offsets share the clock and are kept
+RR-12,2019-04-21T06:40:00Z,2019-05-22T00:04:00Z,Animal_transfer_to_ISS (telemetry),Sac4 (telemetry),
+RR-19,2019-12-10T15:09:00Z,2020-01-08T00:00:00Z,Animal_transfer (telemetry),LAR (radiation),
+RR-10,2020-12-09T00:00:00Z,2021-01-03T00:00:00Z,Animal Transfer (telemetry),Sac2 (telemetry),telemetry rows are duplicated per timestamp
+RR-23,2020-12-09T00:00:00Z,2021-01-15T23:59:00Z,animal transfer (radiation),end of telemetry,no end milestone in EDA
+RR-20,2023-11-10T00:00:00Z,2023-12-22T00:00:00Z,Launch (telemetry),LAR Return (telemetry),no animal-transfer milestone in EDA; window starts at launch
+RR-25,2022-11-29T09:15:00Z,2023-01-25T00:00:00Z,Launch (telemetry),Dissection 3 (telemetry),no animal-transfer milestone in EDA; window starts at launch
+RR-28,2024-03-24T20:17:00Z,2024-04-30T00:00:00Z,Animal Transfer (telemetry),LAR Return (telemetry),
+RR-18,2021-12-23T00:00:00Z,2022-01-24T00:00:00Z,Animal Transfer (telemetry),LAR Return (telemetry),flight series only (no ground column)

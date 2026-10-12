@@ -37,6 +37,6 @@ assumptions:
   - param: openings.velocity_interpretation
     why: "Cancedda 2012: airflow of 0.2-0.3 m/s through the cages; applied as a uniform face velocity (mid-point 0.25 m/s)."
   - param: environment.co2_reference
-    why: "In-cage CO2 is controlled but not reported; supply air is set to the ISS U.S. Lab cabin CO2 measured during RR-1 (Choi et al. 2020; mid-point of 788-4690 ppm). MDS flew in 2009 in JEM, so this is a proxy."
+    why: "In-cage CO2 is controlled but not reported; supply air is set to the ISS U.S. Lab cabin CO2 during RR-1 (median of the EDA flight telemetry, hardware/_iss_cabin.yaml). MDS flew in 2009 in JEM and EDA starts in 2014, so this is a proxy; CO2 excess does not depend on it."
   - param: zones.mouse.co2_load
     why: "Organism-level C57BL/6 rates (ICES-2014-101) and BALB/c heat and moisture (Riskowski 2006) scaled by the generic 30 g adult mass from Cancedda 2012; MDS flew C57BL/10J males."

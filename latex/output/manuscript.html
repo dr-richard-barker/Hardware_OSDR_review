@@ -65,7 +65,7 @@ NASA’s Open Science Data Repository (OSDR) now holds hundreds of
 spaceflight studies <span class="citation" data-cites="gebre2025 berrios2021">(Gebre et al. 2025; Berrios et al.
 2021)</span>, and the OSDR also publishes two hardware resources: the
 SPLASH instrument catalogue <span class="citation" data-cites="splash">(NASA Ames Research Center 2026)</span> and a
-hardware registry linked to payloads and studies <span class="citation" data-cites="osdrapi">(NASA Open Science Data Repository 2026)</span>.
+hardware registry linked to payloads and studies <span class="citation" data-cites="osdrapi">(NASA Open Science Data Repository 2026b)</span>.
 Whether these resources describe the hardware well enough to reconstruct
 the specimen environment has not been assessed.</p>
 <p>Here we (i) build a crosswalk across the three public hardware
@@ -92,7 +92,12 @@ fields), the OSDR hardware registry
 payload and experiment record), and the
 <code>experiment platform</code>, project identifier and organism of
 every OSDR dataset (641 datasets) together with each dataset’s metadata,
-including protocol descriptions. Raw responses are archived with SHA-256
+including protocol descriptions. We also archived the ISS-cabin and
+ground-control telemetry (temperature, relative humidity,
+CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>2</mn></msub><annotation encoding="application/x-tex">_2</annotation></semantics></math>)
+and daily absorbed dose of all 24 missions in the OSDR Environmental
+Data App <span class="citation" data-cites="eda">(NASA Open Science Data
+Repository 2026a)</span>. Raw responses are archived with SHA-256
 checksums; every downstream stage reads only this snapshot.</p>
 <h2 id="catalogue-integrity">Catalogue integrity</h2>
 <p>Because SPLASH has no structured links, we tested each record’s
@@ -195,14 +200,22 @@ and 1 atm,
 and specimen heat enters the energy equation. Inlets impose the sourced
 volumetric flow or face velocity and the supply composition; outlets fix
 the pressure; passive vents impose the exterior (ISS cabin) state;
-gas-permeable membranes use a Robin condition. The mean age of air was
-computed with a passive scalar (unit source, zero at inflow). Flow was
-treated as laminar: inlet Reynolds numbers (hydraulic diameter) were at
-most 1949.19 in all cases except the APH fan-maximum sensitivity case
-(9745.93), which is above transition and Cases start from the supply
-state at rest and run until the specimen-zone quantities reach a
-plateau. Hardware with a sourced specimen heat load (MDS) was run with
-gravity off (flight) and on (ground control,
+gas-permeable membranes use a Robin condition. The ISS cabin state is
+the median of the quality-controlled flight telemetry of the
+Environmental Data App during the RR-1 habitation period
+(3<span>,</span>371 ppm
+CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>2</mn></msub><annotation encoding="application/x-tex">_2</annotation></semantics></math>,
+43% relative humidity; Supplementary Note S9);
+CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>2</mn></msub><annotation encoding="application/x-tex">_2</annotation></semantics></math>
+and water vapour are passive scalars, so specimen-zone excesses do not
+depend on it. The mean age of air was computed with a passive scalar
+(unit source, zero at inflow). Flow was treated as laminar: inlet
+Reynolds numbers (hydraulic diameter) were at most 1949.19 in all cases
+except the APH fan-maximum sensitivity case (9745.93), which is above
+transition and Cases start from the supply state at rest and run until
+the specimen-zone quantities reach a plateau. Hardware with a sourced
+specimen heat load (MDS) was run with gravity off (flight) and on
+(ground control,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>9.80665</mn><annotation encoding="application/x-tex">9.80665</annotation></semantics></math> m s<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mrow><mi>−</mi><mn>2</mn></mrow></msup><annotation encoding="application/x-tex">^{-2}</annotation></semantics></math>).
 Where no heat load could be sourced, the temperature field is uniform
 and the Boussinesq model has no buoyancy source, so the
@@ -625,6 +638,30 @@ versus ground control
 (1 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>),
 medium meshes.</figcaption>
 </figure>
+<h2 id="cabin-telemetry">Cabin telemetry</h2>
+<p>Of the 24 missions in the Environmental Data App, 13 Rodent Research
+missions have flight and ground-control series of the same variables
+during habitation (10 with
+CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>2</mn></msub><annotation encoding="application/x-tex">_2</annotation></semantics></math>);
+all describe cabin or ground-chamber air, and none the interior of the
+hardware. The ground-control series tracked the cabin with a lag of at
+most 1 h, and median
+flight<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>−</mi><annotation encoding="application/x-tex">-</annotation></semantics></math>ground
+differences were within
+0.10 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mo>∘</mo></msup><annotation encoding="application/x-tex">^\circ</annotation></semantics></math>C,
+1.03% relative humidity and 67.33 ppm
+CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>2</mn></msub><annotation encoding="application/x-tex">_2</annotation></semantics></math>,
+except in RR-3, whose ground controls were
+2.00 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mo>∘</mo></msup><annotation encoding="application/x-tex">^\circ</annotation></semantics></math>C
+warmer than the cabin (23.88 versus
+21.88 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mo>∘</mo></msup><annotation encoding="application/x-tex">^\circ</annotation></semantics></math>C;
+Supplementary Note S9). The plant missions in the app return no values,
+and PH-04, the Advanced Plant Habitat run modelled here (OSD-772), has
+no telemetry in OSDR. The RR-1 cabin ranges reported by <span class="citation" data-cites="choi2020">Choi et al. (2020)</span>
+(CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi></mi><mn>2</mn></msub><annotation encoding="application/x-tex">_2</annotation></semantics></math>
+788–4<span>,</span>690 ppm) equal the extremes of the app’s
+ground-control series; its flight series spans
+1<span>,</span>862–4<span>,</span>667 ppm.</p>
 <h1 id="discussion">Discussion</h1>
 <h2 id="the-specimen-environment-is-mostly-undocumented">The specimen
 environment is mostly undocumented</h2>
@@ -666,7 +703,11 @@ CO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><
 around the specimens 4.64-fold. For hardware of this kind, interpreting
 a flight–ground difference as a gravity effect requires the hardware
 environment to be measured or modelled, and modelling requires metadata
-that do not yet exist publicly.</p>
+that do not yet exist publicly. Cabin telemetry, now public for 13
+rodent missions, can set the exterior of such models and shows that
+ground controls usually reproduced the cabin closely, with exceptions
+such as RR-3; it cannot test a specimen-zone prediction, which needs
+telemetry from inside the hardware, and none is public for PH-04.</p>
 <h2 id="catalogue-integrity-1">Catalogue integrity</h2>
 <p>The defects we found are of a kind that propagates silently:
 displaced fields in a contiguous block of SPLASH records (a plant growth
@@ -705,12 +746,13 @@ were varied.</p>
 <h1 class="unnumbered" id="data-and-code-availability">Data and code
 availability</h1>
 <p>Code, the 2026-10-12 source snapshot, curated hardware
-specifications, model definitions, reduced CFD outputs and this
-manuscript’s sources are archived on Zenodo (DOI to be assigned on
-deposit) under the MIT licence (code) and CC-BY-4.0 (data and figures).
-SPLASH data were obtained from NASA’s Space Life Sciences Archive of
-Scientific Hardware <span class="citation" data-cites="splash">(NASA
-Ames Research Center 2026)</span>.</p>
+specifications, model definitions, reduced CFD outputs, the
+Environmental Data App telemetry snapshot and this manuscript’s sources
+are archived on Zenodo (DOI to be assigned on deposit) under the MIT
+licence (code) and CC-BY-4.0 (data and figures). SPLASH data were
+obtained from NASA’s Space Life Sciences Archive of Scientific Hardware
+<span class="citation" data-cites="splash">(NASA Ames Research Center
+2026)</span>.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bell2014" class="csl-entry" role="listitem">
 Bell, Ian H., Jorrit Wronski, Sylvain Quoilin, and Vincent Lemort. 2014.
@@ -731,6 +773,12 @@ Freitas. 2008. <span>“Procedure for Estimation and Reporting of
 Uncertainty Due to Discretization in <span>CFD</span>
 Applications.”</span> <em>Journal of Fluids Engineering</em> 130:
 078001. <a href="https://doi.org/10.1115/1.2960953">https://doi.org/10.1115/1.2960953</a>.
+</div>
+<div id="ref-choi2020" class="csl-entry" role="listitem">
+Choi, Sungshin Y., Amanda Saravia-Butler, Yasaman Shirazi-Fard, et al.
+2020. <span>“Validation of a New Rodent Experimental System to
+Investigate Consequences of Long Duration Space Habitation.”</span>
+<em>Scientific Reports</em> 10: 2336. <a href="https://doi.org/10.1038/s41598-020-58898-4">https://doi.org/10.1038/s41598-020-58898-4</a>.
 </div>
 <div id="ref-gebre2025" class="csl-entry" role="listitem">
 Gebre, Samrawit G., Ryan T. Scott, Amanda M. Saravia-Butler, Danielle K.
@@ -769,8 +817,12 @@ Environmental Physics</em>. 3rd ed. Academic Press / Elsevier.
 NASA Ames Research Center. 2026. <em><span>SPLASH</span>: Space Life
 Sciences Archive of Scientific Hardware</em>. <a href="https://visualization.osdr.nasa.gov/splash/instruments" class="uri">Https://visualization.osdr.nasa.gov/splash/instruments</a>.
 </div>
+<div id="ref-eda" class="csl-entry" role="listitem">
+NASA Open Science Data Repository. 2026a. <em><span>OSDR</span>
+Environmental Data App (<span>EDA</span>)</em>. <a href="https://visualization.osdr.nasa.gov/eda/" class="uri">Https://visualization.osdr.nasa.gov/eda/</a>.
+</div>
 <div id="ref-osdrapi" class="csl-entry" role="listitem">
-NASA Open Science Data Repository. 2026. <em><span>OSDR</span> Hardware
+NASA Open Science Data Repository. 2026b. <em><span>OSDR</span> Hardware
 Registry and Biological Data <span>API</span> (V2)</em>. <a href="https://osdr.nasa.gov/geode-py/ws/api/hardware" class="uri">Https://osdr.nasa.gov/geode-py/ws/api/hardware</a>; <a href="https://visualization.osdr.nasa.gov/biodata/api/v2" class="uri">https://visualization.osdr.nasa.gov/biodata/api/v2</a>.
 </div>
 <div id="ref-openfoam2606" class="csl-entry" role="listitem">
