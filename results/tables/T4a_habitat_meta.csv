@@ -11,12 +11,12 @@ HW156,Habrobracon (Wasp) Experiment Package,other_animal,<1981,1967.0,not in SPL
 HW041,yuri - ScienceTaxi,mixed,,,not in SPLASH,no mission record,SPLASH only,0,0.1,0.25,C,G1; G2; F1; F2; E1,0.1,C,unknown,C,C
 HW051,yuri - ScienceShell,mixed,,,not in SPLASH,no mission record,SPLASH only,0,0.1333,0.3333,C,G1; G2; F1; F2; E1,0.1333,C,unknown,C,C
 HW094,Extant Life Volumetric Imaging System,cell_microbe,>2010,2025.0,Active,no mission record,SPLASH only,0,0.1333,0.3333,C,G1; G2; F1; F2; E1,0.1333,C,unknown,C,C
-HW144,Cell Culture Model,cell_microbe,1981-2000,1998.0,Legacy,no mission record,SPLASH only,0,0.1333,0.1667,C,G1; G2; F1; F2; E1,0.1333,C,unknown,C,C
+HW144,Cell Culture Model,cell_microbe,,,Legacy,no mission record,SPLASH only,0,0.1333,0.1667,C,G1; G2; F1; F2; E1,0.1333,C,unknown,C,C
 HW170,Cosmos Fruit Fly Container,other_animal,<1981,1975.0,not in SPLASH,Free-flyer (Bion/Cosmos/Biosatellite),registry only,0,0.1333,0.25,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C
 HW039,"Space Technology and Advanced Research Systems, Inc.-1 Experiment Facility",mixed,>2010,2017.0,Active,no mission record,SPLASH only,0,0.1333,0.3333,C,G1; G2; F1; F2; E1,0.1333,C,unknown,C,C
 HW266,LADA: The ISS Plant Substrate Microgravity Testbed,plant,,,not in SPLASH,no mission record,registry only,0,0.1667,0.25,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C
 HW158,Neurospora (Microorganism) Experiment Package,cell_microbe,<1981,1967.0,not in SPLASH,Free-flyer (Bion/Cosmos/Biosatellite),registry only,0,0.1667,0.25,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C
-HW140,BRIC-Opti,plant,2001-2010,2006.0,Legacy,no mission record,SPLASH+registry,0,0.1667,0.4167,C,G1; G2; F2; E1,0.1667,C,sealed,C,C
+HW140,BRIC-Opti,plant,,,Legacy,no mission record,SPLASH+registry,0,0.1667,0.4167,C,G1; G2; F2; E1,0.1667,C,sealed,C,C
 HW159,Pelomyxa (Amoeba) Experiment Package,cell_microbe,<1981,1967.0,not in SPLASH,Free-flyer (Bion/Cosmos/Biosatellite),registry only,0,0.1667,0.3333,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C
 HW165,Tribolium (Flour Beetle) Experiment Package,other_animal,<1981,1967.0,not in SPLASH,Free-flyer (Bion/Cosmos/Biosatellite),registry only,0,0.1667,0.3333,C,G1; G2; F1; F2; E1,0.0,C,unknown,C,C
 HW078,Biotechnology Specimen Temperature Controller,cell_microbe,,,Active,no mission record,SPLASH only,0,0.1667,0.3333,C,G1; G2; F1; F2; E1,0.1667,C,unknown,C,C
@@ -59,7 +59,7 @@ HW264,XROOTS,plant,,,not in SPLASH,no mission record,registry only,0,0.3,0.4167,
 HW001,Optical Density/ Colorimetric Measurement [next-gen PharmaSat/ EcAMSat/SESLO/PowerCell],cell_microbe,>2010,2017.0,Legacy,no mission record,SPLASH only,0,0.3,0.5,C,G2; F1; F2,0.3,C,unknown,C,C
 HW141,Biopack,mixed,2001-2010,2003.0,Legacy,Shuttle,SPLASH+registry,0,0.3,0.6667,C,F1; F2,0.1,C,unknown,C,C
 HW064,Advanced Biological Research System,plant,2001-2010,2009.0,Legacy,no mission record,SPLASH only,2,0.3,0.5,C,G2; F1; F2; E1,0.2333,C,unknown,C,C
-HW121,Modular Orbital Bioreactor with Automated Sampling,cell_microbe,2001-2010,2002.0,Legacy,Shuttle,SPLASH+registry,3,0.3,0.4167,C,G1; G2; F1; F2,0.0667,C,unknown,C,C
+HW121,Modular Orbital Bioreactor with Automated Sampling,cell_microbe,2001-2010,2006.0,Legacy,Shuttle,SPLASH+registry,3,0.3,0.4167,C,G1; G2; F1; F2,0.0667,C,unknown,C,C
 HW049,TangoLab-,plant,,,Active,no mission record,SPLASH only,0,0.3,0.5,C,G2; F2; E1,0.3,C,sealed,C,C
 HW052,Spectrum,mixed,>2010,2019.0,Active,no mission record,SPLASH+registry,0,0.3,0.3333,C,G1; G2; F1; F2; E1,0.2,C,unknown,C,C
 HW163,Rana (Frog) Experiment Package,other_animal,<1981,1966.0,not in SPLASH,Apollo/Gemini,registry only,0,0.3333,0.5,C,G1; G2; F1; F2,0.0,C,unknown,C,C

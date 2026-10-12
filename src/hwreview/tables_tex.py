@@ -148,7 +148,10 @@ def t_assumptions():
     d = pd.DataFrame(out)
     lines = [r"\footnotesize", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.55\linewidth}}",
              r"\caption{Every modelling assumption in the CFD models (all other numbers reference sourced "
-             r"parameters).}\label{tab:assumptions}\\", r"\toprule Model & Parameter & Reason \\ \midrule \endhead"]
+             r"parameters).}\label{tab:assumptions}\\", r"\toprule Model & Parameter & Reason \\ \midrule \endfirsthead",
+             # label only in the first head: a repeated \endhead caption would redefine it on every page
+             r"\multicolumn{3}{l}{\emph{Table~\ref{tab:assumptions}, continued}}\\",
+             r"\toprule Model & Parameter & Reason \\ \midrule \endhead"]
     for _, r in d.iterrows():
         lines.append(f"{r.model} & {r.param} & {r.why} \\\\")
     lines += [r"\bottomrule", r"\end{longtable}", r"\normalsize", ""]
@@ -161,6 +164,8 @@ def t_splash_review():
     lines = [r"\footnotesize", r"\begin{longtable}{r>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}r>{\raggedright\arraybackslash}p{0.45\linewidth}}",
              r"\caption{SPLASH fields judged misattributed, uncertain or duplicated (likely source row "
              r"given).}\label{tab:splash}\\",
+             r"\toprule \# & Field & Verdict & Source row & Reason \\ \midrule \endfirsthead",
+             r"\multicolumn{5}{l}{\emph{Table~\ref{tab:splash}, continued}}\\",
              r"\toprule \# & Field & Verdict & Source row & Reason \\ \midrule \endhead"]
     for _, r in d.iterrows():
         src = "" if pd.isna(r.likely_source_id) else str(int(r.likely_source_id))

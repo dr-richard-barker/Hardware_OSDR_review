@@ -24,7 +24,7 @@ from collections import Counter
 import pandas as pd
 
 from . import crosswalk, sources
-from .evidence import entity_missions, entity_studies, entity_texts
+from .evidence import entity_missions, entity_studies, entity_texts, untrusted
 from .lexicon import LOC_RE, MODE_ORGANISMS, NONBIO_RE, NUT_RE, ORG_RE, classes_in, evidence
 from .paths import CURATED, DERIVED, TABLES
 
@@ -141,6 +141,7 @@ def _override_for(e, ovr):
 def run():
     ents = crosswalk.load_entities()
     sp = sources.splash()
+    bad = untrusted()          # displaced-row block and reviewed field verdicts
     ovr = load_role_overrides()
     rows, nut_rows = [], []
     for _, e in ents.iterrows():
@@ -220,7 +221,8 @@ def run():
             "nutrient_modes": sorted(modes),
             "splash_status": "; ".join(str(sp.loc[s].get("status") or "") for s in e["splash_ids"]),
             "splash_category": "; ".join(str(sp.loc[s].get("category") or "") for s in e["splash_ids"]),
-            "first_launch": "; ".join(str(sp.loc[s].get("date_of_first_launch") or "") for s in e["splash_ids"]),
+            "first_launch": "; ".join(str(sp.loc[s].get("date_of_first_launch") or "") for s in e["splash_ids"]
+                                      if (int(s), "date_of_first_launch") not in bad),
             "n_text_units": len(texts),
         })
     cls = pd.DataFrame(rows)

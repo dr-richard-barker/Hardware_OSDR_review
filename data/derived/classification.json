@@ -6551,7 +6551,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Culturing, Growth, Microscopy",
-  "first_launch":"2002",
+  "first_launch":"",
   "n_text_units":7
  },
  {
@@ -6603,7 +6603,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Experiment Hosting Facilities (with centrifuge)",
-  "first_launch":"2012",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -6653,7 +6653,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Microscopy\/Plate Readers",
-  "first_launch":"2010",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -6703,7 +6703,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Microscopy\/Plate Readers",
-  "first_launch":"2011",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -6753,7 +6753,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Materials Science",
-  "first_launch":"2002",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -6804,7 +6804,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Physical Sciences \u2013 Protein Crystallization \/ Biotechnology",
-  "first_launch":"2002",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -6854,7 +6854,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Physical Sciences - Protein Crystallization\/Biotechnology",
-  "first_launch":"2009",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -6904,7 +6904,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"DNA\/RNA Analysis",
-  "first_launch":"2017",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -6956,7 +6956,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Physical Science (Fluid Physics\/Biochemistry)",
-  "first_launch":"2019",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -7007,7 +7007,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Physical Science (Thermodynamics\/Combustion)",
-  "first_launch":"2022",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -7058,7 +7058,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Physical Science (Materials Science\/Thermodynamic Analysis)",
-  "first_launch":"2002",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -7108,7 +7108,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Physical Science \u2013 Materials Science \/ Thermodynamic Analysis",
-  "first_launch":"2008",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -7159,7 +7159,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences \u2013 Incubator \/ Temperature-Controlled Payload",
-  "first_launch":"2021",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -7210,7 +7210,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences - Imaging\/Molecular Biology",
-  "first_launch":"2021",
+  "first_launch":"",
   "n_text_units":4
  },
  {
@@ -7260,7 +7260,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences \u2013 Sample Handling Consumables \/ Support Kit",
-  "first_launch":"2016",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -7310,7 +7310,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences - DNA\/RNA Analysis, Molecular Biology",
-  "first_launch":"2016",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -7360,7 +7360,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences - Animal Habitat",
-  "first_launch":"2012",
+  "first_launch":"",
   "n_text_units":6
  },
  {
@@ -7413,7 +7413,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences - Plant Growth \/ Environmental Control",
-  "first_launch":"2017",
+  "first_launch":"",
   "n_text_units":11
  },
  {
@@ -7592,7 +7592,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences - Animal Habitat Support \/ Logistics Interface",
-  "first_launch":"2014",
+  "first_launch":"",
   "n_text_units":38
  },
  {
@@ -7646,7 +7646,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Life Sciences \u2013 Culturing, Growth, Microbiology \/ Environmental Monitoring",
-  "first_launch":"2006",
+  "first_launch":"",
   "n_text_units":5
  },
  {
@@ -7918,7 +7918,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Life Sciences - Animal Habitat",
-  "first_launch":"2014",
+  "first_launch":"",
   "n_text_units":173
  },
  {
@@ -7982,7 +7982,7 @@
   ],
   "splash_status":"Active",
   "splash_category":"Life Sciences \u2013 Culturing, Growth, Microbiology \/ Exposure Facilities",
-  "first_launch":"2014",
+  "first_launch":"",
   "n_text_units":25
  },
  {
@@ -8035,7 +8035,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Life Sciences \u2013 Culturing, Growth, Microbiology \/ Cell Culture",
-  "first_launch":"1998",
+  "first_launch":"",
   "n_text_units":3
  },
  {
@@ -8088,7 +8088,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Life Sciences \u2013 Animal Habitat (Aquatic Animal Experiment Unit) \/ Environmental Monitoring",
-  "first_launch":"1994",
+  "first_launch":"",
   "n_text_units":8
  },
  {
@@ -8142,7 +8142,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Life Sciences - Culturing, Growth, Animal Habitat",
-  "first_launch":"1992",
+  "first_launch":"",
   "n_text_units":8
  },
  {
@@ -8200,7 +8200,7 @@
   ],
   "splash_status":"Legacy",
   "splash_category":"Life Sciences \u2013 Animal\u2013Plant Aquatic Ecosystem \/ Environmental Monitoring",
-  "first_launch":"1998",
+  "first_launch":"",
   "n_text_units":10
  },
  {
