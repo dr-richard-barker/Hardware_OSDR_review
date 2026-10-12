@@ -232,6 +232,8 @@ def main(argv=None):
             post.animate(slug, a.mesh, "CO2" if "CO2" in meta.get("scalars", []) else "AoA")
         if not a.no_vtk:
             export_vtk(slug, a.mesh)
+    if not a.no_anim:
+        post.animation_consistency([s for s, meshes, _ in CAMPAIGN if a.mesh in meshes], a.mesh)
     df = table(a.mesh)
     if len(df):
         comparison(df, a.mesh)

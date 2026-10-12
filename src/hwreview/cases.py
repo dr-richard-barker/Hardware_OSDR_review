@@ -103,13 +103,19 @@ def zone_sources(m: geometry.Model, R) -> dict:
 
 
 # ----------------------------------------------------------------------------- case writer
-def build(slug: str, gravity: str = "0g", mesh: str = "medium", nprocs: int = 8, tag: str = "") -> Path:
+def build(slug: str, gravity: str = "0g", mesh: str = "medium", nprocs: int = 8, tag: str = "",
+          anim: bool = False) -> Path:
+    """Write an OpenFOAM case. anim=True writes the animation-only variant (suffix _anim): the model's
+    `animation:` block overrides end time and write interval; everything else is identical."""
     m = geometry.load(slug)
     errs = geometry.validate(m)
     if errs:
         raise ValueError(f"{slug}: geometry invalid:\n  " + "\n  ".join(errs))
     R = geometry.Resolver(m.hw, m.spec.get("assumptions") or [])
-    num = m.spec["numerics"]
+    num = dict(m.spec["numerics"])
+    if anim:
+        num.update(m.spec["animation"])
+        tag = "_anim"
     case = RUNS / f"{slug}_{gravity}_{mesh}{tag}"
     tri = case / "constant" / "triSurface"
     info = geometry.write_stl(m, tri)

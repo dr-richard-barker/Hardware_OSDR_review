@@ -42,11 +42,13 @@ results/tables/T8*_verification_*.csv	hwreview.verify_cfd	heated-cavity ladders 
 results/tables/V_verification_*.json	hwreview.verify_cfd	raw verification outputs
 results/tables/M_*.json	hwreview.post	per-model metrics (0 g and 1 g)
 results/tables/T9_cfd_results_*.csv	hwreview.results	cross-hardware CFD metrics
+results/tables/T10_animation_consistency.csv	hwreview.post.animation_consistency	animation run vs production run at the animation end time
 results/figures/F*.p*	hwreview.figures_meta / hwreview.results	manuscript figures (PDF + PNG)
 results/figures/ortho_*.p*	hwreview.ortho	orthographic engineering sheets of each CFD geometry
 results/figures/fields_*.p*	hwreview.post	0 g / 1 g mid-plane field slices
 results/figures/card_*.p*	hwreview.results	environment cards (specimen-zone time series)
-results/figures/anim_*.mp4	hwreview.post.animate	mid-plane animations, 0 g | 1 g
+results/figures/anim_*.mp4	hwreview.post.animate	mid-plane animations, 0 g | 1 g, from the dense-output animation runs (campaign --anim)
+results/figures/anim_*_poster.png	hwreview.post.animate	last frame of each animation (web poster image)
 results/fields/timeseries_*.csv	hwreview.post	zone, domain and outlet time series per run
 results/fields/vtk_*.tar.gz	hwreview.results	VTK time series (4-D field record) per medium-mesh run
 results/macros.tex	hwreview.macros	every number quoted in the manuscript

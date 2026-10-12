@@ -3,7 +3,7 @@
 #   make setup      create .venv and install pinned requirements
 #   make analysis   crosswalk -> classification -> sufficiency -> meta-analysis -> validation -> figures
 #   make verify     CFD verification (heated cavity ladders, diffusion) - needs Docker
-#   make cfd        Tier-A hardware campaign (0 g / 1 g, mesh ladders)  - needs Docker, ~2-4 h on 12 cores
+#   make cfd        Tier-A hardware campaign (0 g / 1 g, mesh ladders) + animation runs - needs Docker, ~2-4 h on 12 cores
 #   make post       post-processing, GCI, animations, ortho sheets
 #   make paper      macros + manuscript PDF / DOCX / HTML
 #   make check      tests, reference check, manuscript pre-flight, manifest
@@ -47,6 +47,7 @@ verify:
 
 cfd:
 	$(RUN) -m hwreview.campaign --np 12
+	$(RUN) -m hwreview.campaign --anim --np 12
 
 post:
 	$(RUN) -m hwreview.ortho $(MODELS)

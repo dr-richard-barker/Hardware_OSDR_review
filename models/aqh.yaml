@@ -8,6 +8,9 @@ openings:
 environment:
   temperature_C: {ref: environment.temperature_C}
 numerics: {cell_mm: 3.5, surface_level: 0, obstacle_level: 0, end_time_s: 1800, write_every_s: 150, max_dt_s: 1.0, max_co: 0.9, probe_every_steps: 20}
+# Animation only: a separate run on the same mesh with the same settings, writing fields densely
+# through the start-up (the age of water develops over ~550 s; the production run writes every 150 s). Results and VTK archives come from the production run.
+animation: {end_time_s: 1800, write_every_s: 45}
 assumptions:
   - param: openings[0].size
     why: "Water inlet/outlet geometry of the aquarium is not published (aqh.yaml: 'aquarium water inlet/outlet geometry'). 20 x 20 mm ports assumed."

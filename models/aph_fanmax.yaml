@@ -28,6 +28,9 @@ environment:
   co2_ppm: {ref: run_setpoints.PH04.co2_ppm}
   rh_percent: {ref: run_setpoints.PH04.rh_percent}
 numerics: {cell_mm: 16, surface_level: 0, obstacle_level: 0, end_time_s: 120, write_every_s: 10, max_dt_s: 0.05, max_co: 0.9, probe_every_steps: 20}
+# Animation only: a separate run on the same mesh with the same settings, writing fields densely
+# through the start-up (the fan-driven flow is unsteady, see the late s.d. in T9; the production run writes every 10 s). Results and VTK archives come from the production run.
+animation: {end_time_s: 15, write_every_s: 0.25}
 assumptions:
   - param: obstacles[0].center
     why: "Science Carrier fills the chamber floor ('installed into the base of the growth chamber', registry 2017); footprint equal to the chamber footprint by construction (enclosure footprint was derived from the carrier)."

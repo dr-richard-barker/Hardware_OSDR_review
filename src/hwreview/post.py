@@ -282,8 +282,27 @@ if __name__ == "__main__":
     print(json.dumps(run(a.slug, a.mesh, a.vtk), indent=1, default=float))
 
 
-def animate(slug: str, mesh: str = "medium", field: str = "CO2", fps: int = 4):
-    """MP4 of the vertical mid-plane over time, 0 g | 1 g side by side (ffmpeg)."""
+FIELD_LABEL = {"CO2": "CO$_2$ (ppm)", "AoA": "age (s)", "T": "T (K)", "H2O": "H$_2$O (mmol/mol)"}
+
+
+def _tlabel(t: float) -> str:
+    return f"{round(t, 3):g}"
+
+
+def anim_cases(slug: str, mesh: str = "medium") -> dict:
+    """Cases the animation is drawn from: the dense-output animation runs (`<case>_anim`, see
+    campaign.animation_runs) when every gravity has one, else the production runs."""
+    from .campaign import done
+    prod = {g: RUNS / f"{slug}_{g}_{mesh}" for g in ("0g", "1g") if (RUNS / f"{slug}_{g}_{mesh}").exists()}
+    anim = {g: c.with_name(c.name + "_anim") for g, c in prod.items()}
+    if anim and all(c.exists() and done(c) for c in anim.values()):
+        return anim
+    return prod
+
+
+def animate(slug: str, mesh: str = "medium", field: str = "CO2", clip_s: float = 6.0):
+    """MP4 of the vertical mid-plane over time, 0 g | 1 g side by side (ffmpeg), plus a poster PNG
+    of the last frame. Encoded for browsers: H.264 yuv420p, constant 24 fps, moov atom first."""
     import shutil
     import subprocess
     import tempfile
@@ -293,7 +312,7 @@ def animate(slug: str, mesh: str = "medium", field: str = "CO2", fps: int = 4):
 
     from . import geometry
     style.apply()
-    cases = {g: RUNS / f"{slug}_{g}_{mesh}" for g in ("0g", "1g") if (RUNS / f"{slug}_{g}_{mesh}").exists()}
+    cases = anim_cases(slug, mesh)
     readers = {}
     for g, c in cases.items():
         (c / "case.foam").touch()
@@ -323,6 +342,7 @@ def animate(slug: str, mesh: str = "medium", field: str = "CO2", fps: int = 4):
     meta = json.loads((next(iter(cases.values())) / "case_meta.json").read_text())
     for k, (t, fr) in enumerate(frames):
         fig, axes = plt.subplots(1, len(fr), figsize=(3.6 * len(fr), 3.0), squeeze=False)
+        fig.subplots_adjust(top=0.80)          # room for the figure title above the panel titles
         for ax, (g, (cc, v)) in zip(axes[0], fr.items()):
             tr = mtri.Triangulation(cc[:, 0] * 1000, cc[:, 2] * 1000)
             cen = np.column_stack([tr.x[tr.triangles].mean(1), np.full(len(tr.triangles), cc[0, 1] * 1000),
@@ -335,17 +355,65 @@ def animate(slug: str, mesh: str = "medium", field: str = "CO2", fps: int = 4):
             tr.set_mask(mask | (edge > 3 * meta["cell_mm"]))
             cs = ax.tricontourf(tr, v, levels=np.linspace(vmin, vmax, 25), cmap="viridis")
             ax.set_aspect("equal")
-            ax.set_title(f"{g}   t = {t:.0f} s", fontsize=8)
+            ax.set_title(f"{g}   t = {_tlabel(t)} s", fontsize=8)
             ax.set_xlabel("x (mm)", fontsize=7)
             ax.set_ylabel("z (mm)", fontsize=7)
             ax.grid(False)
-        fig.colorbar(cs, ax=list(axes[0]), shrink=0.85, label=field)
+        fig.colorbar(cs, ax=list(axes[0]), shrink=0.85, label=FIELD_LABEL.get(field, field))
         fig.suptitle(f"{slug}: {field}, vertical mid-plane", x=0.01, ha="left", fontsize=9)
         fig.savefig(tmp / f"f{k:04d}.png", dpi=110)
         plt.close(fig)
     out = FIGURES / f"anim_{slug}_{mesh}_{field}.mp4"
+    fps = max(4, round(len(frames) / clip_s))          # whole run in about clip_s seconds
+    vf = ("pad=ceil(iw/2)*2:ceil(ih/2)*2,tpad=stop_mode=clone:stop_duration=1.5,"   # hold the end state
+          "fps=24,format=yuv420p")
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(fps), "-i", str(tmp / "f%04d.png"),
-                    "-vf", "pad=ceil(iw/2)*2:ceil(ih/2)*2", "-pix_fmt", "yuv420p", "-c:v", "libx264", str(out)],
-                   check=True)
+                    "-vf", vf, "-c:v", "libx264", "-profile:v", "high", "-preset", "slow", "-crf", "20",
+                    "-movflags", "+faststart", "-an", str(out)], check=True)
+    shutil.copy2(tmp / f"f{len(frames) - 1:04d}.png", FIGURES / f"anim_{slug}_{mesh}_{field}_poster.png")
     shutil.rmtree(tmp)
     return out
+
+
+def animation_consistency(slugs, mesh: str = "medium"):
+    """Animation run vs production run (same mesh and settings; only end time and write interval
+    differ). Compares the specimen-zone mean over the last third of the animation window; for unsteady
+    flows the instantaneous states diverge, so the production run's s.d. over the same window is given
+    for scale. Quantities whose excess is only round-off are skipped. Writes T10_animation_consistency.csv."""
+    rows = []
+    for slug in slugs:
+        for g, ca in anim_cases(slug, mesh).items():
+            if not ca.name.endswith("_anim"):
+                continue
+            cp = ca.with_name(ca.name[:-len("_anim")])
+            ta, tp = timeseries(ca), timeseries(cp)
+            meta = json.loads((cp / "case_meta.json").read_text())
+            t_end = float(ta.time.max())
+            w0 = 2 / 3 * t_end
+            wa, wp = ta[ta.time >= w0], tp[(tp.time >= w0) & (tp.time <= t_end)]
+            # specimen zones (aggregate only, not the per-vial copies); the whole domain when there is no zone
+            cols = [c for c in ta.columns if c.startswith("zone_") and not re.search(r"_\d{3}:", c)] \
+                or [c for c in ta.columns if c.startswith("domainAvg:")]
+            for col in [c for c in cols if c.split(":")[1] in ("CO2", "T", "AoA")]:
+                if col not in tp:
+                    continue
+                q = col.split(":")[1]
+                ref = {"CO2": meta["initial"]["CO2_ppm"], "T": meta["initial"]["T_C"] + 273.15, "AoA": 0.0}[q]
+                # compare at the sparser run's sample times, interpolating the denser one
+                if 0 < len(wp) < len(wa):
+                    a = float(np.mean(np.interp(wp.time, ta.time, ta[col])))
+                    b = float(wp[col].mean())
+                else:
+                    a = float(wa[col].mean())
+                    b = float(np.mean(np.interp(wa.time, tp.time, tp[col])))
+                exc = b - ref
+                if abs(exc) < (1e-3 if q == "T" else 1e-6):
+                    continue                  # no source for this quantity: excess is round-off
+                rows.append({"model": slug, "gravity": g, "window_start_s": w0, "window_end_s": t_end,
+                             "quantity": col, "animation_run_mean": a, "production_run_mean": b,
+                             "abs_diff": abs(a - b), "rel_diff_of_excess_pct": 100 * abs(a - b) / abs(exc),
+                             "production_window_sd": float(wp[col].std(ddof=1)) if len(wp) > 1 else float("nan")})
+    df = pd.DataFrame(rows)
+    TABLES.mkdir(parents=True, exist_ok=True)
+    df.to_csv(TABLES / "T10_animation_consistency.csv", index=False)
+    return df

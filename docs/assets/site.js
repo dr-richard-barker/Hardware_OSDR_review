@@ -48,6 +48,28 @@
     });
   });
 
+  /* ---------- animations: play while on screen (unless reduced motion is requested) ---------- */
+  var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!calm && "IntersectionObserver" in window) {
+    var playIt = function (v) {
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});       // autoplay refused: the poster and controls remain
+    };
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        v._inView = e.isIntersecting && e.intersectionRatio >= 0.5;
+        if (v._inView) playIt(v); else v.pause();
+      });
+    }, { threshold: [0, 0.5] });
+    document.querySelectorAll(".mpanel video").forEach(function (v) { io.observe(v); });
+    // browsers pause muted video in hidden tabs; resume the one on screen when the tab is shown again
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState !== "visible") return;
+      document.querySelectorAll(".mpanel video").forEach(function (v) { if (v._inView) playIt(v); });
+    });
+  }
+
   /* ---------- hardware explorer ---------- */
   var table = document.getElementById("xtable");
   if (!table) return;

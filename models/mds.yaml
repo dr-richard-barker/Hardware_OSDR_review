@@ -18,6 +18,9 @@ environment:
   co2_ppm: {ref: "cabin:environment.co2_ppm"}
   rh_percent: {ref: environment.rh_percent}
 numerics: {cell_mm: 4, surface_level: 0, obstacle_level: 0, end_time_s: 30, write_every_s: 2, max_dt_s: 0.02, max_co: 0.9, probe_every_steps: 20}
+# Animation only: a separate run on the same mesh with the same settings, writing fields densely
+# through the start-up (the mouse-zone plume establishes within ~0.2 s, CO2 t90 ~0.1 s; the production run writes every 2 s). Results and VTK archives come from the production run.
+animation: {end_time_s: 0.4, write_every_s: 0.008}
 assumptions:
   - param: zones[0].size
     why: "Mouse represented as a distributed source volume of 80 x 30 x 30 mm (adult-mouse scale) resting on the cage floor; body geometry not modelled as a solid."

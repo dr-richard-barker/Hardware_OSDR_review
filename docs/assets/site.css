@@ -56,7 +56,7 @@ pre{background:var(--card);border:1px solid var(--line);border-radius:10px;paddi
 .mtabs button[aria-selected=true]{background:var(--accent);border-color:var(--accent);color:#fff}
 .mtabs button:focus-visible{outline:2px solid var(--accent2);outline-offset:2px}
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
-.mpanel video{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#000}
+.mpanel video{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:var(--card)}
 @media (max-width:760px){.mgrid{grid-template-columns:1fr}}
 
 ul.find,ol.recs{margin:12px 0 0 1.2em;padding:0}

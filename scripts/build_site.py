@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+import yaml
 
 root = Path(__file__).resolve().parents[1]
 SITE, DOCS = root / "site", root / "docs"
@@ -122,6 +123,33 @@ def table_curated() -> str:
             '<th class="num">Sourced / sought</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>")
 
 
+def _num(x: float) -> str:
+    return f"{x:,.0f}" if x >= 100 else f"{x:.3g}"
+
+
+def anim_caption(m: str, field: str, fname: str) -> str:
+    """Time window and production-run check for an animation, from the model file and T10."""
+    a = (yaml.safe_load((root / "models" / f"{m}.yaml").read_text()) or {}).get("animation")
+    if not a:
+        return f"Four-dimensional record: {fname} on a mid-plane slice through time (medium mesh)."
+    txt = (f"Four-dimensional record: {fname} on the vertical mid-plane from t&nbsp;=&nbsp;0 to "
+           f"{a['end_time_s']:g}&nbsp;s, one frame every {a['write_every_s']:g}&nbsp;s, from a dedicated "
+           f"animation run on the production mesh.")
+    t10 = TABLES / "T10_animation_consistency.csv"
+    if t10.exists():
+        c = pd.read_csv(t10)
+        c = c[(c.model == m) & c.quantity.str.endswith(f":{field}")]
+        if len(c):
+            where = "domain-average" if c.quantity.str.startswith("domainAvg").all() else "specimen-zone"
+            what = f"the {fname} excess" if field == "CO2" else f"the mean {fname}"
+            pct = c.rel_diff_of_excess_pct.max()
+            agree = ("matches the production run to better than 0.01%" if pct < 0.01 else
+                     f"agrees with the production run within {pct:.2g}%")
+            txt += (f" Its {where} mean over t&nbsp;=&nbsp;{_num(c.window_start_s.min())}–{_num(c.window_end_s.max())}&nbsp;s "
+                    f"{agree} of {what}.")
+    return txt
+
+
 def model_viewer() -> str:
     t = pd.read_csv(TABLES / "T9_cfd_results_medium.csv").drop_duplicates("model").set_index("model")
     tabs, panels = [], []
@@ -139,9 +167,10 @@ def model_viewer() -> str:
             f'alt="Orthographic drawing of the {esc(label)} CFD geometry"><figcaption>Geometry: front, side and plan '
             f'elevations and isometric view, with inlets, outlets, vents and the specimen zone. '
             f'<a href="assets/fig/ortho_{ortho}.png">Full size</a></figcaption></figure>'
-            f'<figure><video controls loop muted playsinline preload="metadata" src="assets/fig/anim_{m}_medium_{field}.mp4" '
-            f'aria-label="Animation of {fname} on a mid-plane slice, {esc(label)}"></video><figcaption>Four-dimensional '
-            f'record: {fname} on a mid-plane slice through time (medium mesh).</figcaption></figure></div>'
+            f'<figure><video controls loop muted playsinline preload="none" '
+            f'poster="assets/fig/anim_{m}_medium_{field}_poster.png" src="assets/fig/anim_{m}_medium_{field}.mp4" '
+            f'aria-label="Animation of {fname} on a mid-plane slice, {esc(label)}"></video><figcaption>'
+            f'{anim_caption(m, field, fname)}</figcaption></figure></div>'
             f'<figure><img loading="lazy" src="assets/fig/fields_{m}_medium.png" alt="Field slices for {esc(label)}">'
             f'<figcaption>Field slices at the end of the run. <a href="assets/fig/fields_{m}_medium.png">Full size</a>'
             f'</figcaption></figure>'
@@ -188,8 +217,8 @@ def main():
     for n in names:
         shutil.copy2(FIGS / f"{n}.png", DOCS / "assets/fig" / f"{n}.png")
     for m, _ in RUNS:
-        n = f"anim_{m}_medium_{ANIM_FIELD.get(m, 'CO2')}.mp4"
-        shutil.copy2(FIGS / n, DOCS / "assets/fig" / n)
+        for n in (f"anim_{m}_medium_{ANIM_FIELD.get(m, 'CO2')}.mp4", f"anim_{m}_medium_{ANIM_FIELD.get(m, 'CO2')}_poster.png"):
+            shutil.copy2(FIGS / n, DOCS / "assets/fig" / n)
     for f in ("manuscript.pdf", "manuscript.html", "supplement.pdf"):
         shutil.copy2(root / "latex/output" / f, DOCS / "paper" / f)
     hab = habitats()

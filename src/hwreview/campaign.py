@@ -1,6 +1,7 @@
 """Run the CFD campaign: every Tier-A model in 0 g and 1 g, with mesh ladders for the GCI study.
 
     python -m hwreview.campaign [--np 12] [--only aph,mds]
+    python -m hwreview.campaign --anim      # animation-only runs (medium mesh, dense field output)
 
 Resumable: a case whose solver log reached its end time is skipped. Progress is
 appended to runs/campaign.log; failures are logged and the queue continues.
@@ -11,6 +12,7 @@ import argparse
 import datetime as dt
 import json
 import re
+import shutil
 import traceback
 
 from . import cases, foam, geometry
@@ -50,11 +52,45 @@ def log(msg: str):
         f.write(line + "\n")
 
 
+def animation_runs(nprocs: int, only=None):
+    """Medium-mesh reruns that write fields densely through the start-up, for the animations only.
+    The mesh is copied from the production case, so the two runs differ only in end time and
+    write interval (post.animation_consistency compares them)."""
+    for slug, _, gravities in CAMPAIGN:
+        if only and slug not in only:
+            continue
+        for g in gravities:
+            prod = RUNS / f"{slug}_{g}_medium"
+            case = RUNS / f"{slug}_{g}_medium_anim"
+            try:
+                if case.exists() and done(case):
+                    log(f"skip  {case.name} (complete)")
+                    continue
+                if not (prod / "constant" / "polyMesh" / "cellZones").exists():
+                    raise FileNotFoundError(f"{prod.name} has no mesh; run the campaign first")
+                t0 = dt.datetime.now()
+                case = cases.build(slug, g, "medium", nprocs, anim=True)
+                shutil.rmtree(case / "constant" / "polyMesh", ignore_errors=True)
+                shutil.copytree(prod / "constant" / "polyMesh", case / "constant" / "polyMesh")
+                shutil.copy2(prod / "log.checkMesh", case / "log.checkMesh")
+                shutil.rmtree(case / "0", ignore_errors=True)            # initial fields as meshed for production
+                shutil.copytree(prod / "0", case / "0")
+                log(f"start {case.name} (mesh copied from {prod.name})")
+                cases.solve(case, nprocs)
+                log(f"done  {case.name} in {(dt.datetime.now() - t0).total_seconds():.0f} s")
+            except Exception as e:
+                log(f"FAIL  {case.name}: {type(e).__name__}: {str(e).splitlines()[0][:200]}")
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--np", type=int, default=12)
     ap.add_argument("--only")
+    ap.add_argument("--anim", action="store_true", help="animation-only runs instead of the campaign")
     a = ap.parse_args(argv)
+    if a.anim:
+        animation_runs(a.np, set(a.only.split(",")) if a.only else None)
+        return
     global TAG
     TAG = f"[np{a.np}] " if a.only else ""
     only = set(a.only.split(",")) if a.only else None

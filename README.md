@@ -44,7 +44,7 @@ results by `scripts/build_site.py`).
 | Tiers after literature curation | `curated` | `T6_curated_tiers.csv` |
 | CFD verification (heated cavity, diffusion) | `verify_cfd` | `T8*`, `V_*` |
 | Geometry, drawings | `geometry`, `ortho` | `ortho_<model>` sheets |
-| OpenFOAM cases and campaign | `cases`, `campaign`, `foam` | `runs/` (not archived) |
+| OpenFOAM cases and campaign | `cases`, `campaign`, `foam` | `runs/` (not archived); `campaign --anim` adds medium-mesh reruns with dense field output used only for the animations (checked against the production runs in `T10`) |
 | Post-processing, GCI, results | `post`, `gci`, `results` | `T7_gci.csv`, `T9_*`, cards, slices, animations, VTK |
 | Manuscript numbers | `macros` | `results/macros.tex` |
 
