@@ -90,9 +90,11 @@ def t_gci():
     rows = pd.DataFrame({"m": d.model.map(lab), "g": d.gravity, "q": d.quantity.map(lambda s: esc(q(s))),
                          "f": d.phi_fine.map(num), "md": d.phi_medium.map(num), "c": d.phi_coarse.map(num),
                          "p": d.p.map(lambda v: num(v)), "gci": d.gci_fine_pct.map(lambda v: num(v)),
-                         "conv": d.convergence})
-    return tabular(rows, "lllrrrrrl", ["Model", "$g$", "Quantity", "Fine", "Medium", "Coarse", "$p$",
-                                       "GCI (\\%)", "Convergence"],
+                         "sd": d.temporal_sd_fine.map(lambda v: num(v)),
+                         "conv": [c + (" (within unsteadiness)" if w else "")
+                                  for c, w in zip(d.convergence, d.mesh_spread_within_unsteadiness)]})
+    return tabular(rows, "lllrrrrrrl", ["Model", "$g$", "Quantity", "Fine", "Medium", "Coarse", "$p$",
+                                        "GCI (\\%)", "Temporal sd", "Convergence"],
                    "Grid convergence \\citep{celik2008} of specimen-zone and domain quantities (excess over the supply "
                    "state; age of air in s; $U_{max}$ in m\\,s$^{-1}$).", "tab:gci", r"\scriptsize")
 

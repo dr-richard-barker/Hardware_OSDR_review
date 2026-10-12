@@ -80,8 +80,13 @@ def run():
                 if max(abs(m[key]) for m in mets) < (1e-3 if ":T:" in key else 1e-9):
                     continue
                 r = gci3([m[key] for m in mets], [h[0] for h in hs])
+                sd = mets[0].get(key.replace(":final_excess", ":late_sd")) if key.endswith(":final_excess") else None
+                spread = max(m[key] for m in mets) - min(m[key] for m in mets)
                 rows.append({"model": slug, "gravity": g, "quantity": key,
-                             "N_fine": hs[0][1], "N_medium": hs[1][1], "N_coarse": hs[2][1], **r})
+                             "N_fine": hs[0][1], "N_medium": hs[1][1], "N_coarse": hs[2][1], **r,
+                             "temporal_sd_fine": sd,
+                             # mesh-to-mesh spread smaller than ~2 temporal sd: not separable from unsteadiness
+                             "mesh_spread_within_unsteadiness": bool(sd and spread < 2 * sd)})
     df = pd.DataFrame(rows)
     TABLES.mkdir(parents=True, exist_ok=True)
     df.to_csv(TABLES / "T7_gci.csv", index=False)
