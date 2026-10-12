@@ -27,6 +27,14 @@ def esc(s) -> str:
     return s
 
 
+def brk(s) -> str:
+    """Escaped identifier that may break after underscores, dots and brackets."""
+    t = esc(s)
+    for a in ("\\_", ".", "]"):
+        t = t.replace(a, a + "\\allowbreak{}")
+    return t
+
+
 def num(v, nd=2):
     if v is None or (isinstance(v, float) and v != v):
         return "--"
@@ -42,10 +50,11 @@ def num(v, nd=2):
 def tabular(df: pd.DataFrame, spec: str, header: list[str], caption: str, label: str, size=r"\footnotesize",
             long=False) -> str:
     lines = [f"\\begin{{table}}[htbp]\\centering{size}", f"\\caption{{{caption}}}\\label{{{label}}}",
+             r"\begin{adjustbox}{max width=\linewidth}",
              f"\\begin{{tabular}}{{{spec}}}", r"\toprule", " & ".join(header) + r" \\", r"\midrule"]
     for _, r in df.iterrows():
         lines.append(" & ".join(str(x) for x in r.values) + r" \\")
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table}", ""]
+    lines += [r"\bottomrule", r"\end{tabular}", r"\end{adjustbox}", r"\end{table}", ""]
     return "\n".join(lines)
 
 
@@ -104,17 +113,30 @@ def t_cfd():
     if not f.exists():
         return ""
     d = pd.read_csv(f)
-    rows = pd.DataFrame({"m": d.label.map(esc), "g": d.gravity, "z": d.zone.map(esc),
-                         "co2": d.CO2_excess_ppm.map(num), "h2o": d.H2O_excess_mmol_mol.map(num),
-                         "t": d.T_excess_K.map(lambda v: num(v, 3)), "age": d.age_of_air_s.map(num),
-                         "u": d.U_max_m_s.map(lambda v: num(v, 3)), "re": d.Re.map(lambda v: num(v, 0)),
-                         "ri": d.Ri_1g.map(num), "bal": d.CO2_balance_rel_imbalance.map(num)})
-    return tabular(rows, "lllrrrrrrrr", ["Model", "$g$", "Zone", "$\\Delta$CO$_2$ (ppm)",
-                                         "$\\Delta$H$_2$O (mmol/mol)", "$\\Delta T$ (K)", "Age (s)",
-                                         "$U_{max}$ (m/s)", "Re", "Ri (1 g)", "CO$_2$ imbalance"],
-                   "Specimen-environment results (medium mesh, end of run): excess over the supply/initial state in the "
-                   "specimen zone, its age of air, peak velocity, Reynolds and Richardson numbers, and the relative "
-                   "closure of the transient CO$_2$ balance.", "tab:cfd", r"\scriptsize")
+
+    def pm(v, sd, nd=2):
+        if v is None or (isinstance(v, float) and v != v):
+            return "--"
+        return num(v, nd) + (f" $\\pm$ {num(sd, nd)}" if sd and sd == sd and sd > 0.005 * max(1e-12, abs(v)) else "")
+    rows = pd.DataFrame({
+        "m": d.label.map(esc), "g": d.gravity, "z": d.zone.map(esc),
+        "co2": [pm(v, s_) for v, s_ in zip(d.CO2_excess_ppm, d.CO2_late_sd_ppm)],
+        "h2o": d.H2O_excess_mmol_mol.map(lambda v: "0" if v == v and abs(v) < 1e-4 else num(v, 3)),
+        "t": d.T_excess_K.map(lambda v: "0" if v == v and abs(v) < 1e-4 else num(v, 3)),
+        "age": [pm(v, s_) for v, s_ in zip(d.age_of_air_s, d.age_late_sd_s)],
+        "rein": d.Re_inlet.map(lambda v: num(v, 0)),
+        "ri": d.Ri_1g.map(lambda v: "0" if v == v and abs(v) < 1e-6 else num(v)),
+        "ras": d.Ra_solutal_CO2_1g.map(lambda v: num(v, 0)),
+        "bal": d.CO2_balance_rel_imbalance.map(lambda v: "--" if v != v else f"{100 * v:+.2f}")})
+    body = tabular(rows, "lllrrrrrrrr", ["Model", "$g$", "Zone", "$\\Delta$CO$_2$ (ppm)", "$\\Delta$H$_2$O (mmol/mol)",
+                                          "$\\Delta T$ (K)", "Age of air (s)", "Re$_{inlet}$", "Ri", "Ra$_{CO_2}$",
+                                          "CO$_2$ bal. (\\%)"],
+                   "Specimen environments (medium mesh): plateau excess over the supply or initial state in the specimen "
+                   "zone ($\\pm$ temporal s.d.\\ over the last quarter of the run), mean age of air, inlet Reynolds "
+                   "number, Richardson number (1\\,$g$), solutal Rayleigh number of the CO$_2$ excess (omitted by the "
+                   "model) and the closure of the transient CO$_2$ balance. Zero entries are zero up to round-off.",
+                   "tab:cfd", r"\scriptsize")
+    return body
 
 
 def t_assumptions():
@@ -122,9 +144,9 @@ def t_assumptions():
     for f in sorted((ROOT / "models").glob("*.yaml")):
         spec = yaml.safe_load(f.read_text())
         for a in spec.get("assumptions") or []:
-            out.append({"model": esc(f.stem), "param": esc(a["param"]), "why": esc(a["why"])})
+            out.append({"model": brk(f.stem), "param": brk(a["param"]), "why": esc(a["why"])})
     d = pd.DataFrame(out)
-    lines = [r"\footnotesize", r"\begin{longtable}{p{0.16\linewidth}p{0.22\linewidth}p{0.56\linewidth}}",
+    lines = [r"\footnotesize", r"\begin{longtable}{>{\raggedright\arraybackslash}p{0.17\linewidth}>{\raggedright\arraybackslash}p{0.22\linewidth}>{\raggedright\arraybackslash}p{0.55\linewidth}}",
              r"\caption{Every modelling assumption in the CFD models (all other numbers reference sourced "
              r"parameters).}\label{tab:assumptions}\\", r"\toprule Model & Parameter & Reason \\ \midrule \endhead"]
     for _, r in d.iterrows():
@@ -136,13 +158,13 @@ def t_assumptions():
 def t_splash_review():
     d = pd.read_csv(CURATED / "splash_field_review.csv")
     d = d[d.verdict.isin(["misattributed", "uncertain", "duplicate_of"])]
-    lines = [r"\footnotesize", r"\begin{longtable}{rp{0.2\linewidth}p{0.12\linewidth}rp{0.45\linewidth}}",
+    lines = [r"\footnotesize", r"\begin{longtable}{r>{\raggedright\arraybackslash}p{0.2\linewidth}>{\raggedright\arraybackslash}p{0.12\linewidth}r>{\raggedright\arraybackslash}p{0.45\linewidth}}",
              r"\caption{SPLASH fields judged misattributed, uncertain or duplicated (likely source row "
              r"given).}\label{tab:splash}\\",
              r"\toprule \# & Field & Verdict & Source row & Reason \\ \midrule \endhead"]
     for _, r in d.iterrows():
         src = "" if pd.isna(r.likely_source_id) else str(int(r.likely_source_id))
-        lines.append(f"{r.splash_id} & {esc(r.field)} & {esc(r.verdict)} & {src} & {esc(r.reason)} \\\\")
+        lines.append(f"{r.splash_id} & {brk(r.field)} & {brk(r.verdict)} & {src} & {esc(r.reason)} \\\\")
     lines += [r"\bottomrule", r"\end{longtable}", r"\normalsize", ""]
     return "\n".join(lines)
 

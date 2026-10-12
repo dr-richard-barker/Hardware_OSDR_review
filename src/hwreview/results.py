@@ -91,6 +91,17 @@ def inlet_reynolds(case, slug: str, meta: dict) -> float | None:
     return best
 
 
+def nominal_residence(case, ts) -> float | None:
+    """Mesh volume / total inflow (s) for cases with inlets; None for sealed or passive cases."""
+    import re
+    flows = [c for c in ts.columns if c.startswith("flow_") and c.endswith(":phi")]
+    q_in = -sum(min(0.0, float(ts[c].iloc[-1])) for c in flows)
+    if q_in <= 0:
+        return None
+    v = float(re.search(r"Total volume = ([0-9.eE+-]+)", (case / "log.checkMesh").read_text()).group(1).rstrip("."))
+    return v / q_in
+
+
 def solutal_ra(m: dict, meta: dict, pre: str):
     dco2 = m.get(f"{pre}:CO2:final_excess")
     if dco2 is None or meta.get("medium") == "water":
@@ -105,7 +116,7 @@ def solutal_ra(m: dict, meta: dict, pre: str):
 
 def table(mesh: str) -> pd.DataFrame:
     rows = []
-    for slug, meshes in CAMPAIGN:
+    for slug, meshes, _g in CAMPAIGN:
         if mesh not in meshes:
             continue
         for g in ("0g", "1g"):
@@ -139,6 +150,7 @@ def table(mesh: str) -> pd.DataFrame:
                 # CO2 excess (drho/rho = dx (M_CO2 - M_air)/M_air; molar masses from CoolProp)
                 "Ra_solutal_CO2_1g": solutal_ra(m, meta, pre),
                 "Ra_thermal_1g": m.get("Ra_1g"),
+                "nominal_residence_s": nominal_residence(c, ts),
             })
     df = pd.DataFrame(rows)
     df.to_csv(TABLES / f"T9_cfd_results_{mesh}.csv", index=False)
@@ -147,23 +159,44 @@ def table(mesh: str) -> pd.DataFrame:
 
 def comparison(df: pd.DataFrame, mesh: str):
     style.apply()
-    qs = [("CO2_excess_ppm", "Specimen-zone CO$_2$ excess (ppm)"), ("T_excess_K", "Specimen-zone T excess (K)"),
-          ("age_of_air_s", "Specimen-zone age of air (s)")]
-    models = [m for m in df.model.unique()]
-    fig, axes = plt.subplots(1, len(qs), figsize=(7.4, 0.42 * len(models) + 1.2), sharey=True)
+    qs = [("CO2_excess_ppm", "CO2_late_sd_ppm", "CO$_2$ excess (ppm)", "linear"),
+          ("T_excess_K", "T_late_sd_K", "Temperature excess (K)", "linear"),
+          ("age_of_air_s", "age_late_sd_s", "Age of air (s, log scale)", "log")]
+    models = list(df.model.unique())
+    labels = [LABEL.get(m, m).replace(" (water)", ", water") + (" (whole volume)" if (df[df.model == m].zone == "domain").all()
+                                                                 else "") for m in models]
+    fig, axes = plt.subplots(1, len(qs), figsize=(7.6, 0.46 * len(models) + 1.3), sharey=True,
+                             gridspec_kw={"wspace": 0.12})
     y = np.arange(len(models))[::-1]
-    for ax, (q, lab) in zip(axes, qs):
-        for g, off in (("0g", 0.12), ("1g", -0.12)):
-            v = [df[(df.model == m) & (df.gravity == g)][q].iloc[0] if len(df[(df.model == m) & (df.gravity == g)]) else np.nan
-                 for m in models]
-            ax.scatter(v, y + off, color=GRAVITY_COLOR[g], s=26, label=g, zorder=3)
+    for ax, (q, sdq, lab, scale) in zip(axes, qs):
+        for g, off in (("0g", 0.13), ("1g", -0.13)):
+            for yi, m in zip(y, models):
+                r = df[(df.model == m) & (df.gravity == g)]
+                if not len(r) or pd.isna(r[q].iloc[0]):
+                    continue
+                v = float(r[q].iloc[0])
+                sd = float(r[sdq].iloc[0]) if sdq in r and pd.notna(r[sdq].iloc[0]) else 0.0
+                if scale == "log" and v <= 0:
+                    continue
+                ax.errorbar(v, yi + off, xerr=sd if sd > 0 else None, fmt="o", ms=4.5, color=GRAVITY_COLOR[g],
+                            ecolor=GRAVITY_COLOR[g], elinewidth=1, capsize=2, zorder=3)
+                txt = "0" if (q == "T_excess_K" and abs(v) < 1e-4) else f"{v:.3g}"   # round-off-level T excess
+                ax.annotate(txt, (v, yi + off), xytext=(5, 0), textcoords="offset points", va="center",
+                            fontsize=5.8, color=INK2)
+        ax.set_xscale(scale)
         ax.set_title(lab, fontsize=7.6)
         ax.grid(axis="y", visible=False)
-        ax.axvline(0, color=INK2, lw=0.5)
-    axes[0].set_yticks(y, [LABEL.get(m, m) for m in models], fontsize=7)
-    axes[0].legend(fontsize=7, loc="lower right")
-    fig.suptitle("Flight (0 g) versus ground control (1 g) in the same hardware", x=0.01, ha="left", fontsize=9)
-    fig.tight_layout()
+        if scale == "linear":
+            ax.axvline(0, color=INK2, lw=0.5)
+        lo, hi = ax.get_xlim()
+        ax.set_xlim(lo, hi + 0.18 * (hi - lo) if scale == "linear" else hi * 3)
+    axes[0].set_yticks(y, labels, fontsize=7)
+    handles = [plt.Line2D([], [], marker="o", ls="", color=GRAVITY_COLOR[g], label=lab_)
+               for g, lab_ in (("0g", "flight (0 g)"), ("1g", "ground control (1 g)"))]
+    fig.legend(handles=handles, loc="lower center", ncol=2, fontsize=7, bbox_to_anchor=(0.55, -0.02))
+    fig.suptitle("Specimen-zone environment at the end of each run (bars: temporal s.d.)", x=0.01, ha="left",
+                 fontsize=9)
+    fig.subplots_adjust(bottom=0.16)
     style.save(fig, f"F6_cfd_comparison_{mesh}")
 
 
@@ -187,7 +220,7 @@ def main(argv=None):
     ap.add_argument("--no-anim", action="store_true")
     ap.add_argument("--only")
     a = ap.parse_args(argv)
-    for slug, meshes in CAMPAIGN:
+    for slug, meshes, _g in CAMPAIGN:
         if a.only and slug not in a.only.split(","):
             continue
         if a.mesh not in meshes or not (RUNS / f"{slug}_0g_{a.mesh}" / "postProcessing").exists():

@@ -163,11 +163,37 @@ def run():
                             ("H2O_excess_mmol_mol", "Ht"), ("U_max_m_s", "Umax"), ("Re", "Re"), ("Ri_1g", "Ri"),
                             ("CO2_late_sd_ppm", "CoSd"), ("age_late_sd_s", "AgeSd"), ("Re_inlet", "ReIn"),
                             ("Ra_solutal_CO2_1g", "RaSol"), ("Ra_thermal_1g", "RaTh"),
-                            ("domain_CO2_excess_ppm", "CoDom")):
+                            ("domain_CO2_excess_ppm", "CoDom"), ("nominal_residence_s", "Tau"),
+                            ("t90_CO2_s", "Tninety")):
                 if col not in x:
                     continue
                 if pd.notna(x[col]):
                     M[f"Cfd{k}{nm}"] = float(x[col])
+    if t9.exists():
+        def pick(model, g, col):
+            q = r[(r.model == model) & (r.gravity == g)]
+            return float(q[col].iloc[0]) if len(q) and pd.notna(q[col].iloc[0]) else None
+        a, b = pick("vented_fly_box_vent20", "0g", "CO2_excess_ppm"), pick("vented_fly_box_vent60", "0g", "CO2_excess_ppm")
+        if a and b:
+            M["CfdVfbCoRatio"] = a / b
+        a, b = pick("vented_fly_box_vent20", "0g", "t90_CO2_s"), pick("vented_fly_box_vent60", "0g", "t90_CO2_s")
+        if a and b:
+            M["CfdVfbTninetyRatio"] = a / b
+        a, b = pick("aph", "0g", "CO2_excess_ppm"), pick("aph", "1g", "CO2_excess_ppm")
+        if a is not None and b is not None:
+            M["CfdAphGravityDiff"] = abs(a - b)
+        a, b = pick("mds", "0g", "CO2_excess_ppm"), pick("mds", "1g", "CO2_excess_ppm")
+        if a and b:
+            M["CfdMdsGravityDiffPct"] = 100 * abs(a - b) / abs(a)
+    if t7.exists():
+        g7 = pd.read_csv(t7)
+        for model, gname in (("mds", "Mds"), ("aph", "Aph"), ("vented_fly_box_vent20", "VfbSmall")):
+            for qkey, qn in (("CO2:final_excess", "Co"), ("AoA:final_excess", "Age"), ("T:final_excess", "Dt")):
+                q = g7[(g7.model == model) & (g7.gravity == "0g") & g7.quantity.str.startswith("zone_")
+                       & g7.quantity.str.endswith(qkey)]
+                if len(q):
+                    M[f"Gci{gname}{qn}"] = float(q.gci_fine_pct.iloc[0])
+                    M[f"GciP{gname}{qn}"] = float(q.p.iloc[0])
     words = dict(zip("0123456789", ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight",
                                     "Nine"]))
     seen = {}

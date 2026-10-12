@@ -1,0 +1,19 @@
+{
+ "0g": {
+  "case": "aqh_0g_medium",
+  "t_end_s": 1796.4865,
+  "domainAvg:T:final_excess": 0.0,
+  "domainAvg:T:late_sd": 0.0,
+  "domainAvg:AoA:final_excess": 544.5022645238096,
+  "domainAvg:AoA:late_sd": 11.413522393729208,
+  "domainAvg:AoA:t90_s": 1120.8108,
+  "U_max_m_s": 0.00585608501,
+  "U_max_late_m_s": 0.00542315791,
+  "L_char_m": 0.09024623925725084,
+  "Re": 31.27900310196315,
+  "Pe_CO2": 32.25170387319357,
+  "Ra_1g": 0.0,
+  "Gr_1g": 0.0,
+  "Ri_1g": 0.0
+ }
+}

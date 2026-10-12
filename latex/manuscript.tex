@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{adjustbox}
 \usepackage{siunitx}
 \usepackage{xcolor}
 \usepackage[numbers,sort&compress]{natbib}
@@ -40,9 +42,13 @@ that has been used in OSDR studies (Spearman $\rho=\hwRhoUse$) and for ISS-era h
 cell and microbe culture hardware. Curation also exposed catalogue defects, including a block of
 \hwNSplashBlock{} SPLASH records whose descriptive fields are displaced from neighbouring rows.
 Targeted literature curation, with every value tied to a verbatim source quotation, raised a subset of
-heavily used hardware to CFD readiness; for these we built three-dimensional transient OpenFOAM models
-in flight (0\,$g$) and ground-control (1\,$g$) conditions, with engineering drawings and four-dimensional
-field records. All code, data snapshots and curated specifications are released for reuse.
+heavily used hardware to CFD readiness; for these we built verified three-dimensional transient OpenFOAM
+models in flight (0\,$g$) and ground-control (1\,$g$) conditions, with engineering drawings and
+four-dimensional field records. In the modelled hardware, gravity changed the specimen-zone CO$_2$ by
+\hwCfdMdsGravityDiffPct\% in a ventilated mouse cage and by less than the flow's own fluctuation in a plant
+growth chamber, whereas a single undocumented parameter -- the vent size of a passive fly box -- changed the
+predicted specimen CO$_2$ \hwCfdVfbCoRatio-fold. The missing metadata, not gravity, dominated the uncertainty
+of the modelled environments. All code, data snapshots and curated specifications are released for reuse.
 \end{abstract}
 
 \section{Introduction}
@@ -68,8 +74,8 @@ is computed from cited values, or is declared as a modelling assumption.
 \section{Methods}
 \subsection{Data sources and snapshot}
 On 2026-10-12 we downloaded, without authentication, the full SPLASH catalogue
-(\texttt{splash-api/public/instruments}, \hwNSplash{} records, 62 fields), the OSDR hardware registry
-(\texttt{geode-py/ws/api/hardware}, \hwNRegistry{} records, with every linked payload and experiment
+(\nolinkurl{splash-api/public/instruments}, \hwNSplash{} records, 62 fields), the OSDR hardware registry
+(\nolinkurl{geode-py/ws/api/hardware}, \hwNRegistry{} records, with every linked payload and experiment
 record), and the \texttt{experiment platform}, project identifier and organism of every OSDR dataset
 (\hwNDatasets{} datasets) together with each dataset's metadata, including protocol descriptions.
 Raw responses are archived with SHA-256 checksums; every downstream stage reads only this snapshot.
@@ -150,8 +156,13 @@ fix the pressure; passive vents impose the exterior (ISS cabin) state; gas-perme
 condition. The mean age of air was computed with a passive scalar (unit source, zero at inflow). Flow was
 treated as laminar: inlet Reynolds numbers (hydraulic diameter) were at most \hwCfdMaxReInletLaminar{} in
 all cases except the APH fan-maximum sensitivity case (\hwCfdReInletFanmax{}), which is above transition and
-is therefore reported only as a laminar approximation. Each case was run with gravity off (flight) and on (ground control,
-$9.80665$\,m\,s$^{-2}$), from the supply state at rest, until the specimen-zone quantities reached a plateau.
+Cases start from the supply state at rest and run until the specimen-zone quantities reach a plateau.
+Hardware with a sourced specimen heat load (MDS) was run with gravity off (flight) and on (ground control,
+$9.80665$\,m\,s$^{-2}$). Where no heat load could be sourced, the temperature field is uniform and the
+Boussinesq model has no buoyancy source, so the 1\,$g$ solution is identical to 0\,$g$ by construction; running
+it only admits spurious currents driven by round-off temperature differences, which in a passive,
+diffusion-dominated enclosure are not negligible, so these cases were run at 0\,$g$ only. The APH baseline was nevertheless run in both
+conditions to show that the difference stays within the temporal fluctuation of the forced flow.
 
 \paragraph{Verification.} The solver configuration was verified on the differentially heated square
 cavity against the reference Nusselt numbers of \citet{devahldavis1983} and \citet{hortmann1990} (as
@@ -257,7 +268,39 @@ balance closed to within \hwCfdMaxImbalance\% in every hardware run.
 \input{../results/tex/verification}
 
 \subsection{Specimen environments in flight and ground control}
-CFDRESULTS
+Table~\ref{tab:cfd} and Fig.~\ref{fig:cfdcomp} summarise the specimen environments at the end of each run;
+field slices, environment cards and animations are in the Supplementary Information.
+
+\paragraph{Mice Drawer System.} With the sourced cage through-flow (0.2--0.3\,m\,s$^{-1}$) and organism-level
+loads for a 30\,g mouse, the air around the mouse carried \hwCfdMdsZeroCo{}\,ppm more CO$_2$ than the supply,
+was \hwCfdMdsZeroDt{}\,K warmer and had a mean age of \hwCfdMdsZeroAge{}\,s. Flight and ground control
+differed by \hwCfdMdsGravityDiffPct\% in CO$_2$ excess: at a Richardson number of \hwCfdMdsZeroRi{} the
+forced flow dominates the mouse's buoyant plume. The mouse-zone CO$_2$ excess converged monotonically with
+mesh refinement (observed order \hwGciPMdsCo{}, fine-mesh GCI \hwGciMdsCo\%).
+
+\paragraph{Advanced Plant Habitat.} At the PH-04 set-points the canopy drew CO$_2$ down by
+\hwCfdAphZeroCo{}\,ppm relative to the 550\,ppm supply in flight (temporal s.d.\ \hwCfdAphZeroCoSd{}\,ppm) and by
+\hwCfdAphOneCo{}\,ppm in ground control (s.d.\ \hwCfdAphOneCoSd{}\,ppm), a difference of
+\hwCfdAphGravityDiff{}\,ppm that lies within the fluctuation of the transitional, fan-driven flow; with no
+sourced canopy or lamp heat load the Boussinesq model has no buoyancy source. The mean age of canopy air
+was \hwCfdAphZeroAge{}\,s in flight and \hwCfdAphOneAge{}\,s in ground control, and mesh-to-mesh differences
+were smaller than the temporal fluctuation (Supplementary Table~S5). Setting the
+fans to their maximum speed changed the canopy CO$_2$ drawdown to \hwCfdAphFanmaxZeroCo{}\,ppm and the canopy
+age of air to \hwCfdAphFanmaxZeroAge{}\,s (laminar approximation).
+
+\paragraph{Vented Fly Box.} The box exchanges gas with the cabin only through its vents, whose size is not
+published. With 20\,mm vents the CO$_2$ excess at the vial plugs reached \hwCfdVfbSmallZeroCo{}\,ppm, with
+60\,mm vents \hwCfdVfbLargeZeroCo{}\,ppm: the undocumented vent size alone changes the predicted specimen
+CO$_2$ \hwCfdVfbCoRatio-fold and the time to reach 90\% of the plateau \hwCfdVfbTninetyRatio-fold
+(\hwCfdVfbSmallZeroTninety{} versus \hwCfdVfbLargeZeroTninety{}\,s). Because the fly load contributes no
+sourced heat, the model has no thermal buoyancy; the solutal Rayleigh number of the CO$_2$ excess, which
+the model omits, was \hwCfdVfbSmallZeroRaSol{} and \hwCfdVfbLargeZeroRaSol{} for the two vent sizes,
+so density-driven exchange in a 1\,$g$ ground control remains a candidate gravity effect that these
+metadata cannot resolve.
+
+\paragraph{Aquatic Habitat.} At the sourced 0.1\,L\,min$^{-1}$ per aquarium, the mean age of water in the
+aquarium was \hwCfdAqhZeroAge{}\,s against a nominal residence time of \hwCfdAqhZeroTau{}\,s; a mean age
+above the nominal residence time indicates poorly flushed regions for the assumed port positions.
 
 \input{../results/tex/cfd}
 
@@ -284,6 +327,17 @@ never reported for the flight itself and had to be taken from organism-level phy
 obscure parameters: they set the gas, temperature and humidity fields that flight and ground-control
 specimens experience, and they are exactly what is needed to judge whether a flight--ground difference is
 a gravity effect or a hardware effect.
+
+\subsection{What the models can and cannot say}
+In the four hardware items that could be modelled, the gravity contrast was small: forced ventilation
+dominated the mouse-cage environment, and in the plant growth chamber the flight--ground difference was
+within the fluctuation of the flow. This is not evidence that gravity does not matter to these
+environments, because the loads that would let it act -- canopy and lamp heat, fly metabolic heat, the
+solutal buoyancy of exhaled CO$_2$ -- are exactly the inputs the public record does not provide. What the
+models do show is that the undocumented inputs can matter more than gravity: the fly-box vent size, which
+no source states, changed the predicted CO$_2$ around the specimens \hwCfdVfbCoRatio-fold. For hardware of
+this kind, interpreting a flight--ground difference as a gravity effect requires the hardware environment
+to be measured or modelled, and modelling requires metadata that do not yet exist publicly.
 
 \subsection{Catalogue integrity}
 The defects we found are of a kind that propagates silently: displaced fields in a contiguous block of

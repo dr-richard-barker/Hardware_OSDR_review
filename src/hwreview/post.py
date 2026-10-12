@@ -196,7 +196,10 @@ def _read_slice(case: Path, y_m: float | None):
 def _slice_png(cases: dict[str, Path], slug: str, mesh: str):
     style.apply()
     meta = json.loads((next(iter(cases.values())) / "case_meta.json").read_text())
-    sl = {g: _read_slice(c, meta.get("slice_y_m")) for g, c in cases.items()}
+    from . import geometry
+    model = geometry.load(slug)
+    y_mm = model.spec.get("numerics", {}).get("slice_y_mm")
+    sl = {g: _read_slice(c, y_mm / 1000 if y_mm is not None else None) for g, c in cases.items()}
     avail = set.intersection(*[set(v[1]) for v in sl.values()])
 
     def varies(f):
@@ -207,8 +210,6 @@ def _slice_png(cases: dict[str, Path], slug: str, mesh: str):
                           ("AoA", "age of air (s)", "magma"), ("U", "|U| (m s$^{-1}$)", "cividis")]
               if f[0] in avail and varies(f[0])]
     import matplotlib.tri as mtri
-    from . import geometry
-    model = geometry.load(slug)
     obstacles = [o.mesh() for o in model.obstacles]
     tris = {}
     for g, (cc, d, t) in sl.items():
@@ -246,7 +247,9 @@ def _slice_png(cases: dict[str, Path], slug: str, mesh: str):
             ax.set_ylabel("z (mm)", fontsize=7)
             ax.grid(False)
         fig.colorbar(cs, ax=list(axes[ri, :]), shrink=0.85)
-    fig.suptitle(f"{slug}: vertical mid-plane, flight (0 g) vs ground control (1 g)", x=0.01, ha="left")
+    where = f"vertical plane y = {y_mm:g} mm" if y_mm is not None else "vertical mid-plane"
+    what = "flight (0 g) vs ground control (1 g)" if len(gs) == 2 else f"{gs[0]} only (1 g identical by construction)"
+    fig.suptitle(f"{slug}: {where}, {what}", x=0.01, ha="left", fontsize=9)
     style.save(fig, f"fields_{slug}_{mesh}")
 
 
@@ -305,7 +308,8 @@ def animate(slug: str, mesh: str = "medium", field: str = "CO2", fps: int = 4):
             r.set_active_time_value(t)
             m = r.read()["internalMesh"]
             b = m.bounds
-            sl = m.slice(normal="y", origin=(0, 0.5 * (b[2] + b[3]), 0))
+            y_mm = model.spec.get("numerics", {}).get("slice_y_mm")
+            sl = m.slice(normal="y", origin=(0, y_mm / 1000 if y_mm is not None else 0.5 * (b[2] + b[3]), 0))
             if field not in sl.cell_data:
                 return None
             v = np.asarray(sl.cell_data[field])

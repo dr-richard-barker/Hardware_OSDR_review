@@ -187,9 +187,6 @@ def run():
     fig8_where_and_feed()
 
 
-if __name__ == "__main__":
-    run()
-
 
 def _short(name: str) -> str:
     import re
@@ -277,3 +274,7 @@ def fig8_where_and_feed():
     ax.set_title("How specimens are fed and watered", fontsize=8.5)
     ax.grid(axis="y", visible=False)
     style.save(fig, "F8_where_and_feed")
+
+
+if __name__ == "__main__":
+    run()

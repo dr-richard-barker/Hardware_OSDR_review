@@ -51,9 +51,12 @@ post:
 	$(RUN) -m hwreview.ortho $(MODELS)
 	$(RUN) -m hwreview.results
 	$(RUN) -m hwreview.gci
+	$(RUN) -c "from hwreview import verify_cfd; verify_cfd.summarise()"
 
 paper:
+	$(RUN) -m hwreview.curated
 	$(RUN) -m hwreview.macros
+	$(RUN) -m hwreview.tables_tex
 	$(MAKE) -C latex all
 
 check:

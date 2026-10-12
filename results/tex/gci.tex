@@ -1,0 +1,37 @@
+\begin{table}[htbp]\centering\scriptsize
+\caption{Grid convergence \citep{celik2008} of specimen-zone and domain quantities (excess over the supply state; age of air in s; $U_{max}$ in m\,s$^{-1}$).}\label{tab:gci}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lllrrrrrrl}
+\toprule
+Model & $g$ & Quantity & Fine & Medium & Coarse & $p$ & GCI (\%) & Temporal sd & Convergence \\
+\midrule
+MDS & 0g & zone mouse CO2 & 14.76 & 15.58 & 17.34 & 2.29 & 5.83 & 0.00 & monotonic \\
+MDS & 0g & zone mouse T & 0.28 & 0.29 & 0.33 & 2.27 & 6.00 & 0.00 & monotonic \\
+MDS & 0g & zone mouse AoA & 0.27 & 0.27 & 0.27 & 1.75 & 0.53 & 0.00 & monotonic \\
+MDS & 0g & domain CO2 & 1.19 & 1.21 & 1.24 & 1.56 & 2.75 & 0.00 & monotonic \\
+MDS & 0g & domain AoA & 0.18 & 0.18 & 0.18 & 3.12 & 0.39 & $2.79\times10^{-17}$ & monotonic \\
+MDS & 0g & U\_max\_late\_m\_s & 0.31 & 0.30 & 0.30 & 4.44 & 0.32 & -- & oscillatory \\
+MDS & 1g & zone mouse CO2 & 14.79 & 15.61 & 17.38 & 2.29 & 5.86 & 0.00 & monotonic \\
+MDS & 1g & zone mouse T & 0.28 & 0.29 & 0.33 & 2.26 & 6.03 & 0.00 & monotonic \\
+MDS & 1g & zone mouse AoA & 0.27 & 0.27 & 0.27 & 1.81 & 0.51 & $4.92\times10^{-10}$ & monotonic \\
+MDS & 1g & domain CO2 & 1.19 & 1.21 & 1.24 & 1.57 & 2.76 & 0.00 & monotonic \\
+MDS & 1g & domain AoA & 0.18 & 0.18 & 0.18 & 3.11 & 0.40 & 0.00 & monotonic \\
+MDS & 1g & U\_max\_late\_m\_s & 0.31 & 0.30 & 0.30 & 4.27 & 0.34 & -- & oscillatory \\
+APH & 0g & zone canopy CO2 & -6.43 & -6.50 & -6.50 & 10.35 & 0.04 & 0.24 & monotonic (within unsteadiness) \\
+APH & 0g & zone canopy AoA & 1.97 & 1.98 & 1.97 & 3.24 & 0.10 & 0.11 & oscillatory (within unsteadiness) \\
+APH & 0g & domain CO2 & -7.19 & -7.14 & -7.22 & 1.40 & 1.42 & 0.08 & oscillatory (within unsteadiness) \\
+APH & 0g & domain AoA & 4.91 & 4.89 & 4.94 & 4.31 & 0.08 & 0.09 & oscillatory (within unsteadiness) \\
+APH & 0g & U\_max\_late\_m\_s & 0.45 & 0.45 & 0.43 & 2.95 & 0.79 & -- & monotonic \\
+APH & 1g & zone canopy CO2 & -6.64 & -6.82 & -6.46 & 1.96 & 3.71 & 0.27 & oscillatory (within unsteadiness) \\
+APH & 1g & zone canopy AoA & 2.10 & 2.23 & 2.04 & 1.24 & 14.36 & 0.17 & oscillatory (within unsteadiness) \\
+APH & 1g & domain CO2 & -7.22 & -7.31 & -7.23 & 0.50 & 8.51 & 0.06 & oscillatory (within unsteadiness) \\
+APH & 1g & domain AoA & 5.00 & 5.05 & 4.95 & 1.94 & 1.39 & 0.08 & oscillatory (within unsteadiness) \\
+APH & 1g & U\_max\_late\_m\_s & 0.45 & 0.44 & 0.44 & 0.52 & 11.69 & -- & monotonic \\
+VFB (20 mm) & 0g & zone plug CO2 & 184.46 & 187.94 & 197.02 & 2.87 & 2.27 & $6.56\times10^{-3}$ & monotonic \\
+VFB (20 mm) & 0g & zone plug AoA & 460.83 & 469.19 & 496.32 & 3.65 & 1.54 & 0.02 & monotonic \\
+VFB (20 mm) & 0g & domain CO2 & 145.41 & 148.53 & 157.31 & 3.14 & 2.27 & $7.00\times10^{-3}$ & monotonic \\
+VFB (20 mm) & 0g & domain AoA & 490.81 & 499.40 & 527.38 & 3.67 & 1.47 & 0.02 & monotonic \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}

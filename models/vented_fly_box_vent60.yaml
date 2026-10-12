@@ -27,7 +27,7 @@ environment:
   temperature_C: {ref: environment.temperature_C}
   co2_ppm: {ref: "cabin:environment.co2_ppm"}
   rh_percent: {ref: "cabin:environment.rh_percent"}
-numerics: {cell_mm: 3, surface_level: 0, obstacle_level: 1, end_time_s: 3600, write_every_s: 300, max_dt_s: 2.0, max_co: 0.9, probe_every_steps: 20}
+numerics: {cell_mm: 3, surface_level: 0, obstacle_level: 1, end_time_s: 3600, write_every_s: 300, max_dt_s: 2.0, max_co: 0.9, probe_every_steps: 20, slice_y_mm: 31}
 assumptions:
   - param: obstacles[0].center
     why: "15 vials (24 x 75 mm) fit the 94 x 94 x 130 mm box only lying along x in a 3 x 5 stack (upright, at most 12 fit); g-load at launch was directed into the food at the vial bottoms (OSD-347). Vials treated as solid (food + flies inside not resolved)."

@@ -16,14 +16,18 @@ import traceback
 from . import cases, foam, geometry
 from .paths import RUNS
 
-# (model, meshes) - three meshes where the grid-convergence study is done
+# (model, meshes, gravities). Hardware with no sourced heat load has no buoyancy source in the
+# Boussinesq model, so its 1 g solution is identical to 0 g by construction; running it only adds
+# round-off-driven spurious currents (seen in a trial 1 g run of the passive fly box), so such models run 0 g only.
+# APH keeps both gravities as a demonstration that the 0 g / 1 g difference is within the temporal
+# fluctuation of the forced flow.
 CAMPAIGN = [
-    ("mds", ["coarse", "medium", "fine"]),
-    ("aph", ["coarse", "medium", "fine"]),
-    ("vented_fly_box_vent20", ["coarse", "medium", "fine"]),
-    ("vented_fly_box_vent60", ["medium"]),
-    ("aph_fanmax", ["medium"]),
-    ("aqh", ["medium"]),
+    ("mds", ["coarse", "medium", "fine"], ["0g", "1g"]),
+    ("aph", ["coarse", "medium", "fine"], ["0g", "1g"]),
+    ("vented_fly_box_vent20", ["coarse", "medium", "fine"], ["0g"]),
+    ("vented_fly_box_vent60", ["medium"], ["0g"]),
+    ("aph_fanmax", ["medium"], ["0g"]),
+    ("aqh", ["medium"], ["0g"]),
 ]
 
 
@@ -54,11 +58,11 @@ def main(argv=None):
     global TAG
     TAG = f"[np{a.np}] " if a.only else ""
     only = set(a.only.split(",")) if a.only else None
-    for slug, meshes in CAMPAIGN:
+    for slug, meshes, gravities in CAMPAIGN:
         if only and slug not in only:
             continue
         for mesh in meshes:
-            for g in ("0g", "1g"):
+            for g in gravities:
                 case = RUNS / f"{slug}_{g}_{mesh}"
                 try:
                     if case.exists() and done(case):

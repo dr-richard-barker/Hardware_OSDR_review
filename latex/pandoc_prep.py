@@ -18,6 +18,17 @@ macros = {}
 for m in re.finditer(r"\\newcommand\{\\(hw\w+)\}\{(.*)\}", (here / "../results/macros.tex").read_text()):
     macros[m.group(1)] = m.group(2)
 text = re.sub(r"\\input\{\.\./results/macros(\.tex)?\}\s*", "", text)
+
+
+def _inline(m):
+    f = here / (m.group(1) if m.group(1).endswith(".tex") else m.group(1) + ".tex")
+    t = f.read_text() if f.exists() else ""
+    # pandoc does not know adjustbox: keep only the tabular inside
+    t = re.sub(r"\\begin\{adjustbox\}\{[^}]*\}\s*", "", t)
+    return t.replace("\\end{adjustbox}", "")
+
+
+text = re.sub(r"\\input\{([^}]*)\}", _inline, text)
 # longest names first so \hwNHabitats is not clipped by \hwNHab
 for name in sorted(macros, key=len, reverse=True):
     text = re.sub(rf"\\{name}(?![A-Za-z])(\{{\}})?", lambda _m, v=macros[name]: v, text)

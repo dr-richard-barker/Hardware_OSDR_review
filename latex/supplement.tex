@@ -6,6 +6,9 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{longtable}
+\usepackage{array}
+\usepackage{adjustbox}
+\usepackage[section]{placeins}
 \usepackage[numbers,sort&compress]{natbib}
 \usepackage[hidelinks]{hyperref}
 \renewcommand{\thetable}{S\arabic{table}}
@@ -18,6 +21,7 @@
 \begin{document}
 \maketitle
 
+\FloatBarrier
 \section*{Supplementary Note S1. Catalogue defects and source conflicts}
 SPLASH records \#121--\#147 carry descriptive fields displaced from neighbouring rows (offsets mostly $-2$).
 All fields of these records except the name, alternate names, background, category and status are excluded
@@ -31,18 +35,23 @@ entry. Source conflicts recorded during literature curation are listed, per hard
 
 \input{../results/tex/splash_review}
 
+\FloatBarrier
 \section*{Supplementary Note S2. The MI-CFD-HW checklist}
 \input{../results/tex/items}
 
+\FloatBarrier
 \section*{Supplementary Note S3. Literature curation}
 \input{../results/tex/curated}
 
+\FloatBarrier
 \section*{Supplementary Note S4. Modelling assumptions}
 \input{../results/tex/assumptions}
 
+\FloatBarrier
 \section*{Supplementary Note S5. Discretisation uncertainty}
 \input{../results/tex/gci}
 
+\FloatBarrier
 \section*{Supplementary Note S6. Geometry of the modelled hardware}
 \begin{figure}[htbp]\centering
 \includegraphics[width=0.78\linewidth]{../results/figures/ortho_aph.pdf}
@@ -61,6 +70,7 @@ entry. Source conflicts recorded during literature curation are listed, per hard
 \caption{One Aquatic Habitat aquarium as modelled (water).}
 \end{figure}
 
+\FloatBarrier
 \section*{Supplementary Note S7. Field slices}
 \begin{figure}[htbp]\centering
 \includegraphics[width=0.8\linewidth]{../results/figures/fields_mds_medium.pdf}
@@ -79,6 +89,7 @@ entry. Source conflicts recorded during literature curation are listed, per hard
 \caption{AQH aquarium, vertical mid-plane at the end of the run, 0\,$g$ and 1\,$g$.}
 \end{figure}
 
+\FloatBarrier
 \section*{Supplementary Note S8. Environment cards}
 Time series of specimen-zone excess over the supply or initial state, 0\,$g$ (blue) and 1\,$g$ (red), medium meshes.
 \begin{figure}[htbp]\centering
